@@ -1,0 +1,43 @@
+.cards svg{
+    width: 41px;
+    height: 41px;
+}
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 12px;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+}
+@media (max-width: 1440px){
+    .cards{
+        width: 100%;
+    }
+}
+@media (max-width: 1080px){
+    .cards{
+        width: 85%;
+    }
+}
+@media (max-width: 786px){
+    .cards{
+        width: 69%;
+        margin: auto;
+    }
+    .footer-content .item:nth-child(2){
+        max-width: 100% !important;
+    }
+}
+@media (max-width: 500px){
+    .cards{
+        width: 80%;
+        margin: auto;
+    }
+}
+@media (max-width: 400px){
+    .cards{
+        width: 100%;
+        margin: auto;
+    }
+}

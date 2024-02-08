@@ -1,0 +1,276 @@
+.main-body{
+    background-image: url(./studenbg.jpg);
+    background-size: cover;
+    min-height: 100vh;
+}
+.wraperofitems{
+    margin-top: 40px;
+}
+.coverofall {
+    margin-top: 50px 
+}
+
+.footerforstudy{
+    margin-top: 10vh;
+}
+.lastSvg{
+    margin-right: 10px;
+}
+.card-body2{
+    width: 80%;
+    background-color: white;
+    margin: auto;
+    border-radius: 0px 0px 16px 20px;
+}
+.loaderlogo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+}
+.tickcontent{
+    display: flex;
+    align-items: end;
+}
+.card-hea{
+    border-radius: 16px 16px 0px 0px;
+    background: #2C292A;
+    display: flex;
+    padding: 12px 32px;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%;
+    letter-spacing: 1px;
+    width: 80%;
+    margin: auto;
+    margin-top: 35px;
+    
+}
+.backbutton{
+    width: 80%;
+    margin: auto;
+}
+.quiz-head{
+    border-radius: 16px 16px 0px 0px;
+    display: flex;
+    padding: 12px 32px;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    color: black;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 160%;
+    letter-spacing: 1px;
+    width: 80%;
+    margin: auto;
+    margin-top: 35px;
+background: #F5F5F5;   
+}
+.card-body{
+    width: 80%;
+    margin: auto;
+    background-color: white;
+    border-radius: 0px 0px 20px 20px;
+
+}
+.course-Name{
+    color: #2C292A;
+font-family: Inter;
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: 120%; /* 28.8px */
+letter-spacing: 1.2px;
+padding-top: 35px;
+
+}
+.listitem {
+    border-radius: 16px;
+    border: 1px solid rgba(44, 41, 42, 0.05);
+    background: #F5F5F5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.lastsvg{
+    margin-right: 10px;
+}
+.progreque{
+    border-radius: 15px;
+background: #D9D9D9;
+height: 16px;
+margin-top: 30px;
+margin-bottom: 20px;
+}
+.displayquiz{
+    border-radius: 15px;
+}
+.circlepro{
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    background-color: #FBB723;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 16px;
+    right: 5px;
+}
+.endbtn{
+    width: 100%;
+    border-radius: 8px;
+    background: #FBB723;
+    /* width: 1080px; */
+    height: 56px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+.wraperofitems{
+    height: 607px;
+    overflow-y:auto ;
+    padding-right: 10px;
+}
+
+  
+
+  .modal-content-center{
+    text-align: center;
+   margin: auto;
+   padding: 50px;
+
+  }
+  .modal-content-center svg{
+    margin: auto;
+    padding-top: 20px;
+
+  }
+
+  .bold-content{
+    color: #0A0A0A;
+text-align: center;
+font-family: Inter;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: 140%; /* 28px */
+  }
+  .light-content{
+    color: #696969;
+text-align: center;
+font-family: Inter;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 20px; /* 142.857% */
+padding-top: 20px;
+
+  }
+  .download-button{
+    display: flex;
+height: 56px;
+padding: 24px;
+justify-content: center;
+align-items: center;
+gap: 8px;
+border-radius: 8px;
+background: #FBB723;
+color: #2C292A;
+font-family: Inter;
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: 24px; /* 150% */
+letter-spacing: 0.32px;
+margin: auto;
+padding-top: 20px;
+}
+.progresschart{
+    width: 63px;
+    height: 63px;
+    border-radius: 50%;
+    background-color: grey;
+}
+.progresscenter{
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 12px;
+}
+.progressindentify{
+    width: 100%;
+    background-color: rgb(234, 243, 0);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    overflow: hidden;
+}
+.paddingdiv{
+   width: 70%;
+   margin: auto;
+   padding-top: 20px;
+}
+.mianrounded{
+    padding: 20px;
+}
+@media (max-width:1440px) {
+    .coverofall{
+        margin-top: 40px;
+    }
+    .footerforstudy{
+        margin-top: 5vh;
+        position: relative;
+        bottom: 0px;
+    
+    
+    
+    }
+    .wraperofitems{
+        height: 380px;
+    }
+}
+@media (max-width:786px) {
+    .maincardbody{
+        padding: 20px !important;
+    }
+    .navbar-nav{
+        margin-top: 30px;
+    }
+    .card-body2{
+        width: 90%;
+    }
+    .quiz-head{
+        width: 90%;
+    }
+    .paddingdiv{
+        width: 90%;
+        margin: auto;
+        padding-top: 20px;
+     }
+     .mianrounded{
+        padding: 0px;
+    }
+}

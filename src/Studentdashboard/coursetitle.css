@@ -1,0 +1,188 @@
+.descimage{
+   width: 100%;
+   height: 60%;
+   max-width: 600px;
+}
+.contentdiv {
+  min-height: 900px !important;
+}
+.card-con{
+  min-height: 72vh;
+}
+.learning{
+    background-image: url(./studenbg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+     min-height: 100vh;
+}
+.titles{
+    background: #F5F5F5;
+    padding: 14px 60px;
+    width: 100%;
+    color: #333;
+font-family: Inter;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: 120%; /* 24px */
+letter-spacing: 1px;
+display: flex;
+align-items: center;
+
+    }
+    .titles .pagelen{
+        margin: auto;
+    }
+    .main-contain- {
+        width: 90%;
+        margin: auto;
+        height: auto;
+        background-color: white;
+        border-radius: 16px;
+        margin-top: 30px;
+    }
+    .nav-item a{
+        justify-content: center;
+        align-items: center;
+    }
+    .nav-item {
+        margin-left: 30px;
+    }
+    .progressgra{
+        background: #C9C8C5;
+        color: #2C292A;
+font-family: Inter;
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: 160%; /* 25.6px */
+letter-spacing: 0.8px;
+height: 30px;
+    }
+    .dropcon{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        column-gap: 20px;
+    }
+    .activepage{
+        display: flex;
+padding: 8px 15px;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 10px;
+border-radius: 5px;
+border: 2px solid #2C292A;
+background: #F5F5F5;
+    }
+    .nextbtn{
+    position: absolute;
+    right: 0px;
+    top: 60%;
+    cursor: pointer;
+}
+.prebtn{
+    position: absolute;
+    /* top: 50%; */
+    top: 60%;
+    left: 0px;
+    cursor: pointer;
+}
+.mainbarcover {
+    height: 10px;
+    border-radius: 10px;
+    background: #c9c8c5;
+    width: 400px;
+    overflow: hidden; /* Ensures the child element doesn't overflow */
+  }
+  
+  .bari {
+    border-radius: 10px;
+    background-color: #fbb723;
+    height: 100%;
+  }
+  /* CSS */
+.volume-control {
+    margin-top: 10px; /* Adjust the margin as needed */
+    display: flex;
+    align-items: center;
+  }
+  
+  .volume-control label {
+    margin-right: 10px;
+  }
+  .contentdiv{
+    padding: 40px;
+    min-height: 50vh;
+    display: flex;
+  }
+  .headertwo{
+    display: flex;
+    justify-content: space-between;
+  }
+  .footerforstudy {
+    width: 100%;
+    padding: 22px 32px;
+    background: #2C292A;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: -0.12px;
+    position: relative;
+    bottom: 0;
+    top: 30px;
+    margin-top: 23vh;
+}
+
+
+  .pagebuttons{
+    display: none;
+  }
+  @media (max-width:786px) {
+    .pagebuttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+  }
+  .footerforstudy{
+    display: none;
+  }
+    .previousbutton{
+      color: #2C292A;
+font-family: Inter;
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: 24px; /* 150% */
+letter-spacing: 0.32px;
+display: flex;
+width: 134px;
+height: 48px;
+padding: 16px 24px;
+justify-content: center;
+align-items: center;
+gap: 8px;
+border-radius: 8px;
+background: #FBB723;
+    }
+    .headertwo{
+      display: block;
+    }
+    .mainpro{
+      margin-top: 10px;
+    }
+    .contentdiv{
+      display: block;
+    }
+    .nextbtn{
+      display: none;
+    }
+    .prebtn{
+      display: none;
+    }
+  }
