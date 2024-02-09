@@ -88,8 +88,8 @@ export default function FeedbackSliderWithFunFacts({ language }) {
            <Carousel >
    
     <div className="carousel_cover">
-      <div className="right-block">
-                <div className="card-custom tw-w-full  tw-bg-white tw-text-[#2C292A] Poppins tw-rounded-xl">
+    <div className="right-block">
+                <div className="card-custom bg-white text-dark rounded-xl card">
                   <div style={{ lineHeight: "160%", marginTop: "20px" }}>
                     Initially, I was skeptical about online CDL endorsement
                     platforms, but this one proved me wrong. The content was
@@ -97,25 +97,25 @@ export default function FeedbackSliderWithFunFacts({ language }) {
                     me retain the information effectively. Thank you for
                     providing such a valuable resource!
                   </div>
-                  <div className="tw-flex tw-my-5 tw-mt-20 ">
+                  <div class="d-flex my-5 mt-20">
                     <img
-                      className="tw-w-16 tw-h-16 tw-rounded-full"
+                      class=" feedimage rounded-circle"
                       src="https://api.dicebear.com/7.x/initials/svg?seed=Bella"
                     />
-                    <div className="tw-flex tw-flex-col tw-ml-5">
-                      <div className="tw-text-yellow-300 tw-font-bold tw-text-lg">
+                    <div class="d-flex mx-3 flex-column ml-5">
+                      <div  class="text-warning font-weight-bold text-lg">
                         David Johnson
                       </div>
                       <div>Motorista de ônibus escolar</div>
                     </div>
                   </div>
                 </div>
-              </div>  
+              </div> 
     </div>
        <div className="carousel_cover">
 
     <div className="right-block">
-                <div className="card-custom tw-w-full  tw-bg-white tw-text-[#2C292A] Poppins  tw-rounded-xl">
+                <div className="card-custom bg-white text-dark rounded-xl card">
                   <div style={{ lineHeight: "160%", marginTop: "20px" }}>
                     Initially, I was skeptical about online CDL endorsement
                     platforms, but this one proved me wrong. The content was
@@ -123,13 +123,13 @@ export default function FeedbackSliderWithFunFacts({ language }) {
                     me retain the information effectively. Thank you for
                     providing such a valuable resource!
                   </div>
-                  <div className="tw-flex tw-my-5 tw-mt-20 ">
+                  <div class="d-flex my-5 mt-20">
                     <img
-                      className="tw-w-16 tw-h-16 tw-rounded-full"
+                      class="feedimage rounded-circle"
                       src="https://api.dicebear.com/7.x/initials/svg?seed=Bella"
                     />
-                    <div className="tw-flex tw-flex-col tw-ml-5">
-                      <div className="tw-text-yellow-300 tw-font-bold tw-text-lg">
+                    <div class="d-flex mx-3 flex-column ml-5">
+                      <div  class="text-warning font-weight-bold text-lg">
                         David Johnson
                       </div>
                       <div>Motorista de ônibus escolar</div>
@@ -140,7 +140,7 @@ export default function FeedbackSliderWithFunFacts({ language }) {
     </div>
     <div className="carousel_cover">
     <div className="right-block">
-                <div className="card-custom tw-w-full  tw-bg-white tw-text-[#2C292A] Poppins  tw-rounded-xl">
+                <div className="card-custom bg-white text-dark rounded-xl card">
                   <div style={{ lineHeight: "160%", marginTop: "20px" }}>
                     Initially, I was skeptical about online CDL endorsement
                     platforms, but this one proved me wrong. The content was
@@ -148,13 +148,13 @@ export default function FeedbackSliderWithFunFacts({ language }) {
                     me retain the information effectively. Thank you for
                     providing such a valuable resource!
                   </div>
-                  <div className="tw-flex tw-my-5 tw-mt-20 ">
+                  <div class="d-flex my-5 mt-20">
                     <img
-                      className="tw-w-16 tw-h-16 tw-rounded-full"
+                      class="feedimage rounded-circle"
                       src="https://api.dicebear.com/7.x/initials/svg?seed=Bella"
                     />
-                    <div className="tw-flex tw-flex-col tw-ml-5">
-                      <div className="tw-text-yellow-300 tw-font-bold tw-text-lg">
+                    <div class="d-flex mx-3 flex-column ml-5">
+                      <div  class="text-warning font-weight-bold text-lg">
                         David Johnson
                       </div>
                       <div>Motorista de ônibus escolar</div>

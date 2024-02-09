@@ -35,20 +35,7 @@ const AppRoutes = () => {
       >
         <Routes>
           {/* ================= Public Routes Started */}
-          <Route
-            path="/tokenExpired"
-            element={
-              <HeaderFooter>
-                <div className="display-3 text-center"> Token Expired </div>
-              </HeaderFooter>
-            }
-          />
- <Route
-            path="/addlesson"
-            element={
-             <AddLessonForm/>
-            }
-          />
+         
              <Route
             path="login"
             element={
@@ -61,12 +48,7 @@ const AppRoutes = () => {
              <Logout/>
             }
           />
-              <Route
-            path="/text"
-            element={
-             <Alltext/>
-            }
-          />
+            
           
 <Route
 path="/loader"

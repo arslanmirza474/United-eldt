@@ -36,6 +36,10 @@ font-style: normal;
 font-weight: 700;
 line-height: 32px; /* 160% */
 }
+.feedimage{
+  width: 56px;
+  height: 56px;
+}
 .mediumcreenhero{
   display: none;
 }
@@ -3180,6 +3184,9 @@ textarea.form-control {
   -moz-transition: 0.5s;
   transition: 0.5s;
 }
+.card-custom{
+  background-color: white;
+}
 .courses-sidebar-information .coupon form .input-search::placeholder {
   color: #848484;
   transition: 0.5s;
@@ -3957,7 +3964,7 @@ textarea.form-control {
   height: auto !important;
 }
 .feedback-area {
-  /* background: url("/images/hero-background.png") center no-repeat; */
+  background: url("./hero-background.png") center no-repeat;
   color: #fff;
   position: relative;
   z-index: 1;
