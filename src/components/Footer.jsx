@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Translator, Translate } from "react-auto-translate";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import SocialLinks from "./footer/SocialLinks";
 import { useSelector } from "react-redux";
 import weblogo from "./LOGO ELDT 2024 04 Artboard 5.svg"
+import sealbig from "./seal-big.png"
 import "./ter.css"
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const languageState = useSelector((state) => state.language);
+const {pathname} =useLocation();
+useEffect(()=>{
+window.scrollTo(0,0);
+},[pathname])
   return (
     <>
       <Translator
@@ -20,7 +25,7 @@ export default function Footer() {
             <div className="footer-content flex f-direction-row">
               <div className="item">
                 <div className="seal">
-                  <img src="/images/seal-big.png" alt="" />
+                  <img src={sealbig} alt="" />
                 </div>
                 <span>
                   <Translate>
@@ -59,7 +64,7 @@ export default function Footer() {
                     </span>
                     <p>
                       <Translate>
-                        Please contact us by email or through our online <u><strong><Link to="/contact-us">contact
+                        Please contact us by email or through our online <u><strong><Link to="/contact-us" >contact
                         form.</Link></strong> </u>
                       </Translate>
                     </p>

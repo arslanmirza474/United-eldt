@@ -36,6 +36,10 @@ font-style: normal;
 font-weight: 700;
 line-height: 32px; /* 160% */
 }
+.marginabove{
+  margin-top: 7rem;
+  margin-bottom: 10px;
+}
 .feedimage{
   width: 56px;
   height: 56px;
@@ -4440,7 +4444,7 @@ textarea.form-control {
   font-size: 24px;
 }
 .page-title-area {
-  /* background: url("/images/hero-background.png") center no-repeat; */
+  background: url("./hero-background.png") center no-repeat;
   position: relative;
   z-index: 2;
   padding: 120px 0 60px;
@@ -6490,6 +6494,7 @@ padding-bottom: 150px;
   }
   .feedback-content .title {
     max-width: initial;
+
   }
   .feedback-area {
     padding: 74px 0 0;
@@ -7118,6 +7123,7 @@ padding-bottom: 150px;
     font-size: 24px;
     line-height: 28.8px;
     margin-bottom: 16px;
+    line-height: normal;
   }
   .feedback-content .sub-title {
     margin-bottom: 10px;

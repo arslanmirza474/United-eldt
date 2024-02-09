@@ -97,7 +97,7 @@ export default function FeedbackSliderWithFunFacts({ language }) {
                     me retain the information effectively. Thank you for
                     providing such a valuable resource!
                   </div>
-                  <div class="d-flex my-5 mt-20">
+                  <div class="d-flex  marginabove">
                     <img
                       class=" feedimage rounded-circle"
                       src="https://api.dicebear.com/7.x/initials/svg?seed=Bella"
@@ -123,7 +123,7 @@ export default function FeedbackSliderWithFunFacts({ language }) {
                     me retain the information effectively. Thank you for
                     providing such a valuable resource!
                   </div>
-                  <div class="d-flex my-5 mt-20">
+                  <div class="d-flex  marginabove">
                     <img
                       class="feedimage rounded-circle"
                       src="https://api.dicebear.com/7.x/initials/svg?seed=Bella"
@@ -148,7 +148,7 @@ export default function FeedbackSliderWithFunFacts({ language }) {
                     me retain the information effectively. Thank you for
                     providing such a valuable resource!
                   </div>
-                  <div class="d-flex my-5 mt-20">
+                  <div class="d-flex  marginabove">
                     <img
                       class="feedimage rounded-circle"
                       src="https://api.dicebear.com/7.x/initials/svg?seed=Bella"

@@ -48,7 +48,7 @@ export default function PageBanner(
       <Translator
         from="en"
         to={languageState?.language?.value || "en"}
-        googleApiKey={import.meta.env.VITE_GOOGLE_TRANSLATE_KEY}
+        googleApiKey={process.env.REACT_APP_GOOGLE_TRANSLATE_KEY}
       >
         <div className="page-title-area">
           <div className="container-full">

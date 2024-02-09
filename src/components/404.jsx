@@ -2,7 +2,7 @@ import React from "react";
 import { Translator, Translate } from "react-auto-translate";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-
+import notfound from "./error.png"
 export default function NotFound() {
   const languageState = useSelector((state) => state.language);
 
@@ -22,7 +22,7 @@ export default function NotFound() {
                     className=""
                     style={{ display: "flex", justifyContent: "center" }}
                   >
-                    <img src="/images/error.png" alt="image" />
+                    <img src={notfound} alt="image" />
                   </div>
                   <h3>
                     <Translate>Page Not Found</Translate>
