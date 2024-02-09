@@ -30,8 +30,8 @@ export default function CallToPhone({ language }) {
               <div className="button-block">
                
                 <button
-                  className="btn  tw-flex tw-justify-center tw-items-center"
-                  onClick={() => {
+className="btn d-flex justify-content-center align-items-center"
+onClick={() => {
                     Swal.fire("Please Stay tuned");
                   }}
                 >
@@ -45,8 +45,8 @@ export default function CallToPhone({ language }) {
                   onClick={() => {
                     Swal.fire("Please Stay tuned");
                   }}
-                  className="btn  tw-flex tw-justify-center tw-items-center"
-                >
+                  className="btn d-flex justify-content-center align-items-center"
+                  >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="32"
