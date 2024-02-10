@@ -1,12 +1,24 @@
 import React, { useEffect, useState,useRef } from 'react';
 import { Translator, Translate } from "react-auto-translate";
 import { motion } from 'framer-motion';
-function CustomSelect({ options, handleLanguageChange,language,plans,showModal,large,medium }) {
+import { useNavigate } from 'react-router-dom';
+import Paymentformobile from './Paymentformobile';
+function CustomSelect({ options, handleLanguageChange,language,plans,showModal,large,medium,showCancelButton,handleNavigationClick }) {
   const [visibleItems, setVisibleItems] = useState(1);
   const [startIndex, setStartIndex] = useState(0);
   const [largescreen, setLargescreen] = useState(large);
   const [mediumscreen, setMediumscreen] = useState(medium);
   const [dropdownStates, setDropdownStates] = useState([]);
+const navigate = useNavigate()
+const paymentpage = (plan) => {
+  const screenWidth = window.innerWidth;
+  if (screenWidth <= 500) {
+    localStorage.setItem("purchase", JSON.stringify(plan));
+   navigate("/Paymentformobile")
+  } else {
+    showModal(plan);
+  }
+};
 
   useEffect(() => {
     const updateVisibleItems = () => {
@@ -258,7 +270,7 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
 <button
   className=" buy-button "
   style={{ marginTop: "40px" }}
-  onClick={() => { showModal(plan) }}
+  onClick={() => { paymentpage(plan) }}
 >
   <Translate>Buy Now</Translate>
 </button>

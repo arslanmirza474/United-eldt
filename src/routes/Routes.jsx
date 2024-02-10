@@ -15,6 +15,15 @@ import Allchap from "../Studentdashboard/Allchap.jsx";
 import Logout from "../Studentdashboard/Logout.jsx"
 import Alltext from "../Studentdashboard/Alltext.jsx"
 import Loader from "../Studentdashboard/Loader.jsx";
+import Paymentformobile from "../components/Home/Paymentformobile.jsx";
+import {
+  Elements
+  } from '@stripe/react-stripe-js';
+  import { loadStripe } from '@stripe/stripe-js';
+  
+  
+  const stripePromise = loadStripe('pk_test_51O5F9gFZtgAr5eHPPYRptE8ZBDBXAtaLj7XGBnSp106qIqacE80PBnqGyndDPhtDYDpBWNvpJ8YmObgxijiNX22o00C8ueO5lb'); // Replace with your actual public key
+  
 const AppRoutes = () => {
   const [userId, setUserId]=useState(null)
 
@@ -46,6 +55,12 @@ const AppRoutes = () => {
             path="/logout"
             element={
              <Logout/>
+            }
+          />
+           <Route
+            path="/Paymentformobile"
+            element={
+              <Elements stripe={stripePromise}><Paymentformobile/></Elements> 
             }
           />
             

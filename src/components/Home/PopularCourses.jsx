@@ -541,7 +541,7 @@ function isValidEmail(email) {
                             components={{ DropdownIndicator: CustomDropdownIndicator }}
                           /> */}
                           <div className="customcard">
-                                              <CustomDropdown options={languageOptions} handleLanguageChange={handleLanguageChange} language={language} plans={plans}  large={large} medium={medium} showModal={showModal}/>
+                                              <CustomDropdown options={languageOptions} handleLanguageChange={handleLanguageChange} language={language} plans={plans}  large={large} medium={medium} showModal={showModal} showCancelButton={showCancelButton} handleNavigationClick={handleNavigationClick}/>
 
                           </div>
 {/* <div className="buynewcourse">
