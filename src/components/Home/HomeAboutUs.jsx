@@ -96,9 +96,7 @@ export default function HomeAboutUs({ language }) {
   };
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef(null);
- const playsmall =()=>{
-  videoRef.current.muted = false;
- }
+ 
   const handlePlay = () => {
     if (videoRef.current) {
       if (isPlaying) {
@@ -160,13 +158,12 @@ export default function HomeAboutUs({ language }) {
                 <video
                     // src={aboutvid}
                     ref={videoRef}
+                    preload="auto"
                     loop
-                    autoPlay
+                    autoPlay={"autoplay"}
                     muted
                     playsInline
-                    
                     poster="https://res.cloudinary.com/dlj1daxbn/image/upload/v1707585490/Screenshot_2024-02-10_221714_l5nk3t.png"
-
                   >
                      <source
           src="https://res.cloudinary.com/dlj1daxbn/video/upload/v1707561986/video_2023-01-28_16-32-41_m1c6vw.mp4"
