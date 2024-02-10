@@ -148,11 +148,7 @@ const fetchquestions = () => {
       const correctCount = results.filter(result => result.isCorrect).length;
       const totalQuestions = results.length;
       const percentage = (correctCount / totalQuestions) * 100;
-  if(percentage < 79){
-    setErrormodal(true)
-  }else{
-    setSuccessmodal(true)
-  }
+
       // Send results to the backend
       const response = await axios.post('https://server-of-united-eldt.vercel.app/api/saveResult', {
         studentId: userId,  // Assuming userId is available in your component state
