@@ -6,6 +6,12 @@ import { useSelector } from "react-redux";
 import weblogo from "./logo 1.svg"
 import sealbig from "./seal-big.png"
 import "./ter.css"
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 1000,
+    behavior: 'smooth'
+  });
+};
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const languageState = useSelector((state) => state.language);
@@ -13,6 +19,7 @@ const {pathname} =useLocation();
 useEffect(()=>{
 window.scrollTo(0,0);
 },[pathname])
+
   return (
     <>
       <Translator
@@ -187,7 +194,7 @@ window.scrollTo(0,0);
                     </Link>
                   </li>
                   <li>
-                    <Link to="/courses">
+                    <Link onClick={scrollToTop}>
                       <a>
                         <Translate>Courses</Translate>
                       </a>
