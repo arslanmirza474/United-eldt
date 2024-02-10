@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Translator, Translate } from "react-auto-translate";
 import OpenCloseItem from "../Faq/openCloseItem";
 import AboutFeaturesList from "./AboutFeaturesList";
@@ -94,12 +94,20 @@ export default function HomeAboutUs({ language }) {
       behavior: "smooth",
     });
   };
+  const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef(null);
 
   const handlePlay = () => {
     if (videoRef.current) {
-      videoRef.current.play();
-      videoRef.current.muted = false;
+      if (isPlaying) {
+        videoRef.current.pause();
+
+      } else {
+        videoRef.current.play();
+        videoRef.current.muted = false;
+
+      }
+      setIsPlaying(!isPlaying);
     }
   };
 
@@ -147,13 +155,15 @@ export default function HomeAboutUs({ language }) {
                 </p>
 
                 <div className="about-image mobile" onClick={handlePlay} onDoubleClick={handleDoubleClick}>
-                  <video
+                <video
                     // src={aboutvid}
                     ref={videoRef}
                     preload="auto"
                     loop
                     muted
                     playsInline
+                    poster="https://res.cloudinary.com/dlj1daxbn/image/upload/v1707585490/Screenshot_2024-02-10_221714_l5nk3t.png"
+
                   >
                      <source
           src="https://res.cloudinary.com/dlj1daxbn/video/upload/v1707561986/video_2023-01-28_16-32-41_m1c6vw.mp4"
