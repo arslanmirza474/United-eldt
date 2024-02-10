@@ -95,6 +95,7 @@ useEffect(() => {
                 d="M19.5 8.25l-7.5 7.5-7.5-7.5"
               />
             </svg>
+            <i class="fa-solid fa-chevron-down mx-2"></i>
           </span>
         </BtnLang>
         <div className={"dropdown-menu m-auto"} id="language-menu">
