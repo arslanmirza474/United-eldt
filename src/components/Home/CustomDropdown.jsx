@@ -9,16 +9,7 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
   const [largescreen, setLargescreen] = useState(large);
   const [mediumscreen, setMediumscreen] = useState(medium);
   const [dropdownStates, setDropdownStates] = useState([]);
-const navigate = useNavigate()
-const paymentpage = (plan) => {
-  const screenWidth = window.innerWidth;
-  if (screenWidth <= 500) {
-    localStorage.setItem("purchase", JSON.stringify(plan));
-   navigate("/Paymentformobile")
-  } else {
-    showModal(plan);
-  }
-};
+
 
   useEffect(() => {
     const updateVisibleItems = () => {
@@ -270,7 +261,7 @@ const paymentpage = (plan) => {
 <button
   className=" buy-button "
   style={{ marginTop: "40px" }}
-  onClick={() => { paymentpage(plan) }}
+  onClick={() => { showModal(plan) }}
 >
   <Translate>Buy Now</Translate>
 </button>
