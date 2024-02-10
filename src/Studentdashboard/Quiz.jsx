@@ -348,6 +348,7 @@ Congratulations, you have completed the Class A course.
 >
 <div className='modal-content-center'>
 <img className='mx-auto' src={successimage} alt='done'/>
+<br></br>
 <span className='bold-content'>
 Congratulations, you have completed this lesson.
 </span><br></br>
@@ -363,6 +364,7 @@ Congratulations, you have completed this lesson.
 >
 <div className='modal-content-center'>
 <img className='mx-auto' src={errorimage} alt='done'/>
+<br></br>
 
 <span className='bold-content'>
 Sorry,Please Try again
