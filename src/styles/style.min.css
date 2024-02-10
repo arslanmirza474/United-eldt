@@ -5443,7 +5443,6 @@ overflow-x: hidden;
 .footer-content .item:first-child {
   padding-left: 0;
   max-width: 331px;
-  padding-top: 50px;
 }
 .footer-content .item:nth-child(2) {
   max-width: 453px;
