@@ -1,8 +1,6 @@
 import React, { useEffect, useState,useRef } from 'react';
 import { Translator, Translate } from "react-auto-translate";
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
-import Paymentformobile from './Paymentformobile';
 function CustomSelect({ options, handleLanguageChange,language,plans,showModal,large,medium,showCancelButton,handleNavigationClick }) {
   const [visibleItems, setVisibleItems] = useState(1);
   const [startIndex, setStartIndex] = useState(0);

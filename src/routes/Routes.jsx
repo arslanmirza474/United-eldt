@@ -15,7 +15,6 @@ import Allchap from "../Studentdashboard/Allchap.jsx";
 import Logout from "../Studentdashboard/Logout.jsx"
 import Alltext from "../Studentdashboard/Alltext.jsx"
 import Loader from "../Studentdashboard/Loader.jsx";
-import Paymentformobile from "../components/Home/Paymentformobile.jsx";
 import {
   Elements
   } from '@stripe/react-stripe-js';
@@ -56,15 +55,7 @@ const AppRoutes = () => {
             element={
              <Logout/>
             }
-          />
-           <Route
-            path="/Paymentformobile"
-            element={
-              <Elements stripe={stripePromise}><Paymentformobile/></Elements> 
-            }
-          />
-            
-          
+          />        
 <Route
 path="/loader"
 element={
