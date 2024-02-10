@@ -156,7 +156,7 @@ const fetchquestions = () => {
         chapterId: lessonId,  // Replace with the actual chapterId
         percentage,
       });
-      if (response.data.completed != true) {
+      if (response.data.completed === false) {
         if(percentage < 79){
           setErrormodal(true)
         }else{
