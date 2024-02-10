@@ -7,8 +7,43 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
   const [largescreen, setLargescreen] = useState(large);
   const [mediumscreen, setMediumscreen] = useState(medium);
   const [dropdownStates, setDropdownStates] = useState([]);
+  const [touchPosition, setTouchPosition] = useState(null);
 
 
+
+  useEffect(() => {
+    const handleTouchStart = (e) => {
+      const touchDown = e.touches[0].clientX;
+      setTouchPosition(touchDown);
+    };
+
+    const handleTouchMove = (e) => {
+      if (!touchPosition) {
+        return;
+      }
+
+      const currentTouch = e.touches[0].clientX;
+      const diff = touchPosition - currentTouch;
+
+      if (diff > 5) {
+        showNextItem();
+      }
+
+      if (diff < -5) {
+        showPreviousItem();
+      }
+
+      setTouchPosition(null);
+    };
+
+    document.addEventListener('touchstart', handleTouchStart);
+    document.addEventListener('touchmove', handleTouchMove);
+
+    return () => {
+      document.removeEventListener('touchstart', handleTouchStart);
+      document.removeEventListener('touchmove', handleTouchMove);
+    };
+  });
   useEffect(() => {
     const updateVisibleItems = () => {
       const screenWidth = window.innerWidth;
