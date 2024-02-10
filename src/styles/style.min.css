@@ -3551,6 +3551,9 @@ textarea.form-control {
   }
 }
 @media (max-width: 480px) {
+  .logo-nav{
+    max-width: 180px;
+  }
   .disclaimer .line-numbers .block-number {
     padding: 0 16px;
   }

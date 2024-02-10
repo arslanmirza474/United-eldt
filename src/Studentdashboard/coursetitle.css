@@ -152,6 +152,9 @@ background: #F5F5F5;
   .footerforstudy{
     display: none;
   }
+  .nav-item{
+    margin-left: 0px;
+  }
     .previousbutton{
       color: #2C292A;
 font-family: Inter;
