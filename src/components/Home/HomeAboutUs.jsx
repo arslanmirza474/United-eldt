@@ -162,6 +162,7 @@ export default function HomeAboutUs({ language }) {
                     loop
                     muted
                     playsInline
+                    controls
                     poster="https://res.cloudinary.com/dlj1daxbn/image/upload/v1707585490/Screenshot_2024-02-10_221714_l5nk3t.png"
 
                   >
