@@ -134,8 +134,8 @@ export default function HomeAboutUs({ language }) {
 
                 <div className="about-image mobile">
                   <video
-                    // src="http://unitedcdlschool.com/wp-content/uploads/2023/01/video_2023-01-28_16-32-41.mp4"
-                    src={aboutvid}
+                    src="https://res.cloudinary.com/dlj1daxbn/video/upload/v1707561986/video_2023-01-28_16-32-41_m1c6vw.mp4"
+                    // src={aboutvid}
                     controls="playsinline autoplay muted loop"
                     preload="auto"
                     autoPlay="autoplay"
@@ -148,8 +148,8 @@ export default function HomeAboutUs({ language }) {
 
               <div className="about-image desktop ">
                 <video
-                  // src="http://unitedcdlschool.com/wp-content/uploads/2023/01/video_2023-01-28_16-32-41.mp4"
-                  src={aboutvid}
+                    src="https://res.cloudinary.com/dlj1daxbn/video/upload/v1707561986/video_2023-01-28_16-32-41_m1c6vw.mp4"
+                    // src={aboutvid}
                   controls="playsinline autoplay loop"
                   preload="auto"
                   loop="loop"
