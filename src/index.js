@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { parseCookies, destroyCookie } from "nookies";
 // Global Styles
 
 import "./styles/dashboard.css";
@@ -27,16 +26,13 @@ import { Provider } from "react-redux";
 import store, { persistor } from "./store";
 import { PersistGate } from "redux-persist/integration/react";
 import AppRoutes from "./routes/Routes";
-import { CookiesProvider } from "react-cookie";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
 <Provider store={store}>
     <PersistGate persistor={persistor}>
-      <CookiesProvider>
         <AppRoutes />
-      </CookiesProvider>
     </PersistGate>
   </Provider>
 );
