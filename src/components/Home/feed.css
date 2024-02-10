@@ -138,8 +138,13 @@
         height: 8px;
         border-radius: 10px;
       }
-    
+   
  .svgcontainafter {
    display: none;
 }
+}
+@media (max-width: 786px) {
+  .svgcontain{
+    display: none;
+  }
 }

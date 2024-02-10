@@ -3,7 +3,7 @@ import { Translator, Translate } from "react-auto-translate";
 import OpenCloseItem from "../Faq/openCloseItem";
 import AboutFeaturesList from "./AboutFeaturesList";
 import { useSelector } from "react-redux";
-
+import aboutvid from "./video_2023-01-28_16-32-41.mp4"
 
 const WhyChooseUs = () => {
 
@@ -135,6 +135,7 @@ export default function HomeAboutUs({ language }) {
                 <div className="about-image mobile">
                   <video
                     // src="http://unitedcdlschool.com/wp-content/uploads/2023/01/video_2023-01-28_16-32-41.mp4"
+                    src={aboutvid}
                     controls="playsinline autoplay muted loop"
                     preload="auto"
                     autoPlay="autoplay"
@@ -148,6 +149,7 @@ export default function HomeAboutUs({ language }) {
               <div className="about-image desktop ">
                 <video
                   // src="http://unitedcdlschool.com/wp-content/uploads/2023/01/video_2023-01-28_16-32-41.mp4"
+                  src={aboutvid}
                   controls="playsinline autoplay loop"
                   preload="auto"
                   loop="loop"
