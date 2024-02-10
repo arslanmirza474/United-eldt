@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import back from "./back.png"
 
 import { useCookies } from "react-cookie";
-import logomain from "./Logo (2).svg"
+import logomain from "./logo 1.png"
 import axios from "axios";
 import successmsg from "./Group 6674.png"
 import errormsg from "./Group 6674 (2).png"

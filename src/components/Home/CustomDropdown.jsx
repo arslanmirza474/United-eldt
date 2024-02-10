@@ -265,7 +265,6 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
 >
   <Translate>Buy Now</Translate>
 </button>
-
 </motion.div>
 ))}
   

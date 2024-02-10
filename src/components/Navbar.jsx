@@ -9,7 +9,7 @@ import { styled } from "@mui/material/styles";
 import { useDispatch, useSelector } from "react-redux";
 import { setLanguage } from "../store/UserActions";
 import { Link as ScrollLink } from 'react-scroll';
-import weblogo from "./Logo.svg"
+import weblogo from "./NavBar_Vector.png"
 import { jwtDecode } from "jwt-decode";
 
 export default function Navbar({ className = "is-home" }, ...props) {

@@ -1,5 +1,5 @@
 import "./studentdashcss.css"
-import logo from "./LOGO ELDT 2024 04 Artboard 5.svg"
+import logo from "./logo 1.svg"
 import StudentRegistration from "./StudentRegistration";
 import Progre from "./Progre";
 import { useState,useEffect } from "react";

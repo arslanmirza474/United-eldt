@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Translator, Translate } from "react-auto-translate";
 import OpenCloseItem from "../Faq/openCloseItem";
 import AboutFeaturesList from "./AboutFeaturesList";
@@ -94,6 +94,20 @@ export default function HomeAboutUs({ language }) {
       behavior: "smooth",
     });
   };
+  const videoRef = useRef(null);
+
+  const handlePlay = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+      videoRef.current.muted = false;
+    }
+  };
+
+  const handleDoubleClick = () => {
+    if (videoRef.current) {
+      videoRef.current.controls = true; // Show controls for manual interaction
+    }
+  };
   return (
     <>
       <Translator
@@ -132,29 +146,39 @@ export default function HomeAboutUs({ language }) {
                   </div>
                 </p>
 
-                <div className="about-image mobile">
+                <div className="about-image mobile" onClick={handlePlay} onDoubleClick={handleDoubleClick}>
                   <video
-                    src="https://res.cloudinary.com/dlj1daxbn/video/upload/v1707561986/video_2023-01-28_16-32-41_m1c6vw.mp4"
                     // src={aboutvid}
-                    controls="playsinline autoplay muted loop"
+                    ref={videoRef}
                     preload="auto"
-                    autoPlay="autoplay"
-                    loop="loop"
-                    muted="muted"
-                    playsInline="playsinline"
-                  />
+                    loop
+                    muted
+                    playsInline
+                  >
+                     <source
+          src="https://res.cloudinary.com/dlj1daxbn/video/upload/v1707561986/video_2023-01-28_16-32-41_m1c6vw.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
                 </div>
               </div>
 
-              <div className="about-image desktop ">
-                <video
-                    src="https://res.cloudinary.com/dlj1daxbn/video/upload/v1707561986/video_2023-01-28_16-32-41_m1c6vw.mp4"
+              <div className="about-image desktop" onClick={handlePlay} onDoubleClick={handleDoubleClick}>
+              <video
                     // src={aboutvid}
-                  controls="playsinline autoplay loop"
-                  preload="auto"
-                  loop="loop"
-                  playsInline="playsinline"
-                />
+                    ref={videoRef}
+                    preload="auto"
+                    loop
+                    muted
+                    playsInline
+                  >
+                     <source
+          src="https://res.cloudinary.com/dlj1daxbn/video/upload/v1707561986/video_2023-01-28_16-32-41_m1c6vw.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
               </div>
             </div>
             {/* <div className="about-bottom">

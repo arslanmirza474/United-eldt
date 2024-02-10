@@ -3,7 +3,7 @@ import { Translator, Translate } from "react-auto-translate";
 import { Link, useLocation } from "react-router-dom";
 import SocialLinks from "./footer/SocialLinks";
 import { useSelector } from "react-redux";
-import weblogo from "./LOGO ELDT 2024 04 Artboard 5.svg"
+import weblogo from "./logo 1.svg"
 import sealbig from "./seal-big.png"
 import "./ter.css"
 export default function Footer() {
@@ -173,14 +173,8 @@ window.scrollTo(0,0);
             <div className="footer-bottom flex f-direction-row">
               <p>
                 Copyright {currentYear},
-                <Translate> UNITED ELDT is Proudly Powered by </Translate>
-                <a
-                  target="_blank"
-                  href="https://technicslab.com/"
-                  rel="noreferrer"
-                >
-                  Technics Lab
-                </a>
+                <Translate> United ELDT Inc.</Translate>
+              
               </p>
 
               <div className="right-block">
