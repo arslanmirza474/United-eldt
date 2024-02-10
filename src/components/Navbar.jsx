@@ -9,7 +9,7 @@ import { styled } from "@mui/material/styles";
 import { useDispatch, useSelector } from "react-redux";
 import { setLanguage } from "../store/UserActions";
 import { Link as ScrollLink } from 'react-scroll';
-import weblogo from "./NavBar_Vector.png"
+import weblogo from "./Unitedlogo.png"
 import { jwtDecode } from "jwt-decode";
 
 export default function Navbar({ className = "is-home" }, ...props) {
@@ -167,6 +167,7 @@ useEffect(() => {
                     <img
                       src={weblogo}
                       alt="logo"
+                      class="navlogo"
                       className="logo-nav"
                     />
                   </a>
