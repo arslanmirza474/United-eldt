@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Translator, Translate } from "react-auto-translate";
 import OpenCloseItem from "../Faq/openCloseItem";
 import AboutFeaturesList from "./AboutFeaturesList";
@@ -96,7 +96,9 @@ export default function HomeAboutUs({ language }) {
   };
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef(null);
-
+ const playsmall =()=>{
+  videoRef.current.muted = false;
+ }
   const handlePlay = () => {
     if (videoRef.current) {
       if (isPlaying) {
@@ -154,13 +156,15 @@ export default function HomeAboutUs({ language }) {
                   </div>
                 </p>
 
-                <div className="about-image mobile" onClick={handlePlay} onDoubleClick={handleDoubleClick}>
+                <div className="about-image mobile" onClick={handlePlay}   onDoubleClick={handleDoubleClick}>
                 <video
                     // src={aboutvid}
                     ref={videoRef}
-                    preload="auto"
+                    loop
+                    autoPlay
+                    muted
                     playsInline
-                    controls
+                    
                     poster="https://res.cloudinary.com/dlj1daxbn/image/upload/v1707585490/Screenshot_2024-02-10_221714_l5nk3t.png"
 
                   >
