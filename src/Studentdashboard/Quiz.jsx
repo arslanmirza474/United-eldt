@@ -148,6 +148,9 @@ const fetchquestions = () => {
       const correctCount = results.filter(result => result.isCorrect).length;
       const totalQuestions = results.length;
       const percentage = (correctCount / totalQuestions) * 100;
+  if(percentage < 79){
+    setErrormodal(true)
+  }
 
       // Send results to the backend
       const response = await axios.post('https://server-of-united-eldt.vercel.app/api/saveResult', {
@@ -156,14 +159,11 @@ const fetchquestions = () => {
         chapterId: lessonId,  // Replace with the actual chapterId
         percentage,
       });
-      if (response.data.completed === false) {
-        if(percentage < 79){
-          setErrormodal(true)
-        }else{
-          setSuccessmodal(true)
-        }      }
+
       if (response.data.completed === true) {
         setModalVisible(true);
+      }else{
+        setSuccessmodal(true)
       }
     } catch (error) {
       console.error('Error processing answers:', error);
