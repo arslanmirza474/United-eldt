@@ -7,6 +7,7 @@ function Logout() {
   useEffect(() => {
     // Remove userId from local storage
     localStorage.removeItem('userId');
+    localStorage.clear()
     // Redirect to login page or any other desired page
     navigate('/login'); // Corrected to use navigate
   }, [navigate]);
