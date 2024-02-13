@@ -54,7 +54,7 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
       } else if (screenWidth >= 1080) {
         setVisibleItems(2);
       } else if (screenWidth >= 786) {
-        setVisibleItems(1);
+        setVisibleItems(2);
       } else {
         setVisibleItems(1);
       }

@@ -625,7 +625,7 @@ margin-top: 24px;
         
     }
     .card-content{
-        width: 30%;
+        width:368px;
     }
     /* .card-content{
         margin-right: 20px !important
@@ -767,7 +767,13 @@ margin-top: 24px;
         height: 542px;
     }
 }
-
+@media (max-width: 1000px) {
+    .card-content{
+     width:368px;
+     margin: auto;
+     height: 542px;
+ }
+}
 @media (max-width: 450px) {
 
  
