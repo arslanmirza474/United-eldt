@@ -3704,6 +3704,7 @@ textarea.form-control {
 @media (max-width: 1050px) {
   .callphone-block .right-side {
     padding: 20px 0;
+    padding-left: 20px;
   }
   .callphone-block .left-side {
     bottom: 0;
