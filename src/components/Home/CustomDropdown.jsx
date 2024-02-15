@@ -94,6 +94,7 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
   
   
   
+  
 
   const handleClickOutside = (event, index) => {
     const dropdownContainers = document.querySelectorAll('.card-content');
@@ -130,14 +131,19 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
   };
 
   const handleOptionSelect = (option, index, planId) => {
-    setDropdownStates((prevStates) => {
+    setDropdownStates(prevStates => {
       const updatedStates = [...prevStates];
-      updatedStates[index].selectedOption = option;
-      updatedStates[index].isOpen = false;
+      console.log(updatedStates)
+      updatedStates[index] = {
+        ...updatedStates[index],
+        selectedOption: option,
+        isOpen: false // Close the dropdown after selecting an option
+      };
       return updatedStates;
     });
     handleLanguageChange(option, planId);
   };
+  
   const showNextItem = () => {
     if (startIndex + visibleItems < plans.length) {
       setStartIndex(startIndex + 1);
@@ -214,22 +220,28 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
                         <div className="dropdown toper" >
                           <Translate>Select the desired language:</Translate><br></br>
                           <div className="custom-select mt-2">
-              <div className="selected-option" onClick={() => toggleDropdown(index)}>
-                <div className='d-flex'> <img src={dropdownStates[index]?.selectedOption.image} alt={dropdownStates[index]?.selectedOption.label} className="language-image" />
-                <span className='mx-2'>{dropdownStates[index]?.selectedOption.label}</span></div>
-               
-                <i class="fa-solid fa-angle-down downicon"></i>
-              </div>
+                          <div className="selected-option" onClick={() => toggleDropdown(index)}>
+  <div className='d-flex'>
+    <img src={dropdownStates[index]?.selectedOption.image} alt={dropdownStates[index]?.selectedOption.label} className="language-image" />
+    <span className='mx-2'>{plan?.language ||"English" }</span>
+  </div>
+  <i class="fa-solid fa-angle-down downicon"></i>
+</div>
               {dropdownStates[index] && dropdownStates[index]?.isOpen && (
   <div className="options dropoptions">
     {options.map((option) => (
-      <div key={option?.value} className="option" onClick={() => handleOptionSelect(option, index, plan._id)}>
+      <div
+        key={option?.value}
+        className="option"
+        onClick={() => handleOptionSelect(option, index, plan._id)}
+      >
         <img src={option?.image} alt={option?.label} className="language-image" />
         <span>{option?.label}</span>
       </div>
     ))}
   </div>
 )}
+
 
             </div>
     </div>
