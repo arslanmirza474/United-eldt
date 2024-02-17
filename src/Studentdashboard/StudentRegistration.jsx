@@ -4,7 +4,8 @@ import { jwtDecode } from "jwt-decode";
 import axios from 'axios';
 import { Modal } from 'antd';
 import Successi from "./Group 6674.png"
-function StudentRegistration({handleNavigationClick}) {
+
+function StudentRegistration({ handleNavigationClick }) {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -14,8 +15,8 @@ function StudentRegistration({handleNavigationClick}) {
   const [userId, setUserId]=useState("")
   const [student, setStudent]=useState("")
   const [modalvisible, setModalvisible]=useState(false)
-
   const [errors, setErrors] = useState({});
+
   const hided =()=>{
     setModalvisible(false)
   }
@@ -41,14 +42,41 @@ function StudentRegistration({handleNavigationClick}) {
       });
   };
   
+  const generatePassword = () => {
+    const letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const numbers = '0123456789';
+    const symbols = '!@#$%^&*()-_=+[{]}|;:,<.>?';
+
+    let password = '';
+    const allCharacters = letters + numbers + symbols;
+
+    // Generate at least one letter
+    password += letters.charAt(Math.floor(Math.random() * letters.length));
+    
+    // Generate at least one number
+    password += numbers.charAt(Math.floor(Math.random() * numbers.length));
+    
+    // Generate at least one symbol
+    password += symbols.charAt(Math.floor(Math.random() * symbols.length));
+
+    // Fill the rest of the password with random characters
+    for (let i = 0; i < 9; i++) {
+      password += allCharacters.charAt(Math.floor(Math.random() * allCharacters.length));
+    }
+
+    // Shuffle the password characters
+    password = password.split('').sort(() => Math.random() - 0.5).join('');
+
+    return password;
+  };
 
   const handleSave = () => {
     const errors = {};
-
-   
-
-    if (!newPassword.trim()) {
-      errors.newPassword = 'New password is required';
+    
+    // Check if new password matches required format
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{12}$/;
+    if (!passwordRegex.test(newPassword)) {
+      errors.newPassword = 'Password must be 12 characters long, containing at least one letter, one number, and one symbol.';
     }
 
     if (newPassword !== confirmPassword) {
@@ -56,25 +84,22 @@ function StudentRegistration({handleNavigationClick}) {
     }
 
     if (Object.keys(errors).length === 0) {
-      console.log(Object.keys(errors).length)
-      if (Object.keys(errors).length === 0) {
-        axios.put(`https://server-of-united-eldt.vercel.app/api/putstudent/${userId}`,{
-        password :newPassword
-        })
-        .then(res=>{
-          if(res.data.status === true){
-            setModalvisible(true)
-          }
-        })
-      } else {
-        setErrors(errors);
-      }      console.log('Form is valid. Perform save operation.');
+      axios.put(`https://server-of-united-eldt.vercel.app/api/putstudent/${userId}`, {
+        password: newPassword
+      })
+      .then(res => {
+        if (res.data.status === true) {
+          setModalvisible(true)
+        }
+      })
+      .catch(error => {
+        console.error("Error updating password:", error);
+      });
     } else {
       // Update the state with validation errors
       setErrors(errors);
     }
   };
-
   return (
     <>
       <div className="main-contain-regist">
@@ -157,10 +182,10 @@ function StudentRegistration({handleNavigationClick}) {
               readOnly
             />
 
-            <label className="foam-label">New password</label>
+<label className="foam-label">New password</label>
             <input
               className={`registinput ${errors.newPassword ? 'error-border' : ''}`}
-              type="text"
+              type="password"
               placeholder="New Password"
               value={newPassword}
               onChange={(e) => setNewPassword(e.target.value)}
@@ -170,12 +195,13 @@ function StudentRegistration({handleNavigationClick}) {
             <label className="foam-label">Confirm password</label>
             <input
               className={`registinput ${errors.confirmPassword ? 'error-border' : ''}`}
-              type="text"
+              type="password"
               placeholder="Confirm Password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
             {errors.confirmPassword && <div className="error-message">{errors.confirmPassword}</div>}
+ 
           </form>
           <div className='buttonsave'>
               <button className="btn-warning" onClick={handleSave}>
