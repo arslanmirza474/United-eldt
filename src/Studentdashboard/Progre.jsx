@@ -196,7 +196,7 @@ const formonth =(day)=>{
 <label className="fomlbl">Month</label>
 <div class="dropdown">
 <div class=" registinput dpbtn"  data-bs-toggle="dropdown" aria-expanded="false">
-    <input type='text' style={{width:"100%"}} value={month} onChange={(e)=>{setMonth(e.target.value)}}/>
+    <input type='text' style={{width:"100%",border:"none"}} value={month} onChange={(e)=>{setMonth(e.target.value)}}/>
 
     <i class="fa-solid fa-angle-down mt-1"></i>
 </div>
@@ -221,7 +221,7 @@ const formonth =(day)=>{
 <label className="fomlbl">Day</label>
 <div class="dropdown">
 <div class=" registinput dpbtn"  data-bs-toggle="dropdown" aria-expanded="false">
-  <input type='number' style={{width:"100%"}} value={day} onChange={(e)=>{setDay(e.target.value)}}/>
+  <input type='number' style={{width:"100%",border:"none"}} value={day} onChange={(e)=>{setDay(e.target.value)}}/>
     <i class="fa-solid fa-angle-down mt-1"></i>
 </div>
   <ul class="dropdown-menu yeardropdown">
@@ -262,7 +262,7 @@ const formonth =(day)=>{
 <label className="fomlbl">Year</label>
 <div class="dropdown">
   <div class=" registinput dpbtn" data-bs-toggle="dropdown" aria-expanded="false">
-  <input type='number' style={{width:"100%"}} value={year} onChange={(e)=>{setYear(e.target.value)}}/>
+  <input type='number' style={{width:"100%",border:"none"}} value={year} onChange={(e)=>{setYear(e.target.value)}}/>
     <i class="fa-solid fa-angle-down mt-1"></i>
 </div>
   <ul class="dropdown-menu yeardropdown">
