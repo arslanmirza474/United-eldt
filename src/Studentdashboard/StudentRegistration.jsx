@@ -74,15 +74,16 @@ function StudentRegistration({ handleNavigationClick }) {
     const errors = {};
     
     // Check if new password matches required format
-    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{12}$/;
-    if (!passwordRegex.test(newPassword)) {
-      errors.newPassword = 'Password must be 12 characters long, containing at least one letter, one number, and one symbol.';
+    if (!newPassword.trim()) {
+      errors.newPassword = 'New password is required';
+    } else if (!/(?=.*[a-zA-Z])(?=.*\d)(?=.*[@!#$%^&*()_+])[A-Za-z\d@!#$%^&*()_+]{12,}/.test(newPassword)) {
+      errors.newPassword = 'Password must be 12 characters long, containing at least one letter, one number, and one symbol like @ or !';
     }
-
+  
     if (newPassword !== confirmPassword) {
       errors.confirmPassword = 'Passwords do not match';
     }
-
+  
     if (Object.keys(errors).length === 0) {
       axios.put(`https://server-of-united-eldt.vercel.app/api/putstudent/${userId}`, {
         password: newPassword
