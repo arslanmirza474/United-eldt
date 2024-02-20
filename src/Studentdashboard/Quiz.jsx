@@ -125,7 +125,7 @@ const fetchquestions = () => {
       ctx.fillText(`For Completing the ${responsedata.courseName}`, canvas.width / 2, canvas.height / 2 + 40);
   
       // Add score to the canvas (centered and smaller font size)
-      ctx.fillText(`${responsedata.studentfirstname} Scored: ${responsedata.percentage}`, canvas.width / 2, canvas.height / 2 + 60);
+      ctx.fillText(`${responsedata.studentfirstname} Scored: ${responsedata.percentage} %`, canvas.width / 2, canvas.height / 2 + 60);
   
       // Convert canvas to data URL
       const dataUrl = canvas.toDataURL();
