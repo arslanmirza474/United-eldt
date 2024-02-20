@@ -24,7 +24,7 @@ const Quize = () => {
   const [fetcquiz, setFetcquiz] = useState(false);
   const [userId, setUserId] = useState("");
   const [title,setTitle]=useState("")
-  const [userName, setUserName] = useState('');
+  const [responsedata, setResponsedata] = useState('');
 
 
   const resetQuiz = () => {
@@ -40,9 +40,8 @@ const Quize = () => {
     if (personId) {
       const decoded = jwtDecode(personId);
       setUserId(decoded.id);
-      setUserName(decoded.Name)
       fetchquestions()
-      
+      fetchstudentdata()
     }},[userId])
      const { index } = useParams();
   const { chap } = useParams();
@@ -51,6 +50,19 @@ const Quize = () => {
 
 navigate(`/StudentLesson/${index}/${Number(chap) + 1}`)
  }
+
+ const fetchstudentdata = () => {
+  axios.get(`https://server-of-united-eldt.vercel.app/api/studentinformation/?studentId=${userId}&enrolledIndex=${index}`)
+    .then(res => {
+      setResponsedata(res.data);
+    })
+    .catch(error => {
+      console.error('Error fetching student data:', error);
+    });
+};
+
+
+ 
  const fetchQuestions = async () => {
   setFetcquiz(true);
   
@@ -78,47 +90,54 @@ const fetchquestions = () => {
       [questionIndex]: optionIndex,
     }));
   };
+
   const generateCertificate = () => {
-    // Create a new jsPDF instance with portrait orientation
+    // Create a new jsPDF instance with landscape orientation
     const doc = new jsPDF({
       orientation: 'landscape',
       unit: 'mm', // Use millimeters as the unit
     });
-
+  
     // Create a temporary canvas to draw the image and text
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
-
+  
     // Load the certificate background image
     const backgroundImage = new Image();
     backgroundImage.src = certificateim;
-
+  
     backgroundImage.onload = () => {
       // Set canvas dimensions based on the image size
       canvas.width = backgroundImage.width;
       canvas.height = backgroundImage.height;
-
+  
       // Draw the background image
       ctx.drawImage(backgroundImage, 0, 0);
-
-      // Add text to the canvas
-      ctx.font = '40px Arial';
+  
+      // Add name to the canvas (centered and bold)
+      ctx.font = 'bold 40px Arial';
       ctx.fillStyle = 'black';
       ctx.textAlign = 'center';
-      ctx.fillText(userName, canvas.width / 2, canvas.height / 2);
-
-     
-
+      ctx.fillText(setResponsedata.studentName, canvas.width / 2, canvas.height / 2);
+  
+      // Add course name to the canvas (centered and smaller font size)
+      ctx.font = '20px Arial';
+      ctx.fillText(`For Completing the ${setResponsedata.courseName}`, canvas.width / 2, canvas.height / 2 + 40);
+  
+      // Add score to the canvas (centered and smaller font size)
+      ctx.fillText(`${setResponsedata.studentfirstname} Scored: ${setResponsedata.percentage}`, canvas.width / 2, canvas.height / 2 + 60);
+  
       // Convert canvas to data URL
       const dataUrl = canvas.toDataURL();
-
+  
       // Add the image to the PDF
       doc.addImage(dataUrl, 'JPEG', 0, 0, doc.internal.pageSize.getWidth(), doc.internal.pageSize.getHeight());
-
+  
       // Save the PDF
       doc.save('certificate.pdf');
     };
   };
+  
 
   const handleSave = async () => {
     try {
