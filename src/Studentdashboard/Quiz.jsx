@@ -128,10 +128,22 @@ const courseNameYPosition = canvas.height / 2 + 40; // Initial position
 ctx.fillText(courseNameText, canvas.width / 2, courseNameYPosition);
 
 // Add score to the canvas (centered and smaller font size)
-const scoreText = `${responsedata.studentfirstname} Scored: ${responsedata.percentage} %`;
+const scoreText = `${responsedata.studentfirstname} Scored: `;
 const scoreTextHeight = 15; // Adjust as needed
 const scoreYPosition = courseNameYPosition + courseNameTextHeight + 10; // Add margin top between lines
 ctx.fillText(scoreText, canvas.width / 2, scoreYPosition);
+
+// Measure the width of the score text
+const scoreTextWidth = ctx.measureText(scoreText).width;
+
+// Add bold percentage value
+ctx.font = '15px Arial'; // Set font back to regular for the percentage
+const percentageText = `${responsedata.percentage}%`;
+ctx.fillText(percentageText, canvas.width / 2 + scoreTextWidth, scoreYPosition);
+
+// Add bold style just for the percentage
+ctx.font = 'bold 15px Arial';
+
 
   
       // Convert canvas to data URL
