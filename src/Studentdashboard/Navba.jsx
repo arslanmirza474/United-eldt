@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logo from "./Logo (2).svg";
+import logo from "./logo 1.svg";
 import "./quizles.css"
 import { Link, useNavigate } from "react-router-dom";
 function Navba ({page,chapterid}){
