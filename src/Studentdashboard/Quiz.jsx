@@ -120,12 +120,19 @@ const fetchquestions = () => {
       ctx.textAlign = 'center';
       ctx.fillText(responsedata.studentName, canvas.width / 2, canvas.height / 2);
   
-      // Add course name to the canvas (centered and smaller font size)
-      ctx.font = '20px Arial';
-      ctx.fillText(`For Completing the ${responsedata.courseName}`, canvas.width / 2, canvas.height / 2 + 40);
-  
-      // Add score to the canvas (centered and smaller font size)
-      ctx.fillText(`${responsedata.studentfirstname} Scored: ${responsedata.percentage} %`, canvas.width / 2, canvas.height / 2 + 60);
+     // Add course name to the canvas (centered and smaller font size)
+ctx.font = '15px Arial';
+const courseNameText = `For Completing the ${responsedata.courseName}`;
+const courseNameTextHeight = 15; // Adjust as needed
+const courseNameYPosition = canvas.height / 2 + 40; // Initial position
+ctx.fillText(courseNameText, canvas.width / 2, courseNameYPosition);
+
+// Add score to the canvas (centered and smaller font size)
+const scoreText = `${responsedata.studentfirstname} Scored: ${responsedata.percentage} %`;
+const scoreTextHeight = 15; // Adjust as needed
+const scoreYPosition = courseNameYPosition + courseNameTextHeight + 10; // Add margin top between lines
+ctx.fillText(scoreText, canvas.width / 2, scoreYPosition);
+
   
       // Convert canvas to data URL
       const dataUrl = canvas.toDataURL();
