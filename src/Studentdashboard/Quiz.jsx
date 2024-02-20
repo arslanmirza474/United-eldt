@@ -120,36 +120,25 @@ const fetchquestions = () => {
       ctx.textAlign = 'center';
       ctx.fillText(responsedata.studentName, canvas.width / 2, canvas.height / 2);
   
-     // Add course name to the canvas (centered and smaller font size)
-ctx.font = '15px Arial';
-const courseNameText = `For Completing the ${responsedata.courseName}`;
-const courseNameTextHeight = 15; // Adjust as needed
-const courseNameYPosition = canvas.height / 2 + 40; // Initial position
-ctx.fillText(courseNameText, canvas.width / 2, courseNameYPosition);
-// Add score to the canvas (centered and smaller font size)
-const roundedPercentage = responsedata.percentage.toFixed(1); // Round to 1 decimal place
-
-// Add score to the canvas (left-aligned and smaller font size)
-// Add score to the canvas (left-aligned and smaller font size)
-const scoreText = `${responsedata.studentfirstname}Scored: `;
-const scoreTextHeight = 15; // Adjust as needed
-const scoreXPosition = 350; // Move text 100 pixels to the left
-const scoreYPosition = courseNameYPosition + courseNameTextHeight + 10; // Keep the same margin top between lines
-ctx.fillText(scoreText, scoreXPosition, scoreYPosition);
-
-// Measure the width of the score text
-const scoreTextWidth = ctx.measureText(scoreText).width;
-
-// Add bold style just for the percentage
-ctx.font = 'bold 16px Arial'; // Set font to bold and increase font size
-const percentageText = `${roundedPercentage}%`;
-const percentageTextWidth = ctx.measureText(percentageText).width; // Measure the width of the percentage text
-ctx.fillText(percentageText, scoreXPosition + scoreTextWidth, scoreYPosition);
-
-// Add regular style for other text
-ctx.font = '15px Arial';
-
+      // Add course name to the canvas (centered and smaller font size)
+      const courseNameText = `For Completing the ${responsedata.courseName}`;
+      ctx.font = '15px Arial';
+      ctx.fillText(courseNameText, canvas.width / 2, canvas.height / 2 + 40);
   
+// Add score text (centered and smaller font size)
+// Add score text (centered and smaller font size)
+const scoreText = `${responsedata.studentfirstname} Scored: `;
+ctx.font = '15px Arial';
+ctx.textAlign = 'center';
+ctx.fillText(scoreText, canvas.width / 2 - 20, canvas.height / 2 + 70); // Decrease margin top and set margin left
+
+// Add percentage text (bold and larger font size) directly after the score text
+const roundedPercentage = responsedata.percentage.toFixed(1) + '%';
+ctx.font = 'bold 16px Arial';
+const margin = 45; // Adjust the margin as needed
+const textWidth = ctx.measureText(roundedPercentage).width;
+ctx.fillText(roundedPercentage, canvas.width / 2 + ctx.measureText(scoreText).width - textWidth - margin - 20, canvas.height / 2 + 70); // Add 20px margin-left
+
       // Convert canvas to data URL
       const dataUrl = canvas.toDataURL();
   
@@ -160,6 +149,8 @@ ctx.font = '15px Arial';
       doc.save('United ELDT Certificate.pdf');
     };
   };
+  
+  
   
 
   const handleSave = async () => {
