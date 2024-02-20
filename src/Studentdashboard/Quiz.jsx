@@ -243,7 +243,7 @@ ctx.fillText(roundedPercentage, canvas.width / 2 + ctx.measureText(scoreText).wi
   const result = results.find((result) => result.questionId === question._id);
 
   return (
-    <div className="border rounded mianrounded mb-3 " key={question._id}>
+    <div className="mianrounded mb-3 " key={question._id}>
       <b>{questionIndex + 1}.{question.questionText}</b>
       <div className="p-3">
       {question.options.map((option, optionIndex) => {
