@@ -288,12 +288,7 @@ function isValidEmail(email) {
           const scrollPosition = targetElement.offsetTop - 100;
           window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
 
-          setTimeout(() => {
-              const modalContent = document.getElementById(idofinput); // Selector for Ant Design modal's content
-              if (modalContent) {
-                  modalContent.style.marginTop = '40px';
-              }
-          }, 100);
+    
       }
     }
 

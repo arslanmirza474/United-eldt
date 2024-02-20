@@ -126,24 +126,28 @@ const courseNameText = `For Completing the ${responsedata.courseName}`;
 const courseNameTextHeight = 15; // Adjust as needed
 const courseNameYPosition = canvas.height / 2 + 40; // Initial position
 ctx.fillText(courseNameText, canvas.width / 2, courseNameYPosition);
-
 // Add score to the canvas (centered and smaller font size)
-const scoreText = `${responsedata.studentfirstname} Scored: `;
+const roundedPercentage = responsedata.percentage.toFixed(1); // Round to 1 decimal place
+
+// Add score to the canvas (left-aligned and smaller font size)
+// Add score to the canvas (left-aligned and smaller font size)
+const scoreText = `${responsedata.studentfirstname}Scored: `;
 const scoreTextHeight = 15; // Adjust as needed
-const scoreYPosition = courseNameYPosition + courseNameTextHeight + 10; // Add margin top between lines
-ctx.fillText(scoreText, canvas.width / 2, scoreYPosition);
+const scoreXPosition = 350; // Move text 100 pixels to the left
+const scoreYPosition = courseNameYPosition + courseNameTextHeight + 10; // Keep the same margin top between lines
+ctx.fillText(scoreText, scoreXPosition, scoreYPosition);
 
 // Measure the width of the score text
 const scoreTextWidth = ctx.measureText(scoreText).width;
 
-// Add bold percentage value
-ctx.font = '15px Arial'; // Set font back to regular for the percentage
-const percentageText = `${responsedata.percentage}%`;
-ctx.fillText(percentageText, canvas.width / 2 + scoreTextWidth, scoreYPosition);
-
 // Add bold style just for the percentage
-ctx.font = 'bold 15px Arial';
+ctx.font = 'bold 16px Arial'; // Set font to bold and increase font size
+const percentageText = `${roundedPercentage}%`;
+const percentageTextWidth = ctx.measureText(percentageText).width; // Measure the width of the percentage text
+ctx.fillText(percentageText, scoreXPosition + scoreTextWidth, scoreYPosition);
 
+// Add regular style for other text
+ctx.font = '15px Arial';
 
   
       // Convert canvas to data URL
@@ -153,7 +157,7 @@ ctx.font = 'bold 15px Arial';
       doc.addImage(dataUrl, 'JPEG', 0, 0, doc.internal.pageSize.getWidth(), doc.internal.pageSize.getHeight());
   
       // Save the PDF
-      doc.save('certificate.pdf');
+      doc.save('United ELDT Certificate.pdf');
     };
   };
   
