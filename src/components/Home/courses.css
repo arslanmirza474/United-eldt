@@ -427,6 +427,7 @@ border: 2px solid rgba(44, 41, 42, 0.25);
 background: #FFF;
 padding: 16px;
 margin-top: 16px;
+width: 100%;
 }
 .numcard2{
     border-radius: 0px 0px 0px 8px;
