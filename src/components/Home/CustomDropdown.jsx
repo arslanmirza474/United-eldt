@@ -130,10 +130,12 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
     });
   };
 
+
+ 
   const handleOptionSelect = (option, index, planId) => {
+    
     setDropdownStates(prevStates => {
       const updatedStates = [...prevStates];
-      console.log(updatedStates)
       updatedStates[index] = {
         ...updatedStates[index],
         selectedOption: option,
@@ -161,6 +163,8 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
   const showItem = (index) => {
     setStartIndex(index);
   };
+
+
   return (
     <>
      <Translator
@@ -222,12 +226,13 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
                           <div className="custom-select mt-2">
                           <div className="selected-option" onClick={() => toggleDropdown(index)}>
   <div className='d-flex'>
-    <img src={dropdownStates[index]?.selectedOption.image} alt={dropdownStates[index]?.selectedOption.label} className="language-image" />
+  <img src={options.find(option => option.value === plan.language)?.image || options.find(option => option.value === "English")?.image} alt={plan.language || "English"} className="language-image" />
     <span className='mx-2'>{plan?.language ||"English" }</span>
   </div>
   <i class="fa-solid fa-angle-down downicon"></i>
 </div>
-              {dropdownStates[index] && dropdownStates[index]?.isOpen && (
+
+{dropdownStates[index] && dropdownStates[index]?.isOpen && (
   <div className="options dropoptions">
     {options.map((option) => (
       <div
@@ -241,6 +246,7 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
     ))}
   </div>
 )}
+
 
 
             </div>
