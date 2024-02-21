@@ -203,7 +203,7 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
 
 
                             <sup className="dollar-sup">$</sup>
-                            <span className="main-price"> <Translate>{plan.price / 100}</Translate></span>
+                            <span className="main-price"> <Translate>{plan.price}</Translate></span>
                           </span>
                         </div>
 

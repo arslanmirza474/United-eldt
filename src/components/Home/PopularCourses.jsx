@@ -324,7 +324,7 @@ if(response.data.available === true ){
          id="mainmodalforpay"
         >
           <div className="mainblack">
-            <span className="pricetxt">${purchase.price / 100}.00</span><br></br>
+            <span className="pricetxt">${purchase.price }.00</span><br></br>
             <span className="description"><span className="categoryi"> {purchase.courseName} </span>
               {
                 purchase.language ? (
@@ -448,7 +448,7 @@ if(response.data.available === true ){
               {
                 loading ? (
                   <>
-                    Place your order:${purchase.price / 100}.00 USD
+                    Place your order:${purchase.price }.00 USD
                   </>
                 ) : (
                   <>
