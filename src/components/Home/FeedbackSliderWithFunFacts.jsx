@@ -106,7 +106,7 @@ export default function FeedbackSliderWithFunFacts({ language }) {
                       <div  class="text-warning font-weight-bold text-lg">
                         David Johnson
                       </div>
-                      <div>Motorista de ônibus escolar</div>
+                      <div>Class A CDL Driver</div>
                     </div>
                   </div>
                 </div>
@@ -132,7 +132,7 @@ export default function FeedbackSliderWithFunFacts({ language }) {
                       <div  class="text-warning font-weight-bold text-lg">
                         David Johnson
                       </div>
-                      <div>Motorista de ônibus escolar</div>
+                      <div>Class A CDL Driver</div>
                     </div>
                   </div>
                 </div>
@@ -157,7 +157,7 @@ export default function FeedbackSliderWithFunFacts({ language }) {
                       <div  class="text-warning font-weight-bold text-lg">
                         David Johnson
                       </div>
-                      <div>Motorista de ônibus escolar</div>
+                      <div>Class A CDL Driver</div>
                     </div>
                   </div>
                 </div>
