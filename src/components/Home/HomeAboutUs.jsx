@@ -3,7 +3,7 @@ import { Translator, Translate } from "react-auto-translate";
 import OpenCloseItem from "../Faq/openCloseItem";
 import AboutFeaturesList from "./AboutFeaturesList";
 import { useSelector } from "react-redux";
-import aboutvid from "./video_2023-01-28_16-32-41.mp4"
+import aboutvid from "./Videoplace.jpg"
 
 const WhyChooseUs = () => {
 
@@ -154,41 +154,14 @@ export default function HomeAboutUs({ language }) {
                   </div>
                 </p>
 
-                <div className="about-image mobile" onClick={handlePlay}   onDoubleClick={handleDoubleClick}>
-                <video
-                    // src={aboutvid}
-                    ref={videoRef}
-                    preload="auto"
-                    loop
-                    autoPlay={"autoplay"}
-                    muted
-                    playsInline
-                    poster="https://res.cloudinary.com/dlj1daxbn/image/upload/v1707585490/Screenshot_2024-02-10_221714_l5nk3t.png"
-                  >
-                     <source
-          src="https://res.cloudinary.com/dlj1daxbn/video/upload/v1707561986/video_2023-01-28_16-32-41_m1c6vw.mp4"
-          type="video/mp4"
-        />
-        Your browser does not support the video tag.
-      </video>
+                <div className="about-image mobile" >
+                <img src={aboutvid} alt="image"/>
+
                 </div>
               </div>
 
-              <div className="about-image desktop" onClick={handlePlay} onDoubleClick={handleDoubleClick}>
-              <video
-                    // src={aboutvid}
-                    ref={videoRef}
-                    preload="auto"
-                    loop
-                    muted
-                    playsInline
-                  >
-                     <source
-          src="https://res.cloudinary.com/dlj1daxbn/video/upload/v1707561986/video_2023-01-28_16-32-41_m1c6vw.mp4"
-          type="video/mp4"
-        />
-        Your browser does not support the video tag.
-      </video>
+              <div className="about-image desktop" >
+            <img src={aboutvid} alt="image"/>
               </div>
             </div>
             {/* <div className="about-bottom">

@@ -3,7 +3,7 @@ import { Translator, Translate } from "react-auto-translate";
 import { useSelector } from "react-redux";
 import { Carousel } from 'antd';
 import "./feed.css"
-
+import reviewpic from "./iconslider.png"
 
  
 export default function FeedbackSliderWithFunFacts({ language }) {
@@ -100,7 +100,7 @@ export default function FeedbackSliderWithFunFacts({ language }) {
                   <div class="d-flex  marginabove">
                     <img
                       class=" feedimage rounded-circle"
-                      src="https://api.dicebear.com/7.x/initials/svg?seed=Bella"
+                     src={reviewpic}
                     />
                     <div class="d-flex mx-3 flex-column ml-5">
                       <div  class="text-warning font-weight-bold text-lg">
@@ -126,7 +126,7 @@ export default function FeedbackSliderWithFunFacts({ language }) {
                   <div class="d-flex  marginabove">
                     <img
                       class="feedimage rounded-circle"
-                      src="https://api.dicebear.com/7.x/initials/svg?seed=Bella"
+                     src={reviewpic}
                     />
                     <div class="d-flex mx-3 flex-column ml-5">
                       <div  class="text-warning font-weight-bold text-lg">
@@ -151,7 +151,7 @@ export default function FeedbackSliderWithFunFacts({ language }) {
                   <div class="d-flex  marginabove">
                     <img
                       class="feedimage rounded-circle"
-                      src="https://api.dicebear.com/7.x/initials/svg?seed=Bella"
+                     src={reviewpic}
                     />
                     <div class="d-flex mx-3 flex-column ml-5">
                       <div  class="text-warning font-weight-bold text-lg">

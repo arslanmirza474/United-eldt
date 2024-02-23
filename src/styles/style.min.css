@@ -4168,6 +4168,9 @@ textarea.form-control {
 @media (max-width:988px) {
   
 }
+.about-image img{
+  height: 100%;
+}
 @media (max-width:1080px) {
   .about-area{
     padding-left: 10px !important;
