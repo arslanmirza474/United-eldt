@@ -4,7 +4,9 @@ import { useSelector } from "react-redux";
 import { Carousel } from 'antd';
 import "./feed.css"
 import reviewpic from "./iconslider.png"
-
+import marvin from "./images/Marving.jpg"
+import bansanta from "./images/Basanta Ghimire.png"
+import Crystal from "./images/Crystal.png"
  
 export default function FeedbackSliderWithFunFacts({ language }) {
   const languageState = useSelector((state) => state.language);
@@ -91,20 +93,17 @@ export default function FeedbackSliderWithFunFacts({ language }) {
     <div className="right-block">
                 <div className="card-custom bg-white text-dark rounded-xl card">
                   <div style={{ lineHeight: "160%", marginTop: "20px" }}>
-                    Initially, I was skeptical about online CDL endorsement
-                    platforms, but this one proved me wrong. The content was
-                    up-to-date and relevant, and the interactive quizzes helped
-                    me retain the information effectively. Thank you for
-                    providing such a valuable resource!
+                  As a native Spanish speaker, finding the Class A ELDT course in my language was a breath of fresh air. United ELDT's commitment to offering the course in eight different languages, including Spanish, is truly unparalleled in the USA. The material, professionally tailored by industry experts, was accessible and engaging. This unique feature of language inclusivity enhanced my learning experience, allowing me to grasp complex concepts more naturally. I'm genuinely impressed with United ELDT's efforts to make professional driving education accessible to a wider audience.
+
                   </div>
                   <div class="d-flex  marginabove">
                     <img
                       class=" feedimage rounded-circle"
-                     src={reviewpic}
+                     src={marvin}
                     />
                     <div class="d-flex mx-3 flex-column ml-5">
                       <div  class="text-warning font-weight-bold text-lg">
-                        David Johnson
+                      Marvin Aguilar
                       </div>
                       <div>Class A CDL Driver</div>
                     </div>
@@ -117,20 +116,16 @@ export default function FeedbackSliderWithFunFacts({ language }) {
     <div className="right-block">
                 <div className="card-custom bg-white text-dark rounded-xl card">
                   <div style={{ lineHeight: "160%", marginTop: "20px" }}>
-                    Initially, I was skeptical about online CDL endorsement
-                    platforms, but this one proved me wrong. The content was
-                    up-to-date and relevant, and the interactive quizzes helped
-                    me retain the information effectively. Thank you for
-                    providing such a valuable resource!
+                  I was thrilled to discover that United ELDT offers the Hazmat endorsement course in Hindi. Being one of the only platforms in the USA to provide such a wide range of language options, including Hindi, United ELDT has set a high standard for accessible education in the transportation sector. The course was meticulously crafted, reflecting the expertise of leading professionals. The ability to study in my native language made complex regulations and safety practices much easier to understand, enhancing my learning experience significantly.
                   </div>
                   <div class="d-flex  marginabove">
                     <img
                       class="feedimage rounded-circle"
-                     src={reviewpic}
+                     src={bansanta}
                     />
                     <div class="d-flex mx-3 flex-column ml-5">
                       <div  class="text-warning font-weight-bold text-lg">
-                        David Johnson
+                      Basanta Ghimire
                       </div>
                       <div>Class A CDL Driver</div>
                     </div>
@@ -142,20 +137,16 @@ export default function FeedbackSliderWithFunFacts({ language }) {
     <div className="right-block">
                 <div className="card-custom bg-white text-dark rounded-xl card">
                   <div style={{ lineHeight: "160%", marginTop: "20px" }}>
-                    Initially, I was skeptical about online CDL endorsement
-                    platforms, but this one proved me wrong. The content was
-                    up-to-date and relevant, and the interactive quizzes helped
-                    me retain the information effectively. Thank you for
-                    providing such a valuable resource!
+                  Initially skeptical about online CDL endorsement platforms, my experience here shifted my view. The content was current, relevant, and engaging, making learning intuitive. Interactive quizzes notably boosted my information retention. This platform's commitment to delivering a comprehensive educational resource is truly commendable. I'm deeply appreciative of this effective and well-structured learning opportunity.
                   </div>
                   <div class="d-flex  marginabove">
                     <img
                       class="feedimage rounded-circle"
-                     src={reviewpic}
+                     src={Crystal}
                     />
                     <div class="d-flex mx-3 flex-column ml-5">
                       <div  class="text-warning font-weight-bold text-lg">
-                        David Johnson
+                      Crystal Curry
                       </div>
                       <div>Class A CDL Driver</div>
                     </div>

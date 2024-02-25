@@ -40,9 +40,17 @@ font-weight: 700;
 line-height: 32px; /* 160% */
 }
 .marginabove{
-  margin-top: 7rem;
   margin-bottom: 10px;
+  margin-bottom: 10px;
+    position: absolute;
+    bottom: 0px;
+    left: 23px;
 }
+.card-custom{
+  font-size: 15px;
+  height: 350px;
+}
+
 .feedimage{
   width: 56px;
   height: 56px;
@@ -3244,6 +3252,9 @@ textarea.form-control {
   .subscribe-content .newsletter-form{
     width: 100% !important;
   }
+  .card-custom{
+    height: 450px;
+  }
   .about-area .about-image{
     width: 100% !important;
     height: 237px;
@@ -3686,6 +3697,9 @@ textarea.form-control {
     margin-right: 0px;
     padding-left: 60px;
     margin-left: 0px;
+}
+.card-custom{
+  height: 460px;
 }
 .bottomemail{
   padding-top: 37px !important;
