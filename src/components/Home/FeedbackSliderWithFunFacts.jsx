@@ -87,7 +87,7 @@ export default function FeedbackSliderWithFunFacts({ language }) {
   </defs>
 </svg></div>
 
-           <Carousel >
+           <Carousel autoplay={{ interval: 5000 }}>
    
     <div className="carousel_cover">
     <div className="right-block">
