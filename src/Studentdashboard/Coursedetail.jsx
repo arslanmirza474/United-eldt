@@ -104,7 +104,7 @@ function Coursedetail() {
                                             format={() => null}
                                         />
                                     </Space>
-                                    <span className="mx-3">{course.courseName} - {course.courselangugae}</span>
+                                    <span className="newlineitem">{course.courseName} - {course.courselangugae}</span>
                                 </div>
                                 <Link to={`/Alllessons/${course.enrollindex}`}>
                                     <div className="warning">Open</div>
@@ -155,7 +155,7 @@ function Coursedetail() {
     format={() => null}
   />
 </Space>
-<span className="mx-3">{course.courseName} - {course.courselangugae}</span>  
+<span className="newlineitem">{course.courseName} - {course.courselangugae}</span>  
 
 
                           </div>   
@@ -206,7 +206,7 @@ function Coursedetail() {
     format={() => null}
   />
 </Space>
-<span className="mx-3">{course.courseName} - {course.courselangugae}</span>  
+<span className="newlineitem">{course.courseName} - {course.courselangugae}</span>  
    
 
                           </div> 

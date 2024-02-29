@@ -115,11 +115,23 @@ right: 40px; }
     border-radius: 8px;
     background: #FBB723;
 }
+.newlineitem{
+    margin-left: 10px;
+}
 @media (max-width:786px) {
     .progress-bar-container{
-        display: contents;
+        display:table-caption;
     }
     .warning{
         margin-top: 20px;
+        margin-bottom: 20px;
+
     }
+    .newlineitem{
+        display: flex;
+        white-space: nowrap; 
+        margin-top: 20px;
+        margin-left: 0px;
+    }
+
 }
