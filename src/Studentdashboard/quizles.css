@@ -275,10 +275,11 @@ padding-top: 20px;
         padding: 15px;
     }
     .navbar-nav{
-        margin-top: 70px;
+        margin-top: 14px;
         align-items: self-start;
         padding-left: 20px;
         color: black;
+        row-gap: 20px;
     }
     .card-body2{
         width: 90%;

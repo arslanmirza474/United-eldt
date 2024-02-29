@@ -19,6 +19,7 @@ import {
   Elements
   } from '@stripe/react-stripe-js';
   import { loadStripe } from '@stripe/stripe-js';
+import StudentNav from "../Studentdashboard/StudentNav.jsx";
   
   
   const stripePromise = loadStripe('pk_test_51O5F9gFZtgAr5eHPPYRptE8ZBDBXAtaLj7XGBnSp106qIqacE80PBnqGyndDPhtDYDpBWNvpJ8YmObgxijiNX22o00C8ueO5lb'); // Replace with your actual public key
@@ -69,7 +70,6 @@ element={
       }
     />
   
-
     <Route
       path="/test/:index/:chap"
       element={
@@ -127,8 +127,9 @@ element={
 
 
           {/* ============== Admin Routes Ended  */}
-          <Route path="/studentdash/*" element={<Homepage />} />
 
+<Route path="/studentdash" element={<Homepage />} />
+<Route path="/studentdash/:local" element={<Homepage />} />
           <Route
             path="/*"
             element={

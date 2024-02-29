@@ -3,7 +3,7 @@ import logo from "./logo 1.svg"
 import StudentRegistration from "./StudentRegistration";
 import Progre from "./Progre";
 import { useState,useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import CourseList from "./CourseList";
 import Coursedetail from "./Coursedetail";
 import { jwtDecode } from "jwt-decode";
@@ -13,7 +13,15 @@ function StudentNav (){
     const [selectedPage, setSelectedPage] = useState("");
     const [loca, setLoca]=useState("")
     const [isOpen, setIsOpen] = useState(false);
-
+    const { local } = useParams();
+    const [location, setLocation] = useState(null);
+    console.log(local)
+    useEffect(() => {
+      if(local != undefined){
+         setLocation(local);
+      }
+     
+    }, []);
     const handleToggle = () => {
         setIsOpen(!isOpen);
     };
@@ -37,14 +45,25 @@ function StudentNav (){
       axios.get(`https://server-of-united-eldt.vercel.app/api/studentbyid/${userId}`)
       .then(res => {
         if (res.data.status === true) {
-          if (!res.data.student.firstName){
-            setSelectedPage("courses")
-            setLoca("courses")
-          }else{
-            setSelectedPage("information")
-            setLoca("information")
+          if (location != null ) {
+            if (location === "buynew") { // Corrected the comparison operator from = to ===
+              setSelectedPage("newcoursebuy");
+              setLocation(null)
+            } else if (location === "myaccount") { // Changed if else to else if
+              setSelectedPage("myaccount");
+              setLocation(null)
+            }
+          } else {
+            if (!res.data.student.firstName) {
+              setSelectedPage("courses");
+              setLoca("courses");
+            } else {
+              setSelectedPage("information");
+              setLoca("information");
+            }
           }
         }
+        
       })
       .catch(error => {
         console.error("Error fetching user info:", error);
@@ -76,13 +95,13 @@ function StudentNav (){
 </div>
 <div className="Navbar_Links">
     <ul>
-    <Link to="/">
+        <Link to="/">
 
-<li className="mainlink">
-<svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+        <li className="mainlink">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
 <path d="M11.875 16.8501V13.1001C11.875 12.9344 11.8092 12.7754 11.6919 12.6582C11.5747 12.541 11.4158 12.4751 11.25 12.4751H8.75C8.58424 12.4751 8.42527 12.541 8.30806 12.6582C8.19085 12.7754 8.125 12.9344 8.125 13.1001V16.8501C8.125 17.0159 8.05915 17.1749 7.94194 17.2921C7.82473 17.4093 7.66576 17.4751 7.5 17.4751H3.75C3.58424 17.4751 3.42527 17.4093 3.30806 17.2921C3.19085 17.1749 3.125 17.0159 3.125 16.8501V9.62358C3.1264 9.53708 3.14509 9.45174 3.17998 9.37258C3.21486 9.29342 3.26523 9.22204 3.32812 9.16264L9.57812 3.48296C9.69334 3.37755 9.84384 3.31909 10 3.31909C10.1562 3.31909 10.3067 3.37755 10.4219 3.48296L16.6719 9.16264C16.7348 9.22204 16.7851 9.29342 16.82 9.37258C16.8549 9.45174 16.8736 9.53708 16.875 9.62358V16.8501C16.875 17.0159 16.8092 17.1749 16.6919 17.2921C16.5747 17.4093 16.4158 17.4751 16.25 17.4751H12.5C12.3342 17.4751 12.1753 17.4093 12.0581 17.2921C11.9408 17.1749 11.875 17.0159 11.875 16.8501Z" stroke="#696969" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>  Homepage
-</li></Link>
+        </li></Link>
         <li className={`mainlink ${selectedPage === 'courses' || selectedPage === 'information' ? 'activateding' : ''}`} onClick={() => handleNavigationClick(loca)}>
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
   <path d="M2.5 5.6001V11.8501" stroke="#696969" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
