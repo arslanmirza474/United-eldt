@@ -134,7 +134,7 @@ useEffect(() => {
             id="navbarNav"
           >
             <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
+            <li className="nav-item newnavdesign">
                 <Link
                   className="nav-link d-flex"
                   aria-current="page"
@@ -146,7 +146,7 @@ useEffect(() => {
 </svg>  Homepage
                 </Link>
               </li>
-              <li className="nav-item">
+              <li className="nav-item newnavdesign">
                 <Link
                   className="nav-link d-flex"
                   aria-current="page"
@@ -158,7 +158,7 @@ useEffect(() => {
                 </Link>
               </li>
            
-              <li className="nav-item" onClick={gotolastchap}>
+              <li className="nav-item newnavdesign" onClick={gotolastchap}>
                 <a
                   className="nav-link d-flex"
                   href="#"
@@ -168,20 +168,20 @@ useEffect(() => {
                   Resume
                 </a>
               </li>
-              <li className="nav-item" onClick={gotochapterlist}>
+              <li className="nav-item newnavdesign" onClick={gotochapterlist}>
                 <Link className="nav-link d-flex" onClick={closeNavbar}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><path d="M6.875 5.1001H16.875" stroke="#696969" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6.875 10.1001H16.875" stroke="#696969" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6.875 15.1001H16.875" stroke="#696969" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path><path d="M3.4375 6.0376C3.95527 6.0376 4.375 5.61786 4.375 5.1001C4.375 4.58233 3.95527 4.1626 3.4375 4.1626C2.91973 4.1626 2.5 4.58233 2.5 5.1001C2.5 5.61786 2.91973 6.0376 3.4375 6.0376Z" fill="#696969"></path><path d="M3.4375 11.0376C3.95527 11.0376 4.375 10.6179 4.375 10.1001C4.375 9.58233 3.95527 9.1626 3.4375 9.1626C2.91973 9.1626 2.5 9.58233 2.5 10.1001C2.5 10.6179 2.91973 11.0376 3.4375 11.0376Z" fill="#696969"></path><path d="M3.4375 16.0376C3.95527 16.0376 4.375 15.6179 4.375 15.1001C4.375 14.5823 3.95527 14.1626 3.4375 14.1626C2.91973 14.1626 2.5 14.5823 2.5 15.1001C2.5 15.6179 2.91973 16.0376 3.4375 16.0376Z" fill="#696969"></path></svg>
                 Table of Contents
                 </Link>
               </li>
-              <li className="nav-item" onClick={gotochapterlist}>
-                <Link className="nav-link d-flex" onClick={closeNavbar}>
+              <li className="nav-item newnavdesign" onClick={gotochapterlist}>
+                <Link to="/studentdash" className="nav-link d-flex" onClick={closeNavbar}>
                 <i class="fa-solid fa-cart-arrow-down"></i>
                                 Buy Another Course 
                 </Link>
               </li>
-              <li className="nav-item" onClick={gotochapterlist}>
-                <Link className="nav-link d-flex" onClick={closeNavbar}>
+              <li className="nav-item newnavdesign" onClick={gotochapterlist}>
+                <Link to="/studentdash" className="nav-link d-flex" onClick={closeNavbar}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
 <path d="M10 13.1001C12.7614 13.1001 15 10.8615 15 8.1001C15 5.33867 12.7614 3.1001 10 3.1001C7.23858 3.1001 5 5.33867 5 8.1001C5 10.8615 7.23858 13.1001 10 13.1001Z" stroke="#696969" stroke-width="1.5" stroke-miterlimit="10"/>
 <path d="M2.42188 17.4751C3.18979 16.1447 4.2944 15.0399 5.62465 14.2718C6.9549 13.5037 8.46392 13.0994 10 13.0994C11.5361 13.0994 13.0451 13.5037 14.3753 14.2718C15.7056 15.0399 16.8102 16.1447 17.5781 17.4751" stroke="#696969" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -189,8 +189,8 @@ useEffect(() => {
                                 My account
                 </Link>
               </li>
-              <li className="nav-item" onClick={gotochapterlist}>
-                <Link className="nav-link d-flex" onClick={closeNavbar}>
+              <li className="nav-item newnavdesign" onClick={gotochapterlist}>
+                <Link to="/logout" className="nav-link d-flex" onClick={closeNavbar}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
   <path d="M13.5938 7.31885L16.875 10.6001L13.5938 13.8813" stroke="#696969" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M8.125 10.6001H16.875" stroke="#696969" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>

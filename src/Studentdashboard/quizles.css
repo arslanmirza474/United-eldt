@@ -256,6 +256,18 @@ padding-top: 20px;
     }
 }
 @media (max-width:786px) {
+    .newnavdesign:hover{
+        border-radius: 8px;
+        background: rgba(251, 183, 35, 0.20);
+        cursor: pointer;
+        color: #000000;
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 160%;
+        letter-spacing: 0.7px;
+    }
     .maincardbody{
         padding: 20px !important;
     }
