@@ -6,7 +6,9 @@ const Loader = () => {
   return (
     <div className='logocon'>
       <div className='maincontainer'>
-      <div class="loadermain"></div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="100" stroke="#f5b505" speed="0.75" data-testid="rotating-lines-svg" aria-label="rotating-lines-loading" aria-busy="true" role="progressbar" class="sc-dmyCSP cXeqit"><polyline points="24,12 24,4" width="3" transform="rotate(0, 24, 24)" class="sc-hLQSwg jqMhbM"></polyline><polyline points="24,12 24,4" width="3" transform="rotate(30, 24, 24)" class="sc-hLQSwg jqMhbM"></polyline><polyline points="24,12 24,4" width="3" transform="rotate(60, 24, 24)" class="sc-hLQSwg jqMhbM"></polyline><polyline points="24,12 24,4" width="3" transform="rotate(90, 24, 24)" class="sc-hLQSwg jqMhbM"></polyline><polyline points="24,12 24,4" width="3" transform="rotate(120, 24, 24)" class="sc-hLQSwg jqMhbM"></polyline><polyline points="24,12 24,4" width="3" transform="rotate(150, 24, 24)" class="sc-hLQSwg jqMhbM"></polyline><polyline points="24,12 24,4" width="3" transform="rotate(180, 24, 24)" class="sc-hLQSwg jqMhbM"></polyline><polyline points="24,12 24,4" width="3" transform="rotate(210, 24, 24)" class="sc-hLQSwg jqMhbM"></polyline><polyline points="24,12 24,4" width="3" transform="rotate(240, 24, 24)" class="sc-hLQSwg jqMhbM"></polyline><polyline points="24,12 24,4" width="3" transform="rotate(270, 24, 24)" class="sc-hLQSwg jqMhbM"></polyline><polyline points="24,12 24,4" width="3" transform="rotate(300, 24, 24)" class="sc-hLQSwg jqMhbM"></polyline><polyline points="24,12 24,4" width="3" transform="rotate(330, 24, 24)" class="sc-hLQSwg jqMhbM"></polyline></svg>
+
+
     </div>
     
     </div>
