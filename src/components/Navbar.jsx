@@ -20,7 +20,7 @@ export default function Navbar({ className = "is-home" }, ...props) {
   const handleClick = () => {
     toggleNavbar()
     window.scrollTo({
-        top: 1000,
+        top: 1150,
         behavior: "smooth",
     });
    

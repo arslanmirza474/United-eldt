@@ -7,7 +7,6 @@ function Navba({ page, chapterid }) {
   const [chapter, setChapter] = useState("");
   const [lesson, setLesson] = useState("");
   const [isOpen, setIsOpen] = useState(false);
-console.log(isOpen)
 const handleToggle = () => {
   setIsOpen(!isOpen);
 };
@@ -132,9 +131,7 @@ useEffect(() => {
             className={`collapse navbar-collapse ${isOpen ? "show" : ""}`}
             id="navbarNav"
           >
-            <ul className={`navbar-nav ms-auto ${
-          isOpen ? "expanded" : ""
-        }`}>
+            <ul className="navbar-nav ms-auto">
             <li className="nav-item newnavdesign">
                 <Link
                   className="nav-link d-flex"
