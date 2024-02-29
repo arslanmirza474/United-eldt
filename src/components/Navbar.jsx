@@ -18,11 +18,12 @@ export default function Navbar({ className = "is-home" }, ...props) {
     setMenu(!menu);
   };
   const handleClick = () => {
-    console.log("pushed");
+    toggleNavbar()
     window.scrollTo({
         top: 1000,
         behavior: "smooth",
     });
+   
 };
 const [userId, setUserId]=useState(null)
 
