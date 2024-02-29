@@ -152,8 +152,9 @@ function LeftHeroContent(...props) {
         behavior: "smooth", });
     }else{
       window.scrollTo({
-        top: window.scrollY + 1150,
-        behavior: "smooth", });
+        top: 1150,
+        behavior: "smooth",
+    });
     }
      
     
