@@ -236,6 +236,9 @@ padding-top: 20px;
 .mianrounded{
     padding: 20px;
 }
+.navbar-nav .nav-link {
+    gap: 10px;
+   }
 @media (max-width:1440px) {
     .coverofall{
         margin-top: 40px;
@@ -329,6 +332,9 @@ padding-top: 20px;
         padding-left: 20px;
         color: black;
     }
+    .expanded .navbar-nav .nav-link {
+        gap: 10px;
+       }
     .expanded .navbar-nav {
       flex-direction: row;
     }
