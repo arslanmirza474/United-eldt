@@ -11,7 +11,20 @@ console.log(isOpen)
 const handleToggle = () => {
   setIsOpen(!isOpen);
 };
+useEffect(() => {
+  if (isOpen) {
+    // Disable scrolling when Navbar is open
+    document.body.style.overflow = "hidden";
+  } else {
+    // Enable scrolling when Navbar is closed
+    document.body.style.overflow = "auto";
+  }
 
+  // Cleanup function to restore default scrolling behavior when component unmounts
+  return () => {
+    document.body.style.overflow = "auto";
+  };
+}, [isOpen]);
   const navigate = useNavigate();
 
   useEffect(() => {
