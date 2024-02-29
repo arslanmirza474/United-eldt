@@ -75,7 +75,10 @@ useEffect(() => {
   const SelectLanguage = (availableLanguages, i18n, lang) => {
     return (
       <>
-        <BtnLang className="block-lang">
+        <BtnLang
+          className="block-lang"
+          onClick={() => setOpenLang(!openLang)}
+        >
           <span
             className={"flag-icon " + flg}
             style={{ width: 32, height: 32 }}
@@ -96,10 +99,10 @@ useEffect(() => {
                 d="M19.5 8.25l-7.5 7.5-7.5-7.5"
               />
             </svg>
-            <i class="fa-solid fa-chevron-down mx-2"></i>
+            <i className="fa-solid fa-chevron-down mx-2"></i>
           </span>
         </BtnLang>
-        <div className={"dropdown-menu m-auto"} id="language-menu">
+        <div className={"dropdown-menu m-auto " + (openLang ? 'show' : '')} id="language-menu">
           <ul className="list-striped">
             {availableLanguages.map((language, index) => {
               return (
@@ -126,12 +129,7 @@ useEffect(() => {
                     );
                     setFlg(language.className);
                     setNameLang(language.name);
-
-                    //   changeLanguage(
-                    // language.name,
-                    // language.value,
-                    // language.className
-                    // )
+                    setOpenLang(false); // Close the language dropdown after selecting a language
                   }}
                   name={language.name}
                   value={language.value}
@@ -150,6 +148,7 @@ useEffect(() => {
       </>
     );
   };
+  
   const classOne = menu ? "collapse ms-auto show" : "collapse ms-auto show";
 
   return (

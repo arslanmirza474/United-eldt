@@ -118,7 +118,7 @@ function StudentNav (){
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary" style={{width:"100%"}}>
   <div class="container-fluid">
-  <img className="navlogo" src={logo} alt="complogo"/>
+  <img className="navbar-brand" src={logo} alt="complogo"/>
     {/* <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button> */}

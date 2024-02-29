@@ -178,16 +178,7 @@ if(response.data.available === true ){
   };
   const handleupward = (idofinput) => {
     const screenWidth = window.innerWidth;
-    if (screenWidth <= 786) {
-      const targetElement = document.getElementById(idofinput);
-      if (targetElement) {
-          // Calculate the scroll position by subtracting 100 pixels
-          const scrollPosition = targetElement.offsetTop - 100;
-          window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
 
-    
-      }
-    }
 
 };
 
