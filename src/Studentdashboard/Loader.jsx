@@ -6,10 +6,7 @@ const Loader = () => {
   return (
     <div className='logocon'>
       <div className='maincontainer'>
-      {/* <span className="loader "></span> */}
-      {/* <img className='comlogo' src={sitelogo} alt='logo'  style={{width:"100px"}}/> */}
-      <img src={loaderimage} alt='logo' className='loadermain' />
-
+      <div class="loadermain"></div>
     </div>
     
     </div>
