@@ -3228,6 +3228,7 @@ textarea.form-control {
   border-radius: 5px;
   padding: 0 15px;
 }
+
 @media (max-width: 1120px) {
   .courses-details-content .left-side {
     width: calc(100% - 350px);
@@ -3255,6 +3256,49 @@ textarea.form-control {
 }
 .anothertitleforcards{
   display: none;
+}
+
+.rightimagecontent{
+  /* display: `flex`,
+  position: `relative`,
+  flexDirection: `column`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  paddingBottom: `50px`,
+  boxSizing: `border-box`,
+  flex: `1`,
+  width: `inherit`,
+  flexWrap: "nowrap",
+  // height: `auto`, */
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 50px;
+  /* box-sizing: border-box; */
+  flex: 1;
+  width: inherit;
+  flex-wrap: nowrap;
+  
+}
+.imageforbanner{
+  display: none;
+}
+@media (max-width: 991px) {
+ .rightimagecontent{
+  padding-bottom: 0px;
+ }
+ .imageforbanner{
+  text-align: center;
+  /* margin-bottom: 50px; */
+  position: relative;
+  bottom: 74px;
+  display: block;
+}
+.courses-area{
+padding-top: 0px !important;
+}
 }
 @media (max-width: 786px) {
   .subscribe-content .newsletter-form{

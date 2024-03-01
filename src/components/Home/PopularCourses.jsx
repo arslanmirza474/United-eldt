@@ -12,7 +12,7 @@ import errir from "./images/Group 6674 (2).png"
 import { jwtDecode } from "jwt-decode";
 import CustomDropdown from "./CustomDropdown";
 import { useSelector } from "react-redux";
-
+import bannerimage from  "./images/Selo.svg"
 export default function PopularCourses({ language ,showCancelButton,handleNavigationClick,large,medium }) {
   const userState = useSelector((state) => state.user);
   const [loading, setLoading] = useState(true);
@@ -251,8 +251,11 @@ if(response.data.available === true ){
         to={language || "en"}
         googleApiKey={process.env.REACT_APP_GOOGLE_TRANSLATE_KEY}
       >
+        <div className="imageforbanner">
+<img src={bannerimage}  alt="imageofall"/>
+        </div>
         <div className="courses-area tw-my-3" id="courses">
-          <div className="container p-4">
+          <div className="container ">
             <div className="section-title titleforcards">
               <span className="sub-title ">
                 <Translate>Take the course your way</Translate>

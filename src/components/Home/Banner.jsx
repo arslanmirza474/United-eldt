@@ -5,7 +5,7 @@ import { Translator, Translate } from "react-auto-translate";
 import LeftHeroContent from "./LeftHeroContent";
 import { useSelector } from "react-redux";
 // import useHero1 from './Hero1/useHero1';
-import heroimg from "./images/Group 1171278588.png"
+import heroimg from "./images/Realcover.png"
 import heroimg2 from "./Group 117127858823.png"
 
 const HeroBanner = styled("div")({
@@ -57,17 +57,7 @@ const LeftHeroContentDiv = styled(LeftHeroContent)(({ theme }) => ({
 }));
 
 const DivHeroRight = styled("div")({
-  display: `flex`,
-  position: `relative`,
-  flexDirection: `column`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  paddingBottom: `50px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  width: `inherit`,
-  flexWrap: "nowrap",
-  // height: `auto`,
+
 });
 const MainImage = styled("img")(({ theme }) => ({
   width: "80%", 
@@ -94,12 +84,12 @@ const DivHeroRightContent = styled("div")({
 
 function Banner(...props) {
   const languageState = useSelector((state) => state.language);
-  const [largeScreenImage, setLargeScreenImage] = useState(heroimg);
+  const [largeScreenImage, setLargeScreenImage] = useState(heroimg2);
 
   useEffect(() => {
     const handleResize = () => {
       // Check if the screen width is greater than or equal to 1440 pixels
-      const newImage = window.innerWidth <= 1440 ? heroimg2 : heroimg;
+      const newImage = window.innerWidth <= 1440 ? heroimg2 : heroimg2;
       setLargeScreenImage(newImage);
     };
 
@@ -132,7 +122,7 @@ function Banner(...props) {
             </DivHeroRightContent>
             </DivHeroRightContent>
             <div className="maincover">
-              <div className="main-image mobile">
+              <div className="main-image mobile mainpagearea">
                 <img src={heroimg} alt="" />
               </div>
             </div>
