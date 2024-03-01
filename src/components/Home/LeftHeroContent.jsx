@@ -175,8 +175,8 @@ function LeftHeroContent(...props) {
                 <Translate>{`certified`}</Translate>
               </span>
               &nbsp;
-
-              <Translate>{`from anywhere!`}</Translate>
+<div className="coverover"> <Translate>{`from anywhere!`}</Translate></div>
+             
           </ObtenhaCertificaçãoD>
           <SomosAMaiorCertifica className="main-subtitle" style={{maxWidth:"527px"}} >
             <Translate>

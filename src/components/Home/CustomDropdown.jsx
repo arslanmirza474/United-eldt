@@ -15,11 +15,13 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
 
   useEffect(() => {
     const handleTouchStart = (e) => {
+      e.preventDefault(); 
       const touchDown = e.touches[0].clientX;
       setTouchPosition(touchDown);
     };
 
     const handleTouchMove = (e) => {
+      e.preventDefault(); 
       if (!touchPosition) {
         return;
       }
