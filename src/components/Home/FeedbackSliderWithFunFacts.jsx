@@ -93,7 +93,7 @@ export default function FeedbackSliderWithFunFacts({ language }) {
     <div className="right-block">
                 <div className="card-custom bg-white text-dark rounded-xl card">
                   <div style={{ lineHeight: "160%", marginTop: "20px" }}>
-                  As a native Spanish speaker, finding the Class A ELDT course in my language was a breath of fresh air. United ELDT's commitment to offering the course in eight different languages, including Spanish, is truly unparalleled in the USA. The material, professionally tailored by industry experts, was accessible and engaging. This unique feature of language inclusivity enhanced my learning experience, allowing me to grasp complex concepts more naturally. I'm genuinely impressed with United ELDT's efforts to make professional driving education accessible to a wider audience.
+                  As a native Spanish speaker, finding the Class A ELDT course in my language was a breath of fresh air. United ELDT's commitment to offering the course in eight different languages, including Spanish, is truly unparalleled in the USA. The material, professionally tailored by industry experts, was accessible and engaging. 
 
                   </div>
                   <div class="d-flex  marginabove">
@@ -116,7 +116,7 @@ export default function FeedbackSliderWithFunFacts({ language }) {
     <div className="right-block">
                 <div className="card-custom bg-white text-dark rounded-xl card">
                   <div style={{ lineHeight: "160%", marginTop: "20px" }}>
-                  I was thrilled to discover that United ELDT offers the Hazmat endorsement course in Hindi. Being one of the only platforms in the USA to provide such a wide range of language options, including Hindi, United ELDT has set a high standard for accessible education in the transportation sector. The course was meticulously crafted, reflecting the expertise of leading professionals. The ability to study in my native language made complex regulations and safety practices much easier to understand, enhancing my learning experience significantly.
+                  I was thrilled to discover that United ELDT offers the Hazmat endorsement course in Hindi. Being one of the only platforms in the USA to provide such a wide range of language options, including Hindi, United ELDT has set a high standard for accessible education in the transportation sector. The course was meticulously crafted, reflecting the expertise of leading professionals. 
                   </div>
                   <div class="d-flex  marginabove">
                     <img
