@@ -976,11 +976,7 @@ textarea.form-control {
   .callphone-block{
     height: auto !important;
   }
-  .section-title {
-    text-align: left;
-    /* margin-bottom: 40px; */
-    /* max-width: initial; */
-  }
+ 
   .section-title .sub {
     margin: 0;
   }
@@ -1044,10 +1040,11 @@ textarea.form-control {
 }
 @media (max-width: 767px) {
   .section-title .sub-title {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 28.8px;
     display: block;
   }
+ 
   .subscribe-content .newsletter-form .input-newsletter{
     border: 2px solid #f4f4f4 !important;
     margin-bottom: 0px !important;
@@ -3248,9 +3245,33 @@ textarea.form-control {
 .card-custom{
   padding: 20px;
 }
+.toper2{
+  margin-top: 35px;
+}
+.imageofallflags{
+  width: 60%;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+.anothertitleforcards{
+  display: none;
+}
 @media (max-width: 786px) {
   .subscribe-content .newsletter-form{
     width: 100% !important;
+  }
+  .anothertitleforcards{
+    display: block;
+  }
+  .toper2{
+    margin-top: 10px;
+  }
+  .Iconscovers{
+    display: none;
+  }
+
+  .titleforcards{
+    display: none;
   }
   .card-custom{
     height: 450px;

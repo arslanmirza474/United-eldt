@@ -198,7 +198,17 @@ flex: 0 0 auto;
     padding: 20px;
     margin: auto;
     /* width:368px; */
-    height: 542px;
+    height: 605px;
+}
+.categoria2{
+    color: #2C292A;
+font-family: Inter;
+font-size: 14px;
+font-style: normal;
+font-weight: 300;
+line-height: 160%; /* 22.4px */
+letter-spacing: 0.7px;
+margin-left: 20px;
 }
 .downicon{
     align-items: end;
@@ -721,7 +731,7 @@ margin-top: 24px;
     font-size: 12px;
 }
 .buy-button{
-    height: 40px;
+    height: 56px;
 }
 
 }
@@ -733,6 +743,9 @@ margin-top: 24px;
     .straightcard{
         display: none;
     }
+   .buy-button {
+    margin-top: 25px !important;
+   }
     .custom-modal {
         top: 0;
         width: 100%;
@@ -765,12 +778,12 @@ margin-top: 24px;
        .card-content{
         width:100% !important;
         margin: auto;
-        height: 542px;
+        height: auto !important;
     }
 }
 @media (max-width: 1000px) {
     .card-content{
-     width:368px;
+     width:auto;
      margin: auto;
      height: 542px;
  }

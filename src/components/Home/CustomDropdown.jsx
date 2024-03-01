@@ -1,6 +1,8 @@
 import React, { useEffect, useState,useRef } from 'react';
 import { Translator, Translate } from "react-auto-translate";
 import { motion } from 'framer-motion';
+import imageflags from "./images/Frame 6707.png"
+import { Avatar } from 'antd';
 function CustomSelect({ options, handleLanguageChange,language,plans,showModal,large,medium,showCancelButton,handleNavigationClick }) {
   const [visibleItems, setVisibleItems] = useState(1);
   const [startIndex, setStartIndex] = useState(0);
@@ -8,7 +10,7 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
   const [mediumscreen, setMediumscreen] = useState(medium);
   const [dropdownStates, setDropdownStates] = useState([]);
   const [touchPosition, setTouchPosition] = useState(null);
-
+  const [errorPlanId, setErrorPlanId] = useState(null);
 
 
   useEffect(() => {
@@ -137,8 +139,7 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
     setDropdownStates(prevStates => {
       const updatedStates = [...prevStates];
       updatedStates[index] = {
-        ...updatedStates[index],
-        selectedOption: option,
+      
         isOpen: false // Close the dropdown after selecting an option
       };
       return updatedStates;
@@ -164,7 +165,15 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
     setStartIndex(index);
   };
 
-
+  const handleClickBuyNow = (planId) => {
+    const plan = plans.find(plan => plan._id === planId);
+    if (!plan?.language) {
+        setErrorPlanId(planId);
+    } else {
+        setErrorPlanId(null);
+        showModal(plan);
+    }
+};
   return (
     <>
      <Translator
@@ -218,41 +227,66 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
 
                             <strong className="strongcontent">  <Translate>{plan.category}</Translate></strong>
                           </div>
+                          <div className="categoria2">
+
+
+<span> <Translate>Last update </Translate></span>
+<br></br>
+
+<strong className="strongcontent">  <Translate>07/07/2023</Translate></strong>
+</div>
 
                         </div>
-
-                        <div className="dropdown toper" >
+<div className='imageofallflags'>
+<img src={imageflags} alt='image'/>
+</div>
+                        <div className="dropdown toper2" >
                           <Translate>Select the desired language:</Translate><br></br>
                           <div className="custom-select mt-2">
                           <div className="selected-option" onClick={() => toggleDropdown(index)}>
-  <div className='d-flex'>
-  <img src={options.find(option => option.value === plan.language)?.image || options.find(option => option.value === "English")?.image} alt={plan.language || "English"} className="language-image" />
-    <span className='mx-2'>{plan?.language ||"English" }</span>
-  </div>
-  <i class="fa-solid fa-angle-down downicon"></i>
-</div>
+                                        <div>
+                                           {plan.language ?
+                                            <>
+                                                <img src={options.find(option => option.value === plan.language)?.image} alt={plan.language} className="language-image" />
+                                                <span className='mx-2'>{plan.language}</span>
+                                            </>
+                                            :
+                                            <>
+<Avatar/>                                                                                        <span className='mx-2'><Translate>Select language</Translate></span>
 
-{dropdownStates[index] && dropdownStates[index]?.isOpen && (
-  <div className="options dropoptions">
-    {options.map((option) => (
-      <div
-        key={option?.value}
-        className="option"
-        onClick={() => handleOptionSelect(option, index, plan._id)}
-      >
-        <img src={option?.image} alt={option?.label} className="language-image" />
-        <span>{option?.label}</span>
-      </div>
-    ))}
-  </div>
-)}
-
+                                            </>
+                                        }
+                                        </div>
+                                       
+                                        <i className="fa-solid fa-angle-down downicon"></i>
+                                    </div>
+                                    {errorPlanId === plan._id && !plan.language && (
+                                        <div className="error-message"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14Z" stroke="#FE2727" stroke-width="1.5" stroke-miterlimit="10"/>
+                                        <path d="M8 5V8.5" stroke="#FE2727" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M8 11.5C8.41421 11.5 8.75 11.1642 8.75 10.75C8.75 10.3358 8.41421 10 8 10C7.58579 10 7.25 10.3358 7.25 10.75C7.25 11.1642 7.58579 11.5 8 11.5Z" fill="#FE2727"/>
+                                      </svg>   <span className='mx-2'>Please select a language</span></div>
+                                    )}
+                                    {dropdownStates[index]?.isOpen && (
+                                        <div className="options dropoptions">
+                                            {options.map((option) => (
+                                                <div
+                                                    key={option.value}
+                                                    className="option"
+                                                    onClick={() => handleOptionSelect(option, index, plan._id)}
+                                                >
+                                                    <img src={option.image} alt={option.label} className="language-image" />
+                                                    <span>{option.label}</span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
 
 
             </div>
     </div>
-
-<div className="toper   Acesso">
+<div className='Iconscovers'>
+  <div className="toper   Acesso">
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -309,13 +343,16 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
   </svg>{" "}
   <span  className="mx-2"><Translate>TPR Certified:</Translate><strong className="strong-text"> Yes</strong> </span>
 </div>
+</div>
+
+
 <button
-  className=" buy-button "
-  style={{ marginTop: "40px" }}
-  onClick={() => { showModal(plan) }}
->
-  <Translate>Buy Now</Translate>
-</button>
+                                className="buy-button"
+                                style={{ marginTop: "40px" }}
+                                onClick={() => handleClickBuyNow(plan._id)}
+                            >
+                                <Translate>Buy Now</Translate>
+                            </button>
 </motion.div>
 ))}
   

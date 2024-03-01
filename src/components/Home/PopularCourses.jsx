@@ -253,8 +253,8 @@ if(response.data.available === true ){
       >
         <div className="courses-area tw-my-3" id="courses">
           <div className="container p-4">
-            <div className="section-title">
-              <span className="sub-title">
+            <div className="section-title titleforcards">
+              <span className="sub-title ">
                 <Translate>Take the course your way</Translate>
               </span>
               <h3 className="tab-title" >
@@ -265,6 +265,15 @@ if(response.data.available === true ){
                   Enjoy high-level learning methods; you are the creator of your own career, and we will guide you every step of the way
                 </Translate>
               </span>
+            </div>
+            <div className="section-title anothertitleforcards">
+              <span className="sub-title">
+                <Translate>Take the course your way</Translate>
+              </span>
+              <h3 className="tab-title" >
+                <Translate>Choose your course language</Translate>
+              </h3>
+             
             </div>
 
 
