@@ -44,7 +44,7 @@ export default function FeedbackSliderWithFunFacts({ language }) {
                   </Translate>
                 </p>
               </div>
-              <div className="right_side">
+              <div className="right_side rightslidercover">
                   <div className="svgcontain">
               <svg xmlns="http://www.w3.org/2000/svg" width="68" height="69" viewBox="0 0 68 69" fill="none">
   <g filter="url(#filter0_d_2593_51706)">
@@ -87,7 +87,7 @@ export default function FeedbackSliderWithFunFacts({ language }) {
   </defs>
 </svg></div>
 
-           <Carousel autoplay={{ interval: 5000 }}>
+           <Carousel >
    
     <div className="carousel_cover">
     <div className="right-block">

@@ -45,6 +45,7 @@ line-height: 32px; /* 160% */
     position: absolute;
     bottom: 0px;
     left: 23px;
+    padding-bottom: 30px;
 }
 .card-custom{
   font-size: 15px;
@@ -3303,6 +3304,28 @@ padding-top: 0px !important;
 @media (max-width: 786px) {
   .subscribe-content .newsletter-form{
     width: 100% !important;
+  }
+  .subscribe-area {
+    margin-top: 200px;
+  }
+  .rightslidercover{
+    position: relative;
+    top: 150px;
+  }
+  .ant-carousel .slick-dots li{
+    width: 15px !important;
+     
+  }
+  .ant-carousel .slick-dots li.slick-active{
+    width: 100px !important;
+  }
+  .slick-dots.slick-dots-bottom{
+   position: absolute;
+   bottom: 100%;
+   justify-content: end;
+  }
+  .card-custom {
+    border-radius: 16px;
   }
   .anothertitleforcards{
     display: block;
