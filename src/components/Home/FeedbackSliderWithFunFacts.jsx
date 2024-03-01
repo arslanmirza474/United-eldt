@@ -137,7 +137,7 @@ export default function FeedbackSliderWithFunFacts({ language }) {
     <div className="right-block">
                 <div className="card-custom bg-white text-dark rounded-xl card">
                   <div style={{ lineHeight: "160%", marginTop: "20px" }}>
-                  Initially skeptical about online CDL endorsement platforms, my experience here shifted my view. The content was current, relevant, and engaging, making learning intuitive. Interactive quizzes notably boosted my information retention. This platform's commitment to delivering a comprehensive educational resource is truly commendable. I'm deeply appreciative of this effective and well-structured learning opportunity.
+                  Initially skeptical about online CDL endorsement platforms, my experience here shifted my view. The content was current, relevant, and engaging, making learning intuitive. Interactive quizzes notably boosted my information retention. This platform's commitment to delivering a comprehensive educational resource is truly commendable.
                   </div>
                   <div class="d-flex  marginabove">
                     <img
