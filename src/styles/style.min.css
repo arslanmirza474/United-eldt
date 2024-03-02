@@ -3283,6 +3283,10 @@ textarea.form-control {
   flex-wrap: nowrap;
   
 }
+.line-flag {
+  width: 289px;
+  height: 49px;
+}
 .imageforbanner{
   display: none;
 }

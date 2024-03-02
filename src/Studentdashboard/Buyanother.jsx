@@ -15,7 +15,7 @@ function Buyanother({handleNavigationClick}){
   const [medium, setMedium]=useState(2)
   return(
         <>
-        <div className="container maincontainerforstudent">
+        <div className=" maincontainerforstudent">
                           <Elements stripe={stripePromise}><PopularCourses id="targetSection" language={languageState.language.value} handleNavigationClick={handleNavigationClick} large={large} medium={medium} showCancelButton={false}/></Elements> 
 
         </div>

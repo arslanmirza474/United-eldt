@@ -816,6 +816,12 @@ margin-top: 24px;
   .marg{
     margin-top: 10px;
   }
+  .countryimg{
+    border: 7px solid #2C292A;
+    border-radius: 50%;
+    position: relative;
+    left: 10px;
+  }
 @media (max-width: 786px) {
        .card-content{
         margin: auto;
