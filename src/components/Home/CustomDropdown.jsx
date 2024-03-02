@@ -24,7 +24,7 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
   };
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: false,
     dotsClass: 'custom-dots',
     speed: 500,
     slidesToShow: 1,
@@ -84,7 +84,9 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
   
 
   const handleClickBuyNow = (planId) => {
+    console.log("hello")
     const plan = plans.find(plan => plan._id === planId);
+    console.log(plan)
     if (!plan?.language) {
         setErrorPlanId(planId);
     } else {

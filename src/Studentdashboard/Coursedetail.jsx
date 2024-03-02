@@ -10,7 +10,7 @@ function Coursedetail() {
   const [userId, setUserId] = useState("");
   const [comp, setComp] = useState([]);
   const [uncomp, setUncomp] = useState([]);
-const [loading, setLoading] = useState(false)
+const [loading, setLoading] = useState(true)
   useEffect(() => {
     const personId = localStorage.getItem("userId");
     if (personId) {
