@@ -159,7 +159,8 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
             defaultValue=""
             popupClassName="custom-dropdown"
             listHeight="416px"
-            popupMatchSelectWidth={false} 
+            popupMatchSelectWidth // Set dropdown to match width of select
+            dropdownPlacement="bottomLeft"
             placement="bottomLeft" 
             dropdownStyle={{ maxHeight: "500px", overflowY: "hidden" }} 
             onChange={(value) => handleOptionSelect(value,index, plan._id)}

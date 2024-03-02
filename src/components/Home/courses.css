@@ -762,7 +762,10 @@ margin-top: 24px;
 }
 
 }
-
+.ant-select-selection-item img{
+    width: 30px;
+    height: 30px;
+}
 .custom-modal {
     top: 20px;
   }

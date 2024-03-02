@@ -4,12 +4,13 @@ import { jwtDecode } from "jwt-decode";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { Progress, Space } from 'antd';
+import Loader from "./Loader";
 
 function Coursedetail() {
   const [userId, setUserId] = useState("");
   const [comp, setComp] = useState([]);
   const [uncomp, setUncomp] = useState([]);
-
+const [loading, setLoading] = useState(false)
   useEffect(() => {
     const personId = localStorage.getItem("userId");
     if (personId) {
@@ -20,11 +21,13 @@ function Coursedetail() {
   }, [userId]);
 
   const fetchUserInfo = () => {
+    setLoading(true)
     axios
       .get(`https://server-of-united-eldt.vercel.app/api/student/${userId}/courses`)
       .then((res) => {
         setComp(res.data.completedCourses);
         setUncomp(res.data.uncompletedCourses);
+        setLoading(false)
       })
       .catch((error) => {
         console.error("Error fetching user info:", error);
@@ -75,8 +78,9 @@ function Coursedetail() {
 
         </Link>
       </div>
-   
-      <div className="main-contain-regist">
+   {
+    loading ?(<Loader/>):(
+         <div className="main-contain-regist">
         <div className="card-head">My courses</div>
         <div className="card-body">
         <div class="accordion" id="accordionExample">
@@ -222,6 +226,9 @@ function Coursedetail() {
           </div>
         </div>
       </div>
+    )
+   }
+   
     </div>
   );
 }
