@@ -770,6 +770,9 @@ margin-top: 24px;
     .straightcard{
         display: none;
     }
+    .maincontentslider{
+        margin-bottom: 60px;
+    }
   .maincontentslider  .slick-dots.slick-dots-bottom{
     display: none !important;
   }
