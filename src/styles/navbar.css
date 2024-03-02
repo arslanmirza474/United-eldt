@@ -1658,6 +1658,9 @@ line-height: 24px; /* 150% */
 letter-spacing: 0.32px;
 text-decoration-line: underline;
   }
+  .left-hero-block .main-block-buttons .contact-us:hover{
+	background-color: none;
+  }
 	.block-right-topo {
 		padding: 34px 34px 0 34px;
 	}
