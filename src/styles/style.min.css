@@ -1085,7 +1085,7 @@ textarea.form-control {
     margin-bottom: 16px;
   }
   .about-area .about-content .sub-title {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 28.8px;
   }
   .about-area .about-content .sub,
@@ -3301,27 +3301,66 @@ textarea.form-control {
 padding-top: 0px !important;
 }
 }
+.maincontainerforstudent .imageforbanner{
+  display: none;
+}
 @media (max-width: 786px) {
   .subscribe-content .newsletter-form{
     width: 100% !important;
+  }
+  .call-to-phone-block .container-full{
+    padding: 0px;
+  }
+  .call-to-phone-block .container-full .callphone-block{
+    border-radius: 0px;
+    background-image: url(./cover.png);
+  }
+  .callphone-block .right-side p{
+    color: #FFF;
+font-family: Inter;
+font-size: 16px;
+font-style: normal;
+font-weight: 300;
+line-height: 140%; /* 22.4px */
+letter-spacing: 0.64px;
+width: 295px;
+  }
+  .callphone-block .right-side h3{
+    color: #FFF;
+font-family: Inter;
+font-size: 24px;
+font-style: normal;
+font-weight: 800;
+line-height: 120%; /* 28.8px */
+letter-spacing: 1.2px;
   }
   .subscribe-area {
     margin-top: 200px;
   }
   .rightslidercover{
     position: relative;
-    top: 150px;
+  
   }
   .ant-carousel .slick-dots li{
-    width: 15px !important;
+    width: 12px !important;
+    height: 12px !important;
      
   }
   .ant-carousel .slick-dots li.slick-active{
     width: 100px !important;
   }
+  .footer-area{
+    margin-top: 140px;
+  }
+  .feedback-area{
+    height: 700px !important;
+  }
+  .subscribe-area{
+    display: none;
+  }
   .slick-dots.slick-dots-bottom{
    position: absolute;
-   bottom: 100%;
+   bottom: 90%;
    justify-content: end;
   }
   .card-custom {
@@ -6539,13 +6578,7 @@ padding-bottom: 150px;
     border-bottom: 2px solid rgba(44, 41, 42, 0.15);
   }
 }
-@media (max-width:360px) {
-  .callphone-block{
-    background: url("https://res.cloudinary.com/dezhgxayn/image/upload/v1706877715/forsmall_screen_f2vxqq.png") !important;
-    background-repeat: no-repeat !important;
-    background-size: cover;
-  }
-}
+
 @media (max-width: 990px) {
   .subscribe-content .newsletter-form{
     width: 80%;

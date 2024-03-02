@@ -195,8 +195,7 @@ if(response.data.available === true ){
 
   const handleLanguageChange = (selectedOption, planId) => {
     // Update language in state
-    setCoulan(selectedOption.value);
-
+    setCoulan(selectedOption);
     // Find the index of the plan with the specified planId
     const planIndex = plans.findIndex(plan => plan._id === planId);
 
@@ -206,12 +205,12 @@ if(response.data.available === true ){
 
       // If language property doesn't exist in the plan, add it
       if (!updatedPlans[planIndex].language) {
-        updatedPlans[planIndex].language = selectedOption.value;
+        updatedPlans[planIndex].language = selectedOption;
       } else {
         // Update the language of the plan with the specified planId
         updatedPlans[planIndex] = {
           ...updatedPlans[planIndex],
-          language: selectedOption.value,
+          language: selectedOption,
         };
       }
 

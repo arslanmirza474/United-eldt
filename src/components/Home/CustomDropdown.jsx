@@ -3,169 +3,85 @@ import { Translator, Translate } from "react-auto-translate";
 import { motion } from 'framer-motion';
 import imageflags from "./images/Frame 6707.png"
 import { Avatar } from 'antd';
+import { Carousel } from 'antd';
+import { Select } from 'antd';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+const { Option } = Select;
 function CustomSelect({ options, handleLanguageChange,language,plans,showModal,large,medium,showCancelButton,handleNavigationClick }) {
-  const [visibleItems, setVisibleItems] = useState(1);
-  const [startIndex, setStartIndex] = useState(0);
-  const [largescreen, setLargescreen] = useState(large);
-  const [mediumscreen, setMediumscreen] = useState(medium);
-  const [dropdownStates, setDropdownStates] = useState([]);
-  const [touchPosition, setTouchPosition] = useState(null);
   const [errorPlanId, setErrorPlanId] = useState(null);
 
 
-  useEffect(() => {
-    const handleTouchStart = (e) => {
-      e.preventDefault(); 
-      const touchDown = e.touches[0].clientX;
-      setTouchPosition(touchDown);
-    };
-
-    const handleTouchMove = (e) => {
-      e.preventDefault(); 
-      if (!touchPosition) {
-        return;
-      }
-
-      const currentTouch = e.touches[0].clientX;
-      const diff = touchPosition - currentTouch;
-
-      if (diff > 5) {
-        showNextItem();
-      }
-
-      if (diff < -5) {
-        showPreviousItem();
-      }
-
-      setTouchPosition(null);
-    };
-
-    document.addEventListener('touchstart', handleTouchStart);
-    document.addEventListener('touchmove', handleTouchMove);
-
-    return () => {
-      document.removeEventListener('touchstart', handleTouchStart);
-      document.removeEventListener('touchmove', handleTouchMove);
-    };
-  });
-  useEffect(() => {
-    const updateVisibleItems = () => {
-      const screenWidth = window.innerWidth;
-      if (screenWidth >= 1920) {
-        setVisibleItems(largescreen);
-      } else if (screenWidth >= 1440) {
-        setVisibleItems(mediumscreen);
-      } else if (screenWidth >= 1080) {
-        setVisibleItems(2);
-      } else if (screenWidth >= 786) {
-        setVisibleItems(2);
-      } else {
-        setVisibleItems(1);
-      }
-  
-      // Adjust startIndex if it exceeds the number of plans
-      if (startIndex + visibleItems > plans.length) {
-        setStartIndex(plans.length - visibleItems);
-      }
-    };
-  
-    updateVisibleItems();
-  
-    const handleResize = () => {
-      updateVisibleItems();
-    };
-  
-    window.addEventListener('resize', handleResize);
-  
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [startIndex, visibleItems, plans.length]);
-  
-  
-  useEffect(() => {
-    const initialDropdownState = plans.map((plan) => {
-      // Find the option whose value matches plan.language
-      const selectedOption = options.find(option => option.value === plan.language) || options[0];
-      
-      return {
-        isOpen: false,
-        selectedOption: selectedOption
-      };
-    });
-    setDropdownStates(initialDropdownState);
-  }, [plans, options]);
-  
-  
-  
-  
-
-  const handleClickOutside = (event, index) => {
-    const dropdownContainers = document.querySelectorAll('.card-content');
-    dropdownContainers.forEach((container, idx) => {
-      if (index === idx && !container.contains(event.target)) {
-        setDropdownStates(prevStates => {
-          const updatedStates = [...prevStates];
-          updatedStates[index].isOpen = false;
-          return updatedStates;
-        });
-      }
-    });
+ 
+  let sliderRef = useRef(null);
+  const next = () => {
+    sliderRef.slickNext();
   };
-
-  useEffect(() => {
-    const handleOutsideClick = (event) => {
-      dropdownStates.forEach((state, index) => {
-        handleClickOutside(event, index);
-      });
-    };
-
-    document.addEventListener('mousedown', handleOutsideClick);
-    return () => {
-      document.removeEventListener('mousedown', handleOutsideClick);
-    };
-  }, [dropdownStates]);
-
-  const toggleDropdown = (index) => {
-    setDropdownStates((prevStates) => {
-      const updatedStates = [...prevStates];
-      updatedStates[index].isOpen = !updatedStates[index].isOpen;
-      return updatedStates;
-    });
+  const previous = () => {
+    sliderRef.slickPrev();
   };
+  const settings = {
+    dots: true,
+    infinite: true,
+    dotsClass: 'custom-dots',
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 2000,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 1440,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 1080,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 786,
+        settings: {
+          slidesToShow: 1.3, // Show a bit of the previous and next cards
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 1.3, // Show a bit of the previous and next cards
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
+  
+  
 
+
+  
 
  
   const handleOptionSelect = (option, index, planId) => {
     
-    setDropdownStates(prevStates => {
-      const updatedStates = [...prevStates];
-      updatedStates[index] = {
-      
-        isOpen: false // Close the dropdown after selecting an option
-      };
-      return updatedStates;
-    });
     handleLanguageChange(option, planId);
   };
   
-  const showNextItem = () => {
-    if (startIndex + visibleItems < plans.length) {
-      setStartIndex(startIndex + 1);
-    }
-  };
-  
-  const showPreviousItem = () => {
-    if (startIndex > 0) {
-      setStartIndex(startIndex - 1);
-    }
-  };
-  
-  
-
-  const showItem = (index) => {
-    setStartIndex(index);
-  };
 
   const handleClickBuyNow = (planId) => {
     const plan = plans.find(plan => plan._id === planId);
@@ -183,31 +99,26 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
         to={language || "en"}
         googleApiKey={process.env.REACT_APP_GOOGLE_TRANSLATE_KEY}
       >
-       <div className='navigationbtn'>
-    <button 
-      className="nextbtns" 
-      onClick={showPreviousItem} 
-      disabled={startIndex === 0}>
-        <i class="fa-solid fa-angle-left"></i>
-    </button>
-    <button 
-      className='prebtns' 
-      onClick={showNextItem} 
-      disabled={startIndex >= plans.length - visibleItems}>
-        <i class="fa-solid fa-angle-right"></i>
-    </button>
-  </div>
-<div className='customslider'>
-  <div className='container maincontentslider'>
-            <div className='mainconofslider' >                {plans.slice(startIndex, startIndex + visibleItems).map((plan, index) => (
-                        <motion.div
+   
+
+<div className='container maincontentslider'> 
+<div style={{ textAlign: "center" }}>
+        <button className="button" onClick={previous}>
+          Previous
+        </button>
+        <button className="button" onClick={next}>
+          Next
+        </button>
+      </div>    
+<Slider  ref={slider => {
+          sliderRef = slider;
+        }}
+        {...settings} >
+                        {plans.map((plan, index) => (
+                        <div
                         key={plan._id}
-                        className=" card-content mx-auto "
-                        initial={{ opacity: 0, x: -100 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: 100 }}
-                        transition={{ duration: 0.5 }}
-                      >
+                        className=" card-content mx-auto " 
+                      >  <div className='mainconofslider' >  
                         <div className="plancard d-flex mt-2">
                           <img src={plan.image} height="58px" alt="plan1" />
                           <span className="flex-end">
@@ -242,51 +153,33 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
 <div className='imageofallflags'>
 <img src={imageflags} alt='image'/>
 </div>
-                        <div className="dropdown toper2" >
-                          <Translate>Select the desired language:</Translate><br></br>
-                          <div className="custom-select mt-2">
-                          <div className="selected-option" onClick={() => toggleDropdown(index)}>
-                                        <div>
-                                           {plan.language ?
-                                            <>
-                                                <img src={options.find(option => option.value === plan.language)?.image} alt={plan.language} className="language-image" />
-                                                <span className='mx-2'>{plan.language}</span>
-                                            </>
-                                            :
-                                            <>
-<Avatar/>                                                                                        <span className='mx-2'><Translate>Select language</Translate></span>
 
-                                            </>
-                                        }
-                                        </div>
-                                       
-                                        <i className="fa-solid fa-angle-down downicon"></i>
-                                    </div>
-                                    {errorPlanId === plan._id && !plan.language && (
+    <Select
+            style={{ width: "100%",borderRadius:"7px",border:"1px solid #D2D2D2",height:"48px" ,display:"flex"}}
+            defaultValue="Select language"
+            dropdownClassName="custom-dropdown"
+            onChange={(value) => handleOptionSelect(value,index, plan._id)}
+            onFocus={(e) => e.target.style.boxShadow = "transparent"} // Remove blue border on focus
+            onBlur={(e) => e.target.style.borderColor = "#D2D2D2"} 
+          >
+            <Option value="">
+              <Avatar /> Select language
+            </Option>
+            {options.map((option) => (
+        <Option key={option.value} value={option.label}>
+          <img src={option.image} alt={option.label} className="language-image" />
+          <span>{option.label}</span>
+        </Option>
+      ))}
+            {/* Render other language options here */}
+          </Select>
+          {errorPlanId === plan._id && !plan.language && (
                                         <div className="error-message"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                         <path d="M8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14Z" stroke="#FE2727" stroke-width="1.5" stroke-miterlimit="10"/>
                                         <path d="M8 5V8.5" stroke="#FE2727" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                         <path d="M8 11.5C8.41421 11.5 8.75 11.1642 8.75 10.75C8.75 10.3358 8.41421 10 8 10C7.58579 10 7.25 10.3358 7.25 10.75C7.25 11.1642 7.58579 11.5 8 11.5Z" fill="#FE2727"/>
                                       </svg>   <span className='mx-2'>Please select a language</span></div>
                                     )}
-                                    {dropdownStates[index]?.isOpen && (
-                                        <div className="options dropoptions">
-                                            {options.map((option) => (
-                                                <div
-                                                    key={option.value}
-                                                    className="option"
-                                                    onClick={() => handleOptionSelect(option, index, plan._id)}
-                                                >
-                                                    <img src={option.image} alt={option.label} className="language-image" />
-                                                    <span>{option.label}</span>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    )}
-
-
-            </div>
-    </div>
 <div className='Iconscovers'>
   <div className="toper   Acesso">
   <svg
@@ -348,6 +241,7 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
 </div>
 
 
+
 <button
                                 className="buy-button"
                                 style={{ marginTop: "40px" }}
@@ -355,25 +249,17 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
                             >
                                 <Translate>Buy Now</Translate>
                             </button>
-</motion.div>
+                            </div>
+</div>
 ))}
   
 
-</div>
-<div className="navigation-dots">
-            {plans.map((plan, index) => (
-              <span
-                key={plan._id}
-                className={index === startIndex ? "dot active" : "dot"}
-                onClick={() => showItem(index)}
-              ></span>
-            ))}
-          </div>
-        </div>
-</div>
-        
-    
 
+
+       
+</Slider>
+
+</div>
      
 </Translator>       
     </>

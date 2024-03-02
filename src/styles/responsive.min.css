@@ -487,9 +487,32 @@
     }
 
     .about-content .default-btn {
-        margin-top: 25px
+        margin-top: 25px;
+        width:100%;
+        border-radius: 8px;
+background: #FBB723;
     }
-
+    .about-area .about-image{
+        display: none;
+    }
+    .feedback-content .sub-title{
+        font-size: 20px;
+    }
+    .feedback-content .title{
+        font-size: 24px !important;
+        max-width: 307px;
+    }
+    .feedback-content .sub{
+        color: #FFF;
+font-family: Inter;
+font-size: 16px;
+font-style: normal;
+font-weight: 300;
+line-height: 140%; /* 22.4px */
+letter-spacing: 0.8px;
+max-width: 307px;
+        
+    }
     .about-content-box,
     .slogan-content {
         padding-left: 0;

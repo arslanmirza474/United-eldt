@@ -134,18 +134,12 @@ export default function HomeAboutUs({ language }) {
                 <h2 className="title">
                   <Translate>
                   
-                    Welcome to United ELDT - Your Gateway to Professional
-                    Driving Careers
+                  Welcome to United ELDT - where driving careers begin.
                   </Translate>
                 </h2>
                 <p className="sub">
                   <Translate>
-                    At United ELDT, we understand that becoming a skilled and
-                    confident driver is the first step towards a successful
-                    career on the road. As a leading provider of Entry Level
-                    Driving Training (ELDT) courses online, we are committed to
-                    helping aspiring drivers like you achieve their goals and
-                    unlock a world of opportunities.
+                  At United ELDT, we know that becoming a skilled driver is your first step to a successful career. As a top ELDT course provider online, we're dedicated to helping you reach your driving goals and open doors to new opportunities.
                   </Translate>
                   <div className="tw-flex lg:tw-justify-start tw-justify-center">
                     <button className="default-btn lg:tw-w-1/2 " onClick={handleClick}>
