@@ -130,6 +130,7 @@ useEffect(() => {
                     setFlg(language.className);
                     setNameLang(language.name);
                     setOpenLang(false); // Close the language dropdown after selecting a language
+                    toggleNavbar()
                   }}
                   name={language.name}
                   value={language.value}
