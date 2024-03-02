@@ -9,16 +9,7 @@
   .logocon{
     height: 70vh;
   }
-  .loader {
-    width: 1em;
-    height: 1em;
-    border-radius: 50%;
-    position: relative;
-    text-indent: -9999em;
-    animation: mulShdSpin 1.1s infinite ease;
-    transform: translateZ(0);
-    margin-right: -54px;
-  }
+ 
  .comlogo{
   width: 100px;
   position: absolute;
@@ -26,21 +17,32 @@
   left: 42px;
 }
   
-.loadermain {
+.custom-loader {
   width: 100px;
   height: 100px;
+  display: grid;
   border-radius: 50%;
-  padding: 1.4px;
-  background: conic-gradient(#0000 10%,#f1b800) content-box;
-  -webkit-mask: repeating-conic-gradient(#0000 0deg,#000 1deg 20deg,#0000 21deg 36deg),
-  radial-gradient(farthest-side,#0000 calc(100% - 11.5px),#000 calc(100% - 11.5px));
--webkit-mask-composite: destination-in;
-mask-composite: intersect;
-animation: spinner-d55elj 1.2s infinite steps(10);
+  -webkit-mask:radial-gradient(farthest-side,#0000 40%,#000 41%);
+  background:
+    linear-gradient(0deg ,#FBB72380 50%,#FBB723FF 0) center/8px 100%,
+    linear-gradient(90deg,#FBB72340 50%,#FBB723BF 0) center/100% 8px;
+  background-repeat: no-repeat;
+  animation: s3 1s infinite steps(12);
+}
+.custom-loader::before,
+.custom-loader::after {
+   content:"";
+   grid-area: 1/1;
+   border-radius: 50%;
+   background:inherit;
+   opacity: 0.915;
+   transform: rotate(30deg);
+}
+.custom-loader::after {
+   opacity: 0.83;
+   transform: rotate(60deg);
 }
 
-@keyframes spinner-d55elj {
-  to {
-     transform: rotate(1turn);
-  }
+@keyframes s3 {
+  100% {transform: rotate(1turn)}
 }
