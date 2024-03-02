@@ -159,6 +159,8 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
             defaultValue="Select language"
             popupClassName="custom-dropdown"
             listHeight="416px"
+            popupMatchSelectWidth={false} 
+            placement="bottomLeft" 
             dropdownStyle={{ maxHeight: "500px", overflowY: "hidden" }} 
             onChange={(value) => handleOptionSelect(value,index, plan._id)}
             onFocus={(e) => e.target.style.boxShadow = "transparent"} // Remove blue border on focus
