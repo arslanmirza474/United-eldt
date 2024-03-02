@@ -26,7 +26,7 @@
         margin: auto;
     }
     .footer-content .item:nth-child(2){
-        max-width: 100% !important;
+        max-width: 99% !important;
     }
 }
 @media (max-width: 500px){

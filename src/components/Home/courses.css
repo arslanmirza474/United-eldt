@@ -813,7 +813,9 @@ margin-top: 24px;
 .slick-slide {
    gap: 20px; /* Adjust the margin as needed */
   }
-  
+  .marg{
+    margin-top: 10px;
+  }
 @media (max-width: 786px) {
        .card-content{
         margin: auto;

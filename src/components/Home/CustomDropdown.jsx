@@ -122,7 +122,7 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
                         className=" card-content mx-auto " 
                       >  <div className='mainconofslider' >  
                         <div className="plancard d-flex mt-2">
-                          <img src={plan.image} height="58px" alt="plan1" />
+                          <img src={plan.image} height="59px" width="59px" alt="plan1" />
                           <span className="flex-end">
 
 
@@ -132,7 +132,7 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
                         </div>
 
 
-                        <span className="classer">  <Translate>{plan.courseName}</Translate></span>
+                        <span className="classer marg">  <Translate>{plan.courseName}</Translate></span>
                         <div className="d-flex toper">
                           <div className="categoria">
 
@@ -174,7 +174,7 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
             </Option>
             {options.map((option) => (
         <Option key={option.value} value={option.label}>
-          <img src={option.image} alt={option.label} className="language-image" />
+          <img src={option.image} alt={option.label} width="24px" height="24px" className="language-image" />
           <span>{option.label}</span>
         </Option>
       ))}

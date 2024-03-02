@@ -1,7 +1,14 @@
 import axios, { Axios } from "axios";
 import { Translator, Translate } from "react-auto-translate";
 import { Link } from "react-router-dom";
-
+import barzil from "./images/BR Brazil.svg"
+import america from "./images/US United States of America (the).svg"
+import pakistan from "./images/PK Pakistan.svg"
+import india from "./images/IN India.svg"
+import russia from "./images/RU Russian Federation (the).svg"
+import france from "./images/FR France.svg"
+import arabic from "./images/EH Western Sahara.svg"
+import spain from "./images/ES Spain.svg"
 import "./courses.css"
 import { useState, useEffect, useRef } from 'react';
 import { Modal, notification } from 'antd';
@@ -48,14 +55,14 @@ export default function PopularCourses({ language ,showCancelButton,handleNaviga
       setBillingAddress(decoded.Address)
     }},[])
   const languageOptions = [
-    { value: 'English', label: 'English', image: "https://img.icons8.com/color/24/usa-circular.png", planId: null },
-    { value: 'Spanish', label: 'Spanish', image: "https://img.icons8.com/color/24/spain2-circular.png", planId: null },
-    { value: 'Portuguese', label: 'Portuguese', image: "https://img.icons8.com/color/24/brazil-circular.png", planId: null },
-    { value: 'Russian', label: 'Russian', image: "https://img.icons8.com/color/24/russian-federation-circular.png", planId: null },
-    { value: 'Arabic', label: 'Arabic', image: "https://img.icons8.com/color/24/palestine-circular.png", planId: null },
-    { value: 'Hindi', label: 'Hindi', image: "https://img.icons8.com/fluency/24/india-circular.png", planId: null },
-    { value: 'French', label: 'French', image: "https://img.icons8.com/color/24/france-circular.png", planId: null },
-    { value: 'Urdu', label: 'Urdu', image: "https://img.icons8.com/color/24/pakistan-circular.png", planId: null },
+    { value: 'English', label: 'English', image: america, planId: null },
+    { value: 'Spanish', label: 'Spanish', image: spain, planId: null },
+    { value: 'Portuguese', label: 'Portuguese', image: barzil, planId: null },
+    { value: 'Russian', label: 'Russian', image: russia, planId: null },
+    { value: 'Arabic', label: 'Arabic', image: arabic, planId: null },
+    { value: 'Hindi', label: 'Hindi', image: india, planId: null },
+    { value: 'French', label: 'French', image: france, planId: null },
+    { value: 'Urdu', label: 'Urdu', image: pakistan, planId: null },
   ];
   const visibleModal = () => {
     setSucc(true)

@@ -45,7 +45,7 @@ line-height: 32px; /* 160% */
     position: absolute;
     bottom: 0px;
     left: 23px;
-    padding-bottom: 9px;
+    padding-bottom: 35px;
 }
 .card-custom{
   font-size: 15px;
@@ -3324,7 +3324,9 @@ font-weight: 300;
 line-height: 140%; /* 22.4px */
 letter-spacing: 0.64px;
 width: 295px;
+margin-bottom: 50px !important;
   }
+  
   .callphone-block .right-side h3{
     color: #FFF;
 font-family: Inter;
@@ -3333,6 +3335,25 @@ font-style: normal;
 font-weight: 800;
 line-height: 120%; /* 28.8px */
 letter-spacing: 1.2px;
+margin-bottom: 16px !important;
+  }
+  .callphone-block .right-side .right-content .text-block{
+    margin-top: 24px;
+  }
+  .about-area .about-content .sub-title{
+    margin-bottom: 24px ;
+  }
+  .about-area .about-content h2{
+    margin-bottom: 24px;
+  }
+  .feedback-content .sub-title{
+    margin-bottom: 24px;
+  }
+  .feedback-content .title{
+    margin-bottom: 24px;
+  }
+  .feedback-content .sub{
+    margin-bottom: 50px;
   }
   .subscribe-area {
     margin-top: 200px;
@@ -3353,7 +3374,7 @@ letter-spacing: 1.2px;
     margin-top: 140px;
   }
   .feedback-area{
-    height: 625px !important;
+    height: 689px !important;
   }
   .subscribe-area{
     display: none;
@@ -3380,7 +3401,7 @@ letter-spacing: 1.2px;
     display: none;
   }
   .card-custom{
-    height: 300px !important;
+    height: 327px !important;
   }
   .about-area .about-image{
     width: 100% !important;
