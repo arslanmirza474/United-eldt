@@ -3,7 +3,7 @@ import { Translator, Translate } from "react-auto-translate";
 import OpenCloseItem from "../Faq/openCloseItem";
 import AboutFeaturesList from "./AboutFeaturesList";
 import { useSelector } from "react-redux";
-import aboutvid from "./Videoplace.jpg"
+import aboutvid from "./images/black-man-truck-driver-attaching-power-cables-from-2023-11-27-05-31-11-utc (1).jpg"
 
 const WhyChooseUs = () => {
 
@@ -131,18 +131,31 @@ export default function HomeAboutUs({ language }) {
                   <Translate>Online Learning</Translate>
                 </span>
 
-                <h2 className="title">
+                <h2 className="title mobileabout">
                   <Translate>
                   
                   Welcome to United ELDT - where driving careers begin.
                   </Translate>
                 </h2>
-                <p className="sub">
+                <h2 className="title desktopabout">
                   <Translate>
-                  At United ELDT, we know that becoming a skilled driver is your first step to a successful career. As a top ELDT course provider online, we're dedicated to helping you reach your driving goals and open doors to new opportunities.
+                  
+                  Welcome to United ELDT - your gateway to professional driving careers
                   </Translate>
+                </h2>
+                <p className="sub">
+                  <span className="mobileabout">
+                  <Translate>
+                 At United ELDT, we know that becoming a skilled driver is your first step to a successful career. As a top ELDT course provider online, we're dedicated to helping you reach your driving goals and open doors to new opportunities.
+                 </Translate> 
+                  </span>
+                  <span className="desktopabout textofdesk">
+                  <Translate>
+                  At United ELDT, we understand that becoming a skilled and confident driver is the first step towards a successful career on the road. As a leading provider of Entry Level Driving Training (ELDT) courses online, we are committed to helping aspiring drivers like you achieve their goals and unlock a world of opportunities.                 </Translate> 
+                  </span>
+                  
                   <div className="tw-flex lg:tw-justify-start tw-justify-center">
-                    <button className="default-btn lg:tw-w-1/2 " onClick={handleClick}>
+                    <button className="default-btn lg:tw-w-1/2  buttonofcourse" onClick={handleClick}>
                       View courses
                     </button>
                   </div>

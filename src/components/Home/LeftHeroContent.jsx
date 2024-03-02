@@ -4,7 +4,7 @@ import { styled } from "@mui/material/styles";
 import { Translator, Translate } from "react-auto-translate";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import allfalg from "./images/Frame 6707.png"
+import allfalg from "./images/Allflags.svg"
 const LeftHeroContent1 = styled("div")({});
 const Frame6818 = styled("div")({});
 const ObtenhaCertificaçãoDSpan1 = styled("span")({});

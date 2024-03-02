@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import logo from "./logo 1.svg";
 import "./quizles.css";
 import { Link, useNavigate } from "react-router-dom";
-
+import cart from "./add-cart (1).png"
 function Navba({ page, chapterid }) {
   const [chapter, setChapter] = useState("");
   const [lesson, setLesson] = useState("");
@@ -174,7 +174,7 @@ useEffect(() => {
               </li>
               <li className="nav-item newnavdesign" onClick={gotochapterlist}>
                 <Link to="/studentdash/buynew" className="nav-link d-flex" onClick={closeNavbar}>
-                <i class="fa-solid fa-cart-arrow-down"></i>
+                <img src={cart} alt="cart"/>
                                 Buy Another Course 
                 </Link>
               </li>
@@ -248,7 +248,7 @@ useEffect(() => {
               </li>
               <li className="nav-item newnavdesign" onClick={gotochapterlist}>
                 <Link to="/studentdash/buynew" className="nav-link d-flex" onClick={closeNavbar}>
-                <i class="fa-solid fa-cart-arrow-down"></i>
+                <img src={cart} alt="cart"/>
                                 Buy Another Course 
                 </Link>
               </li>

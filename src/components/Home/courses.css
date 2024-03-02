@@ -10,6 +10,10 @@ letter-spacing: 1.2px;
 .buynewcourse{
     display: none;
 }
+.imageofcards{
+    width: 59px;
+    height: 59px;
+}
 .toper{
     margin-top: 35px;
 }

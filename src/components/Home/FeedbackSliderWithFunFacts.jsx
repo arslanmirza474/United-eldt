@@ -116,7 +116,7 @@ export default function FeedbackSliderWithFunFacts({ language }) {
     <div className="right-block">
                 <div className="card-custom bg-white text-dark rounded-xl card">
                   <div style={{ lineHeight: "160%", marginTop: "20px" }}>
-                  I was thrilled to discover that United ELDT offers the Hazmat endorsement course in Hindi. Being one of the only platforms in the USA to provide such a wide range of language options, 
+                  I was thrilled to discover that United ELDT offers the Hazmat endorsement course in Hindi. Being one of the only platforms in the USA to provide such a wide range of language options. 
                   </div>
                   <div class="d-flex  marginabove">
                     <img

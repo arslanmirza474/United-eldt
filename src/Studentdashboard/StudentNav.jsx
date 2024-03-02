@@ -9,6 +9,7 @@ import Coursedetail from "./Coursedetail";
 import { jwtDecode } from "jwt-decode";
 import axios from 'axios';
 import Buyanother from "./Buyanother";
+import cart from "./add-cart (1).png"
 function StudentNav() {
   const [selectedPage, setSelectedPage] = useState("");
   const [loca, setLoca] = useState("")
@@ -135,7 +136,7 @@ function StudentNav() {
               </svg> My Account
             </li>
             <li className={` mainlink ${selectedPage === 'newcoursebuy' ? 'activateding' : ''}`} onClick={() => handleNavigationClick('newcoursebuy')}>
-              <i class="fa-solid fa-plus"></i> Buy  Another Course
+            <img src={cart} alt="cart"/>  Buy  Another Course
             </li>
             <Link to="/logout">
               <li className="mainlink">
@@ -202,7 +203,7 @@ function StudentNav() {
   </svg> My Account
 </li>
 <li className={` mainlink ${selectedPage === 'newcoursebuy' ? 'activateding' : ''}`} onClick={() => handleNavigationClick('newcoursebuy')}>
-  <i class="fa-solid fa-plus"></i> Buy  Another Course
+ <img src={cart} alt="cart"/> Buy  Another Course
 </li>
 <Link to="/logout">
   <li className="mainlink ">

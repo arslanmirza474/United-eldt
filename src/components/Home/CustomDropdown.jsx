@@ -1,7 +1,7 @@
 import React, { useEffect, useState,useRef } from 'react';
 import { Translator, Translate } from "react-auto-translate";
 import { motion } from 'framer-motion';
-import imageflags from "./images/Frame 6707.png"
+import imageflags from "./images/Yelloeflags.svg"
 import { Avatar } from 'antd';
 import { Carousel } from 'antd';
 import { Select } from 'antd';
@@ -122,7 +122,7 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
                         className=" card-content mx-auto " 
                       >  <div className='mainconofslider' >  
                         <div className="plancard d-flex mt-2">
-                          <img src={plan.image} height="59px" width="59px" alt="plan1" />
+                          <img src={plan.image} className='imageofcards' alt="plan1" />
                           <span className="flex-end">
 
 
