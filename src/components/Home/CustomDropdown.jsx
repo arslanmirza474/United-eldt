@@ -40,7 +40,7 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
         }
       },
       {
-        breakpoint: 1440,
+        breakpoint: 1650,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 2,
@@ -100,16 +100,16 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
         googleApiKey={process.env.REACT_APP_GOOGLE_TRANSLATE_KEY}
       >
    
-
+<div className='navigator' >
+        <button className="nextbtnfor"  onClick={previous}>
+        <i class="fa-solid fa-angle-left"></i>
+        </button>
+        <button className="nextbtnfor2" onClick={next}>
+        <i class="fa-solid fa-angle-right"></i>
+        </button>
+      </div>   
 <div className='container maincontentslider'> 
-<div style={{ textAlign: "center" }}>
-        <button className="button" onClick={previous}>
-          Previous
-        </button>
-        <button className="button" onClick={next}>
-          Next
-        </button>
-      </div>    
+ 
 <Slider  ref={slider => {
           sliderRef = slider;
         }}

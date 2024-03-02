@@ -45,7 +45,7 @@ line-height: 32px; /* 160% */
     position: absolute;
     bottom: 0px;
     left: 23px;
-    padding-bottom: 30px;
+    padding-bottom: 9px;
 }
 .card-custom{
   font-size: 15px;
@@ -3353,7 +3353,7 @@ letter-spacing: 1.2px;
     margin-top: 140px;
   }
   .feedback-area{
-    height: 700px !important;
+    height: 625px !important;
   }
   .subscribe-area{
     display: none;
@@ -3380,7 +3380,7 @@ letter-spacing: 1.2px;
     display: none;
   }
   .card-custom{
-    height: 450px;
+    height: 300px !important;
   }
   .about-area .about-image{
     width: 100% !important;

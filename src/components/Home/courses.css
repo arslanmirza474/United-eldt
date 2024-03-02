@@ -107,58 +107,63 @@ position: absolute;
     -moz-osx-font-smoothing: grayscale;
 opacity: 1;
 }
-.slick-prev::before{
-    content: "<i class="fa-solid fa-less-than"></i>";
-    text-align: center;
-    position: absolute;
-    top: 15px;
-    left: 16px;
-    font-family: 'FontAwesome';
-    font-size: 20px;
-    line-height: 1;
-    color: black;
-    -moz-osx-font-smoothing: grayscale;
-opacity: 1;
+.navigator{
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    position: relative;
+    top: 300px;
+    max-width: 90%;
 }
-.slick-next{
-    right:-94px,
-
-}
-
-
- .slick-prev {
-    position: absolute;
-    top:50%;
-    display: block;
+.nextbtnfor{
     width: 50px;
     height: 50px;
     padding: 0;
-    transform: translate(0, -50%);
     cursor: pointer;
      background: #FBB723; 
      border-radius: 50%;
      margin-right: 50px;
-     left: -67px;
-} 
-.slick-next {
-    position: absolute;
-    top: 50%;
-    display: block;
+     font-size: 25px;
+     font-weight: bolder;
+   
+}
+.nextbtnfor2{
     width: 50px;
     height: 50px;
     padding: 0;
-    transform: translate(0, -50%);
     cursor: pointer;
      background: #FBB723; 
      border-radius: 50%;
      margin-right: 50px;
-     right: -89px !important;
+     font-size: 25px;
+     font-weight: bolder;
+     position: relative;
+     left: 40px;
 }
-.slick-prev:hover{
-    background: #FBB723; 
+.custom-dots{
+    display:  none !important;
 }
-
-  
+@media (max-width:1800px) {
+    .navigator{
+        max-width: 98%;
+    }
+}
+@media (max-width:1600px) {
+ .customcard .container{
+    max-width: 1300px !important;
+ }
+}
+@media (max-width:1380px) {
+   .navigator{
+    display: none;
+   }
+   .custom-dots{
+    display: block !important;
+   }
+   }
+   .slick-arrow {
+    display: none !important;
+   }
 .main-price{
     color: #2C292A;
 font-family: Inter;
