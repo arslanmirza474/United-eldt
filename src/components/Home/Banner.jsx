@@ -5,9 +5,9 @@ import { Translator, Translate } from "react-auto-translate";
 import LeftHeroContent from "./LeftHeroContent";
 import { useSelector } from "react-redux";
 // import useHero1 from './Hero1/useHero1';
-import heroimg from "./images/Realcover.png"
+import heroimg1 from "./images/Group 1171278588.png"
 import heroimg2 from "./Group 117127858823.png"
-
+import heroimg from "./images/Realcover.png"
 const HeroBanner = styled("div")({
   display: `flex`,
   position: `relative`,
@@ -84,12 +84,12 @@ const DivHeroRightContent = styled("div")({
 
 function Banner(...props) {
   const languageState = useSelector((state) => state.language);
-  const [largeScreenImage, setLargeScreenImage] = useState(heroimg2);
+  const [largeScreenImage, setLargeScreenImage] = useState(heroimg1);
 
   useEffect(() => {
     const handleResize = () => {
       // Check if the screen width is greater than or equal to 1440 pixels
-      const newImage = window.innerWidth <= 1440 ? heroimg2 : heroimg2;
+      const newImage = window.innerWidth <= 1440 ? heroimg2 : heroimg1;
       setLargeScreenImage(newImage);
     };
 
