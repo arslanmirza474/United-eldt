@@ -804,6 +804,11 @@ margin-top: 24px;
         padding: 0px;
     }
 }
+@media (max-width: 390px) {
+    .card-content{
+        width: 260px !important;
+    }
+}
 @media (max-width: 1000px) {
     .card-content{
      width:auto;
