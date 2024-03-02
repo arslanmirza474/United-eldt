@@ -5,6 +5,9 @@ ul {
   padding: 0;
   margin: 0;
 }
+.ant-select-item-option-content{
+  align-items: center;
+}
 body {
   -webkit-touch-callout: none; /* Disable selection */
   -webkit-user-select: none; /* Disable selection */
