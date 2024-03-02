@@ -157,7 +157,9 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
     <Select
             style={{ width: "100%",borderRadius:"7px",border:"1px solid #D2D2D2",height:"48px" ,display:"flex"}}
             defaultValue="Select language"
-            dropdownClassName="custom-dropdown"
+            popupClassName="custom-dropdown"
+           
+            dropdownStyle={{ maxHeight: "500px", overflowY: "auto" }} 
             onChange={(value) => handleOptionSelect(value,index, plan._id)}
             onFocus={(e) => e.target.style.boxShadow = "transparent"} // Remove blue border on focus
             onBlur={(e) => e.target.style.borderColor = "#D2D2D2"} 

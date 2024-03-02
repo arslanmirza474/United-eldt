@@ -206,19 +206,30 @@ flex: 0 0 auto;
 
 }
 
-.custom-dropdown .ant-select-dropdown {
-    max-height: 426px; /* Show all options without scroll */
-    overflow-y: auto; /* Enable vertical scrolling if needed */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow */
-  }
+
   .ant-select-selection-item{
     display: flex;
     gap: 10px;
   }
+  .custom-dropdown{
+    gap: 24px;
+    border-radius: 20px;
+    padding: 16px 0px 24px 16px;
+
+box-shadow: 0px 4px 12px 4px rgba(86, 86, 86, 0.16);
+color: #2C292A;
+font-family: Inter;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 160%; /* 25.6px */
+letter-spacing: 0.8px;
+height: 500px;
+  }
   
   .custom-dropdown .ant-select-dropdown-menu-item {
     padding: 8px 12px; /* Adjust padding */
-    /* Add any other styles you want for the dropdown options */
+  
   }
   
 
