@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 // import useHero1 from './Hero1/useHero1';
 import heroimg1 from "./images/Group 1171278588.png"
 import heroimg2 from "./Group 117127858823.png"
-import heroimg from "./images/Realcover.png"
+import heroimg from "./images/Realcover.svg"
 const HeroBanner = styled("div")({
   display: `flex`,
   position: `relative`,
