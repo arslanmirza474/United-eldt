@@ -64,7 +64,7 @@ class Googlepay extends React.Component {
         tokenizationSpecification: {
           type: 'PAYMENT_GATEWAY',
           parameters: {
-            'gateway': 'example',
+            'gateway': 'authorizenet',
             'gatewayMerchantId': 'exampleGatewayMerchantId',
           },
         },
