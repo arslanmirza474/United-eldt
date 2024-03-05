@@ -31,6 +31,15 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
     slidesToScroll: 1,
     responsive: [
       {
+        breakpoint: 10000,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
         breakpoint: 2000,
         settings: {
           slidesToShow: 4,
