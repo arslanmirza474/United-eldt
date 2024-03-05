@@ -189,7 +189,64 @@ if(response.data.available === true ){
 
 };
 
-  
+const [isGooglePayLoaded, setIsGooglePayLoaded] = useState(false);
+
+  useEffect(() => {
+    // Load the Google Pay API library
+    let script;
+
+    const loadGooglePayLibrary = () => {
+      const script = document.createElement('script');
+      script.src = 'https://pay.google.com/gp/p/js/pay.js';
+      script.onload = () => setIsGooglePayLoaded(true);
+      document.body.appendChild(script);
+    };
+
+    loadGooglePayLibrary();
+
+    return () => {
+      // Clean up: remove the script when unmounting
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  const handleGooglePayClick = () => {
+    if (!window.google || !window.google.payments) {
+      console.error('Google Pay API not loaded');
+      return;
+    }
+
+    // Configure the Google Pay API
+    const paymentDataRequest = {
+      apiVersion: 2,
+      apiVersionMinor: 0,
+      allowedPaymentMethods: [/* Define your supported payment methods here */],
+      merchantInfo: {
+        // Your merchant information
+      },
+      transactionInfo: {
+        // Your transaction information
+      },
+    };
+
+    const paymentsClient = new window.google.payments.api.PaymentsClient({
+      environment: 'TEST', // Change to 'PRODUCTION' for production environment
+    });
+
+    // Call the loadPaymentData method to show the Google Pay payment sheet
+    paymentsClient.loadPaymentData(paymentDataRequest)
+      .then(paymentData => {
+        // Handle the payment data response and extract the token
+        const googlePayToken = paymentData.paymentMethodData.tokenizationData.token;
+        // Pass the token to the parent component or perform further processing
+        console.log(googlePayToken)
+      })
+      .catch(error => {
+        console.error('Error loading payment data:', error);
+        // Handle payment failure
+      });
+  };
+
   
   
   
@@ -350,7 +407,7 @@ if(response.data.available === true ){
           <div className="main-content paymentmodal">
             {/* Your payment form and input fields */}
             <div className="gpay">
-              <button className="gpaybtn"><img src={google} alt="google" /> PAY</button>
+              <button className="gpaybtn"><img src={google} alt="google" onClick={handleGooglePayClick} disabled={!isGooglePayLoaded}/> PAY</button>
               <button className="applebtn"><img src={apple} alt="apple" /> PAY</button>
             </div>
 
