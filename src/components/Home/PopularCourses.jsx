@@ -20,6 +20,9 @@ import { jwtDecode } from "jwt-decode";
 import CustomDropdown from "./CustomDropdown";
 import { useSelector } from "react-redux";
 import bannerimage from  "./images/Selo.svg"
+import GooglePayButton from "@google-pay/button-react";
+import GooglePay from "./Googlepay";
+import Applepay from "./Applepay";
 export default function PopularCourses({ language ,showCancelButton,handleNavigationClick,large,medium }) {
   const userState = useSelector((state) => state.user);
   const [loading, setLoading] = useState(true);
@@ -189,72 +192,6 @@ if(response.data.available === true ){
 
 };
 
-const [isGooglePayLoaded, setIsGooglePayLoaded] = useState(false);
-
-  useEffect(() => {
-    // Load the Google Pay API library
-    let script;
-
-    const loadGooglePayLibrary = () => {
-      const script = document.createElement('script');
-      script.src = 'https://pay.google.com/gp/p/js/pay.js';
-      script.onload = () => setIsGooglePayLoaded(true);
-      document.body.appendChild(script);
-    };
-
-    loadGooglePayLibrary();
-
-    return () => {
-      // Clean up: remove the script when unmounting
-      document.body.removeChild(script);
-    };
-  }, []);
-
-  const handleGooglePayClick = () => {
-    if (!window.google || !window.google.payments) {
-      console.error('Google Pay API not loaded');
-      return;
-    }
-
-    // Configure the Google Pay API
-    const paymentDataRequest = {
-      apiVersion: 2,
-      apiVersionMinor: 0,
-      allowedPaymentMethods: [/* Define your supported payment methods here */],
-      merchantInfo: {
-        // Your merchant information
-      },
-      transactionInfo: {
-        // Your transaction information
-      },
-    };
-
-    const paymentsClient = new window.google.payments.api.PaymentsClient({
-      environment: 'TEST', // Change to 'PRODUCTION' for production environment
-    });
-
-    // Call the loadPaymentData method to show the Google Pay payment sheet
-    paymentsClient.loadPaymentData(paymentDataRequest)
-      .then(paymentData => {
-        // Handle the payment data response and extract the token
-        const googlePayToken = paymentData.paymentMethodData.tokenizationData.token;
-        // Pass the token to the parent component or perform further processing
-        console.log(googlePayToken)
-      })
-      .catch(error => {
-        console.error('Error loading payment data:', error);
-        // Handle payment failure
-      });
-  };
-
-  
-  
-  
-  
-  
-  
-  
-  
 
 
   const handleLanguageChange = (selectedOption, planId) => {
@@ -298,6 +235,71 @@ const [isGooglePayLoaded, setIsGooglePayLoaded] = useState(false);
 
     setDate(formattedDate);
 };
+
+
+useEffect(() => {
+  // Load the Google Pay script
+  const script = document.createElement('script');
+  script.src = 'https://pay.google.com/gp/p/js/pay.js';
+  script.async = true;
+  document.body.appendChild(script);
+
+  // Cleanup function
+  return () => {
+    document.body.removeChild(script);
+  };
+}, []);
+
+const handlePaymentRequest = async () => {
+  try {
+    const paymentDataRequest = {
+      apiVersion: 2,
+      apiVersionMinor: 0,
+      allowedPaymentMethods: [
+        {
+          type: 'CARD',
+          parameters: {
+            allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
+            allowedCardNetworks: ['MASTERCARD', 'VISA'],
+          },
+          tokenizationSpecification: {
+            type: 'PAYMENT_GATEWAY',
+            parameters: {
+              gateway: 'example',
+              gatewayMerchantId: 'exampleGatewayMerchantId',
+            },
+          },
+        },
+      ],
+      merchantInfo: {
+        merchantId: '12345678901234567890',
+        merchantName: 'Demo Merchant',
+      },
+      transactionInfo: {
+        totalPriceStatus: 'FINAL',
+        totalPriceLabel: 'Total',
+        totalPrice: '100.00',
+        currencyCode: 'USD',
+        countryCode: 'US',
+      },
+    };
+
+    // Open the Google Pay payment sheet
+    const paymentResponse = await window.google.payments.api.paymentData.request(paymentDataRequest);
+
+    // Extract the payment token from the payment response
+    const paymentToken = paymentResponse.paymentMethodData.tokenizationData.token;
+
+    // Handle the payment token as needed
+    console.log('Payment token:', paymentToken);
+  } catch (error) {
+    console.error('Error processing Google Pay:', error);
+  }
+};
+
+
+
+
   useEffect(() => {
     axios.get("https://server-of-united-eldt.vercel.app/api/courses").then((res) => {
       setPlans(res.data);
@@ -404,10 +406,49 @@ const [isGooglePayLoaded, setIsGooglePayLoaded] = useState(false);
                 - ELDT Theory certificate
             </span>
           </div>
+          <GooglePayButton
+  environment="TEST"
+  paymentRequest={{
+    apiVersion: 2,
+    apiVersionMinor: 0,
+    allowedPaymentMethods: [
+      {
+        type: 'CARD',
+        parameters: {
+          allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
+          allowedCardNetworks: ['MASTERCARD', 'VISA'],
+        },
+        tokenizationSpecification: {
+          type: 'PAYMENT_GATEWAY',
+          parameters: {
+            gateway: 'example',
+            gatewayMerchantId: 'exampleGatewayMerchantId',
+          },
+        },
+      },
+    ],
+    merchantInfo: {
+      merchantId: '12345678901234567890',
+      merchantName: 'Demo Merchant',
+    },
+    transactionInfo: {
+      totalPriceStatus: 'FINAL',
+      totalPriceLabel: 'Total',
+      totalPrice: '100.00',
+      currencyCode: 'USD',
+      countryCode: 'US',
+    },
+  }}
+  onLoadPaymentData={paymentRequest => {
+    console.log('load payment data', paymentRequest);
+  }}
+/>
+<GooglePay/>
+<Applepay/>
           <div className="main-content paymentmodal">
             {/* Your payment form and input fields */}
             <div className="gpay">
-              <button className="gpaybtn"><img src={google} alt="google" onClick={handleGooglePayClick} disabled={!isGooglePayLoaded}/> PAY</button>
+              <button className="gpaybtn"><img src={google} alt="google" onClick={handlePaymentRequest}/> PAY</button>
               <button className="applebtn"><img src={apple} alt="apple" /> PAY</button>
             </div>
 
