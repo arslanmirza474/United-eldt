@@ -94,11 +94,13 @@ navigate(`/test/${id}/${index}`)
         <div className="main-body">
           <Navba/>
           <div className="progressgra d-flex text-center" style={{color:"black",background: "#C9C8C5"}}>
+       
           <div className="displaypro " style={{ width: `${studentprogress.progressPercentage || 0}%`, backgroundColor: '#FBB723', height: "100%" }}>
-  <span >
+  <span className="perceval">
     {isNaN(studentprogress.progressPercentage) ? 0 : Math.round(studentprogress.progressPercentage)}%
   </span>
 </div> 
+
 </div>
 
 <div className="coverofall">
@@ -115,7 +117,7 @@ navigate(`/test/${id}/${index}`)
                   <span className="bolding"><i class="fa-solid fa-arrow-left-long"></i><span className="mx-2">Back</span> </span>
 
         </Link></div>
-  <div className="card-hea">My courses</div>
+  <div className="card-hea">My Courses </div>
         <div className="card-body maincardbody">
           <p className="course-Name">{coursename}-{courselanguage}</p>
           <span className="stu">Your progress {studentprogress.lessonIndex} of {studentprogress.totalChapters} complete. <b>Get certificate after complete</b></span>
@@ -123,7 +125,7 @@ navigate(`/test/${id}/${index}`)
           <div className="progreque d-flex" >
   <div className="displayquiz" style={{ width: `${Math.round(studentprogress.progressPercentage)}%`, backgroundColor: '#FBB723',height:"100%" }}></div>
   <div className="circlepro">
-  <span >{Math.round(studentprogress.progressPercentage)}%</span></div>
+  <span className="perceval">{Math.round(studentprogress.progressPercentage)}%</span></div>
 </div>
 <div className="wraperofitems">
   {

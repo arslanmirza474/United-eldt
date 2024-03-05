@@ -81,7 +81,7 @@ const [loading, setLoading] = useState(true)
    {
     loading ?(<Loader/>):(
          <div className="main-contain-regist">
-        <div className="card-head">My courses</div>
+        <div className="card-head">My Courses</div>
         <div className="card-body">
         <div class="accordion" id="accordionExample">
     <div class="accordion-item">

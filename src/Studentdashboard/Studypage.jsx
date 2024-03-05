@@ -14,8 +14,6 @@ function Studypage() {
   const [chaptertitles, setChaptertitles] = useState([]);
   const [studentprogress, setStudentprogress] = useState([]);
   const [chapti, setChapti] = useState("Select Lesson");
-  const [autoSpeakingProgress, setAutoSpeakingProgress] = useState(0);
-  const [volume, setVolume] = useState(1); 
 const navigate = useNavigate()
   const { id } = useParams();
   const {index}=useParams()
@@ -42,7 +40,7 @@ const [quiz,setQuiz]=useState("")
   };
 
   const handleNextPageClick = () => {
-    stopSpeaking();
+ 
     window.scrollTo({
       top: 0,
       behavior: 'smooth' // Optional: Adds smooth scrolling behavior
@@ -59,7 +57,7 @@ const [quiz,setQuiz]=useState("")
   
 
   const handlePreviousPageClick = () => {
-    stopSpeaking();
+
     window.scrollTo({
       top: 100,
       behavior: 'smooth' // Optional: Adds smooth scrolling behavior
@@ -71,7 +69,7 @@ const [quiz,setQuiz]=useState("")
   };
 
   useEffect(() => {
-    stopSpeaking();
+ 
     const personId = localStorage.getItem("userId");
   
     if (personId) {
@@ -105,44 +103,7 @@ const [quiz,setQuiz]=useState("")
   }, [userId]);
   
   
-  const handleToggleSpeech = () => {
-    if (!isSpeaking) {
-      speakText();
-    } else {
-      stopSpeaking();
-    }
-  };
 
-  const speakText = () => {
-    const speechSynthesis = window.speechSynthesis;
-    const utterance = new SpeechSynthesisUtterance(page.description);
-  
-    utterance.onend = () => {
-      setIsSpeaking(false);
-      setAutoSpeakingProgress(100);
-    };
-  
-    utterance.onboundary = (event) => {
-      const progressPercentage = (event.charIndex / page.description.length) * 100;
-      setAutoSpeakingProgress(progressPercentage);
-    };
-  
-    speechSynthesis.speak(utterance);
-    setIsSpeaking(true);
-  };
-  
-  const stopSpeaking = () => {
-    window.speechSynthesis.cancel();
-    setIsSpeaking(false);
-    setAutoSpeakingProgress(0);
-  };
-  
-
-  useEffect(() => {
-    return () => {
-      stopSpeaking();
-    };
-  }, []);
   const fetchChaptersTitles = async () => {
     try {
       const response = await axios.get(`https://server-of-united-eldt.vercel.app/api/getChapterTitles/${userId}/${id}`);
@@ -187,10 +148,14 @@ const [quiz,setQuiz]=useState("")
   <div className="displaypro" style={{ width: `${studentprogress.progressPercentage}%`, backgroundColor: '#FBB723',height:"100%" }}><span style={{display:"flex", margin:"auto", textAlign:"center", alignItems:"center",justifyContent:"center"}} className="percentshow">{Math.round(studentprogress.progressPercentage)}%</span></div>
   
 </div> */}
-<div className="displaypro" style={{ width: `${studentprogress.progressPercentage || 0}%`, backgroundColor: '#FBB723', height: "100%" }}>
-  <span >
-    {isNaN(studentprogress.progressPercentage) ? 0 : Math.round(studentprogress.progressPercentage)}%
-  </span>
+       <div className="progressgra d-flex text-center" style={{color:"black",background: "#C9C8C5"}}>
+       
+       <div className="displaypro " style={{ width: `${studentprogress.progressPercentage || 0}%`, backgroundColor: '#FBB723', height: "100%" }}>
+<span className="perceval">
+ {isNaN(studentprogress.progressPercentage) ? 0 : Math.round(studentprogress.progressPercentage)}%
+</span>
+</div> 
+
 </div>
 <div className="backbutton mt-3" style={{width:"90%"}}>  <Link to={`/Alllessons/${id}`}>
                   <span className="bolding"><i class="fa-solid fa-arrow-left-long"></i><span className="mx-2">Back</span> </span>
@@ -203,29 +168,9 @@ const [quiz,setQuiz]=useState("")
             </button>
         <div className="main-contain-">
           <div className="card-head headertwo">
-            <div>
-            Read along<Switch
-  checked={isSpeaking}
-  onChange={handleToggleSpeech}
-  checkedChildren=""
-  unCheckedChildren=""
-  style={{ background: isSpeaking ? '#FBB723' : '#FFFFFF', border: isSpeaking ? '#FBB723' : '#C9C8C5' ,marginLeft:"10px"}}
-/>
-</div>
+ 
 <div className="d-flex mainpro align-items-center gap-2">
-
-<span className="maincontent">Autoplay</span>  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-  <g clip-path="url(#clip0_2606_46918)">
-    <path d="M20.3546 11.01C20.8248 11.333 20.8248 12.0271 20.3546 12.3501L8.37728 20.5777C7.83786 20.9483 7.10404 20.5621 7.10404 19.9076L7.10403 11.6801L7.10404 3.45247C7.10404 2.79804 7.83787 2.41185 8.37728 2.78239L20.3546 11.01Z" fill="white"/>
-  </g>
-  <defs>
-    <clipPath id="clip0_2606_46918">
-      <rect width="24" height="24" fill="white"/>
-    </clipPath>
-  </defs>
-</svg> <div className="mainbarcover">
-  <div className="bari" style={{ width: `${autoSpeakingProgress}%` }}></div>
-</div></div>
+</div>
 </div>
           <div className="card-con">
             <div className="titles">
@@ -235,7 +180,7 @@ const [quiz,setQuiz]=useState("")
 {chapti}
     <i class="fa-solid fa-angle-down mt-1 mx-3"></i>
 </span>
-              <div style={{overflowY:"scroll", height:"500px"}} className="dropdown-menu" aria-labelledby="dropdownMenuButton" onClick={stopSpeaking}>
+              <div style={{overflowY:"scroll", height:"500px"}} className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 {chaptertitles.map((chapter, index) => (
                   <div
                     key={index}

@@ -105,7 +105,7 @@ navigate(`/StudentLesson/${id}/${index}`)
           <Navba/>
           <div className="progressgra d-flex text-center" style={{color:"black",background: "#C9C8C5"}}>
           <div className="displaypro mb-3" style={{ width: `${studentprogress.progressPercentage || 0}%`, backgroundColor: '#FBB723', height: "100%" }}>
-  <span >
+  <span className="perceval">
     {isNaN(studentprogress.progressPercentage) ? 0 : Math.round(studentprogress.progressPercentage)}%
   </span>
 </div>
@@ -129,7 +129,7 @@ navigate(`/StudentLesson/${id}/${index}`)
                   <span className="bolding"><i class="fa-solid fa-arrow-left-long"></i><span className="mx-2">Back</span> </span>
 
         </Link></div>
-      <div className="card-hea">My courses</div>
+      <div className="card-hea">My Courses</div>
         <div className="card-body maincardbody ">
           <p className="course-Name">{coursename}-{courselanguage}</p>
           <span className="stu">Your progress {studentprogress.lessonIndex} of {studentprogress.totalChapters} complete. <b>Get certificate after complete</b></span>

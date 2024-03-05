@@ -121,6 +121,7 @@ background: #F5F5F5;
   .headertwo{
     display: flex;
     justify-content: space-between;
+   height: 56px;
   }
   .footerforstudy {
     width: 100%;
@@ -188,4 +189,7 @@ background: #FBB723;
     .prebtn{
       display: none;
     }
+  }
+  .contentdiv p{
+    font-size: 20px;
   }

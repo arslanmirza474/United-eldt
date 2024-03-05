@@ -359,10 +359,11 @@ padding-top: 20px;
   
    
   }
-
+.perceval{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
   .navbar-toggler{
     border: none;
   }
-.displaypro{
-    margin: auto;
-}

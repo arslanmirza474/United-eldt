@@ -152,7 +152,7 @@ useEffect(() => {
                   onClick={closeNavbar}
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><path d="M2.5 5.6001V11.8501" stroke="#696969" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path><path d="M4.23438 17.4751C4.85974 16.5159 5.71451 15.7279 6.72128 15.1824C7.72804 14.637 8.85497 14.3513 10 14.3513C11.145 14.3513 12.272 14.637 13.2787 15.1824C14.2855 15.7279 15.1403 16.5159 15.7656 17.4751" stroke="#696969" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path><path d="M17.5 5.6001L10 8.1001L2.5 5.6001L10 3.1001L17.5 5.6001Z" stroke="#696969" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path><path d="M13.2266 7.02197C13.7999 7.64805 14.1787 8.4274 14.3167 9.26502C14.4548 10.1026 14.3462 10.9623 14.0042 11.7393C13.6622 12.5163 13.1015 13.1769 12.3905 13.6408C11.6795 14.1046 10.8489 14.3516 10 14.3516C9.15108 14.3516 8.3205 14.1046 7.60951 13.6408C6.89852 13.1769 6.33783 12.5163 5.99581 11.7393C5.65378 10.9623 5.54518 10.1026 5.68326 9.26502C5.82134 8.4274 6.20012 7.64805 6.77344 7.02197" stroke="#696969" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                 courses
+                 Courses
                 </Link>
               </li>
            
@@ -184,7 +184,7 @@ useEffect(() => {
 <path d="M10 13.1001C12.7614 13.1001 15 10.8615 15 8.1001C15 5.33867 12.7614 3.1001 10 3.1001C7.23858 3.1001 5 5.33867 5 8.1001C5 10.8615 7.23858 13.1001 10 13.1001Z" stroke="#696969" stroke-width="1.5" stroke-miterlimit="10"/>
 <path d="M2.42188 17.4751C3.18979 16.1447 4.2944 15.0399 5.62465 14.2718C6.9549 13.5037 8.46392 13.0994 10 13.0994C11.5361 13.0994 13.0451 13.5037 14.3753 14.2718C15.7056 15.0399 16.8102 16.1447 17.5781 17.4751" stroke="#696969" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
-                                My account
+                                My Account
                 </Link>
               </li>
               <li className="nav-item newnavdesign" onClick={gotochapterlist}>
@@ -226,7 +226,7 @@ useEffect(() => {
                   onClick={closeNavbar}
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><path d="M2.5 5.6001V11.8501" stroke="#696969" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path><path d="M4.23438 17.4751C4.85974 16.5159 5.71451 15.7279 6.72128 15.1824C7.72804 14.637 8.85497 14.3513 10 14.3513C11.145 14.3513 12.272 14.637 13.2787 15.1824C14.2855 15.7279 15.1403 16.5159 15.7656 17.4751" stroke="#696969" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path><path d="M17.5 5.6001L10 8.1001L2.5 5.6001L10 3.1001L17.5 5.6001Z" stroke="#696969" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path><path d="M13.2266 7.02197C13.7999 7.64805 14.1787 8.4274 14.3167 9.26502C14.4548 10.1026 14.3462 10.9623 14.0042 11.7393C13.6622 12.5163 13.1015 13.1769 12.3905 13.6408C11.6795 14.1046 10.8489 14.3516 10 14.3516C9.15108 14.3516 8.3205 14.1046 7.60951 13.6408C6.89852 13.1769 6.33783 12.5163 5.99581 11.7393C5.65378 10.9623 5.54518 10.1026 5.68326 9.26502C5.82134 8.4274 6.20012 7.64805 6.77344 7.02197" stroke="#696969" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                 courses
+                 Courses
                 </Link>
               </li>
            
@@ -258,7 +258,7 @@ useEffect(() => {
 <path d="M10 13.1001C12.7614 13.1001 15 10.8615 15 8.1001C15 5.33867 12.7614 3.1001 10 3.1001C7.23858 3.1001 5 5.33867 5 8.1001C5 10.8615 7.23858 13.1001 10 13.1001Z" stroke="#696969" stroke-width="1.5" stroke-miterlimit="10"/>
 <path d="M2.42188 17.4751C3.18979 16.1447 4.2944 15.0399 5.62465 14.2718C6.9549 13.5037 8.46392 13.0994 10 13.0994C11.5361 13.0994 13.0451 13.5037 14.3753 14.2718C15.7056 15.0399 16.8102 16.1447 17.5781 17.4751" stroke="#696969" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
-                                My account
+                                My Account
                 </Link>
               </li>
               <li className="nav-item newnavdesign" onClick={gotochapterlist}>
