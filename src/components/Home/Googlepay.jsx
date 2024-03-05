@@ -1,24 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-class Googlepay extends React.Component {
-  constructor(props) {
-    super(props);
-    this.paymentRequest = null;
-  }
+const GooglePay = () => {
+  let paymentRequest = null;
 
-  componentDidMount() {
-    this.initializeGooglePay();
-  }
+  useEffect(() => {
+    initializeGooglePay();
+  }, []);
 
-  initializeGooglePay = () => {
+  const initializeGooglePay = () => {
     if (window.PaymentRequest) {
-      this.paymentRequest = this.createPaymentRequest();
-      this.paymentRequest.canMakePayment()
+      paymentRequest = createPaymentRequest();
+      paymentRequest.canMakePayment()
         .then((result) => {
           if (result) {
             // Display PaymentRequest dialog on interaction with the existing checkout button
             document.getElementById('buyButton')
-              .addEventListener('click', this.onBuyClicked);
+              .addEventListener('click', onBuyClicked);
           }
         })
         .catch((err) => {
@@ -29,10 +26,10 @@ class Googlepay extends React.Component {
     }
   };
 
-  createPaymentRequest = () => {
+  const createPaymentRequest = () => {
     const methodData = [{
       supportedMethods: 'https://google.com/pay',
-      data: this.getGooglePaymentsConfiguration(),
+      data: getGooglePaymentsConfiguration(),
     }];
 
     const details = {
@@ -47,13 +44,13 @@ class Googlepay extends React.Component {
     return new PaymentRequest(methodData, details, options);
   };
 
-  getGooglePaymentsConfiguration = () => {
+  const getGooglePaymentsConfiguration = () => {
     return {
       environment: 'TEST',
       apiVersion: 2,
       apiVersionMinor: 0,
       merchantInfo: {
-        merchantName: 'Example Merchant',
+        merchantName: 'Devlop',
       },
       allowedPaymentMethods: [{
         type: 'CARD',
@@ -65,20 +62,20 @@ class Googlepay extends React.Component {
           type: 'PAYMENT_GATEWAY',
           parameters: {
             'gateway': 'authorizenet',
-            'gatewayMerchantId': 'exampleGatewayMerchantId',
+            'gatewayMerchantId': 'BCR2DN4T4HNPZLZY',
           },
         },
       }],
     };
   };
 
-  onBuyClicked = () => {
-    if (this.paymentRequest) {
-      this.paymentRequest.show()
+  const onBuyClicked = () => {
+    if (paymentRequest) {
+      paymentRequest.show()
         .then((response) => {
           // Dismiss payment dialog.
           response.complete('success');
-          this.handlePaymentResponse(response);
+          handlePaymentResponse(response);
         })
         .catch((err) => {
           console.error('show() error:', err);
@@ -88,20 +85,18 @@ class Googlepay extends React.Component {
     }
   };
 
-  handlePaymentResponse = (response) => {
+  const handlePaymentResponse = (response) => {
     // Extract and handle payment token
     const paymentToken = response.details.paymentToken;
     console.log('Payment token:', paymentToken);
     // Send the payment token to your backend for further processing
   };
 
-  render() {
-    return (
-      <div id="checkout">
-        <button id="buyButton">Checkout</button>
-      </div>
-    );
-  }
+  return (
+    <div id="checkout">
+      <button id="buyButton">Checkout</button>
+    </div>
+  );
 }
 
-export default Googlepay;
+export default GooglePay;
