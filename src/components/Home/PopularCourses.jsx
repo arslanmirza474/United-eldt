@@ -406,13 +406,13 @@ const handlePaymentRequest = async () => {
             </span>
           </div>
   
-<GooglePay/>
+
 <Applepay/>
           <div className="main-content paymentmodal">
             {/* Your payment form and input fields */}
             <div className="gpay">
-              <button className="gpaybtn"><img src={google} alt="google" onClick={handlePaymentRequest}/> PAY</button>
-              <button className="applebtn"><img src={apple} alt="apple" /> PAY</button>
+            <GooglePay/>
+                          <button className="applebtn"><img src={apple} alt="apple" /> PAY</button>
             </div>
 
       

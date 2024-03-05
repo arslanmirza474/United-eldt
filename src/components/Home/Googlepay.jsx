@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import google from "./images/google-pay-38 1.png"
 
 const GooglePay = () => {
   let paymentRequest = null;
@@ -76,6 +77,9 @@ const GooglePay = () => {
           // Dismiss payment dialog.
           response.complete('success');
           handlePaymentResponse(response);
+          // Remove event listener to prevent multiple calls to show()
+          document.getElementById('buyButton')
+            .removeEventListener('click', onBuyClicked);
         })
         .catch((err) => {
           console.error('show() error:', err);
@@ -94,7 +98,8 @@ const GooglePay = () => {
 
   return (
     <div id="checkout">
-      <button id="buyButton">Checkout</button>
+      <button  id="buyButton" className="gpaybtn"><img src={google} alt="google"/> PAY</button>
+
     </div>
   );
 }
