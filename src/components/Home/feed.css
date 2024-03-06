@@ -50,6 +50,9 @@
     height: 8px;
     border-radius: 10px;
 }
+.mobileversion{
+  display: none;
+}
 
 .ant-select-item-option-content{
   padding-bottom: 10px;
@@ -154,8 +157,24 @@
    display: none;
 }
 }
+
 @media (max-width: 786px) {
   .svgcontain{
     display: none;
   }
+  .mobileversion{
+    display: block;
+  }
+  .desktopversion{
+    display: none;
+  }
+}
+.desktopversion .digitalfont{
+  font-size: 20px;
+}
+.mobileversion .digitalfont{
+  font-size: 17px;
+}
+.desktopversion .card-custom{
+  height: 400px;
 }

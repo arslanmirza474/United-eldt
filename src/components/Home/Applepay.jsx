@@ -1,38 +1,60 @@
 import React from 'react';
+import { loadStripe } from '@stripe/stripe-js';
 
-class Applepay extends React.Component {
-  componentDidMount() {
-    // Load the Apple Pay SDK script dynamically
-    const script = document.createElement('script');
-    script.src = 'https://applepay.cdn-apple.com/jsapi/v1.1.0/apple-pay-sdk.js';
-    script.async = true;
-    document.body.appendChild(script);
-  }
+const stripePromise = loadStripe('pk_test_51OLkEpDd781F56V63802JVFKkmxDfAy1BDqtSf3diKC0nkuaBFrw6hWHxHzqEi6FBzkIcrtjlOfxq49tq2kr6xyp00J4ZeKzpg');
 
-  startApplePaySession = () => {
-    // Ensure ApplePaySession is defined before using it
-    if (window.ApplePaySession) {
-      // Your Apple Pay session code goes here
-      console.log('Apple Pay session started.');
-    } else {
-      console.error('Apple Pay SDK is not available.');
+const Applepay = () => {
+  const handleClick = async (event) => {
+    const stripe = await stripePromise;
+    const paymentRequest = stripe.paymentRequest({
+      country: 'US',
+      currency: 'usd',
+      total: {
+        label: 'Total',
+        amount: 1000, // in cents
+      },
+      requestPayerName: true,
+      requestPayerEmail: true,
+    });
+
+    const elements = stripe.elements();
+    const paymentRequestButton = elements.create('paymentRequestButton', {
+      paymentRequest,
+    });
+
+    // Check the availability of Apple Pay and Google Pay
+    const applePayAvailable = await paymentRequest.canMakePayment('apple-pay');
+    const googlePayAvailable = await paymentRequest.canMakePayment('google-pay');
+
+    // Mount the Payment Request Button Element
+    paymentRequestButton.mount('#payment-request-button');
+
+    // Handle payment request
+    paymentRequest.on('paymentmethod', async (event) => {
+      const { error } = await stripe.confirmPaymentIntent({
+        clientSecret: 'sk_test_51OLkEpDd781F56V6YtbwnFjQW58MycDXQUEqfc5th5WDY0ccURVjp82oWc9Pq2NdV1iuTGiZjhD0IWtE7QWiOYK400WnletDlV',
+        paymentMethodId: event.paymentMethod.id,
+      });
+
+      if (error) {
+        console.error('Payment failed:', error);
+      } else {
+        console.log('Payment successful');
+      }
+    });
+
+    // Show Payment Request button only if either Apple Pay or Google Pay is available
+    if (applePayAvailable || googlePayAvailable) {
+      document.getElementById('payment-request-button').style.display = 'block';
     }
-  }
+  };
 
-  render() {
-    return (
-      <div>
-       
-        <apple-pay-button 
-          id="applePayButton" 
-          buttonstyle="black" 
-          type="buy" 
-          locale="el-GR"
-          onClick={this.startApplePaySession}
-        >Button</apple-pay-button>
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <button onClick={handleClick}>Checkout</button>
+      <div id="payment-request-button" style={{ display: 'none' }}></div>
+    </div>
+  );
+};
 
 export default Applepay;

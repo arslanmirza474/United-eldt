@@ -86,13 +86,14 @@ export default function FeedbackSliderWithFunFacts({ language }) {
     </linearGradient>
   </defs>
 </svg></div>
-
+<div className="desktopversion">
            <Carousel autoplay={true} >
    
     <div className="carousel_cover">
     <div className="right-block">
                 <div className="card-custom bg-white text-dark rounded-xl card">
-                  <div style={{ lineHeight: "160%", marginTop: "20px" }}>
+                  <div className="digitalfont" style={{ lineHeight: "160%", marginTop: "20px" }}>
+                  As a native Spanish speaker, finding the Class A ELDT course in my language was a breath of fresh air. United ELDT's commitment to offering the course in eight different languages,
                   As a native Spanish speaker, finding the Class A ELDT course in my language was a breath of fresh air. United ELDT's commitment to offering the course in eight different languages,
 
                   </div>
@@ -115,7 +116,9 @@ export default function FeedbackSliderWithFunFacts({ language }) {
 
     <div className="right-block">
                 <div className="card-custom bg-white text-dark rounded-xl card">
-                  <div style={{ lineHeight: "160%", marginTop: "20px" }}>
+                  <div className="digitalfont" style={{ lineHeight: "160%", marginTop: "20px" }}>
+                  I was thrilled to discover that United ELDT offers the Hazmat endorsement course in Hindi. Being one of the only platforms in the USA to provide such a wide range of language options. 
+
                   I was thrilled to discover that United ELDT offers the Hazmat endorsement course in Hindi. Being one of the only platforms in the USA to provide such a wide range of language options. 
                   </div>
                   <div class="d-flex  marginabove">
@@ -136,7 +139,9 @@ export default function FeedbackSliderWithFunFacts({ language }) {
     <div className="carousel_cover">
     <div className="right-block">
                 <div className="card-custom bg-white text-dark rounded-xl card">
-                  <div style={{ lineHeight: "160%", marginTop: "20px" }}>
+                  <div className="digitalfont" style={{ lineHeight: "160%", marginTop: "20px" }}>
+                  Initially skeptical about online CDL endorsement platforms, my experience here shifted my view. The content was current, relevant, and engaging, making learning intuitive. 
+
                   Initially skeptical about online CDL endorsement platforms, my experience here shifted my view. The content was current, relevant, and engaging, making learning intuitive. 
                   </div>
                   <div class="d-flex  marginabove">
@@ -154,6 +159,76 @@ export default function FeedbackSliderWithFunFacts({ language }) {
                 </div>
               </div>      </div>
   </Carousel>
+  </div>
+  <div className="mobileversion">
+           <Carousel autoplay={true} >
+   
+    <div className="carousel_cover">
+    <div className="right-block">
+                <div className="card-custom bg-white text-dark rounded-xl card">
+                  <div className="digitalfont" style={{ lineHeight: "160%", marginTop: "20px" }}>
+                  As a native Spanish speaker, finding the Class A ELDT course in my language was a breath of fresh air. United ELDT's commitment to offering the course in eight different languages,
+
+                  </div>
+                  <div class="d-flex  marginabove">
+                    <img
+                      class=" feedimage rounded-circle"
+                     src={marvin}
+                    />
+                    <div class="d-flex mx-3 flex-column ml-5">
+                      <div  class="text-warning font-weight-bold text-lg">
+                      Marvin Aguilar
+                      </div>
+                      <div>Class A CDL Driver</div>
+                    </div>
+                  </div>
+                </div>
+              </div> 
+    </div>
+       <div className="carousel_cover">
+
+    <div className="right-block">
+                <div className="card-custom bg-white text-dark rounded-xl card">
+                  <div className="digitalfont" style={{ lineHeight: "160%", marginTop: "20px" }}>
+                  I was thrilled to discover that United ELDT offers the Hazmat endorsement course in Hindi. Being one of the only platforms in the USA to provide such a wide range of language options. 
+                  </div>
+                  <div class="d-flex  marginabove">
+                    <img
+                      class="feedimage rounded-circle"
+                     src={bansanta}
+                    />
+                    <div class="d-flex mx-3 flex-column ml-5">
+                      <div  class="text-warning font-weight-bold text-lg">
+                      Basanta Ghimire
+                      </div>
+                      <div>Class A CDL Driver</div>
+                    </div>
+                  </div>
+                </div>
+              </div>  
+    </div>
+    <div className="carousel_cover">
+    <div className="right-block">
+                <div className="card-custom bg-white text-dark rounded-xl card">
+                  <div className="digitalfont" style={{ lineHeight: "160%", marginTop: "20px" }}>
+                  Initially skeptical about online CDL endorsement platforms, my experience here shifted my view. The content was current, relevant, and engaging, making learning intuitive. 
+                  </div>
+                  <div class="d-flex  marginabove">
+                    <img
+                      class="feedimage rounded-circle"
+                     src={Crystal}
+                    />
+                    <div class="d-flex mx-3 flex-column ml-5">
+                      <div  class="text-warning font-weight-bold text-lg">
+                      Crystal Curry
+                      </div>
+                      <div>Class A CDL Driver</div>
+                    </div>
+                  </div>
+                </div>
+              </div>      </div>
+  </Carousel>
+  </div>
   <div className="svgcontainafter">
               <svg xmlns="http://www.w3.org/2000/svg" width="55" height="56" viewBox="0 0 55 56" fill="none">
   <g filter="url(#filter0_d_2593_51711)">
