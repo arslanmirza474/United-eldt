@@ -6853,8 +6853,9 @@ padding-bottom: 150px;
   .profile-block {
     align-items: center;
     flex-direction: column;
+    max-width: 93%;
     padding: 0 0 92px;
-    max-width: 100%;
+    margin: auto;
   }
   .login-form {
     padding: 0 0 59px;
