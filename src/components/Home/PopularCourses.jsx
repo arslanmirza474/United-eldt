@@ -411,9 +411,9 @@ const handlePaymentRequest = async () => {
             </span>
           </div>
   
-          <Elements stripe={stripePromise}>
+          {/* <Elements stripe={stripePromise}>
             <Applepay/>
-          </Elements>
+          </Elements> */}
           <GooglePay purchase={purchase} cardholderName={cardholderName}/>
           <div className="main-content paymentmodal">
             {/* Your payment form and input fields */}
