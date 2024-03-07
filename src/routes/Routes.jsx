@@ -7,6 +7,7 @@ import HomeMain from "../pages/HomeMain";
 import Homepage from "../Studentdashboard/Homepage";
 import AddLessonForm from "./AddLessonForm";
 import { jwtDecode } from "jwt-decode";
+import apple from "../apple-developer-merchantid-domain-association"
 import { useEffect, useState } from "react";
 import Studypage from "../Studentdashboard/Studypage.jsx";
 import Quize from "../Studentdashboard/Quiz.jsx";
@@ -127,7 +128,7 @@ element={
 
 
           {/* ============== Admin Routes Ended  */}
-
+<Route path="/.well-known/apple-developer-merchantid-domain-association" element={apple}/>
 <Route path="/studentdash" element={<Homepage />} />
 <Route path="/studentdash/:local" element={<Homepage />} />
           <Route
