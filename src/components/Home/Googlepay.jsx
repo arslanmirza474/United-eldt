@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from 'react';
-import {PaymentRequestButtonElement, useStripe, useElements} from '@stripe/react-stripe-js';
-import useMessages from './useMessages'
+import React, { useEffect, useState } from 'react';
+import { PaymentRequestButtonElement, useStripe, useElements } from '@stripe/react-stripe-js';
+import useMessages from './useMessages';
 
-const GooglePay = ({purchase}) => {
+const Googlepay = ({ purchase }) => {
   const stripe = useStripe();
   const elements = useElements();
   const [paymentRequest, setPaymentRequest] = useState(null);
@@ -32,59 +32,16 @@ const GooglePay = ({purchase}) => {
     });
 
     pr.on('paymentmethod', async (e) => {
-      const {error: backendError, clientSecret} = await fetch(
-        'https://server-of-united-eldt.vercel.app/create-payment-intent',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            paymentMethodType: 'card',
-            currency: 'usd',
-          }),
-        }
-      ).then((r) => r.json());
-
-      if (backendError) {
-        addMessage(backendError.message);
-        return;
-      }
-
-      addMessage('Client secret returned');
-
-      const {
-        error: stripeError,
-        paymentIntent,
-      } = await stripe.confirmCardPayment(clientSecret, {
-        payment_method: e.paymentMethod.id,
-      }, { handleActions: false });
-
-      if (stripeError) {
-        // Show error to your customer (e.g., insufficient funds)
-        addMessage(stripeError.message);
-        return;
-      }
-
-      // Show a success message to your customer
-      // There's a risk of the customer closing the window before callback
-      // execution. Set up a webhook or plugin to listen for the
-      // payment_intent.succeeded event that handles any business critical
-      // post-payment actions.
-      addMessage(`Payment ${paymentIntent.status}: ${paymentIntent.id}`);
+      // Payment processing logic
     });
-  }, [stripe, elements, addMessage]);
+  }, [stripe, elements]);
 
   return (
     <>
-    
-
-
-      {paymentRequest && <PaymentRequestButtonElement options={{paymentRequest}} />}
-
+      {paymentRequest && <PaymentRequestButtonElement options={{ paymentRequest }} />}
       <useMessages messages={messages} />
     </>
   );
 };
 
-export default GooglePay;
+export default Googlepay;
