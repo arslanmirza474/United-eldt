@@ -22,11 +22,8 @@ import { useSelector } from "react-redux";
 import bannerimage from  "./images/Selo.svg"
 import GooglePay from "./Googlepay";
 import Applepay from "./Applepay";
-import {
-  Elements
-  } from '@stripe/react-stripe-js';
-  import { loadStripe } from '@stripe/stripe-js';
-  const stripePromise = loadStripe('pk_test_51O5F9gFZtgAr5eHPPYRptE8ZBDBXAtaLj7XGBnSp106qIqacE80PBnqGyndDPhtDYDpBWNvpJ8YmObgxijiNX22o00C8ueO5lb'); // Replace with your actual public key
+import {PaymentRequestButtonElement, useStripe, useElements} from '@stripe/react-stripe-js';
+import useMessages from './useMessages'
 export default function PopularCourses({ language ,showCancelButton,handleNavigationClick,large,medium }) {
   const userState = useSelector((state) => state.user);
   const [loading, setLoading] = useState(true);
@@ -239,7 +236,77 @@ if(response.data.available === true ){
 
     setDate(formattedDate);
 };
+const stripe = useStripe();
+const elements = useElements();
+const [paymentRequest, setPaymentRequest] = useState(null);
+const [messages, addMessage] = useMessages();
 
+useEffect(() => {
+  if (!stripe || !elements) {
+    return;
+  }
+
+  const pr = stripe.paymentRequest({
+    country: 'US',
+    currency: 'usd',
+    total: {
+      label: 'Demo total',
+      amount: purchase.price,
+    },
+    requestPayerName: true,
+    requestPayerEmail: true,
+  });
+
+  // Check the availability of the Payment Request API.
+  pr.canMakePayment().then(result => {
+    if (result) {
+      setPaymentRequest(pr);
+    }
+  });
+
+  pr.on('paymentmethod', async (e) => {
+    const {error: backendError, clientSecret} = await fetch(
+      'https://server-of-united-eldt.vercel.app/create-payment-intent',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          paymentMethodType: 'card',
+          currency: 'usd',
+        }),
+      }
+    ).then((r) => r.json());
+
+    if (backendError) {
+      addMessage(backendError.message);
+      return;
+    }
+
+    addMessage('Client secret returned');
+
+    const {
+      error: stripeError,
+      paymentIntent,
+    } = await stripe.confirmCardPayment(clientSecret, {
+      payment_method: e.paymentMethod.id,
+    }, { handleActions: false });
+
+    if (stripeError) {
+      // Show error to your customer (e.g., insufficient funds)
+      addMessage(stripeError.message);
+      return;
+    }
+
+    // Show a success message to your customer
+    // There's a risk of the customer closing the window before callback
+    // execution. Set up a webhook or plugin to listen for the
+    // payment_intent.succeeded event that handles any business critical
+    // post-payment actions.
+    addMessage(`Payment ${paymentIntent.status}: ${paymentIntent.id}`);
+  });
+}, [stripe, elements, addMessage]);
 
 useEffect(() => {
   // Load the Google Pay script
@@ -254,52 +321,7 @@ useEffect(() => {
   };
 }, []);
 
-const handlePaymentRequest = async () => {
-  try {
-    const paymentDataRequest = {
-      apiVersion: 2,
-      apiVersionMinor: 0,
-      allowedPaymentMethods: [
-        {
-          type: 'CARD',
-          parameters: {
-            allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
-            allowedCardNetworks: ['MASTERCARD', 'VISA'],
-          },
-          tokenizationSpecification: {
-            type: 'PAYMENT_GATEWAY',
-            parameters: {
-              gateway: 'example',
-              gatewayMerchantId: 'exampleGatewayMerchantId',
-            },
-          },
-        },
-      ],
-      merchantInfo: {
-        merchantId: '12345678901234567890',
-        merchantName: 'Demo Merchant',
-      },
-      transactionInfo: {
-        totalPriceStatus: 'FINAL',
-        totalPriceLabel: 'Total',
-        totalPrice: '100.00',
-        currencyCode: 'USD',
-        countryCode: 'US',
-      },
-    };
 
-    // Open the Google Pay payment sheet
-    const paymentResponse = await window.google.payments.api.paymentData.request(paymentDataRequest);
-
-    // Extract the payment token from the payment response
-    const paymentToken = paymentResponse.paymentMethodData.tokenizationData.token;
-
-    // Handle the payment token as needed
-    console.log('Payment token:', paymentToken);
-  } catch (error) {
-    console.error('Error processing Google Pay:', error);
-  }
-};
 
 
 
@@ -411,10 +433,10 @@ const handlePaymentRequest = async () => {
             </span>
           </div>
   
-          <Elements stripe={stripePromise}>
-            <Applepay/>
-          </Elements>
-          <GooglePay/>
+       
+      {paymentRequest && <PaymentRequestButtonElement options={{paymentRequest}} />}
+<useMessages messages={messages} />
+          <GooglePay purchase={purchase} cardholderName={cardholderName}/>
           <div className="main-content paymentmodal">
             {/* Your payment form and input fields */}
             <div className="gpay">
