@@ -414,11 +414,11 @@ const handlePaymentRequest = async () => {
           <Elements stripe={stripePromise}>
             <Applepay/>
           </Elements>
-
+          <GooglePay/>
           <div className="main-content paymentmodal">
             {/* Your payment form and input fields */}
             <div className="gpay">
-            <GooglePay/>
+            
                           <button className="applebtn"><img src={apple} alt="apple" /> PAY</button>
             </div>
 
