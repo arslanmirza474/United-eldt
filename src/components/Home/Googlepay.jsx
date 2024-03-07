@@ -33,7 +33,7 @@ const GooglePay = () => {
 
     pr.on('paymentmethod', async (e) => {
       const {error: backendError, clientSecret} = await fetch(
-        '/create-payment-intent',
+        'https://server-of-united-eldt.vercel.app/create-payment-intent',
         {
           method: 'POST',
           headers: {
