@@ -1,107 +1,99 @@
-import React, { useEffect } from 'react';
-import google from "./images/google-pay-38 1.png"
+import React, {useEffect, useState} from 'react';
+import {PaymentRequestButtonElement, useStripe, useElements} from '@stripe/react-stripe-js';
+import useMessages from './useMessages'
 
 const GooglePay = () => {
-  let paymentRequest = null;
+  const stripe = useStripe();
+  const elements = useElements();
+  const [paymentRequest, setPaymentRequest] = useState(null);
+  const [messages, addMessage] = useMessages();
 
   useEffect(() => {
-    initializeGooglePay();
-  }, []);
-
-  const initializeGooglePay = () => {
-    if (window.PaymentRequest) {
-      paymentRequest = createPaymentRequest();
-      paymentRequest.canMakePayment()
-        .then((result) => {
-          if (result) {
-            // Display PaymentRequest dialog on interaction with the existing checkout button
-            document.getElementById('buyButton')
-              .addEventListener('click', onBuyClicked);
-          }
-        })
-        .catch((err) => {
-          console.error('canMakePayment() error:', err);
-        });
-    } else {
-      console.error('PaymentRequest API not available.');
+    if (!stripe || !elements) {
+      return;
     }
-  };
 
-  const createPaymentRequest = () => {
-    const methodData = [{
-      supportedMethods: 'https://google.com/pay',
-      data: getGooglePaymentsConfiguration(),
-    }];
-
-    const details = {
-      total: { label: 'Test Purchase', amount: { currency: 'USD', value: '1.00' } },
-    };
-
-    const options = {
-      requestPayerEmail: true,
-      requestPayerName: true,
-    };
-
-    return new PaymentRequest(methodData, details, options);
-  };
-
-  const getGooglePaymentsConfiguration = () => {
-    return {
-      environment: 'TEST',
-      apiVersion: 2,
-      apiVersionMinor: 0,
-      merchantInfo: {
-        merchantName: 'Devlop',
+    const pr = stripe.paymentRequest({
+      country: 'US',
+      currency: 'usd',
+      total: {
+        label: 'Demo total',
+        amount: 1999,
       },
-      allowedPaymentMethods: [{
-        type: 'CARD',
-        parameters: {
-          allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
-          allowedCardNetworks: ['AMEX', 'DISCOVER', 'INTERAC', 'JCB', 'MASTERCARD', 'VISA'],
-        },
-        tokenizationSpecification: {
-          type: 'PAYMENT_GATEWAY',
-          parameters: {
-            'gateway': 'authorizenet',
-            'gatewayMerchantId': 'BCR2DN4T4HNPZLZY',
+      requestPayerName: true,
+      requestPayerEmail: true,
+    });
+
+    // Check the availability of the Payment Request API.
+    pr.canMakePayment().then(result => {
+      if (result) {
+        setPaymentRequest(pr);
+      }
+    });
+
+    pr.on('paymentmethod', async (e) => {
+      const {error: backendError, clientSecret} = await fetch(
+        '/create-payment-intent',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
           },
-        },
-      }],
-    };
-  };
+          body: JSON.stringify({
+            paymentMethodType: 'card',
+            currency: 'usd',
+          }),
+        }
+      ).then((r) => r.json());
 
-  const onBuyClicked = () => {
-    if (paymentRequest) {
-      paymentRequest.show()
-        .then((response) => {
-          // Dismiss payment dialog.
-          response.complete('success');
-          handlePaymentResponse(response);
-          // Remove event listener to prevent multiple calls to show()
-          document.getElementById('buyButton')
-            .removeEventListener('click', onBuyClicked);
-        })
-        .catch((err) => {
-          console.error('show() error:', err);
-        });
-    } else {
-      console.error('PaymentRequest is not initialized.');
-    }
-  };
+      if (backendError) {
+        addMessage(backendError.message);
+        return;
+      }
 
-  const handlePaymentResponse = (response) => {
-    // Extract and handle payment token
-    const paymentToken = response.details.paymentToken;
-    console.log('Payment token:', paymentToken);
-    // Send the payment token to your backend for further processing
-  };
+      addMessage('Client secret returned');
+
+      const {
+        error: stripeError,
+        paymentIntent,
+      } = await stripe.confirmCardPayment(clientSecret, {
+        payment_method: e.paymentMethod.id,
+      }, { handleActions: false });
+
+      if (stripeError) {
+        // Show error to your customer (e.g., insufficient funds)
+        addMessage(stripeError.message);
+        return;
+      }
+
+      // Show a success message to your customer
+      // There's a risk of the customer closing the window before callback
+      // execution. Set up a webhook or plugin to listen for the
+      // payment_intent.succeeded event that handles any business critical
+      // post-payment actions.
+      addMessage(`Payment ${paymentIntent.status}: ${paymentIntent.id}`);
+    });
+  }, [stripe, elements, addMessage]);
 
   return (
-    <div id="checkout">
-      <button  id="buyButton" className="gpaybtn"><img src={google} alt="google"/> PAY</button>
+    <>
+      <h1>Google Pay</h1>
 
-    </div>
+      <p>
+        Before you start, you need to:
+        <ul>
+          <li><a href="https://stripe.com/docs/stripe-js/elements/payment-request-button#html-js-testing" target="_blank">Add a payment method to your browser.</a> For example, add a card to your Google Pay settings.</li>
+          <li>Serve your application over HTTPS. This is a requirement both in development and in production. One way to get up and running is to use a service like <a href="https://ngrok.com/" target="_blank" rel="noopener noreferrer">ngrok</a>.</li>
+        </ul>
+      </p>
+
+      <a href="https://stripe.com/docs/stripe-js/elements/payment-request-button" target="_blank">Stripe Documentation</a>
+
+      {paymentRequest && <PaymentRequestButtonElement options={{paymentRequest}} />}
+
+      <useMessages messages={messages} />
+    </>
   );
-}
+};
 
 export default GooglePay;
