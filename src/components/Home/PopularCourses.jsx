@@ -22,6 +22,11 @@ import { useSelector } from "react-redux";
 import bannerimage from  "./images/Selo.svg"
 import GooglePay from "./Googlepay";
 import Applepay from "./Applepay";
+import {
+  Elements
+  } from '@stripe/react-stripe-js';
+  import { loadStripe } from '@stripe/stripe-js';
+  const stripePromise = loadStripe('pk_test_51O5F9gFZtgAr5eHPPYRptE8ZBDBXAtaLj7XGBnSp106qIqacE80PBnqGyndDPhtDYDpBWNvpJ8YmObgxijiNX22o00C8ueO5lb'); // Replace with your actual public key
 export default function PopularCourses({ language ,showCancelButton,handleNavigationClick,large,medium }) {
   const userState = useSelector((state) => state.user);
   const [loading, setLoading] = useState(true);
@@ -406,8 +411,10 @@ const handlePaymentRequest = async () => {
             </span>
           </div>
   
+          <Elements stripe={stripePromise}>
+            <Applepay/>
+          </Elements>
 
-<Applepay/>
           <div className="main-content paymentmodal">
             {/* Your payment form and input fields */}
             <div className="gpay">
