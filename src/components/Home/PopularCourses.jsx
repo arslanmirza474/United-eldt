@@ -251,7 +251,7 @@ useEffect(() => {
     currency: 'usd',
     total: {
       label: 'Demo total',
-      amount: purchase.price,
+      amount: 1999,
     },
     requestPayerName: true,
     requestPayerEmail: true,
