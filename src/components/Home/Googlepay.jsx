@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {PaymentRequestButtonElement, useStripe, useElements} from '@stripe/react-stripe-js';
 import useMessages from './useMessages'
 
-const GooglePay = () => {
+const GooglePay = ({purchase}) => {
   const stripe = useStripe();
   const elements = useElements();
   const [paymentRequest, setPaymentRequest] = useState(null);
@@ -18,7 +18,7 @@ const GooglePay = () => {
       currency: 'usd',
       total: {
         label: 'Demo total',
-        amount: 1999,
+        amount: purchase.price * 100,
       },
       requestPayerName: true,
       requestPayerEmail: true,
