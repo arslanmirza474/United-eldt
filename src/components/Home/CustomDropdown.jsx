@@ -161,9 +161,7 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
 </div>
 
                         </div>
-<div className='imageofallflags'>
-<img src={imageflags} alt='image'/>
-</div>
+<div className='selectedtest'>Select the desired language:</div>
 
     <Select
             style={{ width: "100%",borderRadius:"7px",border:"1px solid #D2D2D2",height:"48px" ,display:"flex"}}
