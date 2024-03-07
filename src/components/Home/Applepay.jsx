@@ -16,6 +16,7 @@ const Applepay = () => {
         },
         requestPayerName: true,
         requestPayerEmail: true,
+        paymentMethodTypes: ['card'],
       });
 
       // Check the availability of the Payment Request API.
