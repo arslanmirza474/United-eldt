@@ -77,17 +77,8 @@ const GooglePay = () => {
 
   return (
     <>
-      <h1>Google Pay</h1>
+    
 
-      <p>
-        Before you start, you need to:
-        <ul>
-          <li><a href="https://stripe.com/docs/stripe-js/elements/payment-request-button#html-js-testing" target="_blank">Add a payment method to your browser.</a> For example, add a card to your Google Pay settings.</li>
-          <li>Serve your application over HTTPS. This is a requirement both in development and in production. One way to get up and running is to use a service like <a href="https://ngrok.com/" target="_blank" rel="noopener noreferrer">ngrok</a>.</li>
-        </ul>
-      </p>
-
-      <a href="https://stripe.com/docs/stripe-js/elements/payment-request-button" target="_blank">Stripe Documentation</a>
 
       {paymentRequest && <PaymentRequestButtonElement options={{paymentRequest}} />}
 
