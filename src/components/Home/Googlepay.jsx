@@ -17,7 +17,7 @@ const Googlepay = ({ purchase }) => {
       country: 'US',
       currency: 'usd',
       total: {
-        label: purchase.title,
+        label: "demo about",
         amount: purchase.price * 100,
       },
       requestPayerName: true,
