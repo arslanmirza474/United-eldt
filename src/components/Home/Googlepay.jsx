@@ -98,11 +98,11 @@ const Googlepay = ({ purchase }) => {
   }, [stripe, elements]);
 
   return (
-    <>
+    <div className="buttonofpayment">
       {paymentRequest && (
         <PaymentRequestButtonElement options={{ paymentRequest }} />
       )}
-    </>
+    </div>
   );
 };
 

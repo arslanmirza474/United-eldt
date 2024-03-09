@@ -209,6 +209,12 @@ flex: 0 0 auto;
     width: 368px !important;
 
 }
+.buttonofpayment{
+    width: 209px;
+    display: flex;
+    justify-content: center;
+    height: 60px;
+}
 .selectedtest{
     color: #2C292A;
     font-family: Inter;
