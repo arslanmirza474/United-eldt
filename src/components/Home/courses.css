@@ -209,11 +209,13 @@ flex: 0 0 auto;
     width: 368px !important;
 
 }
-.buttonofpayment .StripeElement .__PrivateStripeElement{
-    width: 209px;
+.buttonofpayment{
     display: flex;
     justify-content: center;
-    height: 60px;
+    margin-top: 20px;
+}
+.buttonofpayment .StripeElement .__PrivateStripeElement{
+    width: 209px;
 }
 .selectedtest{
     color: #2C292A;
