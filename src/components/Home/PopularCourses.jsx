@@ -416,11 +416,7 @@ const handlePaymentRequest = async () => {
           </Elements> */}
           <GooglePay purchase={purchase} cardholderName={cardholderName}/>
           <div className="main-content paymentmodal">
-            {/* Your payment form and input fields */}
-            <div className="gpay">
-            
-                          <button className="applebtn"><img src={apple} alt="apple" /> PAY</button>
-            </div>
+
 
       
             <input
