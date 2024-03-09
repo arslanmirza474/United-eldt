@@ -209,7 +209,7 @@ flex: 0 0 auto;
     width: 368px !important;
 
 }
-.buttonofpayment{
+.buttonofpayment .StripeElement{
     width: 209px;
     display: flex;
     justify-content: center;
