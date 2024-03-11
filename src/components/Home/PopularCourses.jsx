@@ -48,7 +48,15 @@ export default function PopularCourses({ language ,showCancelButton,handleNaviga
   const [cardNumber, setCardNumber] = useState("");
   const [date, setDate] = useState("");
   const [cardCode, setCardCode] = useState("");
-
+const [iswrtting,setIswritting]=useState({})
+const handleFocus = (id)=>{
+  setIswritting(({...iswrtting,[id]:true}))
+}
+const handleBlur =(event,id)=>{
+  if(event.target.value === ""){
+    setIswritting({...iswrtting,[id]:false})
+  }
+}
   useEffect(() => {
     const personId = localStorage.getItem("userId");
     if (personId) {
@@ -418,16 +426,15 @@ const handlePaymentRequest = async () => {
           <div className="main-content paymentmodal">
 
 
-      
+
             <input
   type="text"
-  className="form-control fnam"
+  className=" fnam"
   id="cardholderName"
   placeholder="Full Name"
   value={userId !== null ? userId.Name : cardholderName}
   readOnly={userId !== null}
-  onClick={()=>{handleupward("cardholderName")}}
-  onFocus={()=>{handleupward("cardholderName")}}
+
   onChange={(e) => {
     setCardholderName(e.target.value);
     removeErrorBorder('cardholderName');
@@ -435,7 +442,7 @@ const handlePaymentRequest = async () => {
 />
 <input
   type="text"
-  className="form-control fnam"
+  className=" fnam"
   id="email"
   placeholder="Email address"
   value={userId !== null ? userId.Email : email}
@@ -449,7 +456,7 @@ const handlePaymentRequest = async () => {
 />
 <input
   type="text"
-  className="form-control fnam"
+  className="fnam"
   id="confirmedemail"
   placeholder="Confirm Email address"
   value={userId !== null ? userId.Email : confirmemail}
@@ -488,7 +495,7 @@ const handlePaymentRequest = async () => {
           
             <input
   type="text"
-  className="form-control fnam"
+  className=" fnam"
   id="billingAddress"
   placeholder="Address"
   value={userId !== null ? userId.Address : billingAddress}
@@ -503,7 +510,7 @@ const handlePaymentRequest = async () => {
 
 <input
   type="text"
-  className="form-control fname"
+  className=" fnam"
   placeholder="Zip code"
   id="zip"
   value={userId !== null ? userId.zip : zip}

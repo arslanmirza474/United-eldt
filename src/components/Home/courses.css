@@ -7,6 +7,14 @@ font-weight: 500;
 line-height: 120%; /* 28.8px */
 letter-spacing: 1.2px;
 }
+.fnam {
+    border-radius: 8px;
+    border: 2px solid rgba(44, 41, 42, 0.25);
+    background: #FFF;
+    padding: 15px;
+    margin-top: 16px;
+    width: 100%;
+  }
 .customcard .container{
     max-width: 1600px !important;
  }
