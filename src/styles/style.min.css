@@ -3316,6 +3316,20 @@ height: 485px;
   bottom: 74px;
   display: block;
 }
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-image {
+  animation: rotate360 10s linear infinite; /* Adjust duration and timing function as needed */
+}
+
+
 .courses-area{
 padding-top: 0px !important;
 }

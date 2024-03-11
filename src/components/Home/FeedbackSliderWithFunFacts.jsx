@@ -31,7 +31,7 @@ export default function FeedbackSliderWithFunFacts({ language }) {
             <div className="feedback-content flex f-direction-row justify-between">
               <div className="left-block">
                 <span className="sub-title">
-                  <Translate>Distance learning</Translate>
+                  <Translate>Distance Learning</Translate>
                 </span>
                 <h2 className="title" style={{marginTop:"16px"}}>
                   <Translate>
@@ -166,7 +166,7 @@ export default function FeedbackSliderWithFunFacts({ language }) {
     <div className="carousel_cover">
     <div className="right-block">
                 <div className="card-custom bg-white text-dark rounded-xl card">
-                  <div className="digitalfont" style={{ lineHeight: "160%", marginTop: "20px" }}>
+                  <div className="digitalfont pt-3" style={{ lineHeight: "160%", marginTop: "20px" }}>
                   As a native Spanish speaker, finding the Class A ELDT course in my language was a breath of fresh air. United ELDT's commitment to offering the course in eight different languages,
 
                   </div>
@@ -189,7 +189,7 @@ export default function FeedbackSliderWithFunFacts({ language }) {
 
     <div className="right-block">
                 <div className="card-custom bg-white text-dark rounded-xl card">
-                  <div className="digitalfont" style={{ lineHeight: "160%", marginTop: "20px" }}>
+                  <div className="digitalfont pt-3" style={{ lineHeight: "160%", marginTop: "20px" }}>
                   I was thrilled to discover that United ELDT offers the Hazmat endorsement course in Hindi. Being one of the only platforms in the USA to provide such a wide range of language options. 
                   </div>
                   <div class="d-flex  marginabove">
@@ -210,7 +210,7 @@ export default function FeedbackSliderWithFunFacts({ language }) {
     <div className="carousel_cover">
     <div className="right-block">
                 <div className="card-custom bg-white text-dark rounded-xl card">
-                  <div className="digitalfont" style={{ lineHeight: "160%", marginTop: "20px" }}>
+                  <div className="digitalfont pt-3" style={{ lineHeight: "160%", marginTop: "20px" }}>
                   Initially skeptical about online CDL endorsement platforms, my experience here shifted my view. The content was current, relevant, and engaging, making learning intuitive. 
                   </div>
                   <div class="d-flex  marginabove">

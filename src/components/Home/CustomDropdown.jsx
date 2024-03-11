@@ -151,10 +151,10 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
 
                             <strong className="strongcontent">  <Translate>{plan.category}</Translate></strong>
                           </div>
-                          <div className="categoria2">
+                          <div className="categoria2 ">
 
 
-<span> <Translate>Last update </Translate></span>
+<span> <Translate>Last Update </Translate></span>
 <br></br>
 
 <strong className="strongcontent">  <Translate>07/07/2023</Translate></strong>

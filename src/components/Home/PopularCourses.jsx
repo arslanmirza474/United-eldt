@@ -321,7 +321,7 @@ const handlePaymentRequest = async () => {
         googleApiKey={process.env.REACT_APP_GOOGLE_TRANSLATE_KEY}
       >
         <div className="imageforbanner">
-<img src={bannerimage}  alt="imageofall"/>
+<img className="rotate-image" src={bannerimage}  alt="imageofall"/>
         </div>
         <div className="courses-area tw-my-3" id="courses">
           <div className="container ">

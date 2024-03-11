@@ -200,7 +200,7 @@ window.scrollTo(0,0);
                   <li>
                     <Link to="/contact-us">
                       <a>
-                        <Translate>Connect with me</Translate>
+                        <Translate>Connect With Me</Translate>
                       </a>
                     </Link>
                   </li>
@@ -217,7 +217,7 @@ window.scrollTo(0,0);
                   <li>
                     <Link to="/terms-and-conditions">
                       <a>
-                        <Translate>Terms and conditions</Translate>
+                        <Translate>Terms And Conditions</Translate>
                       </a>
                     </Link>
                   </li>
