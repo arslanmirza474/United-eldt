@@ -303,6 +303,7 @@ img {
 ul li {
   list-style: none;
 }
+
 p {
   color: #606060;
   margin-bottom: 15px;
@@ -3275,28 +3276,16 @@ height: 485px;
 }
 
 .rightimagecontent{
-  /* display: `flex`,
-  position: `relative`,
-  flexDirection: `column`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  paddingBottom: `50px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  width: `inherit`,
-  flexWrap: "nowrap",
-  // height: `auto`, */
+
   display: flex;
   position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 50px;
-  /* box-sizing: border-box; */
   flex: 1;
   width: inherit;
   flex-wrap: nowrap;
-  
+  padding-bottom: 50px;
 }
 .line-flag {
   width: 289px;
@@ -3868,15 +3857,28 @@ height: 100%;
   
 
 }
+.coverofbannerimage{
+  position: relative;
+  position: relative;
+  display: flex;
+  /* align-items: center; */
+  top: 361px;
+  left: 5px;
+}
+.rotater{
+  width: 195px;
+}
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 
-.callphone-block .button-block button:hover {
-  background: #fbb723;
-  border: 2px solid #2c292a;
-  padding: 0;
-  color: #2c292a;
-  letter-spacing: 0.32px;
-  font-weight: 500;
-  
+.rotater {
+  animation: rotate360 10s linear infinite; /* Adjust duration and timing function as needed */
 }
 .callphone-block .button-block button svg,
 .contact-info .line-icons-contact li .icon {
@@ -4410,11 +4412,30 @@ height: 100%;
     max-width: 500px !important;
   }
 }
+@media (max-width:1600px) {
+  .coverofbannerimage{
+    top: 364px;
+    left: 0;
+    }
+}
+@media (max-width:1550px) {
+  .coverofbannerimage{
+    top: 320px;
+    left: 0;
+    }
+}
 @media (max-width:1440px) {
   .callphone-block .right-side{
     margin-right: 163px;
     margin-top: 70px;
   }
+  .rightimagecontent{
+    margin-left: 12%;
+  }
+  .coverofbannerimage{
+    top: 334px;
+    left: 0;
+    }
   .feedback-content{
     padding-left: 20px;
     padding-right: 20px;
@@ -4476,6 +4497,11 @@ height: 100%;
   .callphone-block .right-side{
     margin-top: 0px;
     margin-right: 10px;
+  }
+}
+@media (max-width:1240px) {
+  .rightimagecontent{
+    margin-left: 25%;
   }
 }
 @media (max-width:1200px) {
@@ -6668,6 +6694,15 @@ padding-bottom: 150px;
 @media (max-width: 990px) {
   .subscribe-content .newsletter-form{
     width: 80%;
+  }
+  .rightimagecontent{
+    margin-left: 0px;
+  }
+  .css-fph0cl{
+padding-bottom: 0px !important;
+  }
+  .coverofbannerimage{
+    display: none;
   }
   .callphone-block {
     flex-direction: column;

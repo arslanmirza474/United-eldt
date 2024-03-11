@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { styled } from "@mui/material/styles";
-
+import bannerimage from  "./images/Selo.svg"
 import { Translator, Translate } from "react-auto-translate";
 import LeftHeroContent from "./LeftHeroContent";
 import { useSelector } from "react-redux";
@@ -21,6 +21,7 @@ const HeroBanner = styled("div")({
   boxSizing: `border-box`,
   flexWrap: "wrap",
   flex: `1`,
+  paddingBottom:"50px"
 });
 
 const Hero = styled("div")({
@@ -70,7 +71,7 @@ const MainImage = styled("img")(({ theme }) => ({
 
 const DivHeroRightContent = styled("div")({
   display: `flex`,
-  position: `relative`,
+  position: `absolute`,
   flexDirection: `row`,
   justifyContent: `space-between`,
   alignItems: `center`,
@@ -79,7 +80,7 @@ const DivHeroRightContent = styled("div")({
   flex: `1`,
   width: `974px`,
   flexWrap: "wrap",
-  
+  bottom:"20px"
 });
 
 function Banner(...props) {
@@ -118,6 +119,9 @@ function Banner(...props) {
           <DivHeroRight className="rightimagecontent">
             <DivHeroRightContent imgcontent>
             <DivHeroRightContent imgcontent>
+          <div className="coverofbannerimage">
+            <img className="rotater" src={bannerimage}  alt="imageofall"/>
+          </div>
               <MainImage src={largeScreenImage} alt="" className="main-image desktop largescreenhero" />
             </DivHeroRightContent>
             </DivHeroRightContent>

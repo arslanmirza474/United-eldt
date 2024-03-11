@@ -63,7 +63,7 @@ window.scrollTo(0,0);
                 <div className="ref-bottom flex f-direction-row">
                   <div className="email-bottom bottomemail">
                     <span className="title-bottom">
-                      <Translate>Connect with us</Translate>
+                      <Translate>Connect With Us</Translate>
                     </span>
                     <p>
                       <Translate>
@@ -82,7 +82,7 @@ window.scrollTo(0,0);
                 <div className="">
 
                 <span className="title-bottom">
-                      <Translate>Our payment methods</Translate>
+                      <Translate>Our Payment Methods</Translate>
                       <div className="cards" >
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 11" fill="none">
                         <path d="M31.623 0.408203H29.5155C28.8783 0.408203 28.3882 0.604249 28.0941 1.2414L24.0752 10.4065H26.9179C26.9179 10.4065 27.408 9.18125 27.506 8.88718C27.8001 8.88718 30.5937 8.88718 30.9858 8.88718C31.0838 9.23026 31.3289 10.3575 31.3289 10.3575H33.8775L31.623 0.408203ZM28.2902 6.8287C28.5352 6.24056 29.3684 4.03505 29.3684 4.03505C29.3684 4.08406 29.6135 3.44691 29.7115 3.10383L29.9076 3.98604C29.9076 3.98604 30.4467 6.3876 30.5447 6.87771H28.2902V6.8287Z" fill="#3362AB" />
