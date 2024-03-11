@@ -177,7 +177,7 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
             onBlur={(e) => e.target.style.borderColor = "#D2D2D2"} 
           >
             <Option className="justify-content-center" value="">
-              <Avatar /> Select language
+              <Avatar /> Select Language
             </Option>
             {options.map((option) => (
         <Option key={option.value} value={option.label}>
