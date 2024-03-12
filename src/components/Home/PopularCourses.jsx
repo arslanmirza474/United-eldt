@@ -529,7 +529,7 @@ const handlePaymentRequest = async () => {
               {
                 loading ? (
                   <>
-                    Place your order:${purchase.price }.00 USD
+                    Place your order: ${purchase.price }.00 USD
                   </>
                 ) : (
                   <>
