@@ -16,7 +16,24 @@ function StudentRegistration({ handleNavigationClick }) {
   const [student, setStudent]=useState("")
   const [modalvisible, setModalvisible]=useState(false)
   const [errors, setErrors] = useState({});
-
+  const [inputtype, setInputtype] = useState("password");
+  const [coinputtype, setCoinputtype] = useState("password");
+const showpassword =(e)=>{
+  e.preventDefault()
+if(inputtype === "password"){
+  setInputtype("text")
+}else{
+  setInputtype("password")
+}
+}
+const showcopassword =(e)=>{
+  e.preventDefault()
+if(coinputtype === "password"){
+  setCoinputtype("text")
+}else{
+  setCoinputtype("password")
+}
+}
   const hided =()=>{
     setModalvisible(false)
   }
@@ -184,23 +201,40 @@ function StudentRegistration({ handleNavigationClick }) {
             />
 
 <label className="foam-label">New password</label>
-            <input
-              className={`registinput ${errors.newPassword ? 'error-border' : ''}`}
-              type="password"
+<div  className={`registinput ${errors.newPassword ? 'error-border' : ''}`}
+>
+  <input
+  style={{border:"none",width:"90%"}}
+              type={inputtype}
               placeholder="New Password"
               value={newPassword}
               onChange={(e) => setNewPassword(e.target.value)}
             />
+            <button onClick={showpassword}>
+              {
+                inputtype === "password" ?(<i class="fa-regular fa-eye"></i>):(<i class="fa-regular fa-eye-slash"></i>)
+              }
+            </button>
+</div>
+            
             {errors.newPassword && <div className="error-message">{errors.newPassword}</div>}
 
             <label className="foam-label">Confirm password</label>
-            <input
-              className={`registinput ${errors.confirmPassword ? 'error-border' : ''}`}
-              type="password"
-              placeholder="Confirm Password"
+            <div  className={`registinput ${errors.confirmPassword ? 'error-border' : ''}`}
+>
+  <input
+              style={{border:"none",width:"90%"}}
+              type={coinputtype}
+              placeholder="New Password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
+            <button onClick={showcopassword}>
+              {
+                coinputtype === "password" ?(<i class="fa-regular fa-eye"></i>):(<i class="fa-regular fa-eye-slash"></i>)
+              }
+            </button>
+</div>
             {errors.confirmPassword && <div className="error-message">{errors.confirmPassword}</div>}
  
           </form>

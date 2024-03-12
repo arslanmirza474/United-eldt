@@ -46,7 +46,7 @@ const AppRoutes = () => {
           {/* ================= Public Routes Started */}
          
              <Route
-            path="login"
+            path="/login"
             element={
                 <AuthenticationStudent />
             }

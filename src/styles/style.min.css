@@ -671,6 +671,12 @@ body .is-layout-flex > * {
   font-size: 16px;
   font-weight: 400;
 }
+.inputflex{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+ padding-right: 10px;
+}
 .form-control::-moz-placeholder,
 .form-select::-moz-placeholder {
   color: #7e7e7e;

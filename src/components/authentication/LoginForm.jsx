@@ -29,6 +29,15 @@ export default function LoginForm() {
  const [error, setError] = useState(false);
 const [process, setProcess]=useState(true)
 const [loginatm, setLoginatm]=useState(true)
+const [inputtype, setInputtype] = useState("password");
+const showpassword =(e)=>{
+  e.preventDefault()
+if(inputtype === "password"){
+  setInputtype("text")
+}else{
+  setInputtype("password")
+}
+}
   const navigate = useNavigate()
 const failedclose = ()=>{
   setFailedlogin(false)
@@ -155,14 +164,22 @@ const recoverEmail = async (e) => {
               <label>
                 <Translate>Password</Translate>
               </label>
-              <input
-                type="password"
-                className="form-control"
-                placeholder="Ex. United2023@"
-                name="password"
-                value={password}
-                onChange={(e)=>{setPassword(e.target.value)}}
-              />
+                     <div  className="form-control inputflex"
+>
+  <input
+              style={{border:"none",width:"90%"}}
+              type={inputtype}
+              placeholder="Ex. United2023@"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <div onClick={showpassword}>
+              {
+                inputtype === "password" ?(<i class="fa-regular fa-eye"></i>):(<i class="fa-regular fa-eye-slash"></i>)
+              }
+            </div>
+</div>
+ 
             </div>
 
 
