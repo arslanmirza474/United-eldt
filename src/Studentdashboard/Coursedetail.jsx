@@ -14,7 +14,7 @@ function Coursedetail() {
   const [uncomp, setUncomp] = useState([]);
 const [loading, setLoading] = useState(true)
 const [responsedata, setResponsedata] = useState('');
-
+const [generating, setGenerating]=useState(false)
   useEffect(() => {
     const personId = localStorage.getItem("userId");
     if (personId) {
@@ -28,13 +28,17 @@ const [responsedata, setResponsedata] = useState('');
     fetchstudentdata(courplace)
   }
   const fetchstudentdata = (courplace) => {
+    setGenerating(true)
     axios.get(`https://server-of-united-eldt.vercel.app/api/studentinformation/?studentId=${userId}&enrolledIndex=${courplace}`)
       .then(res => {
         setResponsedata(res.data);
+        console.log(responsedata)
         generateCertificate()
       })
       .catch(error => {
         console.error('Error fetching student data:', error);
+      }).finally(() => {
+        setGenerating(false);
       });
   };
   const fetchUserInfo = () => {
@@ -289,7 +293,11 @@ ctx.fillText(roundedPercentage, canvas.width / 2 + ctx.measureText(scoreText).wi
 
                           </div> 
                           <Link >
-                          <div className="warning" onClick={()=>{generator(course.enrollindex)}}>Certificate</div></Link>
+                          <div className="warning" onClick={()=>{generator(course.enrollindex)}}>
+                            {
+                              generating ?(<>Please Wait...
+                              </>):(<>Certificate</>)
+                            }</div></Link>
                         </div>
                       </>
                     ))}
