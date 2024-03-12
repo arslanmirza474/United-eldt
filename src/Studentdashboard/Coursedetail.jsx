@@ -214,7 +214,7 @@ const [loading, setLoading] = useState(true)
    
 
                           </div> 
-                          <Link to={`/quiz/${course.courseNameid}`}>
+                          <Link >
                           <div className="warning">Certificate</div></Link>
                         </div>
                       </>
