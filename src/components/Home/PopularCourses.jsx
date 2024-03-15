@@ -12,8 +12,7 @@ import spain from "./images/ES Spain.svg"
 import "./courses.css"
 import { useState, useEffect, useRef } from 'react';
 import { Modal, notification } from 'antd';
-import google from "./images/google-pay-38 1.png"
-import apple from "./images/apple-logo-png-apple-mac-vector-logo-download-23 1.png"
+
 import Successi from "./images/Group 6674.png"
 import errir from "./images/Group 6674 (2).png"
 import { jwtDecode } from "jwt-decode";
@@ -21,7 +20,6 @@ import CustomDropdown from "./CustomDropdown";
 import { useSelector } from "react-redux";
 import bannerimage from  "./images/Selo.svg"
 import GooglePay from "./Googlepay";
-import Applepay from "./Applepay";
 import {
   Elements
   } from '@stripe/react-stripe-js';
@@ -48,15 +46,8 @@ export default function PopularCourses({ language ,showCancelButton,handleNaviga
   const [cardNumber, setCardNumber] = useState("");
   const [date, setDate] = useState("");
   const [cardCode, setCardCode] = useState("");
-const [iswrtting,setIswritting]=useState({})
-const handleFocus = (id)=>{
-  setIswritting(({...iswrtting,[id]:true}))
-}
-const handleBlur =(event,id)=>{
-  if(event.target.value === ""){
-    setIswritting({...iswrtting,[id]:false})
-  }
-}
+
+
   useEffect(() => {
     const personId = localStorage.getItem("userId");
     if (personId) {
@@ -249,74 +240,31 @@ if(response.data.available === true ){
 };
 
 
-useEffect(() => {
-  // Load the Google Pay script
-  const script = document.createElement('script');
-  script.src = 'https://pay.google.com/gp/p/js/pay.js';
-  script.async = true;
-  document.body.appendChild(script);
 
-  // Cleanup function
+
+
+
+
+const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+useEffect(() => {
+  const handleResize = () => {
+    setIsSmallScreen(window.innerWidth <= 500);
+  };
+
+  handleResize(); // Check initial screen size
+  window.addEventListener("resize", handleResize); // Add event listener for window resize
+
   return () => {
-    document.body.removeChild(script);
+    window.removeEventListener("resize", handleResize); // Cleanup on component unmount
   };
 }, []);
-
-const handlePaymentRequest = async () => {
-  try {
-    const paymentDataRequest = {
-      apiVersion: 2,
-      apiVersionMinor: 0,
-      allowedPaymentMethods: [
-        {
-          type: 'CARD',
-          parameters: {
-            allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
-            allowedCardNetworks: ['MASTERCARD', 'VISA'],
-          },
-          tokenizationSpecification: {
-            type: 'PAYMENT_GATEWAY',
-            parameters: {
-              gateway: 'example',
-              gatewayMerchantId: 'exampleGatewayMerchantId',
-            },
-          },
-        },
-      ],
-      merchantInfo: {
-        merchantId: '12345678901234567890',
-        merchantName: 'Demo Merchant',
-      },
-      transactionInfo: {
-        totalPriceStatus: 'FINAL',
-        totalPriceLabel: 'Total',
-        totalPrice: '100.00',
-        currencyCode: 'USD',
-        countryCode: 'US',
-      },
-    };
-
-    // Open the Google Pay payment sheet
-    const paymentResponse = await window.google.payments.api.paymentData.request(paymentDataRequest);
-
-    // Extract the payment token from the payment response
-    const paymentToken = paymentResponse.paymentMethodData.tokenizationData.token;
-
-    // Handle the payment token as needed
-    console.log('Payment token:', paymentToken);
-  } catch (error) {
-    console.error('Error processing Google Pay:', error);
-  }
-};
-
-
-
-
-  useEffect(() => {
-    axios.get("https://server-of-united-eldt.vercel.app/api/courses").then((res) => {
-      setPlans(res.data);
-    });
-  }, []);
+useEffect(() => {
+  axios.get("https://server-of-united-eldt.vercel.app/api/courses").then((res) => {
+    // Remove the first item from plans if the screen size is small
+    setPlans(isSmallScreen ? res.data.slice(1) : res.data);
+  });
+}, [isSmallScreen]);
 
   
 

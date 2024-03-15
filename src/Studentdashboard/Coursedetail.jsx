@@ -27,9 +27,9 @@ const [generating, setGenerating]=useState(false)
   const generator =(courplace)=>{
     fetchstudentdata(courplace)
   }
-  const fetchstudentdata = (courplace) => {
+  const fetchstudentdata = async(courplace) => {
     setGenerating(true)
-    axios.get(`https://server-of-united-eldt.vercel.app/api/studentinformation/?studentId=${userId}&enrolledIndex=${courplace}`)
+   await axios.get(`https://server-of-united-eldt.vercel.app/api/studentinformation/?studentId=${userId}&enrolledIndex=${courplace}`)
       .then(res => {
         setResponsedata(res.data);
         console.log(responsedata)
@@ -100,7 +100,7 @@ const roundedPercentage = responsedata.percentage.toFixed(1) + '%';
 ctx.font = 'bold 16px Arial';
 const margin = 45; // Adjust the margin as needed
 const textWidth = ctx.measureText(roundedPercentage).width;
-ctx.fillText(roundedPercentage, canvas.width / 2 + ctx.measureText(scoreText).width - textWidth - margin - 20, canvas.height / 2 + 70); // Add 20px margin-left
+ctx.fillText(roundedPercentage, canvas.width / 2 + ctx.measureText(scoreText).width - textWidth - margin - -30, canvas.height / 2 + 70); // Add 20px margin-left
 
       // Convert canvas to data URL
       const dataUrl = canvas.toDataURL();

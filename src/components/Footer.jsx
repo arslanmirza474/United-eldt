@@ -52,9 +52,14 @@ window.scrollTo(0,0);
                     />
                   </a>
                 </Link>
-                <p>
+                <p className="forlargerdes">
                   <Translate>
                   Welcome to United ELDT, your premier destination for online Entry-Level Driver Training (ELDT) courses. Our comprehensive program is designed to equip aspiring drivers with the skills and knowledge needed to embark on a successful career in the transportation industry{" "}
+                  </Translate>{" "}
+                </p>
+                <p className="forsmallermobile">
+                  <Translate>
+                  Welcome to United ELDT, your premier destination for online Entry-Level Driver Training (ELDT) courses.{" "}
                   </Translate>{" "}
                 </p>
               </div>
@@ -200,7 +205,7 @@ window.scrollTo(0,0);
                   <li>
                     <Link to="/contact-us">
                       <a>
-                        <Translate>Connect With Me</Translate>
+                        <Translate>Connect With us</Translate>
                       </a>
                     </Link>
                   </li>

@@ -1229,7 +1229,8 @@ Navbar Area CSS
 	left: 0;
 	right: 0;
 	transition: ease-out 0.2s;
-	padding: 27px 0;
+	padding: 10px 0;
+	background-color: #2C292A;
 }
 
 .navbar-area.is-sticky {
@@ -1643,6 +1644,11 @@ Navbar Area CSS
 }
 
 @media (max-width: 500px) {
+	.navbar-area{
+		background: #FFF;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
 	.hidden_mobile
   {
     display: hidden !important;
@@ -1708,11 +1714,13 @@ text-decoration-line: underline;
 		width: calc(100% - 79px);
 	}
 }
-
-@media (max-width: 340px) {
+@media (max-width:500px) {
 	.block-right-topo {
-		padding: 34px 20px 0 20px;
+		top: -43px;
 	}
+}
+@media (max-width: 340px) {
+	
 
 	.main-left-content {
 		padding: 30px 20px !important;

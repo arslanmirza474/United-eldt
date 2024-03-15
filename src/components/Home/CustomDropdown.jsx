@@ -73,7 +73,7 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
       {
         breakpoint: 500,
         settings: {
-          slidesToShow: 1.3, // Show a bit of the previous and next cards
+          slidesToShow: 1.1, // Show a bit of the previous and next cards
           slidesToScroll: 1
         }
       }
@@ -93,9 +93,7 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
   
 
   const handleClickBuyNow = (planId) => {
-    console.log("hello")
     const plan = plans.find(plan => plan._id === planId);
-    console.log(plan)
     if (!plan?.language) {
         setErrorPlanId(planId);
     } else {
@@ -135,8 +133,8 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
                           <span className="flex-end">
 
 
-                            <sup className="dollar-sup">$</sup>
-                            <span className="main-price"> <Translate>{plan.price}</Translate></span>
+                           
+                            <span className="main-price"> <sup className="dollar-sups">$</sup> <Translate>{plan.price}</Translate><div className="dollar-sup">.00</div></span>
                           </span>
                         </div>
 
@@ -175,6 +173,9 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
             onChange={(value) => handleOptionSelect(value,index, plan._id)}
             onFocus={(e) => e.target.style.boxShadow = "transparent"} // Remove blue border on focus
             onBlur={(e) => e.target.style.borderColor = "#D2D2D2"} 
+            suffixIcon={<svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
+            <path d="M14.9141 6.75L9.28906 12.375L3.66406 6.75" stroke="#2C292A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>} 
           >
             <Option className="justify-content-center" value="">
               <Avatar /> Select Language
@@ -194,7 +195,7 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
                                         <path d="M8 11.5C8.41421 11.5 8.75 11.1642 8.75 10.75C8.75 10.3358 8.41421 10 8 10C7.58579 10 7.25 10.3358 7.25 10.75C7.25 11.1642 7.58579 11.5 8 11.5Z" fill="#FE2727"/>
                                       </svg>   <span className='mx-2'>Please select a language</span></div>
                                     )}
-<div className='Iconscovers'>
+
   <div className="toper   Acesso">
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -252,7 +253,7 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
   </svg>{" "}
   <span  className="mx-2"><Translate>TPR Certified:</Translate><strong className="strong-text"> Yes</strong> </span>
 </div>
-</div>
+
 
 
 

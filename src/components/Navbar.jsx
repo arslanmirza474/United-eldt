@@ -11,29 +11,43 @@ import { setLanguage } from "../store/UserActions";
 import { Link as ScrollLink } from 'react-scroll';
 import weblogo from "./Unitedlogo.png"
 import { jwtDecode } from "jwt-decode";
-
+import brandlogo from "./ELDT LOGO.svg"
 export default function Navbar({ className = "is-home" }, ...props) {
+  const [backgroundColor, setBackgroundColor] = useState("#2c292a")
+  const [websitelogo, setWebsitelogo] = useState(weblogo)
+
   const ref = useRef();
   const toggleNavbar = () => {
     setMenu(!menu);
+    if (screenWidth <= 500) {
+      setBackgroundColor(backgroundColor === "#fff" ? "#2c292a" : "#fff")
+      setWebsitelogo(websitelogo === weblogo ? brandlogo : weblogo)
+    }
   };
   const handleClick = () => {
     toggleNavbar()
     window.scrollTo({
-        top: 1150,
-        behavior: "smooth",
+      top: 1150,
+      behavior: "smooth",
     });
-   
-};
-const [userId, setUserId]=useState(null)
 
-useEffect(() => {
-  const personId = localStorage.getItem("userId");
-  if (personId) {
-    const decoded = jwtDecode(personId);
-    setUserId(decoded);
-  }
-}, []);
+  };
+  const buybutton = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+
+  };
+  const [userId, setUserId] = useState(null)
+
+  useEffect(() => {
+    const personId = localStorage.getItem("userId");
+    if (personId) {
+      const decoded = jwtDecode(personId);
+      setUserId(decoded);
+    }
+  }, []);
   const [openUser, setOpenUser] = useState(false);
 
   const userState = useSelector((state) => state.user);
@@ -67,9 +81,9 @@ useEffect(() => {
   useEffect(() => {
     let elementId = document.getElementById("navbar");
     document.addEventListener("scroll", () => {
-     
-        elementId.classList.add("is-sticky");
-     
+
+      elementId.classList.add("is-sticky");
+
     });
   });
   const SelectLanguage = (availableLanguages, i18n, lang) => {
@@ -109,7 +123,7 @@ useEffect(() => {
                 <li
                   className={
                     "button flag-button " + language.className + " " + lang ==
-                    language.name
+                      language.name
                       ? "active"
                       : ""
                   }
@@ -149,149 +163,216 @@ useEffect(() => {
       </>
     );
   };
-  
-  const classOne = menu ? "collapse ms-auto show" : "collapse ms-auto show";
 
+  const classOne = menu ? "collapse ms-auto show" : "collapse ms-auto show";
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setIsScrolled(scrollPosition > 450); // Change 400 to your desired scroll position
+    };
+
+    if (screenWidth <= 500) {
+      window.addEventListener('scroll', handleScroll);
+      setBackgroundColor("#fff")
+      setWebsitelogo(brandlogo)
+    } else {
+      setIsScrolled(false);
+      window.removeEventListener('scroll', handleScroll);
+    }
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [screenWidth]);
   return (
     <Translator
       from="en"
       to={languageState.language.value}
       googleApiKey={process.env.REACT_APP_GOOGLE_TRANSLATE_KEY}
     >
-      <div className="no-tailwindcss">
-        <div id="navbar" className={`navbar-area ${className}`} ref={ref}>
-          <div className="edemy-nav">
-            <div className="container-full">
-              <div className="navbar navbar-expand navbar-light">
-                <Link to="/">
-                  <a onClick={toggleNavbar} className="navbar-brand">
-                    <img
-                      src={weblogo}
-                      alt="logo"
-                      class="navlogo"
-                      className="logo-nav"
-                    />
-                  </a>
-                </Link>
-
-                <button
-                  className={`button-open-menu  ${menu ? "is-open" : ""}`}
-                  onClick={toggleNavbar}
-                  type="button"
-                >
-                  <span className="icon-bar top-bar"></span>
-                  <span className="icon-bar middle-bar"></span>
-                  <span className="icon-bar bottom-bar"></span>
-                </button>
-                <div
-                  className={`block-right-topo ${menu ? "open-mobile" : ""}`}
-                >
-                  <div className={classOne} id="navbarSupportedContent">
-                    <div className="navbar-nav flex">
-                      <motion.li
-                        className={`nav-item ${openLang ? "show-menu" : ""}`}
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                        }}
-                      >
-                        <Link active className="active">
-                          <a className="nav-link">
-                            {SelectLanguage(availableLanguages, "en", lang)}
-                          </a>
-                        </Link>
-                      </motion.li>
-                      <motion.li className="nav-item">
-                        <Link
-                          onClick={() => {
-                            setMenu(false);
-                          }}
-                          to="/"
-                          active
-                          className="active"
-                        >
-                          <a className="nav-link">
-                            <Translate>Home</Translate>
-                          </a>
-                        </Link>
-                      </motion.li>
-
-                      <motion.li className="nav-item" whileTap={{ scale: 0.9 }}>
-                        <Link
-                          onClick={() => {
-                            setMenu(false);
-                          }}
-                      
-                          active
-                          className="active"
-                        >
-                          
-                           <ScrollLink onClick={handleClick} to="targetSection" smooth={true} duration={500}  className="nav-link">
-                           <Link to="/"> <Translate>Courses</Translate></Link>
-                          </ScrollLink>
-                        </Link>
-                      </motion.li>
-
-                     
-                     
-                     
-                    
-
-                      <motion.li className="nav-item">
-                        <div className="others-option d-flex align-items-center"></div>
-                      </motion.li>
-                    </div>
+      <nav id="navbar" className={isScrolled ? 'scrolled-navbar' : 'no-tailwindcss'}>
+        {/* Render different navbar content based on isScrolled */}
+        {isScrolled ? (
+          <div className="scrolled-navbar">
+            <div className="coverofnavbar">
+              <div className="leftscroll">
+                <div className="nameofclass">
+                  Class A
+                </div>
+                <div className="red-cover">
+                  <div className="redprice">
+                    50% OFF
                   </div>
-
-                  <div className="others-option d-flex align-items-center">
-                    {/* <Cart
-                      language={languageState?.language?.value}
-                      setMenu={setMenu}
-                    /> */}
-{
-  userId === null ?(<>
-    <div className="option-item">
-                    
-                    <Link
-                      onClick={() => {
-                        setMenu(false);
-                      }}
-                      to="/login"
-                    >
-                      <a className="default-btn">
-                        <Translate>Login</Translate>
-                      </a>
-                    </Link>
-                
-                </div>
-  </>):(
-    <>
-      <div className="option-item">
-                    
-                    <Link
-                      onClick={() => {
-                        setMenu(false);
-                      }}
-                      to="/studentdash"
-                    >
-                      <a className="default-btn">
-                        <Translate>Dashboard</Translate>
-                      </a>
-                    </Link>
-                
+                  <div className="coverofextra">
+                    $50.00
+                  </div>
                 </div>
 
-    </>
-  )
-}
-                  
+              </div>
+              <div className="rightscroll">
+                <div className="buysmallbutton" onClick={buybutton}>
+                  Buy now
+                </div>
+              </div>
+            </div>
+
+          </div>
+        ) : (
+          <div className="no-tailwindcss">
+            <div id="navbar" style={{ backgroundColor }} className={`navbar-area ${className}`} ref={ref}>
+              <div className="edemy-nav">
+                <div className="container-full">
+                  <div className="navbar navbar-expand navbar-light">
+
+                    <Link to="/">
+                      <a onClick={toggleNavbar} className="navbar-brand">
+                        <img
+                          src={websitelogo}
+                          alt="logo"
+                          class="navlogo"
+                          className="logo-nav"
+                        />
+                      </a>
+                    </Link>
+
+
+
+                    <button
+                      className={`button-open-menu  ${menu ? "is-open" : ""}`}
+                      onClick={toggleNavbar}
+                      type="button"
+                    >
+                      <span className="icon-bar top-bar"></span>
+                      <span className="icon-bar middle-bar"></span>
+                      <span className="icon-bar bottom-bar"></span>
+                    </button>
+                    <div
+                      className={`block-right-topo ${menu ? "open-mobile" : ""}`}
+                    >
+                      <div className={classOne} id="navbarSupportedContent">
+                        <div className="navbar-nav flex">
+                          <motion.li
+                            className={`nav-item ${openLang ? "show-menu" : ""}`}
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                            }}
+                          >
+                            <Link active className="active">
+                              <a className="nav-link">
+                                {SelectLanguage(availableLanguages, "en", lang)}
+                              </a>
+                            </Link>
+                          </motion.li>
+                          <motion.li className="nav-item">
+                            <Link
+                              onClick={() => {
+                                setMenu(false);
+                              }}
+                              to="/"
+                              active
+                              className="active"
+                            >
+                              <a className="nav-link">
+                                <Translate>Home</Translate>
+                              </a>
+                            </Link>
+                          </motion.li>
+
+                          <motion.li className="nav-item" whileTap={{ scale: 0.9 }}>
+                            <Link
+                              onClick={() => {
+                                setMenu(false);
+                              }}
+
+                              active
+                              className="active"
+                            >
+
+                              <ScrollLink onClick={handleClick} to="targetSection" smooth={true} duration={500} className="nav-link">
+                                <Link to="/"> <Translate>Courses</Translate></Link>
+                              </ScrollLink>
+                            </Link>
+                          </motion.li>
+
+
+
+
+
+
+                          <motion.li className="nav-item">
+                            <div className="others-option d-flex align-items-center"></div>
+                          </motion.li>
+                        </div>
+                      </div>
+
+                      <div className="others-option d-flex align-items-center">
+                        {/* <Cart
+                            language={languageState?.language?.value}
+                            setMenu={setMenu}
+                          /> */}
+                        {
+                          userId === null ? (<>
+                            <div className="option-item">
+
+                              <Link
+                                onClick={() => {
+                                  setMenu(false);
+                                }}
+                                to="/login"
+                              >
+                                <a className="default-btn">
+                                  <Translate>Login</Translate>
+                                </a>
+                              </Link>
+
+                            </div>
+                          </>) : (
+                            <>
+                              <div className="option-item">
+
+                                <Link
+                                  onClick={() => {
+                                    setMenu(false);
+                                  }}
+                                  to="/studentdash"
+                                >
+                                  <a className="default-btn">
+                                    <Translate>Dashboard</Translate>
+                                  </a>
+                                </Link>
+
+                              </div>
+
+                            </>
+                          )
+                        }
+
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        )}
+      </nav>
+
     </Translator>
   );
 }

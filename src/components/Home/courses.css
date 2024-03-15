@@ -1,11 +1,29 @@
 .dollar-sup{
-    color: #2C292A;
+    color: #060606;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 120%; /* 28.8px */
+    letter-spacing: -0.96px;
+    position: relative;
+    bottom: 10px;
+}
+.dollar-sups{
+    color: #060606;
 font-family: Inter;
 font-size: 24px;
 font-style: normal;
 font-weight: 500;
 line-height: 120%; /* 28.8px */
 letter-spacing: 1.2px;
+}
+.main-price{
+    display: flex;
+    align-items: center;
+}
+.mobile_cards .imageforbanner{
+    display: none;
 }
 .fnam {
     border-radius: 8px;
@@ -866,7 +884,7 @@ margin-top: 24px;
        .card-content{
         margin: auto;
         height: auto !important;
-        width: 311px !important;
+      
         margin-left: 7% !important;
   
     }
@@ -874,16 +892,12 @@ margin-top: 24px;
         padding: 0px;
     }
 }
-@media (max-width: 430px) {
+@media (max-width: 500px) {
     .card-content{
-        width: 300px !important;
+        width: 92% !important;
     }
 }
-@media (max-width: 410px) {
-    .card-content{
-        width: 295px !important;
-    }
-}
+
 @media (max-width: 1000px) {
     .card-content{
      width:auto;
