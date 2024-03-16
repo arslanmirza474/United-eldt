@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import back from "./back.png"
 
 import { useCookies } from "react-cookie";
-import logomain from "./logo 1.png"
+import logomain from "./ELDT LOGO.svg"
 import axios from "axios";
 import successmsg from "./Group 6674.png"
 import errormsg from "./Group 6674 (2).png"
@@ -122,7 +122,7 @@ const recoverEmail = async (e) => {
 
         </Link>
         <div className="mainlog">
-          <img src={logomain} alt="web-logo"/>
+          <img src={logomain} alt="web-logo" style={{width:"323px"}}/>
         </div>
         {
           forget ?(
