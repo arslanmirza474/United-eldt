@@ -104,11 +104,12 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
   return (
     <>
      <Translator
+     
         from="en"
         to={language || "en"}
         googleApiKey={process.env.REACT_APP_GOOGLE_TRANSLATE_KEY}
       >
-   
+  
 <div className='navigator' >
         <button className="nextbtnfor"  onClick={previous}>
         <i class="fa-solid fa-angle-left"></i>
@@ -117,7 +118,7 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
         <i class="fa-solid fa-angle-right"></i>
         </button>
       </div>   
-<div className='container maincontentslider'> 
+<div className='container maincontentslider' > 
  
 <Slider  ref={slider => {
           sliderRef = slider;
@@ -275,7 +276,7 @@ function CustomSelect({ options, handleLanguageChange,language,plans,showModal,l
 </Slider>
 
 </div>
-     
+
 </Translator>       
     </>
    

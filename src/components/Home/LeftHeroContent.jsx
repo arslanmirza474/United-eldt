@@ -4,7 +4,7 @@ import { styled } from "@mui/material/styles";
 import { Translator, Translate } from "react-auto-translate";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import allfalg from "./images/Allflags.svg"
+import allfalg from "./images/Allflags.svg";
 const LeftHeroContent1 = styled("div")({});
 const Frame6818 = styled("div")({});
 const ObtenhaCertificaçãoDSpan1 = styled("span")({});
@@ -14,15 +14,14 @@ const ObtenhaCertificaçãoD = styled("h1")({});
 const SomosAMaiorCertifica = styled("span")({});
 const DivFrame6707 = styled("div")({});
 
-
 const Ellipse15 = styled("img")({
   height: `41px`,
   width: `41px`,
   margin: `-2px`,
   position: "relative",
-  border:"3px solid #2c292a",
- borderRadius:"50%",
- padding:"0px"
+  border: "3px solid #2c292a",
+  borderRadius: "50%",
+  padding: "0px",
 });
 
 const Ellipse16 = styled("img")({
@@ -30,9 +29,9 @@ const Ellipse16 = styled("img")({
   width: `41px`,
   margin: `-2px`,
   position: "relative",
-  border:"3px solid #2c292a",
- borderRadius:"50%",
- padding:"0px"
+  border: "3px solid #2c292a",
+  borderRadius: "50%",
+  padding: "0px",
 });
 
 const Ellipse17 = styled("img")({
@@ -40,10 +39,9 @@ const Ellipse17 = styled("img")({
   width: `41px`,
   margin: `-2px`,
   position: "relative",
-  border:"2px solid #2c292a",
- borderRadius:"50%",
- padding:"0px"
-
+  border: "2px solid #2c292a",
+  borderRadius: "50%",
+  padding: "0px",
 });
 
 const Ellipse18 = styled("img")({
@@ -51,10 +49,9 @@ const Ellipse18 = styled("img")({
   width: `41px`,
   margin: `-2px`,
   position: "relative",
-  border:"2px solid #2c292a",
- borderRadius:"50%",
- padding:"0px"
-
+  border: "2px solid #2c292a",
+  borderRadius: "50%",
+  padding: "0px",
 });
 
 const Ellipse19 = styled("img")({
@@ -62,9 +59,9 @@ const Ellipse19 = styled("img")({
   width: `41px`,
   margin: `-2px`,
   position: "relative",
-  border:"2px solid #2c292a",
- borderRadius:"50%",
- padding:"0px"
+  border: "2px solid #2c292a",
+  borderRadius: "50%",
+  padding: "0px",
 });
 
 const Ellipse20 = styled("img")({
@@ -146,19 +143,17 @@ function LeftHeroContent(...props) {
   const languageState = useSelector((state) => state.language);
   const handleClick = () => {
     const screenWidth = window.innerWidth;
-    if(screenWidth >=786){
-       window.scrollTo({
-        top: window.scrollY + 1000,
-        behavior: "smooth", });
-    }else{
+    if (screenWidth >= 786) {
       window.scrollTo({
-        top: 1150,
+        top: window.scrollY + 1000,
         behavior: "smooth",
-    });
+      });
+    } else {
+      window.scrollTo({
+        top: 900,
+        behavior: "smooth",
+      });
     }
-     
-    
- 
   };
   return (
     <Translator
@@ -169,46 +164,46 @@ function LeftHeroContent(...props) {
       <LeftHeroContent1 className={`left-hero-block ${props.className}`}>
         <Frame6818>
           <ObtenhaCertificaçãoD className="main-title-hero herosectionhead">
+            {" "}
+            <span className="pre-yellow-bar">
               <Translate>{`Get`}</Translate>
-           &nbsp;
-              <span className="yellow">
-                <Translate>{`certified`}</Translate>
-              </span>
-              &nbsp;
-<div className="coverover"> <Translate>{`from anywhere!`}</Translate></div>
-             
+            </span>
+            &nbsp;
+            <span className="yellow">
+              <Translate>{`certified`}</Translate>
+            </span>
+            &nbsp;
+            <div className="coverover">
+              {" "}
+              <Translate>{`from anywhere!`}</Translate>
+            </div>
           </ObtenhaCertificaçãoD>
-          <SomosAMaiorCertifica className="main-subtitle" style={{maxWidth:"527px"}} >
+          <SomosAMaiorCertifica
+            className="main-subtitle"
+            style={{ maxWidth: "527px" }}
+          >
             <Translate>
               {`We are the largest CDL ELDT certified and digital platform in 8 languages in United States`}
             </Translate>
           </SomosAMaiorCertifica>
         </Frame6818>
 
-        <DivFrame6707 className="line-flag" style={{ display: "flex",marginBottom:"48px" }}>
-          <img
-            src={allfalg}
-            loading="lazy"
-            alt={"us-black"}
-          />
-        
-        </DivFrame6707>
+        {/* <DivFrame6707
+          className="line-flag"
+          style={{ display: "flex", marginBottom: "48px" }}
+        >
+          <img src={allfalg} loading="lazy" alt={"us-black"} />
+        </DivFrame6707> */}
         <DivFrame3830>
           <DivFrame3 className="main-block-buttons">
-            <ComprarAgora className="buy-now">
-              <Link to="" onClick={handleClick}>
-                <Translate>{`Buy Now`}</Translate>
-              </Link>
-            </ComprarAgora>
-            <FaleConosco className="contact-us">
-            <Link to="/contact-us" >
-            <Translate>{`Contact Us`}</Translate>
-          </Link>
-            </FaleConosco>
+            <a href="#thistarget" className="primary-button" >
+              <Translate>{`Buy Now`}</Translate>
+            </a>
+            <Link className="secondary-button" to="/contact-us">
+              <Translate>{`Contact Us`}</Translate>
+            </Link>
           </DivFrame3>
         </DivFrame3830>
-       
-        
       </LeftHeroContent1>
     </Translator>
   );

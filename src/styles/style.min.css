@@ -3318,7 +3318,7 @@ height: 485px;
   text-align: center;
   /* margin-bottom: 50px; */
   position: relative;
-  bottom: 74px;
+  bottom: 29px;
   display: block;
 }
 @keyframes rotate360 {
@@ -3510,8 +3510,12 @@ font-style: normal;
 font-weight: bold;
 line-height: 120%; /* 18px */
 }
-  .slick-dots.slick-dots-bottom{
+  .coverformobileversionofclassa .slick-dots.slick-dots-bottom{
     bottom: -15px;
+  }
+  .slick-dots.slick-dots-bottom{
+    position: relative;
+    bottom: 400px;
   }
   .footer-area{
     margin-top: 140px;

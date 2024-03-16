@@ -1,27 +1,29 @@
 import React, { useEffect, useState } from "react";
 import { styled } from "@mui/material/styles";
-import bannerimage from  "./images/Selo.svg"
+
 import { Translator, Translate } from "react-auto-translate";
 import LeftHeroContent from "./LeftHeroContent";
 import { useSelector } from "react-redux";
 // import useHero1 from './Hero1/useHero1';
-import heroimg1 from "./images/Group 1171278588.png"
-import heroimg2 from "./Group 117127858823.png"
-import heroimg from "./images/Realcover.svg"
+import heroimg1 from "./images/Group 1171278588.png";
+import heroimg2 from "./Group 117127858823.png";
+import heroimg from "./images/Realcover.svg";
+import HeaderHeroImg from "./images/header-hero-img.png";
+import BannerAnimation from "./BannerAnimation";
+import LoaderAnimationSVGComponent from "./LoaderAnimationSVGComponent";
 const HeroBanner = styled("div")({
   display: `flex`,
   position: `relative`,
   flexDirection: `row`,
   width: `100%`,
   height: `fit-content`,
-  backgroundColor: `#2C292A`,
+  backgroundColor: `#ffffff`,
   justifyContent: `center`,
   alignItems: `stretch`,
   alignContent: `stretch`,
   boxSizing: `border-box`,
   flexWrap: "wrap",
   flex: `1`,
-  paddingBottom:"50px"
 });
 
 const Hero = styled("div")({
@@ -57,21 +59,18 @@ const LeftHeroContentDiv = styled(LeftHeroContent)(({ theme }) => ({
   flexWrap: "wrap",
 }));
 
-const DivHeroRight = styled("div")({
-
-});
+const DivHeroRight = styled("div")({});
 const MainImage = styled("img")(({ theme }) => ({
-  width: "80%", 
+  width: "80%",
 
   [theme.breakpoints.up("xl")]: {
     width: "100%", // Set to 100% width for extra-large screens (xl and above)
   },
 }));
 
-
 const DivHeroRightContent = styled("div")({
   display: `flex`,
-  position: `absolute`,
+  position: `relative`,
   flexDirection: `row`,
   justifyContent: `space-between`,
   alignItems: `center`,
@@ -80,7 +79,6 @@ const DivHeroRightContent = styled("div")({
   flex: `1`,
   width: `974px`,
   flexWrap: "wrap",
-  bottom:"20px"
 });
 
 function Banner(...props) {
@@ -111,26 +109,32 @@ function Banner(...props) {
       to={props.language || languageState.language.value || "en"}
       googleApiKey={process.env.REACT_APP_GOOGLE_TRANSLATE_KEY}
     >
+      {/* <LoaderAnimationSVGComponent /> */}
+
       <HeroBanner className={`hero-banner  tw-px-5 ${props.className}`}>
-        <Hero className="container main-block ">
+        <Hero className="container main-block">
           <DivHeroLeft className="main-left-content">
             <LeftHeroContentDiv language={props.language} />
           </DivHeroLeft>
           <DivHeroRight className="rightimagecontent">
+            <BannerAnimation />
+          </DivHeroRight>
+          {/* <DivHeroRight className="rightimagecontent">
             <DivHeroRightContent imgcontent>
-            <DivHeroRightContent imgcontent>
-          <div className="coverofbannerimage">
-            <img className="rotater" src={bannerimage}  alt="imageofall"/>
-          </div>
-              <MainImage src={largeScreenImage} alt="" className="main-image desktop largescreenhero" />
-            </DivHeroRightContent>
+              <DivHeroRightContent imgcontent>
+                <MainImage
+                  src={largeScreenImage}
+                  alt=""
+                  className="main-image desktop largescreenhero"
+                />
+              </DivHeroRightContent>
             </DivHeroRightContent>
             <div className="maincover">
               <div className="main-image mobile mainpagearea">
                 <img src={heroimg} alt="" />
               </div>
             </div>
-          </DivHeroRight>
+          </DivHeroRight> */}
         </Hero>
       </HeroBanner>
     </Translator>

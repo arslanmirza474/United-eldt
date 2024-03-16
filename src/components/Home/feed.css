@@ -168,6 +168,19 @@
   .desktopversion{
     display: none;
   }
+ .feedback-area .slick-dots.slick-dots-bottom{
+    justify-content:flex-end !important;
+  }
+ .feedback-area .ant-carousel .slick-dots li.slick-active{
+    width: 70px;
+    height: 15px;
+    border-radius: 8px;
+  }
+ .feedback-area .ant-carousel .slick-dots li{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+  }
 }
 .desktopversion .digitalfont{
   font-size: 20px;

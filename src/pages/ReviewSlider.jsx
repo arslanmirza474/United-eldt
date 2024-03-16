@@ -26,7 +26,7 @@ function ReviewSlider (){
 
             </div>
 
-                <Carousel >
+                <Carousel autoplay={true}>
             <div className="reviewcontent">
 <img src={Review1} alt="review"/>
             </div>
@@ -63,6 +63,7 @@ function ReviewSlider (){
                 </div>
 
 <span>Unlimited access to the course</span>
+
              </div>
              <div className="listcom">
                 <div>

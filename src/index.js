@@ -11,6 +11,7 @@ import "./styles/nprogress.css";
 import "./styles/navbar.css";
 import "./styles/index.css";
 import "./styles/default.css";
+import "./styles/animate.css";
 
 // import "./styles/style.css";
 // import "./styles/responsive.css";
@@ -26,13 +27,15 @@ import { Provider } from "react-redux";
 import store, { persistor } from "./store";
 import { PersistGate } from "redux-persist/integration/react";
 import AppRoutes from "./routes/Routes";
+import IntroLogoAnimation from "./components/Home/IntroLogoAnimation";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-<Provider store={store}>
+  <Provider store={store}>
     <PersistGate persistor={persistor}>
-        <AppRoutes />
+      <AppRoutes />
+      <IntroLogoAnimation />
     </PersistGate>
   </Provider>
 );

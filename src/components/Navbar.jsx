@@ -2,7 +2,7 @@ import React from "react";
 import { useRef } from "react";
 import { useEffect, useState } from "react";
 import { Translator, Translate } from "react-auto-translate";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { styled } from "@mui/material/styles";
 // import Cart from "./navbar/Cart";
@@ -13,8 +13,8 @@ import weblogo from "./Unitedlogo.png"
 import { jwtDecode } from "jwt-decode";
 import brandlogo from "./ELDT LOGO.svg"
 export default function Navbar({ className = "is-home" }, ...props) {
-  const [backgroundColor, setBackgroundColor] = useState("#2c292a")
-  const [websitelogo, setWebsitelogo] = useState(weblogo)
+  const [backgroundColor, setBackgroundColor] = useState("#fff")
+  const [websitelogo, setWebsitelogo] = useState(brandlogo)
 
   const ref = useRef();
   const toggleNavbar = () => {
@@ -24,6 +24,7 @@ export default function Navbar({ className = "is-home" }, ...props) {
       setWebsitelogo(websitelogo === weblogo ? brandlogo : weblogo)
     }
   };
+  const location = useLocation();
   const handleClick = () => {
     toggleNavbar()
     window.scrollTo({
@@ -186,7 +187,7 @@ export default function Navbar({ className = "is-home" }, ...props) {
       setIsScrolled(scrollPosition > 450); // Change 400 to your desired scroll position
     };
 
-    if (screenWidth <= 500) {
+    if (location.pathname === '/classa' && screenWidth <= 500) {
       window.addEventListener('scroll', handleScroll);
       setBackgroundColor("#fff")
       setWebsitelogo(brandlogo)

@@ -83,7 +83,7 @@ export default function NewsLetter() {
   <motion.button type="button" className="default-btn" onClick={sendEmail}>
   {
   loading ? (
-    <Translate>Sign Up Now</Translate>
+    <Translate>Sign up now</Translate>
   ) : (
     <Translate>Sending...</Translate>
   )

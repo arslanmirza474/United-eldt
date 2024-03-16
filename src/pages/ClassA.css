@@ -430,7 +430,7 @@ margin-top: 16px;
     display: none;
 }
 @media (max-width:500px) {
-    .footer-area{
+   .coverformobileversionofclassa .footer-area{
         margin-top: -241px;
     }
     .forlargerdes{

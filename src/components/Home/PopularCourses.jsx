@@ -1,6 +1,6 @@
 import axios, { Axios } from "axios";
 import { Translator, Translate } from "react-auto-translate";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import barzil from "./images/BR Brazil.svg"
 import america from "./images/US United States of America (the).svg"
 import pakistan from "./images/PK Pakistan.svg"
@@ -12,7 +12,7 @@ import spain from "./images/ES Spain.svg"
 import "./courses.css"
 import { useState, useEffect, useRef } from 'react';
 import { Modal, notification } from 'antd';
-
+import CircularLogoSvg from "./CircularLogoSvg"
 import Successi from "./images/Group 6674.png"
 import errir from "./images/Group 6674 (2).png"
 import { jwtDecode } from "jwt-decode";
@@ -46,6 +46,7 @@ export default function PopularCourses({ language ,showCancelButton,handleNaviga
   const [cardNumber, setCardNumber] = useState("");
   const [date, setDate] = useState("");
   const [cardCode, setCardCode] = useState("");
+  const location = useLocation();
 
 
   useEffect(() => {
@@ -261,10 +262,11 @@ useEffect(() => {
 }, []);
 useEffect(() => {
   axios.get("https://server-of-united-eldt.vercel.app/api/courses").then((res) => {
-    // Remove the first item from plans if the screen size is small
-    setPlans(isSmallScreen ? res.data.slice(1) : res.data);
+    // Remove the first item from plans if the screen size is small and pathname is '/classa'
+    setPlans(isSmallScreen && location.pathname === '/classa' ? res.data.slice(1) : res.data);
   });
-}, [isSmallScreen]);
+}, [isSmallScreen, location.pathname]);
+
 
   
 
@@ -276,10 +278,9 @@ useEffect(() => {
         to={language || "en"}
         googleApiKey={process.env.REACT_APP_GOOGLE_TRANSLATE_KEY}
       >
-        <div className="imageforbanner">
-<img className="rotate-image" src={bannerimage}  alt="imageofall"/>
-        </div>
+        <CircularLogoSvg />
         <div className="courses-area tw-my-3" id="courses">
+        <div id="thistarget"></div>
           <div className="container ">
             <div className="section-title titleforcards">
               <span className="sub-title ">
@@ -326,7 +327,7 @@ useEffect(() => {
 
 
             
-                          <div className="customcard">
+                          <div className="customcard" >
                                               <CustomDropdown options={languageOptions} handleLanguageChange={handleLanguageChange} language={language} plans={plans}  large={large} medium={medium} showModal={showModal} showCancelButton={showCancelButton} handleNavigationClick={handleNavigationClick}/>
 
                           </div>

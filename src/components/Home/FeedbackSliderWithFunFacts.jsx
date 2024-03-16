@@ -46,7 +46,7 @@ export default function FeedbackSliderWithFunFacts({ language }) {
               </div>
               <div className="right_side rightslidercover">
                   <div className="svgcontain">
-              <svg className="heartbeat" xmlns="http://www.w3.org/2000/svg" width="68" height="69" viewBox="0 0 68 69" fill="none">
+              <svg xmlns="http://www.w3.org/2000/svg" width="68" height="69" viewBox="0 0 68 69" fill="none">
   <g filter="url(#filter0_d_2593_51706)">
     <circle cx="33.9996" cy="34.3512" r="13.1364" fill="url(#paint0_linear_2593_51706)"/>
   </g>
@@ -230,7 +230,7 @@ export default function FeedbackSliderWithFunFacts({ language }) {
   </Carousel>
   </div>
   <div className="svgcontainafter">
-              <svg className="heartbeat" xmlns="http://www.w3.org/2000/svg" width="55" height="56" viewBox="0 0 55 56" fill="none">
+              <svg xmlns="http://www.w3.org/2000/svg" width="55" height="56" viewBox="0 0 55 56" fill="none">
   <g filter="url(#filter0_d_2593_51711)">
     <circle cx="27.5" cy="27.8516" r="10.625" fill="url(#paint0_linear_2593_51711)"/>
   </g>

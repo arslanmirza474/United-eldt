@@ -156,7 +156,7 @@ export default function HomeAboutUs({ language }) {
                   
                   <div className="tw-flex lg:tw-justify-start tw-justify-center">
                     <button className="default-btn lg:tw-w-1/2  buttonofcourse" onClick={handleClick}>
-                      View Courses
+                      View courses
                     </button>
                   </div>
                 </p>
