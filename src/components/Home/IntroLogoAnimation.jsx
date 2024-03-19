@@ -1,6 +1,5 @@
 import gsap from "gsap";
 import * as React from "react";
-// import { gsap } from "./gsap.min.js";
 
 const IntroLogoAnimation = (props) => {
   React.useEffect(() => {
@@ -11,22 +10,43 @@ const IntroLogoAnimation = (props) => {
           document.body.classList.remove("no-scroll");
         },
       })
+      .from("#l1", { x: 303, duration: 0.5})
+      .from("#l10tm", { x: -350, duration: 0.5 }, "<")
       .from(
         ".stag",
         {
-          duration: 1,
+          delay: 0.1,
+          duration: 0.5,
           alpha: 0,
-          y: 30,
           transformOrigin: "50% 50%",
-          stagger: 0.2,
+          stagger: {
+            amount: 0.2,
+            from: "center",
+          },
         },
         "<"
       )
-      .to(".introContainer", {
-        delay: 0.5,
-        duration: 0.5,
-        y: "-100%",
-      });
+      .fromTo(
+        "#i-path",
+        { strokeDasharray: "0% 100%" },
+        { strokeDasharray: "100% 100%", duration: 1.2 },
+        "-=0.3"
+      )
+      .from(
+        "#i-dot",
+        {
+          y: 50,
+        },
+        "<"
+      )
+      .to(
+        ".introContainer",
+        {
+          duration: 0.8,
+          y: "-100%",
+        },
+        "-=0.7"
+      );
 
     return () => {
       introLogoAnimation.kill();
@@ -52,7 +72,7 @@ const IntroLogoAnimation = (props) => {
             <g id="Layer_1-2" data-name="Layer 1">
               <path
                 id="l1"
-                className="logoloader-2 stag"
+                className="logoloader-2"
                 d="M100,76.72c0,13.73-4.38,24.25-13,31.4a56.19,56.19,0,0,1-36.95,10.81A56.93,56.93,0,0,1,13,108.12c-8.76-7.3-13-17.67-13-31.4v-60H32.28V76.28c0,5.7,1.46,10.23,4.52,13.59s7.31,5,13.15,5,10.22-1.75,13.14-5.11a19.1,19.1,0,0,0,4.67-13.44V16.7H100Z"
               />
               <path
@@ -62,7 +82,7 @@ const IntroLogoAnimation = (props) => {
               />
               <g id="l3" className="stag">
                 <rect
-                  id="l32"
+                  id="i-dot"
                   className="logoloader-2"
                   x={188.54}
                   y={11.29}
@@ -71,11 +91,18 @@ const IntroLogoAnimation = (props) => {
                 />
                 <rect
                   id="l31"
-                  className="logoloader-2"
+                  className="logoloader-1"
                   x={188.54}
                   y={40.07}
                   width={29.06}
                   height={77.11}
+                />
+                <path
+                  id="i-path"
+                  d="M 203 118 L 203 40"
+                  stroke="#ffffff"
+                  stroke-width="29"
+                  fill="none"
                 />
               </g>
               <path
@@ -108,7 +135,7 @@ const IntroLogoAnimation = (props) => {
                 className="logoloader-1 stag"
                 d="M663.67,11.29c37,0,55.64,17.72,55.64,53,0,35.45-18.49,53-55.64,53H617.75v-106Zm-11.86,80.6h11.25c14.33,0,21.42-7.71,21.42-23V59.68c0-15.41-7.09-23-21.42-23H651.81Z"
               />
-              <g id="l10tm" className="stag">
+              <g id="l10tm">
                 <path
                   id="l10"
                   className="logoloader-1"

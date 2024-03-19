@@ -57,7 +57,6 @@ export default function Navbar({ className = "is-home" }, ...props) {
       setUserId(decoded);
     }
   }, []);
-  const [openUser, setOpenUser] = useState(false);
 
   const userState = useSelector((state) => state.user);
   const dispatch = useDispatch();
@@ -66,9 +65,9 @@ export default function Navbar({ className = "is-home" }, ...props) {
   const BtnLang = styled("div")({});
 
   const languageState = useSelector((state) => state.language);
-  const [flg, setFlg] = useState(
-    languageState?.language?.className || america
-  );
+  const [flg, setFlg] = useState(america);
+
+  
   const [nameLang, setNameLang] = useState(
     languageState?.language?.name || "English"
   );

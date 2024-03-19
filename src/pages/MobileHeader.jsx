@@ -353,7 +353,7 @@ function MobileHeader({ showCancelButton }) {
               </svg>
             </div>
             <div className="reviewcount">
-              3,458 reviews
+              7,458 reviews
             </div>
 
           </div>
