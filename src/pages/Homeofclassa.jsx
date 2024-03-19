@@ -69,6 +69,7 @@ Check out our other courses
             </Elements>       <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br><br></br> <br></br> <br></br> <br></br>
 
             <Fllowup/>
+
             <div className="for_destop_version_classa">
                <ReviewSlider />
                <GraduateStudent/>
