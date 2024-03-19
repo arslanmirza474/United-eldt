@@ -1303,7 +1303,6 @@ Navbar Area CSS
   left: 0;
   right: 0;
   transition: ease-out 0.2s;
-  padding: 27px 0;
 }
 
 .navbar-area.is-sticky {

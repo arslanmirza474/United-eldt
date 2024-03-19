@@ -10,8 +10,8 @@ const Modal = ({ isOpen, onClose, children }) => {
     <div className="modal-overlay">
       <div className="modal-content">
         <div className='modalheading d-flex  align-items-center'>
-        <span className="modal_heading mb-2">Select your truck type</span>
-        <span className="close-btn" onClick={onClose}><i class="fa-solid fa-xmark" style={{fontSize:"30px"}}></i></span>
+          <span className="modal_heading mb-2">Select your truck type</span>
+          <span className="close-btn" onClick={onClose}><i class="fa-solid fa-xmark" style={{ fontSize: "30px" }}></i></span>
 
 
         </div>

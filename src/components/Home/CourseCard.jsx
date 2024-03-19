@@ -34,7 +34,7 @@ export default function CourseCard(
   ...props
 ) {
   const [coupon, setCoupon] = useState();
-  const handleCoupon = () => {};
+  const handleCoupon = () => { };
 
   return (
     <>

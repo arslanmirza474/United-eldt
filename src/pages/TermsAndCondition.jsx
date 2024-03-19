@@ -18,7 +18,7 @@ export default function TermsAndCondition() {
       <Translator
         from="en"
         to={languageState.language.value || "en"}
-        googleApiKey={import.meta.env.VITE_GOOGLE_TRANSLATE_KEY}
+        googleApiKey={process.env.REACT_APP_GOOGLE_TRANSLATE_KEY}
       >
         <div className="privacy-policy-area ptb-100">
           <div className="container">
@@ -28,145 +28,164 @@ export default function TermsAndCondition() {
                   <p>
                     <i>
                       <Translate>
-                        This Terms & Conditions was last updated on January 1,
-                        2022.
+                        Terms and conditions for UnitedELDT.com
                       </Translate>
                     </i>
                   </p>
                   <h3>
-                    <Translate>1. What Data We Get</Translate>
+                    <Translate>1. ACCEPTANCE OF TERMS</Translate>
                   </h3>
 
                   <blockquote className="blockquote">
                     <p>
                       <Translate>
-                        We collect certain data from you directly, like
-                        information you enter yourself, data about your
-                        participation in courses, and data from third-party
-                        platforms you connect with UNITED ELDT. We also collect
-                        some data automatically, like information about your
-                        device and what parts of our Services you interact with
-                        or spend time using.
+                        By accessing or using the United ELDT website (the “https://unitedeldt.com/”), you agree to be bound by these Terms and conditions. If you do not agree with these terms, please do not use the Website.
                       </Translate>
                     </p>
                   </blockquote>
 
                   <h3>
-                    <Translate>2. Data You Provide to Us</Translate>
+                    <Translate>2.PRIVACY POLICY</Translate>
                   </h3>
                   <p>
                     <Translate>
-                      We may collect different data from or about you depending
-                      on how you use the Services. Below are some examples to
-                      help you better understand the data we collect.
+                      Your use of the Website is also governed by our Privacy Policy. Please review the Privacy Policy to understand how we collect, use, and protect your personal information.
                     </Translate>
                   </p>
                   <h3>
-                    <Translate>3. How We Get Data About You</Translate>
+                    <Translate>3. USER RESPONSIBILITIES</Translate>
                   </h3>
-                  <p>
-                    <Translate>
-                      We use tools like cookies, web beacons, analytics
-                      services, and advertising providers to gather the data
-                      listed above. Some of these tools offer you the ability to
-                      opt out of data collection.
-                    </Translate>
-                  </p>
-                  <h3>
-                    <Translate>4. What We Use Your Data For</Translate>
-                  </h3>
-                  <ol>
+                  <ol type="a">
                     <li>
+
                       <Translate>
-                        Responding to your questions and concerns;
+                        You must use the Website in a manner consistent with all applicable laws and regulations.
                       </Translate>
                     </li>
                     <li>
+
                       <Translate>
-                        Sending you administrative messages and information,
-                        including messages from instructors and teaching
-                        assistants, notifications about changes to our Service,
-                        and updates to our agreements;
-                      </Translate>
-                    </li>
-                    <li>
-                      <Translate>
-                        Sending push notifications to your wireless device to
-                        provide updates and other relevant messages (which you
-                        can manage from the “options” or “settings” page of the
-                        mobile app);
+                        You agree not to engage in any harmful, disruptive, or illegal activities on the Website.
                       </Translate>
                     </li>
                   </ol>
+
+
+                  <h3>
+                    <Translate>4. WEBSITE CONTENT</Translate>
+                  </h3>
+                  <ol type="a">
+                    <li>
+                      <Translate>
+                        All content on the Website, including text, images, and multimedia, is the property of United ELDT and protected by intellectual property laws.
+                      </Translate>
+                    </li>
+                    <li>
+                      <Translate>
+                        You may not use, reproduce, or distribute the content without explicit permission.
+                      </Translate>
+                    </li>
+
+                  </ol>
                   <h3>
                     <Translate>
-                      5. Your Choices About the Use of Your Data
+                      5.  USER ACCOUNTS
+                    </Translate>
+                  </h3>
+                  <ol type="a">
+                    <li>
+                      <Translate>
+                        If you create an account on the Website, you are responsible for maintaining the confidentiality of your account information.                      </Translate>
+                    </li>
+                    <li>
+                      <Translate>
+                        You are responsible for all activities that occur under your account.                      </Translate>
+                    </li>
+
+                  </ol>
+
+
+                  <h3>
+                    <Translate>6. TERMINATION</Translate>
+                  </h3>
+                  <ol type="a">
+                    <li>
+                      <Translate>
+                        The information on the Website is provided for general informational purposes and should not be considered professional advice.
+                      </Translate>
+                    </li>
+                    <li>
+                      <Translate>
+                        United ELDT does not guarantee the accuracy, completeness, or reliability of the content on the Website.                </Translate>
+                    </li>
+
+                  </ol>
+
+                  <h3>
+                    <Translate>7. DISCLAIMERS</Translate>
+                  </h3>
+                  <ol type="a">
+                    <li>
+                      <Translate>
+                        The information on the Website is provided for general informational purposes and should not be considered professional advice.                                            </Translate>
+                    </li>
+                    <li>
+                      <Translate>
+                        United ELDT does not guarantee the accuracy, completeness, or reliability of the content on the Website.
+                      </Translate>
+                    </li>
+
+                  </ol>
+
+                  <h3>
+                    <Translate>8.  LIMITATION OF LIABILITY</Translate>
+                  </h3>
+                  <p>
+                    <Translate>
+                      United ELDT is not liable for any direct, indirect, incidental, consequential, or special damages arising out of or in connection with your use of the Website.
+                    </Translate>
+                  </p>
+                  <h3>
+                    <Translate>9. GOVERNING LAW AND JURISDICTION
                     </Translate>
                   </h3>
                   <p>
                     <Translate>
-                      You can choose not to provide certain data to us, but you
-                      may not be able to use certain features of the Services.
+                      These terms are governed by the laws of [Your Jurisdiction]. Any disputes related to these terms will be subject to the exclusive jurisdiction of the courts in [Your Jurisdiction].
+
                     </Translate>
                   </p>
-                  <ul>
-                    <li>
-                      <Translate>
-                        To stop receiving promotional communications from us,
-                        you can opt out by using the unsubscribe mechanism in
-                        the promotional communication you receive or by changing
-                        the email preferences in your account. Note that
-                        regardless of your email preference settings, we will
-                        send you transactional and relationship messages
-                        regarding the Services, including administrative
-                        confirmations, order confirmations, important updates
-                        about the Services, and notices about our policies.
-                      </Translate>
-                    </li>
-                    <li>
-                      <Translate>
-                        The browser or device you use may allow you to control
-                        cookies and other types of local data storage. Your
-                        wireless device may also allow you to control whether
-                        location or other data is collected and shared. You can
-                        manage Adobe LSOs through their Website Storage Settings
-                        panel.
-                      </Translate>
-                    </li>
-                    <li>
-                      <Translate>
-                        To get information and control cookies used for tailored
-                        advertising from participating companies, see the
-                        consumer opt-out pages for the Network Advertising
-                        Initiative and Digital Advertising Alliance, or if you
-                        are located in the European Union, visit the Your Online
-                        Choices site. To opt out of Google display advertising
-                        or customize Google Display Network ads, visit the
-                        Google Ads Settings page. To opt out of Taboola targeted
-                        ads, see the Opt-out Link in their Cookie Policy.
-                      </Translate>
-                    </li>
-                    <li>
-                      <Translate>
-                        To update data you provide directly, log into your
-                        account and update your account at any time.
-                      </Translate>
-                    </li>
-                  </ul>
                   <h3>
-                    <Translate>6. Our Policy Concerning Children</Translate>
+                    <Translate>10. CHANGES TO TERMS</Translate>
                   </h3>
                   <p>
                     <Translate>
-                      We recognize the privacy interests of children and
-                      encourage parents and guardians to take an active role in
-                      their children online activities and interests. Children
-                      under 13 (or under 16 in the European Economic Area)
-                      should not use the Services. If we learn that we have
-                      collected personal data from a child under those ages, we
-                      will take reasonable steps to delete it.
+                      United ELDT reserves the right to modify these Terms and conditions at any time. You are responsible for regularly reviewing the terms, and continued use of the Website constitutes acceptance of any changes.
+                    </Translate>
+                  </p> <h3>
+                    <Translate>12. ENTIRE AGREEMENT
+                    </Translate>
+                  </h3>
+                  <p>
+                    <Translate>
+                      These Terms and conditions constitute the entire agreement between you and United ELDT regarding your use of the Website.
                     </Translate>
                   </p>
+                  <h3>
+                    <Translate>13. SEVERABILITY
+                    </Translate>
+                  </h3>
+                  <p>
+                    <Translate>
+                      If any part of these terms is found to be unenforceable, the remaining provisions will continue to be in effect.
+                    </Translate>
+                  </p>
+
+                  <p>
+                    <Translate>
+                      By using the United ELDT Website, you acknowledge that you have read and understood these Terms and conditions and agree to comply with them.                    </Translate>
+                  </p>
+
                 </div>
               </div>
             </div>

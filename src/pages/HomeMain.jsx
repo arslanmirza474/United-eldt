@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Banner from "../components/Home/Banner";
 import { useSelector } from "react-redux";
 import Disclaimer from "../components/Home/Disclaimer";
@@ -18,26 +18,26 @@ import { Link } from "react-router-dom";
 const stripePromise = loadStripe('pk_test_51O5F9gFZtgAr5eHPPYRptE8ZBDBXAtaLj7XGBnSp106qIqacE80PBnqGyndDPhtDYDpBWNvpJ8YmObgxijiNX22o00C8ueO5lb'); // Replace with your actual public key
 
 export default function HomeMain() {
-  const languageState = useSelector((state) => state.language);  
+  const languageState = useSelector((state) => state.language);
 
   return (
- 
-        <>
-      
-        <Banner language={languageState.language.value} />
-        <div >
-             <Elements stripe={stripePromise}>
-          <PopularCourses id="targetSection" language={languageState.language.value}  showCancelButton={true} />
+
+    <>
+
+      <Banner language={languageState.language.value} />
+      <div >
+        <Elements stripe={stripePromise}>
+          <PopularCourses id="targetSection" language={languageState.language.value} showCancelButton={true} />
         </Elements>
-        </div>
-        
-        
-        <Disclaimer language={languageState.language.value} />
+      </div>
+
+
+      <Disclaimer language={languageState.language.value} />
       <HomeAboutUs language={languageState.language.value} />
       <FeedbackSliderWithFunFacts language={languageState.language.value} />
-     
+
       <NewsLetter language={languageState.language.value} />
-        </>
+    </>
 
   );
 }

@@ -1,3 +1,5 @@
+import truckimage from "./Reviews/Truckimage.png"
+import imagethumbnai from "./Reviews/Thumbnailof iamge.png"
 import Videoimage from "./Reviews/VideoForMobile.png"
 import { useState, useRef, useEffect } from "react";
 import barzil from "../components/Home/images/BR Brazil.svg"
@@ -18,7 +20,7 @@ import Googlepay from "../components/Home/Googlepay";
 import google from "./Reviews/Google.svg"
 const { Option } = Select;
 
-function MobileHeader({ showCancelButton }) {
+function Headerofclassa({ showCancelButton }) {
   const [modalVisible, setModalVisible] = useState(false);
   const videoRef = useRef(null);
   const [modalVisi, setModalVisi] = useState(false);
@@ -269,15 +271,23 @@ function MobileHeader({ showCancelButton }) {
 
 
 
-
-
-
-  return (
-    <>
-      <div className="coverofclassvideo" onClick={handleOpenModal}>
-
-        <img src={Videoimage} alt="Video" />
-        <div className="animation-container">
+    return (
+        <>
+            <div className="cover_of_classa_header">
+                <div className="inside_of_header">
+                    <div className="video_section_desktop" onClick={handleOpenModal}>
+                        <div className="Header_title_classa">
+                            <span className="title_of_classa">
+                                Class A
+                            </span>
+                            <img className="imageoftruck" src={truckimage} alt="logo of class a " />
+                        </div>
+                        <span className="span_intro_text">
+                            Fastest way to get your CDL Guaranteed
+                        </span>
+                        <div className="coverofvideothumbnail">
+                            <img src={imagethumbnai} alt="image for thmnail " />
+                            <div className="animation-container">
           <svg className="svg1" xmlns="http://www.w3.org/2000/svg" width="75" height="74" viewBox="0 0 75 74" fill="none">
             <path d="M37.7471 61C51.0019 61 61.7471 50.2548 61.7471 37C61.7471 23.7452 51.0019 13 37.7471 13C24.4922 13 13.7471 23.7452 13.7471 37C13.7471 50.2548 24.4922 61 37.7471 61Z" fill="#FBB723" stroke="#FBB723" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
             <path d="M45.7471 37L33.7471 29V45L45.7471 37Z" stroke="#FDFDFD" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round" />
@@ -288,18 +298,18 @@ function MobileHeader({ showCancelButton }) {
             <path d="M37.7468 73.8002C58.0709 73.8002 74.5468 57.3243 74.5468 37.0002C74.5468 16.6761 58.0709 0.200195 37.7468 0.200195C17.4227 0.200195 0.946777 16.6761 0.946777 37.0002C0.946777 57.3243 17.4227 73.8002 37.7468 73.8002Z" fill="#FBB723" fill-opacity="0.5" />
             <path d="M45.7471 37L33.7471 29V45L45.7471 37Z" stroke="#FDFDFD" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          <span className="learntext">Learn More</span>
+          <span className="learntext">Course Presentation</span>
         </div>
-      </div>
-      <div className="classacard">
+                        </div>
+                    </div>
+                    <div className="Card_section_of_header">
+                    <div className="classacard">
         <div className="headerofclassa">
-          <span className="classtitle">
-            Class A
-          </span>
+        <div className="button_a">
+            50% OFF
+          </div> 
           <div className="reviewsectionclass">
-            <div className="startsreview">
-              <img src={google} alt="google" />
-            </div>
+          
             <div className="startsreview">
               <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
                 <g clip-path="url(#clip0_3693_14062)">
@@ -353,15 +363,13 @@ function MobileHeader({ showCancelButton }) {
               </svg>
             </div>
             <div className="reviewcount">
-              3,458 reviews
+              7,458 reviews
             </div>
 
           </div>
         </div>
         <div className="coverofpricebuttons">
-          <div className="button_a">
-            50% OFF
-          </div> <svg xmlns="http://www.w3.org/2000/svg" width="85" height="2" viewBox="0 0 85 2" fill="none">
+         <svg xmlns="http://www.w3.org/2000/svg" width="85" height="2" viewBox="0 0 85 2" fill="none">
             <path d="M85 1L2.86102e-06 1" stroke="url(#paint0_linear_3693_14084)" />
             <defs>
               <linearGradient id="paint0_linear_3693_14084" x1="6.35906e-07" y1="1.50005" x2="77.6953" y2="1.49995" gradientUnits="userSpaceOnUse">
@@ -414,7 +422,7 @@ function MobileHeader({ showCancelButton }) {
               <path d="M8 5V8.5" stroke="#FE2727" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
               <path d="M8 11.5C8.41421 11.5 8.75 11.1642 8.75 10.75C8.75 10.3358 8.41421 10 8 10C7.58579 10 7.25 10.3358 7.25 10.75C7.25 11.1642 7.58579 11.5 8 11.5Z" fill="#FE2727" />
             </svg>
-            <span className='mx-2'>Please select a language</span>
+            <span className='mx-2'>Select the desired language:</span>
           </div>
         ) : null}
 
@@ -450,27 +458,31 @@ function MobileHeader({ showCancelButton }) {
         </div>
 
       </div>
-
-
-
-
+    <a href="#allcourses"> <div className="text_under_classa_card">
+      Check out our other courses
+      </div></a> 
+                    </div>
+                </div>
+             
+            </div>
+       
 
       <Modal
         open={modalVisi}
         onCancel={handleCloseModal}
         footer={null}
-        width="90vw" // Adjusted width to 80% of the viewport width
+        width="430px" // Adjusted width to 80% of the viewport width
+        height="90vh"
         style={{ padding: 0, borderRadius: 0, background: "black" }} // Removed padding and border radius
         closeIcon={false}
-        bodyStyle={{ padding: 0, background: "black" }} // Removed padding for the modal body
+        bodyStyle={{ padding: 0, background: "black" ,marginTop: 0 }} // Removed padding for the modal body
       >
         <video controls width="100%" height="auto" autoPlay ref={videoRef}>
           {/* Adjusted video size */}
           <source src="https://res.cloudinary.com/dezhgxayn/video/upload/v1710514955/copy_046EFCFA-73BA-49A8-B54B-345B18DCC9DF_dygfrf.mov" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-      </Modal>
-
+      </Modal>  
       <Modal
         open={modalVisible}
         onCancel={handleCancel}
@@ -668,7 +680,8 @@ function MobileHeader({ showCancelButton }) {
           <button className="buybtn" onClick={hideavailble}>To try again</button>
         </div>
       </Modal>
-    </>
-  )
+        </>
+        
+    )
 }
-export default MobileHeader;
+export default Headerofclassa

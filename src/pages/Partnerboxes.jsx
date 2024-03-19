@@ -1,11 +1,11 @@
 import SliderSponsor from "./Allsponsor.svg"
-function Partnerboxes (){
-    return(
+function Partnerboxes() {
+    return (
         <>
-        <div className="topersponsor">
-           
-           
-        </div>
+            <div className="topersponsor">
+
+
+            </div>
         </>
     )
 }

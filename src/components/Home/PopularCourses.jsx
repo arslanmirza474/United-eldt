@@ -18,14 +18,14 @@ import errir from "./images/Group 6674 (2).png"
 import { jwtDecode } from "jwt-decode";
 import CustomDropdown from "./CustomDropdown";
 import { useSelector } from "react-redux";
-import bannerimage from  "./images/Selo.svg"
+import bannerimage from "./images/Selo.svg"
 import GooglePay from "./Googlepay";
 import {
   Elements
-  } from '@stripe/react-stripe-js';
-  import { loadStripe } from '@stripe/stripe-js';
-  const stripePromise = loadStripe('pk_test_51O5F9gFZtgAr5eHPPYRptE8ZBDBXAtaLj7XGBnSp106qIqacE80PBnqGyndDPhtDYDpBWNvpJ8YmObgxijiNX22o00C8ueO5lb'); // Replace with your actual public key
-export default function PopularCourses({ language ,showCancelButton,handleNavigationClick,large,medium }) {
+} from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+const stripePromise = loadStripe('pk_test_51O5F9gFZtgAr5eHPPYRptE8ZBDBXAtaLj7XGBnSp106qIqacE80PBnqGyndDPhtDYDpBWNvpJ8YmObgxijiNX22o00C8ueO5lb'); // Replace with your actual public key
+export default function PopularCourses({ language, showCancelButton, handleNavigationClick, large, medium }) {
   const userState = useSelector((state) => state.user);
   const [loading, setLoading] = useState(true);
   const [InitialCourses, setInitialCourses] = useState([]);
@@ -53,14 +53,15 @@ export default function PopularCourses({ language ,showCancelButton,handleNaviga
     const personId = localStorage.getItem("userId");
     if (personId) {
       const decoded = jwtDecode(personId);
-      setUserId(decoded);  
-      setEmail(decoded.Email)  
+      setUserId(decoded);
+      setEmail(decoded.Email)
       setConfirmemail(decoded.Email)
       setBillingAddress(decoded.Address)
-      setCardholderName(decoded.Name)  
+      setCardholderName(decoded.Name)
       setZip(decoded.zip)
       setBillingAddress(decoded.Address)
-    }},[])
+    }
+  }, [])
   const languageOptions = [
     { value: 'English', label: 'English', image: america, planId: null },
     { value: 'Spanish', label: 'Spanish', image: spain, planId: null },
@@ -118,23 +119,23 @@ export default function PopularCourses({ language ,showCancelButton,handleNaviga
       element.classList.remove('error-border');
     }
   }
-function isValidEmail(email) {
+  function isValidEmail(email) {
     // Regular expression for basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const isValid = emailRegex.test(email);
-    
+
     if (isValid) {
-        console.log('Email is valid.');
-        return true;
+      console.log('Email is valid.');
+      return true;
     } else {
-        console.log('Email is invalid.');
-        return false;
+      console.log('Email is invalid.');
+      return false;
     }
-}
+  }
   const handlePayment = async () => {
     if (!isValidEmail(email)) {
-        openNotification("error", "Please enter a valid email address");
-        return;
+      openNotification("error", "Please enter a valid email address");
+      return;
     }
     if (!cardholderName || !email || !billingAddress || !zip) {
       // Handle validation errors
@@ -145,13 +146,13 @@ function isValidEmail(email) {
       if (!confirmemail) document.getElementById('confirmedemail').classList.add('error-border');
       return;
     }
-  if(email != confirmemail){
-        openNotification("error","Confirm Email must be same")
-    return;
-  }
+    if (email != confirmemail) {
+      openNotification("error", "Confirm Email must be same")
+      return;
+    }
     try {
       setLoading(false);
-  
+
       // Create payment intent
       const response = await axios.post('https://server-of-united-eldt.vercel.app/api/create-payment-transactions', {
         amount: purchase.price,
@@ -162,7 +163,7 @@ function isValidEmail(email) {
           {
             courseId: purchase._id,
             lessonIndex: 0,
-            language: purchase.language || 'English', 
+            language: purchase.language || 'English',
           },
         ],
         fullName: cardholderName,
@@ -171,15 +172,15 @@ function isValidEmail(email) {
         address: billingAddress,
         zip: zip,
       });
-if(response.data.available === true ){
-  availblemodal()
-  handleCancel()
-}
-      if(response.data.transactionId.transactionResponse.messages.message[0].code = 1){
+      if (response.data.available === true) {
+        availblemodal()
+        handleCancel()
+      }
+      if (response.data.transactionId.transactionResponse.messages.message[0].code = 1) {
         visibleModal()
         handleCancel()
-    return
-  }
+        return
+      }
 
     } catch (error) {
       console.error('Payment error:', error.message);
@@ -194,7 +195,7 @@ if(response.data.available === true ){
     const screenWidth = window.innerWidth;
 
 
-};
+  };
 
 
 
@@ -232,43 +233,43 @@ if(response.data.available === true ){
     let formattedDate = '';
 
     if (input.length <= 2) {
-        formattedDate = input;
+      formattedDate = input;
     } else {
-        formattedDate = input.slice(0, 2) + '/' + input.slice(2);
+      formattedDate = input.slice(0, 2) + '/' + input.slice(2);
     }
 
     setDate(formattedDate);
-};
-
-
-
-
-
-
-
-const [isSmallScreen, setIsSmallScreen] = useState(false);
-
-useEffect(() => {
-  const handleResize = () => {
-    setIsSmallScreen(window.innerWidth <= 500);
   };
 
-  handleResize(); // Check initial screen size
-  window.addEventListener("resize", handleResize); // Add event listener for window resize
-
-  return () => {
-    window.removeEventListener("resize", handleResize); // Cleanup on component unmount
-  };
-}, []);
-useEffect(() => {
-  axios.get("https://server-of-united-eldt.vercel.app/api/courses").then((res) => {
-    // Remove the first item from plans if the screen size is small and pathname is '/classa'
-    setPlans(isSmallScreen && location.pathname === '/classa' ? res.data.slice(1) : res.data);
-  });
-}, [isSmallScreen, location.pathname]);
 
 
-  
+
+
+
+
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 500);
+    };
+
+    handleResize(); // Check initial screen size
+    window.addEventListener("resize", handleResize); // Add event listener for window resize
+
+    return () => {
+      window.removeEventListener("resize", handleResize); // Cleanup on component unmount
+    };
+  }, []);
+  useEffect(() => {
+    axios.get("https://server-of-united-eldt.vercel.app/api/courses").then((res) => {
+      // Remove the first item from plans if the screen size is small and pathname is '/classa'
+      setPlans(isSmallScreen && location.pathname === '/classa' ? res.data.slice(1) : res.data);
+    });
+  }, [isSmallScreen, location.pathname]);
+
+
+
 
 
   return (
@@ -280,7 +281,7 @@ useEffect(() => {
       >
         <CircularLogoSvg />
         <div className="courses-area tw-my-3" id="courses">
-        <div id="thistarget"></div>
+          <div id="thistarget"></div>
           <div className="container ">
             <div className="section-title titleforcards">
               <span className="sub-title ">
@@ -302,7 +303,7 @@ useEffect(() => {
               <h3 className="tab-title" >
                 <Translate>Choose your course language</Translate>
               </h3>
-             
+
             </div>
 
 
@@ -313,7 +314,7 @@ useEffect(() => {
 
 
 
-       
+
 
 
 
@@ -326,11 +327,11 @@ useEffect(() => {
             <>
 
 
-            
-                          <div className="customcard" >
-                                              <CustomDropdown options={languageOptions} handleLanguageChange={handleLanguageChange} language={language} plans={plans}  large={large} medium={medium} showModal={showModal} showCancelButton={showCancelButton} handleNavigationClick={handleNavigationClick}/>
 
-                          </div>
+              <div className="customcard" >
+                <CustomDropdown options={languageOptions} handleLanguageChange={handleLanguageChange} language={language} plans={plans} large={large} medium={medium} showModal={showModal} showCancelButton={showCancelButton} handleNavigationClick={handleNavigationClick} />
+
+              </div>
 
             </>
           ) : (
@@ -350,11 +351,11 @@ useEffect(() => {
           onCancel={handleCancel}
           className="custom-modal"
           closeIcon={null}
-          footer={null} 
-         id="mainmodalforpay"
+          footer={null}
+          id="mainmodalforpay"
         >
           <div className="mainblack">
-            <span className="pricetxt">${purchase.price }.00</span><br></br>
+            <span className="pricetxt">${purchase.price}.00</span><br></br>
             <span className="description"><span className="categoryi"> {purchase.courseName} </span>
               {
                 purchase.language ? (
@@ -364,59 +365,59 @@ useEffect(() => {
                 )
               }
 
-                - ELDT Theory certificate
+              - ELDT Theory certificate
             </span>
           </div>
-  
+
           {/* <Elements stripe={stripePromise}>
             <Applepay/>
           </Elements> */}
-          <GooglePay purchase={purchase} cardholderName={cardholderName}/>
+          <GooglePay purchase={purchase} cardholderName={cardholderName} />
           <div className="main-content paymentmodal">
 
 
 
             <input
-  type="text"
-  className=" fnam"
-  id="cardholderName"
-  placeholder="Full Name"
-  value={userId !== null ? userId.Name : cardholderName}
-  readOnly={userId !== null}
+              type="text"
+              className=" fnam"
+              id="cardholderName"
+              placeholder="Full Name"
+              value={userId !== null ? userId.Name : cardholderName}
+              readOnly={userId !== null}
 
-  onChange={(e) => {
-    setCardholderName(e.target.value);
-    removeErrorBorder('cardholderName');
-  }}
-/>
-<input
-  type="text"
-  className=" fnam"
-  id="email"
-  placeholder="Email address"
-  value={userId !== null ? userId.Email : email}
-  readOnly={userId !== null}
-  onClick={()=>{handleupward("email")}}
-  onFocus={()=>{handleupward("cardholderName")}}
-  onChange={(e) => {
-    setEmail(e.target.value.toLowerCase());
-    removeErrorBorder('email'); // Call removeErrorBorder to remove error class
-  }}
-/>
-<input
-  type="text"
-  className="fnam"
-  id="confirmedemail"
-  placeholder="Confirm Email address"
-  value={userId !== null ? userId.Email : confirmemail}
-  readOnly={userId !== null}
-  onClick={()=>{handleupward("confirmedemail")}}
-  onFocus={()=>{handleupward("cardholderName")}}
+              onChange={(e) => {
+                setCardholderName(e.target.value);
+                removeErrorBorder('cardholderName');
+              }}
+            />
+            <input
+              type="text"
+              className=" fnam"
+              id="email"
+              placeholder="Email address"
+              value={userId !== null ? userId.Email : email}
+              readOnly={userId !== null}
+              onClick={() => { handleupward("email") }}
+              onFocus={() => { handleupward("cardholderName") }}
+              onChange={(e) => {
+                setEmail(e.target.value.toLowerCase());
+                removeErrorBorder('email'); // Call removeErrorBorder to remove error class
+              }}
+            />
+            <input
+              type="text"
+              className="fnam"
+              id="confirmedemail"
+              placeholder="Confirm Email address"
+              value={userId !== null ? userId.Email : confirmemail}
+              readOnly={userId !== null}
+              onClick={() => { handleupward("confirmedemail") }}
+              onFocus={() => { handleupward("cardholderName") }}
 
-  onChange={(e) => {
-    setConfirmemail(e.target.value.toLowerCase());
-  }}
-/>
+              onChange={(e) => {
+                setConfirmemail(e.target.value.toLowerCase());
+              }}
+            />
 
             <label className="labeltext">
               <span className="pasword">Payment information</span>
@@ -428,49 +429,49 @@ useEffect(() => {
 
             <input className="card-element numcard" onChange={(e) => { setCardNumber(e.target.value) }} placeholder="424242424242424242" />
             <div className="d-flex">
-            <input 
-            className="card-element numcard2" 
-            value={date} 
-            onChange={handleMonthYearChange} 
-            placeholder="MM / YY" 
-            maxLength="5" 
-        />
-              <input className="card-element numcard3" onChange={(e)=>{setCardCode(e.target.value)}} style={{ width: '100%' }} placeholder="CVV" maxLength="5"/>
+              <input
+                className="card-element numcard2"
+                value={date}
+                onChange={handleMonthYearChange}
+                placeholder="MM / YY"
+                maxLength="5"
+              />
+              <input className="card-element numcard3" onChange={(e) => { setCardCode(e.target.value) }} style={{ width: '100%' }} placeholder="CVV" maxLength="5" />
             </div>
             {/* Billing address input fields */}
             <label className="labeltext">
               <span className="pasword">Country or region</span>
             </label>
-          
-            <input
-  type="text"
-  className=" fnam"
-  id="billingAddress"
-  placeholder="Address"
-  value={userId !== null ? userId.Address : billingAddress}
-  readOnly={userId !== null}
-  onClick={()=>{handleupward("billingAddress")}}
-  onFocus={()=>{handleupward("cardholderName")}}
-  onChange={(e) => {
-    setBillingAddress(e.target.value);
-    removeErrorBorder('billingAddress');
-  }}
-/>
 
-<input
-  type="text"
-  className=" fnam"
-  placeholder="Zip code"
-  id="zip"
-  value={userId !== null ? userId.zip : zip}
-  readOnly={userId !== null}
-  onClick={()=>{handleupward("zip")}}
-  onFocus={()=>{handleupward("cardholderName")}}
-  onChange={(e) => {
-    setZip(e.target.value);
-    removeErrorBorder('zip');
-  }}
-/>
+            <input
+              type="text"
+              className=" fnam"
+              id="billingAddress"
+              placeholder="Address"
+              value={userId !== null ? userId.Address : billingAddress}
+              readOnly={userId !== null}
+              onClick={() => { handleupward("billingAddress") }}
+              onFocus={() => { handleupward("cardholderName") }}
+              onChange={(e) => {
+                setBillingAddress(e.target.value);
+                removeErrorBorder('billingAddress');
+              }}
+            />
+
+            <input
+              type="text"
+              className=" fnam"
+              placeholder="Zip code"
+              id="zip"
+              value={userId !== null ? userId.zip : zip}
+              readOnly={userId !== null}
+              onClick={() => { handleupward("zip") }}
+              onFocus={() => { handleupward("cardholderName") }}
+              onChange={(e) => {
+                setZip(e.target.value);
+                removeErrorBorder('zip');
+              }}
+            />
             <div className="termdiv">
               <span className="term"> By continuing, you agree to the  <span className="condition">Terms of service </span></span>
             </div>
@@ -478,7 +479,7 @@ useEffect(() => {
               {
                 loading ? (
                   <>
-                    Place your order: ${purchase.price }.00 USD
+                    Place your order: ${purchase.price}.00 USD
                   </>
                 ) : (
                   <>
@@ -504,9 +505,9 @@ useEffect(() => {
             <span className="message">Payment successfully processed</span><br></br>
             <span className="exp">Congratulations! You are now part of United. Click the button below to start your studies.</span>
             {
-              showCancelButton ?( <Link to="/login"><button className="buybtn">Start Now</button></Link>):( <button onClick={()=>{handleNavigationClick("information")}} className="buybtn">Start Now</button>)
+              showCancelButton ? (<Link to="/login"><button className="buybtn">Start Now</button></Link>) : (<button onClick={() => { handleNavigationClick("information") }} className="buybtn">Start Now</button>)
             }
-           
+
             {/* <Link to="/studentdash"><button className="buybtn2">Start Now</button></Link> */}
           </div>
         </Modal>

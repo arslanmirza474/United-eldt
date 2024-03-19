@@ -12,6 +12,14 @@ import { Link as ScrollLink } from 'react-scroll';
 import weblogo from "./Unitedlogo.png"
 import { jwtDecode } from "jwt-decode";
 import brandlogo from "./ELDT LOGO.svg"
+import barzil from "../components/Home/images/BR Brazil.svg"
+import america from "../components/Home/images/US United States of America (the).svg"
+import pakistan from "../components/Home/images/PK Pakistan.svg"
+import india from "../components/Home/images/IN India.svg"
+import russia from "../components/Home/images/RU Russian Federation (the).svg"
+import france from "../components/Home/images/FR France.svg"
+import arabic from "../components/Home/images/EH Western Sahara.svg"
+import spain from "../components/Home/images/ES Spain.svg"
 export default function Navbar({ className = "is-home" }, ...props) {
   const [backgroundColor, setBackgroundColor] = useState("#fff")
   const [websitelogo, setWebsitelogo] = useState(brandlogo)
@@ -59,25 +67,27 @@ export default function Navbar({ className = "is-home" }, ...props) {
 
   const languageState = useSelector((state) => state.language);
   const [flg, setFlg] = useState(
-    languageState?.language?.className || "flag-icon-us"
+    languageState?.language?.className || america
   );
   const [nameLang, setNameLang] = useState(
     languageState?.language?.name || "English"
   );
-
+  
+  
   const [openLang, setOpenLang] = useState(false);
   const [menu, setMenu] = useState(false);
 
   const availableLanguages = [
-    { name: "English", value: "en", className: "flag-icon-us" },
-    { name: "Spanish", value: "es", className: "flag-icon-es" },
-    { name: "Arabic", value: "ar", className: "flag-icon-arab" },
-    { name: "Russian", value: "ru", className: "flag-icon-ru" },
-    { name: "Hindi", value: "hi", className: "flag-icon-hindi" },
-    { name: "French", value: "fr", className: "flag-icon-fr" },
-    { name: "Urdu", value: "ur", className: "flag-icon-ur" },
-    { name: "Portuguese", value: "pt", className: "flag-icon-pt" },
+    { name: "English", value: "en", flagImage: america },
+    { name: "Spanish", value: "es", flagImage: spain },
+    { name: "Arabic", value: "ar", flagImage: arabic },
+    { name: "Russian", value: "ru", flagImage: russia },
+    { name: "Hindi", value: "hi", flagImage: india },
+    { name: "French", value: "fr", flagImage: france },
+    { name: "Urdu", value: "ur", flagImage: pakistan },
+    { name: "Portuguese", value: "pt", flagImage: barzil },
   ];
+  
 
   useEffect(() => {
     let elementId = document.getElementById("navbar");
@@ -90,77 +100,76 @@ export default function Navbar({ className = "is-home" }, ...props) {
   const SelectLanguage = (availableLanguages, i18n, lang) => {
     return (
       <>
-        <BtnLang
-          className="block-lang"
-          onClick={() => setOpenLang(!openLang)}
+       <BtnLang
+  className="block-lang"
+  onClick={() => setOpenLang(!openLang)}
+>
+  <img
+    src={flg}
+    alt={nameLang}
+    style={{ width: 32, height: 32 }}
+  />
+  <span className="name-lang" style={{ display: "flex" }}>
+    <Translate>{nameLang}</Translate>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      className="tw-w-6 tw-h-6 tw-text-white"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+      />
+    </svg>
+    <i className="fa-solid fa-chevron-down mx-2"></i>
+  </span>
+</BtnLang>
+
+<div className={"dropdown-menu m-auto " + (openLang ? 'show' : '')} id="language-menu">
+  <ul className="list-striped">
+    {availableLanguages.map((language, index) => {
+      return (
+        <li
+          className={
+            "button flag-button " + (lang === language.name ? "active" : "")
+          }
+          style={{
+            margin: "auto",
+            padding: "5px",
+            display: "flex",
+            justifyContent: "flex-start",
+          }}
+          onClick={() => {
+            dispatch(
+              setLanguage({
+                name: language.name,
+                value: language.value,
+                className: language.className,
+              })
+            );
+            setFlg(language.flagImage); // Change to set the flag image
+            setNameLang(language.name);
+            setOpenLang(false); // Close the language dropdown after selecting a language
+            toggleNavbar();
+          }}
+          key={index}
         >
-          <span
-            className={"flag-icon " + flg}
-            style={{ width: 32, height: 32 }}
-          ></span>{" "}
-          <span className="name-lang" style={{ display: "flex" }}>
-            <Translate>{nameLang}</Translate>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="tw-w-6 tw-h-6 tw-text-white"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-              />
-            </svg>
-            <i className="fa-solid fa-chevron-down mx-2"></i>
-          </span>
-        </BtnLang>
-        <div className={"dropdown-menu m-auto " + (openLang ? 'show' : '')} id="language-menu">
-          <ul className="list-striped">
-            {availableLanguages.map((language, index) => {
-              return (
-                <li
-                  className={
-                    "button flag-button " + language.className + " " + lang ==
-                      language.name
-                      ? "active"
-                      : ""
-                  }
-                  style={{
-                    margin: "auto",
-                    padding: "5px",
-                    display: "flex",
-                    justifyContent: "flex-start",
-                  }}
-                  onClick={() => {
-                    dispatch(
-                      setLanguage({
-                        name: language.name,
-                        value: language.value,
-                        className: language.className,
-                      })
-                    );
-                    setFlg(language.className);
-                    setNameLang(language.name);
-                    setOpenLang(false); // Close the language dropdown after selecting a language
-                    toggleNavbar()
-                  }}
-                  name={language.name}
-                  value={language.value}
-                  key={index}
-                >
-                  <span
-                    className={"flag-icon " + language.className}
-                    style={{ width: 20, height: 20 }}
-                  ></span>
-                  {language.name}
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+          <img
+            src={language.flagImage} // Use the flag image
+            alt={language.name}
+            style={{ width: 20, height: 20, marginRight: "5px" }}
+          />
+          {language.name}
+        </li>
+      );
+    })}
+  </ul>
+</div>
+
       </>
     );
   };
@@ -187,7 +196,7 @@ export default function Navbar({ className = "is-home" }, ...props) {
       setIsScrolled(scrollPosition > 450); // Change 400 to your desired scroll position
     };
 
-    if (location.pathname === '/classa' && screenWidth <= 500) {
+    if (location.pathname === '/classa') {
       window.addEventListener('scroll', handleScroll);
       setBackgroundColor("#fff")
       setWebsitelogo(brandlogo)

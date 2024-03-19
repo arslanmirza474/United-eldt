@@ -8,35 +8,35 @@ export default function NewsLetter() {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const { language } = useSelector((state) => state.language);
- const [mailsent , setMailsent]=useState(true)
- const [loading ,setLoading]=useState(true)
- const sendEmail = async () => {
-  setLoading(false);
+  const [mailsent, setMailsent] = useState(true)
+  const [loading, setLoading] = useState(true)
+  const sendEmail = async () => {
+    setLoading(false);
 
-  try {
-    // Validate email
-    if (!email || !isValidEmail(email)) {
-      setError("Please enter a valid email address");
-      return;
-    }
+    try {
+      // Validate email
+      if (!email || !isValidEmail(email)) {
+        setError("Please enter a valid email address");
+        return;
+      }
 
-    const response = await axios.post("https://server-of-united-eldt.vercel.app/api/sennews", {
-      Email: email,
-    });
+      const response = await axios.post("https://server-of-united-eldt.vercel.app/api/sennews", {
+        Email: email,
+      });
 
-    if (response.data.message === 'Email sent successfully') {
-      setMailsent(false);
-    }
+      if (response.data.message === 'Email sent successfully') {
+        setMailsent(false);
+      }
 
-    // Clear error and reset email field after successful submission
-    setError("");
-    setEmail("");
-  } catch (error) {
-    console.log(error);
-  } finally {
-    setLoading(true);
+      // Clear error and reset email field after successful submission
+      setError("");
+      setEmail("");
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(true);
+    };
   };
-};
 
 
   const isValidEmail = (email) => {
@@ -63,43 +63,43 @@ export default function NewsLetter() {
             </h2>
             <p>
               <Translate>
-              Stay ahead of the competition with the comprehensive online entry-level driver training course from United ELDT. Subscribe to our newsletter for exclusive updates and industry insights.
+                Stay ahead of the competition with the comprehensive online entry-level driver training course from United ELDT. Subscribe to our newsletter for exclusive updates and industry insights.
               </Translate>
             </p>
-{
-  mailsent ?(<>
-  
-  <form className={`newsletter-form ${error ? 'error-border' : ''}`} onSubmit={(e) => { e.preventDefault(); sendEmail(); }}>
-  <input
-    type="email"
-    className='input-newsletter'
-    placeholder="Enter your email address"
-    name="email"
-    value={email}
-    onChange={(e) => { setEmail(e.target.value); setError(''); }}
-    required
-  />
+            {
+              mailsent ? (<>
 
-  <motion.button type="button" className="default-btn" onClick={sendEmail}>
-  {
-  loading ? (
-    <Translate>Sign up now</Translate>
-  ) : (
-    <Translate>Sending...</Translate>
-  )
-}
+                <form className={`newsletter-form ${error ? 'error-border' : ''}`} onSubmit={(e) => { e.preventDefault(); sendEmail(); }}>
+                  <input
+                    type="email"
+                    className='input-newsletter'
+                    placeholder="Enter your email address"
+                    name="email"
+                    value={email}
+                    onChange={(e) => { setEmail(e.target.value); setError(''); }}
+                    required
+                  />
 
-  </motion.button>
-</form>
+                  <motion.button type="button" className="default-btn" onClick={sendEmail}>
+                    {
+                      loading ? (
+                        <Translate>Sign up now</Translate>
+                      ) : (
+                        <Translate>Sending...</Translate>
+                      )
+                    }
 
-            {error && <p className="error-message">{error}</p>}
+                  </motion.button>
+                </form>
 
-  </>):(<>
-  <div className=" successcontent d-flex">
-    <img src={done} alt="success"/><span className="emailsent">Email registered successfully</span>
-  </div>
-  </>)
-}
+                {error && <p className="error-message">{error}</p>}
+
+              </>) : (<>
+                <div className=" successcontent d-flex">
+                  <img src={done} alt="success" /><span className="emailsent">Email registered successfully</span>
+                </div>
+              </>)
+            }
           </div>
         </div>
       </div>

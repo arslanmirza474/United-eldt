@@ -7,8 +7,8 @@ import aboutvid from "./images/black-man-truck-driver-attaching-power-cables-fro
 
 const WhyChooseUs = () => {
 
- 
-  
+
+
   return (
     <React.Fragment>
       <h3 className="ref-open-title">
@@ -96,7 +96,7 @@ export default function HomeAboutUs({ language }) {
   };
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef(null);
- 
+
   const handlePlay = () => {
     if (videoRef.current) {
       if (isPlaying) {
@@ -133,27 +133,27 @@ export default function HomeAboutUs({ language }) {
 
                 <h2 className="title mobileabout">
                   <Translate>
-                  
-                  Welcome to United ELDT - where driving careers begin.
+
+                    Welcome to United ELDT - where driving careers begin.
                   </Translate>
                 </h2>
                 <h2 className="title desktopabout">
                   <Translate>
-                  
-                  Welcome to United ELDT - your gateway to professional driving careers
+
+                    Welcome to United ELDT - your gateway to professional driving careers
                   </Translate>
                 </h2>
                 <p className="sub">
                   <span className="mobileabout">
-                  <Translate>
-                 At United ELDT, we know that becoming a skilled driver is your first step to a successful career. As a top ELDT course provider online, we're dedicated to helping you reach your driving goals and open doors to new opportunities.
-                 </Translate> 
+                    <Translate>
+                      At United ELDT, we know that becoming a skilled driver is your first step to a successful career. As a top ELDT course provider online, we're dedicated to helping you reach your driving goals and open doors to new opportunities.
+                    </Translate>
                   </span>
                   <span className="desktopabout textofdesk">
-                  <Translate>
-                  At United ELDT, we understand that becoming a skilled and confident driver is the first step towards a successful career on the road. As a leading provider of Entry Level Driving Training (ELDT) courses online, we are committed to helping aspiring drivers like you achieve their goals and unlock a world of opportunities.                 </Translate> 
+                    <Translate>
+                      At United ELDT, we understand that becoming a skilled and confident driver is the first step towards a successful career on the road. As a leading provider of Entry Level Driving Training (ELDT) courses online, we are committed to helping aspiring drivers like you achieve their goals and unlock a world of opportunities.                 </Translate>
                   </span>
-                  
+
                   <div className="tw-flex lg:tw-justify-start tw-justify-center">
                     <button className="default-btn lg:tw-w-1/2  buttonofcourse" onClick={handleClick}>
                       View courses
@@ -162,13 +162,13 @@ export default function HomeAboutUs({ language }) {
                 </p>
 
                 <div className="about-image mobile" >
-                <img src={aboutvid} alt="image"/>
+                  <img src={aboutvid} alt="image" />
 
                 </div>
               </div>
 
               <div className="about-image desktop" >
-            <img src={aboutvid} alt="image"/>
+                <img src={aboutvid} alt="image" />
               </div>
             </div>
             {/* <div className="about-bottom">

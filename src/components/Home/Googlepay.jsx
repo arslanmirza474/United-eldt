@@ -90,7 +90,7 @@ const Googlepay = ({ purchase }) => {
       } else {
         console.log(
           error.message ||
-            "Some error occured while processing your payment. Please try again later"
+          "Some error occured while processing your payment. Please try again later"
         );
         // show error message / toast
       }

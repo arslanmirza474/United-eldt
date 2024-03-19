@@ -32,7 +32,7 @@ export default function GetInstantCourses({ language }) {
             </div>
             <div className="get-instant-block flex f-direction-row">
               <div className="get-instant-courses-content"> */}
-                {/* <p>
+      {/* <p>
 										Are you ready to embark on a
 										transformative journey towards
 										becoming a skilled and confident
@@ -43,7 +43,7 @@ export default function GetInstantCourses({ language }) {
 										needed to excel in the dynamic world
 										of driving.
 									</p> */}
-                {/* <p className="ref-open-title">
+      {/* <p className="ref-open-title">
                   <Translate>Why Choose Our Self-Development Course?</Translate>
                 </p>
                 <ul className="block-open-close">
@@ -123,7 +123,7 @@ export default function GetInstantCourses({ language }) {
                     active="active"
                   />
                 </ul> */}
-                {/* <p>
+      {/* <p>
 										<Translate>
 											Dont let your driving ambitions
 											be limited by lack of knowledge
@@ -138,7 +138,7 @@ export default function GetInstantCourses({ language }) {
 										</Translate>
 									</p> */}
 
-                {/* {user ? (
+      {/* {user ? (
                   <Link to="/learning/my-courses/">
                     <a className="default-btn">
                       <span>
