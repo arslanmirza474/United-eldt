@@ -344,11 +344,11 @@
     line-height: 160%;
     /* 25.6px */
     letter-spacing: 0.8px;
-    height: 416px;
+    height: 450px;
 }
 
 .custom-dropdown .ant-select-dropdown-menu-item {
-    padding: 8px 12px;
+    padding: 5px 8px;
     /* Adjust padding */
 
 }
