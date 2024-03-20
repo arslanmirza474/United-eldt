@@ -9,7 +9,7 @@ const LoaderAnimationSVGComponent = (props) => {
     const truckLoaderAnimation2 = gsap.timeline();
     truckLoaderAnimation2.to("#truck", {
       y: 5,
-      duration: 0.7,
+      duration: 0,
       yoyo: true,
       repeat: -1,
       ease: "none",
@@ -19,17 +19,17 @@ const LoaderAnimationSVGComponent = (props) => {
       repeat: -1,
     });
     truckLoaderAnimation
-      .from("#complete-truck", {
-        immediateRender: true,
-        duration: isMobile.current ? 2 : 2,
-        x: isMobile.current ? "-500%" : "-240%",
-        ease: "none",
-      })
+      // .from("#complete-truck", {
+      //   immediateRender: true,
+      //   duration: isMobile.current ? 2 : 2,
+      //   x: isMobile.current ? "-500%" : "-240%",
+      //   ease: "none",
+      // })
       .fromTo(
         ".tyre",
         { rotation: "0deg" },
         {
-          duration: isMobile.current ? 2 : 2,
+          duration: isMobile.current ? 2: 1,
           ease: "none",
           rotation: "560deg",
           transformOrigin: "center",
@@ -37,34 +37,34 @@ const LoaderAnimationSVGComponent = (props) => {
         "<"
       )
       .from("#b1", {
-        duration: 0.5,
+        duration: 0.3,
         opacity: 0,
         y: -300,
       })
       .from("#b2", {
-        duration: 0.5,
+        duration: 0.3,
         opacity: 0,
         y: -300,
       })
       .from("#b3", {
-        duration: 0.5,
+        duration: 0.3,
         opacity: 0,
         y: -300,
       })
-      .to("#truck-container", {
-        duration: 0.5,
-        opacity: 0.3,
-      })
+      // .to("#truck-container", {
+      //   duration: 0.3,
+      //   opacity: 0.3,
+      // })
       .to("#boxes", {
-        duration: 0.5,
+        duration: 0.3,
         x: 200,
       })
       .to("#truck-container", {
-        duration: 1,
+        duration: 0.6,
         opacity: 1,
       })
       .to("#complete-truck", {
-        duration: isMobile.current ? 1 : 2,
+        duration: isMobile.current ? 1 : 1.2,
         x: "300%",
         ease: "none",
       })
@@ -72,7 +72,7 @@ const LoaderAnimationSVGComponent = (props) => {
         ".tyre",
         { rotation: "0deg" },
         {
-          duration: isMobile.current ? 1 : 2,
+          duration: isMobile.current ? 1 : 1.2,
           ease: "none",
           rotation: "560deg",
           transformOrigin: "center",
