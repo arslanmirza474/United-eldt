@@ -4,8 +4,7 @@ import { jwtDecode } from "jwt-decode";
 import axios from "axios";
 import Navba from "./Navba";
 import "./quizles.css"
-import sitelogo from "./Logo (2).svg"
-import Loader from "./Loader";
+import LoaderAnimationSVGComponent from "../components/Home/LoaderAnimationSVGComponent";
 function QuizLesson(){
     const { id } = useParams();
     const [chaptertitles, setChaptertitles] = useState([]);
@@ -111,7 +110,7 @@ navigate(`/test/${id}/${index}`)
       <img src={sitelogo} alt="logo" />
     </div>
   </div> */}
-<Loader/>
+<LoaderAnimationSVGComponent/>
   </>):(<>
     <div className="backbutton">  <Link to="/studentdash">
                   <span className="bolding"><i class="fa-solid fa-arrow-left-long"></i><span className="mx-2">Back</span> </span>
@@ -130,7 +129,7 @@ navigate(`/test/${id}/${index}`)
 <div className="wraperofitems">
   {
     chaptertitles.length === 0 ? (<div className="d-flex justify-content-center">
-        <Loader/>
+        <LoaderAnimationSVGComponent/>
 </div>):(<>{chaptertitles.map((chapter, index) => (
               <div
               key={index}

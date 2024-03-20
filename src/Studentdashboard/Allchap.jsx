@@ -5,7 +5,7 @@ import axios from "axios";
 import Navba from "./Navba";
 import "./quizles.css"
 import sitelogo from "./Logo (2).svg"
-import Loader from "./Loader";
+import LoaderAnimationSvgComponent from "../components/Home/LoaderAnimationSVGComponent";
 
 function Allchap(){
     const { id } = useParams();
@@ -114,9 +114,9 @@ navigate(`/StudentLesson/${id}/${index}`)
 <div className="coverofall">
 
 {
-  loading ?(<>
-   <div className="image-container">
-    <Loader/>
+   chaptertitles.length === 0 ? (<>
+   <div className="image-container"style={{height:"100vh"}}>
+    <LoaderAnimationSvgComponent/>
   </div>
   </>):(<div >
     {/* <div >
@@ -142,7 +142,7 @@ navigate(`/StudentLesson/${id}/${index}`)
 <div className="wraperofitems">
 {
     chaptertitles.length === 0 ? (<div className="d-flex justify-content-center">
-   <Loader/>
+   <LoaderAnimationSvgComponent/>
    </div>):(<> {chaptertitles.map((chapter, index) => (
     <div
         key={index}

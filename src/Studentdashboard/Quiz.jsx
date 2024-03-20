@@ -11,6 +11,7 @@ import errorimage from "./Group 6674 (2).png"
 import successimage from "./Group 6674.png"
 import sitelogo from "./Logo (2).svg"
 import Loader from './Loader';
+import LoaderAnimationSVGComponent from '../components/Home/LoaderAnimationSVGComponent';
 const Quize = () => {
   const [questions, setQuestions] = useState([]);
   const [selectedOptions, setSelectedOptions] = useState({});
@@ -228,7 +229,7 @@ ctx.fillText(roundedPercentage, canvas.width / 2 + ctx.measureText(scoreText).wi
 {
   questions.length === 0 ?(
     <div className="image-container">
-   <Loader/>
+   <LoaderAnimationSVGComponent/>
   </div>
   ):(
     <>

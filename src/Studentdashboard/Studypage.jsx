@@ -6,6 +6,7 @@ import "./coursetitle.css";
 import { Switch, Slider, Progress, Modal } from 'antd';
 import Navba from "./Navba";
 import Loader from "./Loader";
+import LoaderAnimationSVGComponent from "../components/Home/LoaderAnimationSVGComponent";
 
 function Studypage() {
   const [chapters, setChapters] = useState([]);
@@ -161,7 +162,14 @@ const [quiz,setQuiz]=useState("")
                   <span className="bolding"><i class="fa-solid fa-arrow-left-long"></i><span className="mx-2">Back</span> </span>
 
         </Link></div>
-<button className="prebtn" onClick={handlePreviousPageClick} disabled={currentPageIndex === 0}>
+
+
+        {
+              loading ?(<div className="d-flex justify-content-center" style={{height:"60vh"}}>
+              <LoaderAnimationSVGComponent/>
+              </div>):(
+      <div >
+       <button className="prebtn" onClick={handlePreviousPageClick} disabled={currentPageIndex === 0}>
               <svg xmlns="http://www.w3.org/2000/svg" width="86" height="86" viewBox="0 0 86 86" fill="none">
   <path d="M53.75 69.875L26.875 43L53.75 16.125" stroke="#2C292A" stroke-width="9.55556" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
@@ -216,10 +224,7 @@ const [quiz,setQuiz]=useState("")
             </div>
           
             </div>
-            {
-              loading ?(<div className="d-flex justify-content-center" style={{height:"60vh"}}>
-              <Loader/>
-              </div>):( <div className="contentdiv ">
+            <div className="contentdiv ">
    <div className="p-3" dangerouslySetInnerHTML={{ __html: page.description }} />
    {page.image !== "" ? (
   <img src={page.image} alt="explainimage" className="descimage"/>
@@ -230,13 +235,16 @@ const [quiz,setQuiz]=useState("")
   <button className="previousbutton"  onClick={handlePreviousPageClick}><i class="fa-solid fa-angle-left"></i>Previous</button>
 <button className="previousbutton" onClick={handleNextPageClick}>Next<i class="fa-solid fa-angle-right"></i></button>
 </div>
-          </div>)
-            }
+          </div>
+          
          
          
 
           </div>
-        </div>
+        </div> 
+      </div>   
+          )
+            }
         <button className="nextbtn" onClick={handleNextPageClick} >
               <svg xmlns="http://www.w3.org/2000/svg" width="86" height="86" viewBox="0 0 86 86" fill="none">
   <path d="M32.25 16.125L59.125 43L32.25 69.875" stroke="#2C292A" stroke-width="9.55556" stroke-linecap="round" stroke-linejoin="round"/>

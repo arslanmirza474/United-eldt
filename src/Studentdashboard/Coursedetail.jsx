@@ -5,6 +5,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { Progress, Space } from 'antd';
 import Loader from "./Loader";
+import LoaderAnimationSVGComponent from "../components/Home/LoaderAnimationSVGComponent";
 
 function Coursedetail() {
   const [userId, setUserId] = useState("");
@@ -79,7 +80,7 @@ const [loading, setLoading] = useState(true)
         </Link>
       </div>
    {
-    loading ?(<Loader/>):(
+    loading ?(<LoaderAnimationSVGComponent/>):(
          <div className="main-contain-regist">
         <div className="card-head">My Courses</div>
         <div className="card-body">

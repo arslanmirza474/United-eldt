@@ -183,7 +183,7 @@ function CustomSelect({ options, handleLanguageChange, language, plans, showModa
                     </Option>
                     {options.map((option) => (
                       <Option key={option.value} value={option.label}>
-                        <img src={option.image} alt={option.label} width="24px" height="24px" className="language-image" />
+                        <img src={option.image} alt={option.label} width="30px" height="30px" className="language-image" />
                         <span>{option.label}</span>
                       </Option>
                     ))}

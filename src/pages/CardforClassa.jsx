@@ -45,9 +45,12 @@ Get your CDL quickly with United ELDT proven system; over 10,000 students have s
         <div className="Main_price_area2">
           $50.00
         </div>
-        <div className="BuyNowforCars" >
+        <a href="#topofhead">
+           <div className="BuyNowforCars" >
         🚚.💨 Buy now
         </div>
+        </a>
+       
         </div>
        
 

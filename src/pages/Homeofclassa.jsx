@@ -65,7 +65,9 @@ Check out our other courses
       <Footer />
         </>):(  <>
             <Elements stripe={stripePromise}>
+              <div id="topofhead">
                  <Headerofclassa />
+                </div>                
             </Elements>       <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br><br></br> <br></br> <br></br> <br></br>
 
             <Fllowup/>
