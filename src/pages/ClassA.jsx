@@ -55,6 +55,7 @@ function ClassA() {
           Buy Now
         </div>
       </div>
+      
     </div>
   )
 }

@@ -4,6 +4,7 @@ import OpenCloseItem from "../Faq/openCloseItem";
 import AboutFeaturesList from "./AboutFeaturesList";
 import { useSelector } from "react-redux";
 import aboutvid from "./images/black-man-truck-driver-attaching-power-cables-from-2023-11-27-05-31-11-utc (1).jpg"
+import { Modal } from "antd";
 
 const WhyChooseUs = () => {
 
@@ -87,6 +88,9 @@ const WhyChooseUs = () => {
 };
 export default function HomeAboutUs({ language }) {
   const languageState = useSelector((state) => state.language);
+  const [ismodalopen,setIsmodalopen]=useState(false)
+  const videoRef = useRef(null);
+
   const handleClick = () => {
     console.log("pushed");
     window.scrollTo({
@@ -94,27 +98,12 @@ export default function HomeAboutUs({ language }) {
       behavior: "smooth",
     });
   };
-  const [isPlaying, setIsPlaying] = useState(false);
-  const videoRef = useRef(null);
-
-  const handlePlay = () => {
+  const handleCloseModal = () => {
     if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-
-      } else {
-        videoRef.current.play();
-        videoRef.current.muted = false;
-
-      }
-      setIsPlaying(!isPlaying);
+      videoRef.current.pause();
     }
-  };
-
-  const handleDoubleClick = () => {
-    if (videoRef.current) {
-      videoRef.current.controls = true; // Show controls for manual interaction
-    }
+    // Call the parent component's close modal function
+    setIsmodalopen(false);
   };
   return (
     <>
@@ -162,13 +151,13 @@ export default function HomeAboutUs({ language }) {
                 </p>
 
                 <div className="about-image mobile" >
-                  <img src={aboutvid} alt="image" />
+                  <img src={aboutvid} alt="image" onClick={()=>{setIsmodalopen(true)}}/>
 
                 </div>
               </div>
 
               <div className="about-image desktop" >
-                <img src={aboutvid} alt="image" />
+                <img src={aboutvid} alt="image" onClick={()=>{setIsmodalopen(true)}}/>
               </div>
             </div>
             {/* <div className="about-bottom">
@@ -177,7 +166,25 @@ export default function HomeAboutUs({ language }) {
           </div>
         </div>
       </Translator>
-
+      <Modal
+      visible={ismodalopen}
+      onCancel={handleCloseModal}
+      footer={null}
+      closable={false}
+      centered // Center the modal content
+      style={{ padding: 0, borderRadius: 0 }} // Removed padding and border radius
+      bodyStyle={{ padding: 0 }} // Removed padding for the modal body
+    >
+      <video
+        controls
+        autoPlay
+        ref={videoRef}
+        style={{ width: '100%', height: '100%', outline: 'none' }} // Adjusted video size
+      >
+        <source src="https://res.cloudinary.com/dcve79xmj/video/upload/v1710976774/bd28c8e5-0e0a-4518-9b30-091c2e8c40fe_hdthe0.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </Modal>
     </>
   );
 }
