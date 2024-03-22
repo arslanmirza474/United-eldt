@@ -105,9 +105,7 @@ const ReviewsCarousel = () => {
         <div className="cover_each_carousel">
                 <div className="name_section">
                      <div className="nameofperson">
-                     Alfredo Garcia
-                </div>
-                <div className="startsreview">
+                     Alfredo Garcia  <div className="startsreview">
             <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
               <g clip-path="url(#clip0_3693_14062)">
                 <path d="M5.1942 8.69694L7.28498 9.81603L7.33347 9.83737C7.6884 9.97119 8.02393 9.94404 8.278 9.71712C8.51656 9.50377 8.60384 9.19733 8.55341 8.84628L8.2043 6.43355L9.78305 4.77333C10.0585 4.49599 10.1651 4.15463 10.072 3.79777C9.96925 3.40211 9.63565 3.17325 9.15272 3.09761L7.05418 2.78147L5.95642 0.504498C5.78575 0.182542 5.5181 -0.00752932 5.1845 0.000228676C4.85673 0.00992617 4.59683 0.209695 4.39319 0.568502L3.33034 2.79505L0.97773 3.12282C0.603407 3.18682 0.327998 3.38271 0.217447 3.70661C0.106895 4.03051 0.211629 4.35828 0.494795 4.69188L2.20349 6.43548L1.81947 8.84628C1.75935 9.26327 1.83111 9.59299 2.1104 9.79082C2.36059 9.96731 2.67479 9.96731 3.03748 9.84318L3.0976 9.81797L5.1942 8.69694Z" fill="#FBB723" />
@@ -159,6 +157,8 @@ const ReviewsCarousel = () => {
               </defs>
             </svg>
           </div>
+                </div>
+              
           <div className="date_of_review ">
           03/13/2024
           </div>
@@ -170,9 +170,7 @@ const ReviewsCarousel = () => {
             <div className="cover_each_carousel">
                 <div className="name_section">
                      <div className="nameofperson">
-                     Mario Salustino
-                </div>
-                <div className="startsreview">
+                     Mario Salustino<div className="startsreview">
             <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
               <g clip-path="url(#clip0_3693_14062)">
                 <path d="M5.1942 8.69694L7.28498 9.81603L7.33347 9.83737C7.6884 9.97119 8.02393 9.94404 8.278 9.71712C8.51656 9.50377 8.60384 9.19733 8.55341 8.84628L8.2043 6.43355L9.78305 4.77333C10.0585 4.49599 10.1651 4.15463 10.072 3.79777C9.96925 3.40211 9.63565 3.17325 9.15272 3.09761L7.05418 2.78147L5.95642 0.504498C5.78575 0.182542 5.5181 -0.00752932 5.1845 0.000228676C4.85673 0.00992617 4.59683 0.209695 4.39319 0.568502L3.33034 2.79505L0.97773 3.12282C0.603407 3.18682 0.327998 3.38271 0.217447 3.70661C0.106895 4.03051 0.211629 4.35828 0.494795 4.69188L2.20349 6.43548L1.81947 8.84628C1.75935 9.26327 1.83111 9.59299 2.1104 9.79082C2.36059 9.96731 2.67479 9.96731 3.03748 9.84318L3.0976 9.81797L5.1942 8.69694Z" fill="#FBB723" />
@@ -224,6 +222,8 @@ const ReviewsCarousel = () => {
               </defs>
             </svg>
           </div>
+                </div>
+                
           <div className="date_of_review ">
           03/13/2024
           </div>
@@ -234,9 +234,7 @@ const ReviewsCarousel = () => {
             <div className="cover_each_carousel">
                 <div className="name_section">
                      <div className="nameofperson">
-                     Adane Zegeye
-                </div>
-                <div className="startsreview">
+                     Adane Zegeye<div className="startsreview">
             <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
               <g clip-path="url(#clip0_3693_14062)">
                 <path d="M5.1942 8.69694L7.28498 9.81603L7.33347 9.83737C7.6884 9.97119 8.02393 9.94404 8.278 9.71712C8.51656 9.50377 8.60384 9.19733 8.55341 8.84628L8.2043 6.43355L9.78305 4.77333C10.0585 4.49599 10.1651 4.15463 10.072 3.79777C9.96925 3.40211 9.63565 3.17325 9.15272 3.09761L7.05418 2.78147L5.95642 0.504498C5.78575 0.182542 5.5181 -0.00752932 5.1845 0.000228676C4.85673 0.00992617 4.59683 0.209695 4.39319 0.568502L3.33034 2.79505L0.97773 3.12282C0.603407 3.18682 0.327998 3.38271 0.217447 3.70661C0.106895 4.03051 0.211629 4.35828 0.494795 4.69188L2.20349 6.43548L1.81947 8.84628C1.75935 9.26327 1.83111 9.59299 2.1104 9.79082C2.36059 9.96731 2.67479 9.96731 3.03748 9.84318L3.0976 9.81797L5.1942 8.69694Z" fill="#FBB723" />
@@ -288,6 +286,8 @@ const ReviewsCarousel = () => {
               </defs>
             </svg>
           </div>
+                </div>
+                
           <div className="date_of_review ">
           03/12/2024
           </div>
@@ -300,9 +300,7 @@ const ReviewsCarousel = () => {
             <div className="cover_each_carousel lastslider">
                 <div className="name_section">
                      <div className="nameofperson">
-                     Jefferson Vasconselos
-                </div>
-                <div className="startsreview">
+                     Jefferson Vasconselos <div className="startsreview">
             <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
               <g clip-path="url(#clip0_3693_14062)">
                 <path d="M5.1942 8.69694L7.28498 9.81603L7.33347 9.83737C7.6884 9.97119 8.02393 9.94404 8.278 9.71712C8.51656 9.50377 8.60384 9.19733 8.55341 8.84628L8.2043 6.43355L9.78305 4.77333C10.0585 4.49599 10.1651 4.15463 10.072 3.79777C9.96925 3.40211 9.63565 3.17325 9.15272 3.09761L7.05418 2.78147L5.95642 0.504498C5.78575 0.182542 5.5181 -0.00752932 5.1845 0.000228676C4.85673 0.00992617 4.59683 0.209695 4.39319 0.568502L3.33034 2.79505L0.97773 3.12282C0.603407 3.18682 0.327998 3.38271 0.217447 3.70661C0.106895 4.03051 0.211629 4.35828 0.494795 4.69188L2.20349 6.43548L1.81947 8.84628C1.75935 9.26327 1.83111 9.59299 2.1104 9.79082C2.36059 9.96731 2.67479 9.96731 3.03748 9.84318L3.0976 9.81797L5.1942 8.69694Z" fill="#FBB723" />
@@ -354,6 +352,8 @@ const ReviewsCarousel = () => {
               </defs>
             </svg>
           </div>
+                </div>
+               
           <div className="date_of_review ">
           03/12/2024
           </div>
@@ -368,7 +368,7 @@ const ReviewsCarousel = () => {
         <div className="cover_each_carousel">
                 <div className="name_section">
                      <div className="nameofperson">
-                     Jefferson Vasconselos
+                     Edwin Hernandez
                 </div>
                 <div className="startsreview">
             <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
@@ -423,18 +423,16 @@ const ReviewsCarousel = () => {
             </svg>
           </div>
           <div className="date_of_review ">
-          10/02/2024
+          03/08/2024
           </div>
                 </div>
-            <div className="paraofreview" style={{marginTop:"8px"}}>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do  ipsum dolor sit amet, consectetur adipiscing elit, sed do”</div>
+            <div className="paraofreview" style={{marginTop:"8px"}}>"Pagar $50 dólares por este curso en español fue la mejor decisión que tomé. Encontré cursos que cobraban $280 "</div>
              <img style={{marginTop:"16px"}} src={review4} alt="reviewer"/>
             </div>
             <div className="cover_each_carousel">
                 <div className="name_section">
                      <div className="nameofperson">
-                     Jefferson Vasconselos
-                </div>
-                <div className="startsreview">
+                     Austin Martinez  <div className="startsreview">
             <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
               <g clip-path="url(#clip0_3693_14062)">
                 <path d="M5.1942 8.69694L7.28498 9.81603L7.33347 9.83737C7.6884 9.97119 8.02393 9.94404 8.278 9.71712C8.51656 9.50377 8.60384 9.19733 8.55341 8.84628L8.2043 6.43355L9.78305 4.77333C10.0585 4.49599 10.1651 4.15463 10.072 3.79777C9.96925 3.40211 9.63565 3.17325 9.15272 3.09761L7.05418 2.78147L5.95642 0.504498C5.78575 0.182542 5.5181 -0.00752932 5.1845 0.000228676C4.85673 0.00992617 4.59683 0.209695 4.39319 0.568502L3.33034 2.79505L0.97773 3.12282C0.603407 3.18682 0.327998 3.38271 0.217447 3.70661C0.106895 4.03051 0.211629 4.35828 0.494795 4.69188L2.20349 6.43548L1.81947 8.84628C1.75935 9.26327 1.83111 9.59299 2.1104 9.79082C2.36059 9.96731 2.67479 9.96731 3.03748 9.84318L3.0976 9.81797L5.1942 8.69694Z" fill="#FBB723" />
@@ -486,19 +484,19 @@ const ReviewsCarousel = () => {
               </defs>
             </svg>
           </div>
+                </div>
+              
           <div className="date_of_review ">
-          10/02/2024
+          03/05/2024
           </div>
                 </div>
-            <div className="paraofreview" style={{marginTop:"8px"}}>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do  ipsum dolor sit amet, consectetur adipiscing elit, sed do”</div>
+            <div className="paraofreview" style={{marginTop:"8px"}}>“A friend recommended United ELDT, and it was truly a smart decision. Other companies offer courses at almost $200”</div>
              <img style={{marginTop:"16px"}} src={review5} alt="reviewer"/>
             </div>
             <div className="cover_each_carousel">
                 <div className="name_section">
                      <div className="nameofperson">
-                     Jefferson Vasconselos
-                </div>
-                <div className="startsreview">
+                     Gerson Escoto   <div className="startsreview">
             <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
               <g clip-path="url(#clip0_3693_14062)">
                 <path d="M5.1942 8.69694L7.28498 9.81603L7.33347 9.83737C7.6884 9.97119 8.02393 9.94404 8.278 9.71712C8.51656 9.50377 8.60384 9.19733 8.55341 8.84628L8.2043 6.43355L9.78305 4.77333C10.0585 4.49599 10.1651 4.15463 10.072 3.79777C9.96925 3.40211 9.63565 3.17325 9.15272 3.09761L7.05418 2.78147L5.95642 0.504498C5.78575 0.182542 5.5181 -0.00752932 5.1845 0.000228676C4.85673 0.00992617 4.59683 0.209695 4.39319 0.568502L3.33034 2.79505L0.97773 3.12282C0.603407 3.18682 0.327998 3.38271 0.217447 3.70661C0.106895 4.03051 0.211629 4.35828 0.494795 4.69188L2.20349 6.43548L1.81947 8.84628C1.75935 9.26327 1.83111 9.59299 2.1104 9.79082C2.36059 9.96731 2.67479 9.96731 3.03748 9.84318L3.0976 9.81797L5.1942 8.69694Z" fill="#FBB723" />
@@ -550,20 +548,21 @@ const ReviewsCarousel = () => {
               </defs>
             </svg>
           </div>
+                </div>
+              
+               
           <div className="date_of_review ">
-          10/02/2024
+          03/09/2024
           </div>
                 </div>
-            <div className="paraofreview" style={{marginTop:"8px"}}>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do  ipsum dolor sit amet, consectetur adipiscing elit, sed do”</div>
+            <div className="paraofreview" style={{marginTop:"8px"}}>"Este curso fue el mejor que encontré. Pagué 30 dólares en un sitio web llamado ELDT.com, que tenía un curso que tomaba "</div>
              <img style={{marginTop:"16px"}} src={review6} alt="reviewer"/>
             </div>
 
             <div className="cover_each_carousel lastslider">
                 <div className="name_section">
                      <div className="nameofperson">
-                     Jefferson Vasconselos
-                </div>
-                <div className="startsreview">
+                     Jose Menjivar  <div className="startsreview">
             <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
               <g clip-path="url(#clip0_3693_14062)">
                 <path d="M5.1942 8.69694L7.28498 9.81603L7.33347 9.83737C7.6884 9.97119 8.02393 9.94404 8.278 9.71712C8.51656 9.50377 8.60384 9.19733 8.55341 8.84628L8.2043 6.43355L9.78305 4.77333C10.0585 4.49599 10.1651 4.15463 10.072 3.79777C9.96925 3.40211 9.63565 3.17325 9.15272 3.09761L7.05418 2.78147L5.95642 0.504498C5.78575 0.182542 5.5181 -0.00752932 5.1845 0.000228676C4.85673 0.00992617 4.59683 0.209695 4.39319 0.568502L3.33034 2.79505L0.97773 3.12282C0.603407 3.18682 0.327998 3.38271 0.217447 3.70661C0.106895 4.03051 0.211629 4.35828 0.494795 4.69188L2.20349 6.43548L1.81947 8.84628C1.75935 9.26327 1.83111 9.59299 2.1104 9.79082C2.36059 9.96731 2.67479 9.96731 3.03748 9.84318L3.0976 9.81797L5.1942 8.69694Z" fill="#FBB723" />
@@ -615,11 +614,13 @@ const ReviewsCarousel = () => {
               </defs>
             </svg>
           </div>
+                </div>
+              
           <div className="date_of_review ">
-          10/02/2024
+          03/11/2024
           </div>
                 </div>
-            <div className="paraofreview" style={{marginTop:"8px"}}>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do  ipsum dolor sit amet, consectetur adipiscing elit, sed do”</div>
+            <div className="paraofreview" style={{marginTop:"8px"}}>"This United ELDT course saved me 3 weeks of mandatory classes at the school I was already attending. Thank you, "</div>
              <img style={{marginTop:"16px"}} src={review7} alt="reviewer"/>
             </div>      </div>
        
@@ -627,9 +628,7 @@ const ReviewsCarousel = () => {
         <div className="cover_each_carousel">
                 <div className="name_section">
                      <div className="nameofperson">
-                     Jefferson Vasconselos
-                </div>
-                <div className="startsreview">
+                     Trudy <div className="startsreview">
             <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
               <g clip-path="url(#clip0_3693_14062)">
                 <path d="M5.1942 8.69694L7.28498 9.81603L7.33347 9.83737C7.6884 9.97119 8.02393 9.94404 8.278 9.71712C8.51656 9.50377 8.60384 9.19733 8.55341 8.84628L8.2043 6.43355L9.78305 4.77333C10.0585 4.49599 10.1651 4.15463 10.072 3.79777C9.96925 3.40211 9.63565 3.17325 9.15272 3.09761L7.05418 2.78147L5.95642 0.504498C5.78575 0.182542 5.5181 -0.00752932 5.1845 0.000228676C4.85673 0.00992617 4.59683 0.209695 4.39319 0.568502L3.33034 2.79505L0.97773 3.12282C0.603407 3.18682 0.327998 3.38271 0.217447 3.70661C0.106895 4.03051 0.211629 4.35828 0.494795 4.69188L2.20349 6.43548L1.81947 8.84628C1.75935 9.26327 1.83111 9.59299 2.1104 9.79082C2.36059 9.96731 2.67479 9.96731 3.03748 9.84318L3.0976 9.81797L5.1942 8.69694Z" fill="#FBB723" />
@@ -681,8 +680,10 @@ const ReviewsCarousel = () => {
               </defs>
             </svg>
           </div>
+                </div>
+               
           <div className="date_of_review ">
-          10/02/2024
+          03/12/2024
           </div>
                 </div>
             <div className="paraofreview" style={{marginTop:"8px"}}>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do  ipsum dolor sit amet, consectetur adipiscing elit, sed do”</div>

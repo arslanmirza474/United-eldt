@@ -1,0 +1,36 @@
+.spanishsection .listcom{
+    width: auto;
+}
+.fortextinsider{
+    color: rgba(44, 41, 42, 0.70);
+font-family: Inter;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 140%; /* 19.6px */
+display: flex;
+align-items: center;
+gap: 8px;
+}
+.coverspanish{
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.forlarger{
+    display: block;
+}
+.forsmaller{
+    display: none;
+}
+.coverspanish{
+    margin-top: 16px;
+}
+@media (max-width:1440px) {
+    .forlarger{
+        display: none;
+    }
+    .forsmaller{
+        display: block;
+    }
+}

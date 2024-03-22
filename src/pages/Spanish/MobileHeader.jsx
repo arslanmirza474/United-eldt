@@ -1,37 +1,38 @@
-
-import "./Customize.css"
+import Videoimage from "./Rectangle.png"
 import { useState, useRef, useEffect } from "react";
-import barzil from "../components/Home/images/BR Brazil.svg"
-import america from "../components/Home/images/US United States of America (the).svg"
-import pakistan from "../components/Home/images/PK Pakistan.svg"
-import india from "../components/Home/images/IN India.svg"
-import russia from "../components/Home/images/RU Russian Federation (the).svg"
-import france from "../components/Home/images/FR France.svg"
-import arabic from "../components/Home/images/EH Western Sahara.svg"
-import spain from "../components/Home/images/ES Spain.svg"
+import barzil from "../../components/Home/images/BR Brazil.svg"
+import america from "../../components/Home/images/US United States of America (the).svg"
+import pakistan from "../../components/Home/images/PK Pakistan.svg"
+import india from "../../components/Home/images/IN India.svg"
+import russia from "../../components/Home/images/RU Russian Federation (the).svg"
+import france from "../../components/Home/images/FR France.svg"
+import arabic from "../../components/Home/images/EH Western Sahara.svg"
+import spain from "../../components/Home/images/ES Spain.svg"
 import { Select, Avatar, Modal, notification } from 'antd';
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
-import errir from "../components/Home/images/Group 6674 (2).png"
-import Successi from "../components/Home/images/Group 6674.png"
+import errir from "../../components/Home/images/Group 6674 (2).png"
+import Successi from "../../components/Home/images/Group 6674.png"
 import { Link } from "react-router-dom";
-import Googlepay from "../components/Home/Googlepay";
-import bgofmain from "./Images/EnglsihBackground.png"
-import bgofmainsmal from "./Images/Background1920.png"
-import googlereview from "./Images/Google review.svg"
-import truckimage from "./Images/Truckimage.svg"
-import moneybackgrenty from "./Images/100-Money-Back-Guarantee-PNG-Cutout 1.svg"
-import LearningSection from "./LearningSection";
-import ReviewsCarousel from "./ReviewsCarousel";
-import PopularCourses from "../components/Home/PopularCourses";
+import Googlepay from "../../components/Home/Googlepay";
+import google from "../Reviews/Google.svg"
 const { Option } = Select;
 
+function MobileHeader({ showCancelButton }) {
+  const [modalVisible, setModalVisible] = useState(false);
+  const videoRef = useRef(null);
+  const [modalVisi, setModalVisi] = useState(false);
+  const handleOpenModal = () => {
+    setModalVisi(true);
+  };
 
-function ClassB (){
-    const [modalVisible, setModalVisible] = useState(false);
- 
-
-
+  const handleCloseModal = () => {
+    if (videoRef.current) {
+      videoRef.current.pause();
+    }
+    // Call the parent component's close modal function
+    setModalVisi(false);
+  };
   const languageOptions = [
     { value: 'English', label: 'English', image: america, planId: null },
     { value: 'Spanish', label: 'Spanish', image: spain, planId: null },
@@ -265,27 +266,18 @@ function ClassB (){
 
     setDate(formattedDate);
   };
-  const [openvideo,setOpenvideo]=useState(false)
-  const videoRef = useRef(null);
-  const handleCloseModal = () => {
-    if (videoRef.current) {
-      videoRef.current.pause();
-    }
-    // Call the parent component's close modal function
-    setOpenvideo(false);
-  };
-    return(
-        <>
-        <div className="videosection ">
-            <div className="videosectioncover">
-                <img src={bgofmain} alt="videoof"/>
 
-            </div>
-            <div className="videosectioncoverforlarge">
-                <img src={bgofmainsmal} alt="videoof"/>
 
-            </div>
-            <div className="animation-container" style={{cursor:"pointer"}} onClick={()=>{setOpenvideo(true)}}>
+
+
+
+
+  return (
+    <>
+      <div className="coverofclassvideo" onClick={handleOpenModal}>
+
+        <img src={Videoimage} alt="Video" />
+        <div className="animation-container">
           <svg className="svg1" xmlns="http://www.w3.org/2000/svg" width="75" height="74" viewBox="0 0 75 74" fill="none">
             <path d="M37.7471 61C51.0019 61 61.7471 50.2548 61.7471 37C61.7471 23.7452 51.0019 13 37.7471 13C24.4922 13 13.7471 23.7452 13.7471 37C13.7471 50.2548 24.4922 61 37.7471 61Z" fill="#FBB723" stroke="#FBB723" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
             <path d="M45.7471 37L33.7471 29V45L45.7471 37Z" stroke="#FDFDFD" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round" />
@@ -298,87 +290,78 @@ function ClassB (){
           </svg>
           <span className="learntext">Learn More</span>
         </div>
-            <div className="Review_section">
-<div className="Review_Sectionof">
-    <img src={googlereview} alt="google review"/>
-    <div className="reviewsectionclass">
-          
-          <div className="startsreview">
-            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
-              <g clip-path="url(#clip0_3693_14062)">
-                <path d="M5.1942 8.69694L7.28498 9.81603L7.33347 9.83737C7.6884 9.97119 8.02393 9.94404 8.278 9.71712C8.51656 9.50377 8.60384 9.19733 8.55341 8.84628L8.2043 6.43355L9.78305 4.77333C10.0585 4.49599 10.1651 4.15463 10.072 3.79777C9.96925 3.40211 9.63565 3.17325 9.15272 3.09761L7.05418 2.78147L5.95642 0.504498C5.78575 0.182542 5.5181 -0.00752932 5.1845 0.000228676C4.85673 0.00992617 4.59683 0.209695 4.39319 0.568502L3.33034 2.79505L0.97773 3.12282C0.603407 3.18682 0.327998 3.38271 0.217447 3.70661C0.106895 4.03051 0.211629 4.35828 0.494795 4.69188L2.20349 6.43548L1.81947 8.84628C1.75935 9.26327 1.83111 9.59299 2.1104 9.79082C2.36059 9.96731 2.67479 9.96731 3.03748 9.84318L3.0976 9.81797L5.1942 8.69694Z" fill="#FBB723" />
-              </g>
-              <defs>
-                <clipPath id="clip0_3693_14062">
-                  <rect width="9.93023" height="9.93023" fill="white" transform="matrix(-1 0 0 1 10.105 0)" />
-                </clipPath>
-              </defs>
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
-              <g clip-path="url(#clip0_3693_14062)">
-                <path d="M5.1942 8.69694L7.28498 9.81603L7.33347 9.83737C7.6884 9.97119 8.02393 9.94404 8.278 9.71712C8.51656 9.50377 8.60384 9.19733 8.55341 8.84628L8.2043 6.43355L9.78305 4.77333C10.0585 4.49599 10.1651 4.15463 10.072 3.79777C9.96925 3.40211 9.63565 3.17325 9.15272 3.09761L7.05418 2.78147L5.95642 0.504498C5.78575 0.182542 5.5181 -0.00752932 5.1845 0.000228676C4.85673 0.00992617 4.59683 0.209695 4.39319 0.568502L3.33034 2.79505L0.97773 3.12282C0.603407 3.18682 0.327998 3.38271 0.217447 3.70661C0.106895 4.03051 0.211629 4.35828 0.494795 4.69188L2.20349 6.43548L1.81947 8.84628C1.75935 9.26327 1.83111 9.59299 2.1104 9.79082C2.36059 9.96731 2.67479 9.96731 3.03748 9.84318L3.0976 9.81797L5.1942 8.69694Z" fill="#FBB723" />
-              </g>
-              <defs>
-                <clipPath id="clip0_3693_14062">
-                  <rect width="9.93023" height="9.93023" fill="white" transform="matrix(-1 0 0 1 10.105 0)" />
-                </clipPath>
-              </defs>
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
-              <g clip-path="url(#clip0_3693_14062)">
-                <path d="M5.1942 8.69694L7.28498 9.81603L7.33347 9.83737C7.6884 9.97119 8.02393 9.94404 8.278 9.71712C8.51656 9.50377 8.60384 9.19733 8.55341 8.84628L8.2043 6.43355L9.78305 4.77333C10.0585 4.49599 10.1651 4.15463 10.072 3.79777C9.96925 3.40211 9.63565 3.17325 9.15272 3.09761L7.05418 2.78147L5.95642 0.504498C5.78575 0.182542 5.5181 -0.00752932 5.1845 0.000228676C4.85673 0.00992617 4.59683 0.209695 4.39319 0.568502L3.33034 2.79505L0.97773 3.12282C0.603407 3.18682 0.327998 3.38271 0.217447 3.70661C0.106895 4.03051 0.211629 4.35828 0.494795 4.69188L2.20349 6.43548L1.81947 8.84628C1.75935 9.26327 1.83111 9.59299 2.1104 9.79082C2.36059 9.96731 2.67479 9.96731 3.03748 9.84318L3.0976 9.81797L5.1942 8.69694Z" fill="#FBB723" />
-              </g>
-              <defs>
-                <clipPath id="clip0_3693_14062">
-                  <rect width="9.93023" height="9.93023" fill="white" transform="matrix(-1 0 0 1 10.105 0)" />
-                </clipPath>
-              </defs>
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
-              <g clip-path="url(#clip0_3693_14062)">
-                <path d="M5.1942 8.69694L7.28498 9.81603L7.33347 9.83737C7.6884 9.97119 8.02393 9.94404 8.278 9.71712C8.51656 9.50377 8.60384 9.19733 8.55341 8.84628L8.2043 6.43355L9.78305 4.77333C10.0585 4.49599 10.1651 4.15463 10.072 3.79777C9.96925 3.40211 9.63565 3.17325 9.15272 3.09761L7.05418 2.78147L5.95642 0.504498C5.78575 0.182542 5.5181 -0.00752932 5.1845 0.000228676C4.85673 0.00992617 4.59683 0.209695 4.39319 0.568502L3.33034 2.79505L0.97773 3.12282C0.603407 3.18682 0.327998 3.38271 0.217447 3.70661C0.106895 4.03051 0.211629 4.35828 0.494795 4.69188L2.20349 6.43548L1.81947 8.84628C1.75935 9.26327 1.83111 9.59299 2.1104 9.79082C2.36059 9.96731 2.67479 9.96731 3.03748 9.84318L3.0976 9.81797L5.1942 8.69694Z" fill="#FBB723" />
-              </g>
-              <defs>
-                <clipPath id="clip0_3693_14062">
-                  <rect width="9.93023" height="9.93023" fill="white" transform="matrix(-1 0 0 1 10.105 0)" />
-                </clipPath>
-              </defs>
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
-              <g clip-path="url(#clip0_3693_14062)">
-                <path d="M5.1942 8.69694L7.28498 9.81603L7.33347 9.83737C7.6884 9.97119 8.02393 9.94404 8.278 9.71712C8.51656 9.50377 8.60384 9.19733 8.55341 8.84628L8.2043 6.43355L9.78305 4.77333C10.0585 4.49599 10.1651 4.15463 10.072 3.79777C9.96925 3.40211 9.63565 3.17325 9.15272 3.09761L7.05418 2.78147L5.95642 0.504498C5.78575 0.182542 5.5181 -0.00752932 5.1845 0.000228676C4.85673 0.00992617 4.59683 0.209695 4.39319 0.568502L3.33034 2.79505L0.97773 3.12282C0.603407 3.18682 0.327998 3.38271 0.217447 3.70661C0.106895 4.03051 0.211629 4.35828 0.494795 4.69188L2.20349 6.43548L1.81947 8.84628C1.75935 9.26327 1.83111 9.59299 2.1104 9.79082C2.36059 9.96731 2.67479 9.96731 3.03748 9.84318L3.0976 9.81797L5.1942 8.69694Z" fill="#FBB723" />
-              </g>
-              <defs>
-                <clipPath id="clip0_3693_14062">
-                  <rect width="9.93023" height="9.93023" fill="white" transform="matrix(-1 0 0 1 10.105 0)" />
-                </clipPath>
-              </defs>
-            </svg>
-          </div>
-          <div className="reviewcount">
-            7,458 reviews
-          </div>
-
-        </div>
-        <div className="Claas_Aenglish">
-            <span>Class A</span>
-            <img src={truckimage} alt="image of classa"/>
-        </div>
-        <p className="infoaboutclass">
-        A Class A Commercial Driver's License (CDL) grants you the authority to operate various vehicle combinations. This includes the ability to drive a semi-tractor with a trailer attached. Additionally, it permits you to operate vehicles with a gross weight exceeding 26,001 pounds while towing a trailer weighing at least 10,000 pounds.
-        </p>
-</div>
-<div className="forborder"></div>
-
-<div className="Buyer_section">
-<div className="price_section_english">
-    <div>
+      </div>
+      <div className="classacard">
         <div className="headerofclassa">
-        <div className="button_a">
+          <span className="classtitle">
+            Class A
+          </span>
+          <div className="reviewsectionclass">
+            <div className="startsreview">
+              <img src={google} alt="google" />
+            </div>
+            <div className="startsreview">
+              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
+                <g clip-path="url(#clip0_3693_14062)">
+                  <path d="M5.1942 8.69694L7.28498 9.81603L7.33347 9.83737C7.6884 9.97119 8.02393 9.94404 8.278 9.71712C8.51656 9.50377 8.60384 9.19733 8.55341 8.84628L8.2043 6.43355L9.78305 4.77333C10.0585 4.49599 10.1651 4.15463 10.072 3.79777C9.96925 3.40211 9.63565 3.17325 9.15272 3.09761L7.05418 2.78147L5.95642 0.504498C5.78575 0.182542 5.5181 -0.00752932 5.1845 0.000228676C4.85673 0.00992617 4.59683 0.209695 4.39319 0.568502L3.33034 2.79505L0.97773 3.12282C0.603407 3.18682 0.327998 3.38271 0.217447 3.70661C0.106895 4.03051 0.211629 4.35828 0.494795 4.69188L2.20349 6.43548L1.81947 8.84628C1.75935 9.26327 1.83111 9.59299 2.1104 9.79082C2.36059 9.96731 2.67479 9.96731 3.03748 9.84318L3.0976 9.81797L5.1942 8.69694Z" fill="#FBB723" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_3693_14062">
+                    <rect width="9.93023" height="9.93023" fill="white" transform="matrix(-1 0 0 1 10.105 0)" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
+                <g clip-path="url(#clip0_3693_14062)">
+                  <path d="M5.1942 8.69694L7.28498 9.81603L7.33347 9.83737C7.6884 9.97119 8.02393 9.94404 8.278 9.71712C8.51656 9.50377 8.60384 9.19733 8.55341 8.84628L8.2043 6.43355L9.78305 4.77333C10.0585 4.49599 10.1651 4.15463 10.072 3.79777C9.96925 3.40211 9.63565 3.17325 9.15272 3.09761L7.05418 2.78147L5.95642 0.504498C5.78575 0.182542 5.5181 -0.00752932 5.1845 0.000228676C4.85673 0.00992617 4.59683 0.209695 4.39319 0.568502L3.33034 2.79505L0.97773 3.12282C0.603407 3.18682 0.327998 3.38271 0.217447 3.70661C0.106895 4.03051 0.211629 4.35828 0.494795 4.69188L2.20349 6.43548L1.81947 8.84628C1.75935 9.26327 1.83111 9.59299 2.1104 9.79082C2.36059 9.96731 2.67479 9.96731 3.03748 9.84318L3.0976 9.81797L5.1942 8.69694Z" fill="#FBB723" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_3693_14062">
+                    <rect width="9.93023" height="9.93023" fill="white" transform="matrix(-1 0 0 1 10.105 0)" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
+                <g clip-path="url(#clip0_3693_14062)">
+                  <path d="M5.1942 8.69694L7.28498 9.81603L7.33347 9.83737C7.6884 9.97119 8.02393 9.94404 8.278 9.71712C8.51656 9.50377 8.60384 9.19733 8.55341 8.84628L8.2043 6.43355L9.78305 4.77333C10.0585 4.49599 10.1651 4.15463 10.072 3.79777C9.96925 3.40211 9.63565 3.17325 9.15272 3.09761L7.05418 2.78147L5.95642 0.504498C5.78575 0.182542 5.5181 -0.00752932 5.1845 0.000228676C4.85673 0.00992617 4.59683 0.209695 4.39319 0.568502L3.33034 2.79505L0.97773 3.12282C0.603407 3.18682 0.327998 3.38271 0.217447 3.70661C0.106895 4.03051 0.211629 4.35828 0.494795 4.69188L2.20349 6.43548L1.81947 8.84628C1.75935 9.26327 1.83111 9.59299 2.1104 9.79082C2.36059 9.96731 2.67479 9.96731 3.03748 9.84318L3.0976 9.81797L5.1942 8.69694Z" fill="#FBB723" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_3693_14062">
+                    <rect width="9.93023" height="9.93023" fill="white" transform="matrix(-1 0 0 1 10.105 0)" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
+                <g clip-path="url(#clip0_3693_14062)">
+                  <path d="M5.1942 8.69694L7.28498 9.81603L7.33347 9.83737C7.6884 9.97119 8.02393 9.94404 8.278 9.71712C8.51656 9.50377 8.60384 9.19733 8.55341 8.84628L8.2043 6.43355L9.78305 4.77333C10.0585 4.49599 10.1651 4.15463 10.072 3.79777C9.96925 3.40211 9.63565 3.17325 9.15272 3.09761L7.05418 2.78147L5.95642 0.504498C5.78575 0.182542 5.5181 -0.00752932 5.1845 0.000228676C4.85673 0.00992617 4.59683 0.209695 4.39319 0.568502L3.33034 2.79505L0.97773 3.12282C0.603407 3.18682 0.327998 3.38271 0.217447 3.70661C0.106895 4.03051 0.211629 4.35828 0.494795 4.69188L2.20349 6.43548L1.81947 8.84628C1.75935 9.26327 1.83111 9.59299 2.1104 9.79082C2.36059 9.96731 2.67479 9.96731 3.03748 9.84318L3.0976 9.81797L5.1942 8.69694Z" fill="#FBB723" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_3693_14062">
+                    <rect width="9.93023" height="9.93023" fill="white" transform="matrix(-1 0 0 1 10.105 0)" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
+                <g clip-path="url(#clip0_3693_14062)">
+                  <path d="M5.1942 8.69694L7.28498 9.81603L7.33347 9.83737C7.6884 9.97119 8.02393 9.94404 8.278 9.71712C8.51656 9.50377 8.60384 9.19733 8.55341 8.84628L8.2043 6.43355L9.78305 4.77333C10.0585 4.49599 10.1651 4.15463 10.072 3.79777C9.96925 3.40211 9.63565 3.17325 9.15272 3.09761L7.05418 2.78147L5.95642 0.504498C5.78575 0.182542 5.5181 -0.00752932 5.1845 0.000228676C4.85673 0.00992617 4.59683 0.209695 4.39319 0.568502L3.33034 2.79505L0.97773 3.12282C0.603407 3.18682 0.327998 3.38271 0.217447 3.70661C0.106895 4.03051 0.211629 4.35828 0.494795 4.69188L2.20349 6.43548L1.81947 8.84628C1.75935 9.26327 1.83111 9.59299 2.1104 9.79082C2.36059 9.96731 2.67479 9.96731 3.03748 9.84318L3.0976 9.81797L5.1942 8.69694Z" fill="#FBB723" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_3693_14062">
+                    <rect width="9.93023" height="9.93023" fill="white" transform="matrix(-1 0 0 1 10.105 0)" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+            <div className="reviewcount">
+              7,458 reviews
+            </div>
+
+          </div>
+        </div>
+        <div className="coverofpricebuttons">
+          <div className="button_a">
             50% OFF
-          </div> 
-          <div className="coverofpricebuttons">
-         <svg xmlns="http://www.w3.org/2000/svg" width="85" height="2" viewBox="0 0 85 2" fill="none">
+          </div> <svg xmlns="http://www.w3.org/2000/svg" width="85" height="2" viewBox="0 0 85 2" fill="none">
             <path d="M85 1L2.86102e-06 1" stroke="url(#paint0_linear_3693_14084)" />
             <defs>
               <linearGradient id="paint0_linear_3693_14084" x1="6.35906e-07" y1="1.50005" x2="77.6953" y2="1.49995" gradientUnits="userSpaceOnUse">
@@ -392,85 +375,98 @@ function ClassB (){
             $100.00
           </div>
         </div>
-       
-        </div> <div className="Main_price_area" style={{ marginTop: "20px" }}>
+        <div className="Main_price_area" style={{ marginTop: "30px" }}>
           $50.00
         </div>
-    </div>
-    <img src={moneybackgrenty} height="79px" alt="moneyback"/>       
-</div>
-<div className="sizeadjuster">
-<div className='selectedtest'>Select your language:</div>
+        <div className='selectedtest'>Seleccione su idioma deseado:</div>
 
-<Select
-  style={{ width: "100%", borderRadius: "7px", border: "1px solid #D2D2D2", height: "48px", display: "flex" }}
-  defaultValue=""
-  popupClassName="custom-dropdown"
-  listHeight="416px"
-  popupMatchSelectWidth // Set dropdown to match width of select
-  dropdownPlacement="bottomLeft"
-  placement="bottomLeft"
-  dropdownStyle={{ maxHeight: "500px", overflowY: "hidden" }}
-  onChange={(value) => handleLanguageChange(value, plans[0]._id)}
-  onFocus={(e) => e.target.style.boxShadow = "transparent"} // Remove blue border on focus
-  onBlur={(e) => e.target.style.borderColor = "#D2D2D2"}
-  suffixIcon={<svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
-    <path d="M14.9141 6.75L9.28906 12.375L3.66406 6.75" stroke="#2C292A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-  </svg>}
->
-  <Option className="justify-content-center" value="">
-    <Avatar /> Select Language
-  </Option>
-  {languageOptions.map((option) => (
-    <Option key={option.value} value={option.label}>
-      <img src={option.image} alt={option.label} width="30px" height="30px" className="language-image" />
-      <span>{option.label}</span>
-    </Option>
-  ))}
-  {/* Render other language options here */}
-</Select>
-{errorPlanId ? (
-  <div className="error-message">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-      <path d="M8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14Z" stroke="#FE2727" stroke-width="1.5" stroke-miterlimit="10" />
-      <path d="M8 5V8.5" stroke="#FE2727" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-      <path d="M8 11.5C8.41421 11.5 8.75 11.1642 8.75 10.75C8.75 10.3358 8.41421 10 8 10C7.58579 10 7.25 10.3358 7.25 10.75C7.25 11.1642 7.58579 11.5 8 11.5Z" fill="#FE2727" />
-    </svg>
-    <span className='mx-2'>Select the desired language:</span>
-  </div>
-) : null}
-</div>
-<button
+        <Select
+          style={{ width: "100%", borderRadius: "7px", border: "1px solid #D2D2D2", height: "48px", display: "flex" }}
+          defaultValue=""
+          popupClassName="custom-dropdown"
+          listHeight="416px"
+          popupMatchSelectWidth // Set dropdown to match width of select
+          dropdownPlacement="bottomLeft"
+          placement="bottomLeft"
+          dropdownStyle={{ maxHeight: "500px", overflowY: "hidden" }}
+          onChange={(value) => handleLanguageChange(value, plans[0]._id)}
+          onFocus={(e) => e.target.style.boxShadow = "transparent"} // Remove blue border on focus
+          onBlur={(e) => e.target.style.borderColor = "#D2D2D2"}
+          suffixIcon={<svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
+            <path d="M14.9141 6.75L9.28906 12.375L3.66406 6.75" stroke="#2C292A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>}
+        >
+          <Option className="justify-content-center" value="">
+            <Avatar /> Select Language
+          </Option>
+          {languageOptions.map((option) => (
+            <Option key={option.value} value={option.label}>
+              <img src={option.image} alt={option.label} width="30px" height="30px" className="language-image" />
+              <span>{option.label}</span>
+            </Option>
+          ))}
+          {/* Render other language options here */}
+        </Select>
+        {errorPlanId ? (
+          <div className="error-message">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14Z" stroke="#FE2727" stroke-width="1.5" stroke-miterlimit="10" />
+              <path d="M8 5V8.5" stroke="#FE2727" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M8 11.5C8.41421 11.5 8.75 11.1642 8.75 10.75C8.75 10.3358 8.41421 10 8 10C7.58579 10 7.25 10.3358 7.25 10.75C7.25 11.1642 7.58579 11.5 8 11.5Z" fill="#FE2727" />
+            </svg>
+            <span className='mx-2'>Please select a language</span>
+          </div>
+        ) : null}
+
+        <button
           className="buy-button"
+          style={{ marginTop: "40px" }}
           onClick={handleClickBuyNow}
 
         >
           Buy Now
         </button>
-</div>
-            </div>
-            <LearningSection/>
-            <ReviewsCarousel/>
-            <div className="coverofUnitedEldt">
-              <PopularCourses/>
-            </div>
+        <div className="certificationbtn">
+          <div className="certified">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+              <path d="M12.5 16.5C16.6421 16.5 20 13.1421 20 9C20 4.85786 16.6421 1.5 12.5 1.5C8.35786 1.5 5 4.85786 5 9C5 13.1421 8.35786 16.5 12.5 16.5Z" stroke="#FBB723" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M12.5 13.5C14.9853 13.5 17 11.4853 17 9C17 6.51472 14.9853 4.5 12.5 4.5C10.0147 4.5 8 6.51472 8 9C8 11.4853 10.0147 13.5 12.5 13.5Z" stroke="#FBB723" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M17 15V22.5L12.5 20.25L8 22.5V15" stroke="#FBB723" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg> FMCSA Certified
+          </div>
+          <div className="certified">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+              <path d="M12.5 21C17.4706 21 21.5 16.9706 21.5 12C21.5 7.02944 17.4706 3 12.5 3C7.52944 3 3.5 7.02944 3.5 12C3.5 16.9706 7.52944 21 12.5 21Z" stroke="#FBB723" stroke-width="1.5" stroke-miterlimit="10" />
+              <path d="M12.5 6.75V12H17.75" stroke="#FBB723" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg> Unlimited Access
+          </div>
         </div>
-        <Modal
-        open={openvideo}
+        <div className="watchdetail" >
+        Vea nuestros otros cursos
+        </div>
+
+      </div>
+
+
+
+
+
+      <Modal
+        open={modalVisi}
         onCancel={handleCloseModal}
         footer={null}
-        width={1200}
+        width="90vw" // Adjusted width to 80% of the viewport width
         style={{ padding: 0, borderRadius: 0, background: "black" }} // Removed padding and border radius
         closeIcon={false}
-        bodyStyle={{ padding: 0, background: "black" ,marginTop: 0 }} // Removed padding for the modal body
+        bodyStyle={{ padding: 0, background: "black" }} // Removed padding for the modal body
       >
-        <video controls width="1200px"  height="auto" autoPlay ref={videoRef}>
+        <video controls width="100%" height="auto" autoPlay ref={videoRef}>
           {/* Adjusted video size */}
           <source src="https://united-cdl-school.s3.amazonaws.com/Videos+of/English.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-      </Modal> 
-      
+      </Modal>
+
       <Modal
         open={modalVisible}
         onCancel={handleCancel}
@@ -668,7 +664,7 @@ function ClassB (){
           <button className="buybtn" onClick={hideavailble}>To try again</button>
         </div>
       </Modal>
-   </>
-    )
+    </>
+  )
 }
-export default ClassB;
+export default MobileHeader;

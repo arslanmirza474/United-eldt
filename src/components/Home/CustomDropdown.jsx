@@ -8,14 +8,46 @@ import { Select } from 'antd';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useParams } from 'react-router-dom';
 
 const { Option } = Select;
 function CustomSelect({ options, handleLanguageChange, language, plans, showModal, large, medium, showCancelButton, handleNavigationClick }) {
   const [errorPlanId, setErrorPlanId] = useState(null);
 const [openvideo,setOpenvideo]=useState(false)
 const [videourl,setVideourl]=useState(false)
-const [videosize,setVideosize]=useState("800")
 const videoRef = useRef(null);
+
+const [cardtext, setCardtext] = useState([
+  { category: "Category", lastupdate: "Last update", selecttext: "Select the desired language:", access: "Unlimited", certificate: "Yes", buybtn: "Buy Now" },
+]);
+
+// Fetch the route parameter
+const { pglan } = useParams();
+
+// Effect to update cardtext based on the route parameter
+useEffect(() => {
+  // Define different states for different languages
+  let newText;
+  switch (pglan) {
+    case "Spanish":
+      newText = [
+        { category: "Categoría", lastupdate: "Actualizado", selecttext: "Seleccione el idioma deseado:", access: "Ilimitado", certificate: "Sí", buybtn: "Compra Ahora" },
+      ];
+      break;
+    case "Portuguese":
+      newText = [
+        { category: "Categoria", lastupdate: "Atualização", selecttext: "Selecione o idioma desejado:", access: "Ilimitado", certificate: "Sim", buybtn: "Compre Agora" },
+      ];
+      break;
+    // Add more cases for other languages if needed
+    default:
+      newText = [
+        { category: "Category", lastupdate: "Last update", selecttext: "Select the desired language:", access: "Unlimited", certificate: "Yes", buybtn: "Buy Now" },
+      ];
+  }
+  // Update the cardtext state
+  setCardtext(newText);
+}, [pglan]);
 const handleCloseModal = () => {
   if (videoRef.current) {
     videoRef.current.pause();
@@ -174,7 +206,7 @@ useEffect(() => {
                     <div className="categoria">
 
 
-                      <span> <Translate>Category </Translate></span>
+                      <span> <Translate>{cardtext[0].category} </Translate></span>
                       <br></br>
 
                       <strong className="strongcontent">  <Translate>{plan.category}</Translate></strong>
@@ -182,14 +214,14 @@ useEffect(() => {
                     <div className="categoria2 ">
 
 
-                      <span> <Translate>Last Update </Translate></span>
+                      <span> <Translate>{cardtext[0].lastupdate} </Translate></span>
                       <br></br>
 
                       <strong className="strongcontent">  <Translate>07/07/2023</Translate></strong>
                     </div>
 
                   </div>
-                  <div className='selectedtest'>Select the desired language:</div>
+                  <div className='selectedtest'>{cardtext[0].selecttext}</div>
 
                   <Select
                     style={{ width: "100%", borderRadius: "7px", border: "1px solid #D2D2D2", height: "48px", display: "flex" }}
@@ -250,7 +282,7 @@ useEffect(() => {
                         strokeLinejoin="round"
                       />
                     </svg>{" "}
-                    <span className="mx-2"><Translate>Access:</Translate><strong className="strong-text"> Unlimited</strong> </span>
+                    <span className="mx-2"><Translate>Access:</Translate><strong className="strong-text"> {cardtext[0].access}</strong> </span>
                   </div>
                   <div className="mt-4  Acesso">
                     <svg
@@ -282,7 +314,7 @@ useEffect(() => {
                         strokeLinejoin="round"
                       />
                     </svg>{" "}
-                    <span className="mx-2"><Translate>TPR Certified:</Translate><strong className="strong-text"> Yes</strong> </span>
+                    <span className="mx-2"><Translate>TPR Certified:</Translate><strong className="strong-text"> {cardtext[0].certificate}</strong> </span>
                   </div>
   </div>
   <div className='coverforexplain'>
@@ -303,7 +335,7 @@ useEffect(() => {
                     style={{ marginTop: "40px" }}
                     onClick={() => handleClickBuyNow(plan._id)}
                   >
-                    <Translate>Buy Now</Translate>
+                    <Translate>{cardtext[0].buybtn}</Translate>
                   </button>
                 </div>
               </div>

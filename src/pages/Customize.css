@@ -266,6 +266,16 @@ background: #FBB723;
   .lastslider p{
     margin-bottom: 31px;
   }
+  .nameofperson{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .name_section{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
 @media (min-width:1441px) {
     .videosectioncover img{
         display: none;

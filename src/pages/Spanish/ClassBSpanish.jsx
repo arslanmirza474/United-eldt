@@ -1,33 +1,33 @@
 
-import "./Customize.css"
+import "../Customize.css"
 import { useState, useRef, useEffect } from "react";
-import barzil from "../components/Home/images/BR Brazil.svg"
-import america from "../components/Home/images/US United States of America (the).svg"
-import pakistan from "../components/Home/images/PK Pakistan.svg"
-import india from "../components/Home/images/IN India.svg"
-import russia from "../components/Home/images/RU Russian Federation (the).svg"
-import france from "../components/Home/images/FR France.svg"
-import arabic from "../components/Home/images/EH Western Sahara.svg"
-import spain from "../components/Home/images/ES Spain.svg"
+import barzil from "../../components/Home/images/BR Brazil.svg"
+import america from "../../components/Home/images/US United States of America (the).svg"
+import pakistan from "../../components/Home/images/PK Pakistan.svg"
+import india from "../../components/Home/images/IN India.svg"
+import russia from "../../components/Home/images/RU Russian Federation (the).svg"
+import france from "../../components/Home/images/FR France.svg"
+import arabic from "../../components/Home/images/EH Western Sahara.svg"
+import spain from "../../components/Home/images/ES Spain.svg"
 import { Select, Avatar, Modal, notification } from 'antd';
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
-import errir from "../components/Home/images/Group 6674 (2).png"
-import Successi from "../components/Home/images/Group 6674.png"
+import errir from "../../components/Home/images/Group 6674 (2).png"
+import Successi from "../../components/Home/images/Group 6674.png"
 import { Link } from "react-router-dom";
-import Googlepay from "../components/Home/Googlepay";
-import bgofmain from "./Images/EnglsihBackground.png"
-import bgofmainsmal from "./Images/Background1920.png"
-import googlereview from "./Images/Google review.svg"
-import truckimage from "./Images/Truckimage.svg"
-import moneybackgrenty from "./Images/100-Money-Back-Guarantee-PNG-Cutout 1.svg"
-import LearningSection from "./LearningSection";
-import ReviewsCarousel from "./ReviewsCarousel";
-import PopularCourses from "../components/Home/PopularCourses";
+import Googlepay from "../../components/Home/Googlepay";
+import bgofmain from "./Sergio.png"
+import bgofmainsmal from "./Sergio.png"
+import googlereview from "../Images/Google review.svg"
+import truckimage from "../Images/Truckimage.svg"
+import moneybackgrenty from "../Images/100-Money-Back-Guarantee-PNG-Cutout 1.svg"
+import LearningSection from "./LearningSectionSpanish";
+import ReviewsCarousel from "../ReviewsCarousel";
+import PopularCourses from "../../components/Home/PopularCourses";
 const { Option } = Select;
 
 
-function ClassB (){
+function ClassBSpanishSpanish (){
     const [modalVisible, setModalVisible] = useState(false);
  
 
@@ -365,8 +365,7 @@ function ClassB (){
             <img src={truckimage} alt="image of classa"/>
         </div>
         <p className="infoaboutclass">
-        A Class A Commercial Driver's License (CDL) grants you the authority to operate various vehicle combinations. This includes the ability to drive a semi-tractor with a trailer attached. Additionally, it permits you to operate vehicles with a gross weight exceeding 26,001 pounds while towing a trailer weighing at least 10,000 pounds.
-        </p>
+        Una licencia de conducir comercial de Clase A (CDL) te da la autoridad para operar diversas combinaciones de vehículos. Esto incluye la habilidad de conducir un semirremolque con un remolque adjunto. Además, te permite operar vehículos con un peso bruto que excede las 26,001 libras mientras remolcas un remolque que pesa mas de 10,000 libras.        </p>
 </div>
 <div className="forborder"></div>
 
@@ -400,7 +399,7 @@ function ClassB (){
     <img src={moneybackgrenty} height="79px" alt="moneyback"/>       
 </div>
 <div className="sizeadjuster">
-<div className='selectedtest'>Select your language:</div>
+<div className='selectedtest'>Seleccione su idioma deseado</div>
 
 <Select
   style={{ width: "100%", borderRadius: "7px", border: "1px solid #D2D2D2", height: "48px", display: "flex" }}
@@ -466,7 +465,7 @@ function ClassB (){
       >
         <video controls width="1200px"  height="auto" autoPlay ref={videoRef}>
           {/* Adjusted video size */}
-          <source src="https://united-cdl-school.s3.amazonaws.com/Videos+of/English.mp4" type="video/mp4" />
+          <source src="https://united-cdl-school.s3.amazonaws.com/Videos+of/Spanish.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </Modal> 
@@ -671,4 +670,4 @@ function ClassB (){
    </>
     )
 }
-export default ClassB;
+export default ClassBSpanishSpanish;

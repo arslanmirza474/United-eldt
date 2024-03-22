@@ -15,21 +15,23 @@ import Allchap from "../Studentdashboard/Allchap.jsx";
 import Logout from "../Studentdashboard/Logout.jsx"
 import PrivacyPolicy from "../pages/PrivacyPolicy.jsx"
 import Loader from "../Studentdashboard/Loader.jsx";
+import HomeofclassaSpanish from "../pages/Spanish/HomeofclassaSpanish.jsx"
 import {
   Elements
-  } from '@stripe/react-stripe-js';
-  import { loadStripe } from '@stripe/stripe-js';
+} from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
 import StudentNav from "../Studentdashboard/StudentNav.jsx";
 import Homeofclassa from "../pages/Homeofclassa.jsx";
 import TermsAndCondition from "../pages/TermsAndCondition.jsx";
 import LoaderAnimationSVGComponent from "../components/Home/LoaderAnimationSVGComponent.jsx";
 import ClassB from "../pages/ClassB.jsx";
-  
-  
-  const stripePromise = loadStripe('pk_test_51O5F9gFZtgAr5eHPPYRptE8ZBDBXAtaLj7XGBnSp106qIqacE80PBnqGyndDPhtDYDpBWNvpJ8YmObgxijiNX22o00C8ueO5lb'); // Replace with your actual public key
-  
+import ClassBSpanishSpanish from "../pages/Spanish/ClassBSpanish.jsx";
+
+
+const stripePromise = loadStripe('pk_test_51O5F9gFZtgAr5eHPPYRptE8ZBDBXAtaLj7XGBnSp106qIqacE80PBnqGyndDPhtDYDpBWNvpJ8YmObgxijiNX22o00C8ueO5lb'); // Replace with your actual public key
+
 const AppRoutes = () => {
-  const [userId, setUserId]=useState(null)
+  const [userId, setUserId] = useState(null)
 
   useEffect(() => {
     const personId = localStorage.getItem("userId");
@@ -46,101 +48,109 @@ const AppRoutes = () => {
           maxHeight: "fit-content",
         }}
       >
-        
+
         <Routes>
           {/* ================= Public Routes Started */}
-         
-             <Route
+
+          <Route
             path="/login"
             element={
-                <AuthenticationStudent />
+              <AuthenticationStudent />
             }
           />
-         
-            <Route
+
+          <Route
             path="/classa"
             element={
-          
-                <Homeofclassa />
-               
+
+              <Homeofclassa />
+
             }
           />
-            <Route
+          <Route
+            path="/classa/:pglan"
+            element={
+
+              <HomeofclassaSpanish />
+
+            }
+          />
+          <Route
             path="/privacy"
             element={
-          <HeaderFooter>
-                            <PrivacyPolicy />
+              <HeaderFooter>
+                <PrivacyPolicy />
 
-          </HeaderFooter>
-               
+              </HeaderFooter>
+
             }
           />
-             <Route
+          <Route
             path="/Loading"
             element={
-       
-                            <LoaderAnimationSVGComponent />
 
-               
+              <LoaderAnimationSVGComponent />
+
+
             }
           />
-            <Route
+          <Route
             path="/classB"
             element={
               <HeaderFooter>
 
-                 <ClassB />
+                <ClassB />
               </HeaderFooter>
-                           
 
-               
+
+
             }
           />
-            <Route
+          <Route
             path="/termandconditions"
             element={
-          <HeaderFooter>
-                            <TermsAndCondition />
+              <HeaderFooter>
+                <TermsAndCondition />
 
-          </HeaderFooter>
-               
+              </HeaderFooter>
+
             }
           />
-       
-           <Route
+
+          <Route
             path="/logout"
             element={
-             <Logout/>
+              <Logout />
             }
-          />        
-<Route
-path="/loader"
-element={
-  <Loader/>
-}/>
-     
-    <Route
-      path="/quiz/:id"
-      element={
-        <QuizLesson />
-      }
-    />
-  
-    <Route
-      path="/test/:index/:chap"
-      element={
-        <Quize />
-      }
-    />
-  
+          />
+          <Route
+            path="/loader"
+            element={
+              <Loader />
+            } />
 
-    <Route
-      path="/Alllessons/:id"
-      element={
-        <Allchap/>
-      }
-    />
-  
+          <Route
+            path="/quiz/:id"
+            element={
+              <QuizLesson />
+            }
+          />
+
+          <Route
+            path="/test/:index/:chap"
+            element={
+              <Quize />
+            }
+          />
+
+
+          <Route
+            path="/Alllessons/:id"
+            element={
+              <Allchap />
+            }
+          />
+
           <Route
             path="/"
             element={
@@ -149,25 +159,25 @@ element={
               </HeaderFooter>
             }
           />
-      
-
-
-
-    <Route
-      path="/StudentLesson/:id/:index"
-      element={
-        <Studypage />
-      }
-    />
-  
 
 
 
 
- 
+          <Route
+            path="/StudentLesson/:id/:index"
+            element={
+              <Studypage />
+            }
+          />
 
 
-          
+
+
+
+
+
+
+
           <Route
             path="/contact-us"
             element={
@@ -183,8 +193,8 @@ element={
 
 
           {/* ============== Admin Routes Ended  */}
-<Route path="/studentdash" element={<Homepage />} />
-<Route path="/studentdash/:local" element={<Homepage />} />
+          <Route path="/studentdash" element={<Homepage />} />
+          <Route path="/studentdash/:local" element={<Homepage />} />
           <Route
             path="/*"
             element={

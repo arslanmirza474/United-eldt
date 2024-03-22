@@ -1,6 +1,6 @@
 import axios, { Axios } from "axios";
 import { Translator, Translate } from "react-auto-translate";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import barzil from "./images/BR Brazil.svg"
 import america from "./images/US United States of America (the).svg"
 import pakistan from "./images/PK Pakistan.svg"
@@ -270,7 +270,36 @@ export default function PopularCourses({ language, showCancelButton, handleNavig
 
 
 
-
+  const [cardtitle, setCardtitle] = useState([
+    { offer:"We have other courses for you"},
+  ]);
+  
+  // Fetch the route parameter
+  const { pglan } = useParams();
+  
+  // Effect to update cardtext based on the route parameter
+  useEffect(() => {
+    // Define different states for different languages
+    let newText;
+    switch (pglan) {
+      case "Spanish":
+        newText = [
+          { offer:"Nuestros otros cursos"},        ];
+        break;
+      case "Portuguese":
+        newText = [
+          { offer:"Nós temos outros cursos para você"},
+        ];
+        break;
+      // Add more cases for other languages if needed
+      default:
+        newText = [
+          { offer:"We have other courses for you"},
+                ];
+    }
+    // Update the cardtext state
+    setCardtitle(newText);
+  }, [pglan]);
 
   return (
     <>
@@ -314,7 +343,7 @@ export default function PopularCourses({ language, showCancelButton, handleNavig
 <div className="forclassb">
   <div className="section-title">
     <h3 className="tab-title" >
-                <Translate>We have other courses for you </Translate>
+                <Translate>{cardtitle[0].offer} </Translate>
               </h3>
   </div>
 
