@@ -1,4 +1,4 @@
-import Videoimage from "./Reviews/VideoForMobile.png"
+import Videoimage from "./Reviews/image 13.png"
 import { useState, useRef, useEffect } from "react";
 import barzil from "../components/Home/images/BR Brazil.svg"
 import america from "../components/Home/images/US United States of America (the).svg"
@@ -466,7 +466,7 @@ function MobileHeader({ showCancelButton }) {
       >
         <video controls width="100%" height="auto" autoPlay ref={videoRef}>
           {/* Adjusted video size */}
-          <source src="https://res.cloudinary.com/dezhgxayn/video/upload/v1710514955/copy_046EFCFA-73BA-49A8-B54B-345B18DCC9DF_dygfrf.mov" type="video/mp4" />
+          <source src="https://united-cdl-school.s3.amazonaws.com/Videos+of/English.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </Modal>

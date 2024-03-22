@@ -18,6 +18,7 @@ import Headerofclassa from "./Headerofclassa";
 import Fllowup from "./Fllowup";
 import GraduateStudent from "./GraduateStudents";
 import Cardforclassa from "./CardforClassa";
+import ClassB from "./ClassB";
 
 const stripePromise = loadStripe('pk_test_51O5F9gFZtgAr5eHPPYRptE8ZBDBXAtaLj7XGBnSp106qIqacE80PBnqGyndDPhtDYDpBWNvpJ8YmObgxijiNX22o00C8ueO5lb'); // Replace with your actual public key
 
@@ -65,27 +66,13 @@ Check out our other courses
       <Footer />
         </>):(  <>
             <Elements stripe={stripePromise}>
-              <div id="topofhead">
-                 <Headerofclassa />
-                </div>                
-            </Elements>       <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br><br></br> <br></br> <br></br> <br></br>
+            <ClassB/>
+              
+            </Elements>    
+<Footer/>
+          
 
-            <Fllowup/>
-
-            <div className="for_destop_version_classa">
-               <ReviewSlider />
-               <GraduateStudent/>
-               <TitleCarousel />
-            <Cardforclassa/>
-            </div>
-            <div  id="allcourses" className="mobileallphone">
-        <Elements stripe={stripePromise}>
-          <PopularCourses language={languageState.language.value} showCancelButton={true} />
-        </Elements>
-       
-      </div> 
-      <div className="cover_for_footer">
-      <Footer /></div>          
+             
           </> )
       }
    

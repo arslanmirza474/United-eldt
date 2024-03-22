@@ -1,3 +1,5 @@
+
+import allcomp from "./Images/AllCampanies.svg"
 function LearningSection (){
     return(
         <>
@@ -132,7 +134,7 @@ function LearningSection (){
                     <div className="describethestudent">
                     Students who graduated with us are now working in these companies.
                     </div>
-                    <img className="sponsodeimage" src="/images/AllCampanies.svg" alt="all_companies"/>
+                    <img className="sponsodeimage" src={allcomp} alt="all_companies"/>
                     </div>
         </div>
  

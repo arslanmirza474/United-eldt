@@ -1,6 +1,3 @@
-.videosectioncover img{
-    margin-top: 65px;
-}
 
 .videosectioncoverforlarge,.videosectioncover{
     text-align: right;
@@ -278,7 +275,7 @@ background: #FBB723;
       }
     .videosectioncoverforlarge{
        display: block;
-        margin-top: 65px;
+        margin-top: 20px;
     }  
     .containerofclassa{
         max-width: 1367px;

@@ -39,7 +39,7 @@ function ReviewSlider() {
                     </Carousel>
                 </div>
 
-                <div className="coverofsponer3" style={{ marginTop: "40px" }} >
+                <div className="coverofsponer3" style={{ marginTop: "136px" }} >
                     <div className="courseltitle" >
                         This course includes
                     </div>

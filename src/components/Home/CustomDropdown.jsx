@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { Translator, Translate } from "react-auto-translate";
 import { motion } from 'framer-motion';
 import imageflags from "./images/Yelloeflags.svg"
-import { Avatar } from 'antd';
+import { Avatar, Modal } from 'antd';
 import { Carousel } from 'antd';
 import { Select } from 'antd';
 import Slider from "react-slick";
@@ -12,8 +12,33 @@ import "slick-carousel/slick/slick-theme.css";
 const { Option } = Select;
 function CustomSelect({ options, handleLanguageChange, language, plans, showModal, large, medium, showCancelButton, handleNavigationClick }) {
   const [errorPlanId, setErrorPlanId] = useState(null);
+const [openvideo,setOpenvideo]=useState(false)
+const [videourl,setVideourl]=useState(false)
+const [videosize,setVideosize]=useState("800")
+const videoRef = useRef(null);
+const handleCloseModal = () => {
+  if (videoRef.current) {
+    videoRef.current.pause();
+  }
+  // Call the parent component's close modal function
+  setOpenvideo(false);
+};
+const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
+// Function to update screenWidth state when window is resized
+const updateScreenWidth = () => {
+  setScreenWidth(window.innerWidth);
+};
 
+// Add event listener to window resize event
+useEffect(() => {
+  window.addEventListener('resize', updateScreenWidth);
+
+  // Clean up the event listener when component unmounts
+  return () => {
+    window.removeEventListener('resize', updateScreenWidth);
+  };
+}, []);
 
   let sliderRef = useRef(null);
   const next = () => {
@@ -101,6 +126,10 @@ function CustomSelect({ options, handleLanguageChange, language, plans, showModa
       showModal(plan);
     }
   };
+  const Handlevideo =(plan)=>{
+    setVideourl(plan.videourl)
+    setOpenvideo(true)
+  }
   return (
     <>
       <Translator
@@ -258,7 +287,7 @@ function CustomSelect({ options, handleLanguageChange, language, plans, showModa
   </div>
   <div className='coverforexplain'>
       {
-    plan.thumnail ? ( <img src={plan?.thumnail} alt='explaination video'/> ):(null)
+    plan.thumnail ? ( <img onClick={()=>{Handlevideo(plan)}} src={plan?.thumnail} alt='explaination video'/> ):(null)
   }
   </div>
 
@@ -289,6 +318,43 @@ function CustomSelect({ options, handleLanguageChange, language, plans, showModa
         </div>
 
       </Translator>
+      {
+  screenWidth < 800 ? (
+    <Modal
+      open={openvideo}
+      onCancel={handleCloseModal}
+      footer={null}
+      width="90vw"
+      style={{ padding: 0, borderRadius: 0, background: "black" }} // Removed padding and border radius
+      closeIcon={false}
+      bodyStyle={{ padding: 0, background: "black", marginTop: 0 }} // Removed padding for the modal body
+    >
+      <video controls width="100%" height="auto" autoPlay ref={videoRef}>
+        {/* Adjusted video size */}
+        <source src={videourl} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </Modal>
+  ) : (
+    <Modal
+      open={openvideo}
+      onCancel={handleCloseModal}
+      footer={null}
+      width={800}
+      style={{ padding: 0, borderRadius: 0, background: "black" }} // Removed padding and border radius
+      closeIcon={false}
+      bodyStyle={{ padding: 0, background: "black", marginTop: 0 }} // Removed padding for the modal body
+    >
+      <video controls width="800px" height="auto" autoPlay ref={videoRef}>
+        {/* Adjusted video size */}
+        <source src={videourl} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </Modal>
+  )
+}
+
+   
     </>
 
   );

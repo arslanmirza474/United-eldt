@@ -1,6 +1,4 @@
-import truckimage from "./Reviews/Truckimage.png"
-import imagethumbnai from "./Reviews/Thumbnailof iamge.png"
-import Videoimage from "./Reviews/VideoForMobile.png"
+
 import "./Customize.css"
 import { useState, useRef, useEffect } from "react";
 import barzil from "../components/Home/images/BR Brazil.svg"
@@ -18,7 +16,11 @@ import errir from "../components/Home/images/Group 6674 (2).png"
 import Successi from "../components/Home/images/Group 6674.png"
 import { Link } from "react-router-dom";
 import Googlepay from "../components/Home/Googlepay";
-import google from "./Reviews/Google.svg"
+import bgofmain from "./Images/EnglsihBackground.png"
+import bgofmainsmal from "./Images/Background1920.png"
+import googlereview from "./Images/Google review.svg"
+import truckimage from "./Images/Truckimage.svg"
+import moneybackgrenty from "./Images/100-Money-Back-Guarantee-PNG-Cutout 1.svg"
 import LearningSection from "./LearningSection";
 import ReviewsCarousel from "./ReviewsCarousel";
 import PopularCourses from "../components/Home/PopularCourses";
@@ -27,19 +29,9 @@ const { Option } = Select;
 
 function ClassB (){
     const [modalVisible, setModalVisible] = useState(false);
-  const videoRef = useRef(null);
-  const [modalVisi, setModalVisi] = useState(false);
-  const handleOpenModal = () => {
-    setModalVisi(true);
-  };
+ 
 
-  const handleCloseModal = () => {
-    if (videoRef.current) {
-      videoRef.current.pause();
-    }
-    // Call the parent component's close modal function
-    setModalVisi(false);
-  };
+
   const languageOptions = [
     { value: 'English', label: 'English', image: america, planId: null },
     { value: 'Spanish', label: 'Spanish', image: spain, planId: null },
@@ -273,19 +265,27 @@ function ClassB (){
 
     setDate(formattedDate);
   };
-
+  const [openvideo,setOpenvideo]=useState(false)
+  const videoRef = useRef(null);
+  const handleCloseModal = () => {
+    if (videoRef.current) {
+      videoRef.current.pause();
+    }
+    // Call the parent component's close modal function
+    setOpenvideo(false);
+  };
     return(
         <>
         <div className="videosection ">
             <div className="videosectioncover">
-                <img src="/images/EnglsihBackground.png" alt="videoof"/>
+                <img src={bgofmain} alt="videoof"/>
 
             </div>
             <div className="videosectioncoverforlarge">
-                <img src="/images/Background1920.png" alt="videoof"/>
+                <img src={bgofmainsmal} alt="videoof"/>
 
             </div>
-            <div className="animation-container">
+            <div className="animation-container" style={{cursor:"pointer"}} onClick={()=>{setOpenvideo(true)}}>
           <svg className="svg1" xmlns="http://www.w3.org/2000/svg" width="75" height="74" viewBox="0 0 75 74" fill="none">
             <path d="M37.7471 61C51.0019 61 61.7471 50.2548 61.7471 37C61.7471 23.7452 51.0019 13 37.7471 13C24.4922 13 13.7471 23.7452 13.7471 37C13.7471 50.2548 24.4922 61 37.7471 61Z" fill="#FBB723" stroke="#FBB723" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
             <path d="M45.7471 37L33.7471 29V45L45.7471 37Z" stroke="#FDFDFD" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round" />
@@ -300,7 +300,7 @@ function ClassB (){
         </div>
             <div className="Review_section">
 <div className="Review_Sectionof">
-    <img src="/images/Google review.svg" alt="google review"/>
+    <img src={googlereview} alt="google review"/>
     <div className="reviewsectionclass">
           
           <div className="startsreview">
@@ -362,7 +362,7 @@ function ClassB (){
         </div>
         <div className="Claas_Aenglish">
             <span>Class A</span>
-            <img src="/images/Truckimage.svg" alt="image of classa"/>
+            <img src={truckimage} alt="image of classa"/>
         </div>
         <p className="infoaboutclass">
         A Class A Commercial Driver's License (CDL) grants you the authority to operate various vehicle combinations. This includes the ability to drive a semi-tractor with a trailer attached. Additionally, it permits you to operate vehicles with a gross weight exceeding 26,001 pounds while towing a trailer weighing at least 10,000 pounds.
@@ -397,9 +397,7 @@ function ClassB (){
           $50.00
         </div>
     </div>
-    <img src="/images/100-Money-Back-Guarantee-PNG-Cutout 1.svg" height="79px" alt="moneyback"/>
-
-       
+    <img src={moneybackgrenty} height="79px" alt="moneyback"/>       
 </div>
 <div className="sizeadjuster">
 <div className='selectedtest'>Select your language:</div>
@@ -458,21 +456,21 @@ function ClassB (){
             </div>
         </div>
         <Modal
-        open={modalVisi}
+        open={openvideo}
         onCancel={handleCloseModal}
         footer={null}
-        width="430px" // Adjusted width to 80% of the viewport width
-        height="90vh"
+        width={800}
         style={{ padding: 0, borderRadius: 0, background: "black" }} // Removed padding and border radius
         closeIcon={false}
         bodyStyle={{ padding: 0, background: "black" ,marginTop: 0 }} // Removed padding for the modal body
       >
-        <video controls width="100%" height="auto" autoPlay ref={videoRef}>
+        <video controls width="800px"  height="auto" autoPlay ref={videoRef}>
           {/* Adjusted video size */}
-          <source src="https://res.cloudinary.com/dezhgxayn/video/upload/v1710514955/copy_046EFCFA-73BA-49A8-B54B-345B18DCC9DF_dygfrf.mov" type="video/mp4" />
+          <source src="https://united-cdl-school.s3.amazonaws.com/Videos+of/English.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-      </Modal>  
+      </Modal> 
+      
       <Modal
         open={modalVisible}
         onCancel={handleCancel}
