@@ -1,0 +1,303 @@
+.videosectioncover img{
+    margin-top: 65px;
+}
+
+.videosectioncoverforlarge,.videosectioncover{
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    background:#B4A206;
+    background-blend-mode: luminosity;
+}
+.Review_section{
+    max-width: 1217px;
+height: 315px;
+flex-shrink: 0;
+border-radius: 8px;
+border: 1px solid #EEE;
+background: #FFF;
+box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.10);
+margin: auto;
+position: relative;
+bottom: 75px;
+padding-top: 29px;
+padding-bottom: 45px;
+padding-left: 40;
+padding-left: 40px;
+display: flex;
+justify-content: space-between;
+}
+.videosectioncoverforlarge{
+    display: none;
+}
+.videosection .animation-container{
+    left: 48%;
+    margin-top: 27px;
+    
+}
+.videosection .animation-container .learntext{
+    right: 11px;
+}
+.Review_Sectionof{
+    display: inline-flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 16px;
+max-width: 530px;
+}
+.Claas_Aenglish{
+    display: flex;
+align-items: center;
+gap: 24px;
+color: #2D2727;
+font-family: Inter;
+font-size: 40px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+.infoaboutclass{
+    color: rgba(45, 39, 39, 0.70);
+font-family: Inter;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 160%; /* 22.4px */
+}
+.Buyer_section{
+    display: inline-flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 24px;
+width: 445px;
+margin-right: 40px;
+position: relative;
+bottom: 15px;
+}
+.describethestudent{
+    color: rgba(44, 41, 42, 0.70);
+font-family: Inter;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 140%; /* 19.6px */
+display: flex;
+justify-content: center;
+width: 100%;
+position: relative;
+bottom: 20px;
+}
+.price_section_english{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.price_section_english img{
+    height: 79px;
+    width: 79px;
+}
+.price_section_english{
+    height: 88px;
+}
+.headerofclassa{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.headerofclassa .coverofpricebuttons{
+    margin-top: 0px;
+}
+.sizeadjuster .selectedtest{
+    margin-top: 0px;
+    color: #2C292A;
+font-family: Inter;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 120%; /* 16.8px */
+letter-spacing: 0.7px;
+}
+.sizeadjuster{
+    width: 100%;
+}
+.forborder{
+    border-left: 1px solid #E1E1E1;
+}
+.containerofclassa{
+    max-width: 1217px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.containerofcousel{
+    max-width: 1217px;
+    margin: auto;
+}
+.listcom{
+    display: flex;
+    gap: 8px;
+    width: 260px;
+}
+.iconother .listcom{
+    width: auto; 
+}
+.coverofalllistcom{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.Course_include{
+    display: flex;
+max-width: 590px;
+padding: 20px;
+flex-direction: column;
+align-items: flex-start;
+gap: 10px;
+border-radius: 8px;
+border: 2px solid #EEE;
+background: #FDFDFD;
+height: auto;
+}
+.Graudatestudentjobs{
+    width: 100%;
+    display: flex;
+height: 157px;
+padding: 20px;
+flex-direction: column;
+align-items: flex-start;
+gap: 24px;
+flex-shrink: 0;
+border-radius: 8px;
+border: 2px solid #EEE;
+background: #FDFDFD;
+}
+.sponsodeimage{
+    position: relative;
+    bottom: 30px;
+    width: 1196px;
+    margin: auto;
+}
+.ReviewSection_slider{
+    margin-top: 63px;
+    width: 100vw;
+height: 428px;
+flex-shrink: 0;
+background: #F3F3F3;
+}
+.caourselTitle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.left_itle{
+    color: #2C292A;
+font-family: Inter;
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+.name_section{
+    display: flex;
+   gap: 10px;
+   align-items: center;
+}
+.nameofperson{
+    color: #2C292A;
+font-family: Inter;
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+.date_of_review{
+    color: rgba(44, 41, 42, 0.50);
+font-family: Inter;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin-left: 20px
+}
+.cover_each_carousel{
+    display: flex;
+width: 320px;
+flex-direction: column;
+align-items: flex-start;
+padding-top: 24px;
+}
+.paraofreview{
+    color: rgba(44, 41, 42, 0.70);
+font-family: Inter;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 140%; /* 19.6px */
+width: 292px;
+}
+/* Custom styles for React Slick Carousel dots */
+.slick-dots li  {
+    width: 80px;
+    height: 6px;
+    border-radius: 7.416px;
+background: #FBB723;
+  }
+  .slick-dots li button{
+    color:transparent;
+  }
+  .slick-dots li button:before{
+    font-family: none;
+  }
+  .custom-dot.slick-active {
+    border-radius: 7.416px;
+    background: #fff;
+    width: 80px;
+    height: 6px;
+    border-radius: 7.416px;
+background: #FBB723;
+  }
+  .Slider_cover{
+    display: flex;
+    gap: 24px;
+    margin: auto;
+    justify-content: center;
+  }
+  .lastslider{
+    display: none;
+  }
+  .lastslider p{
+    margin-bottom: 31px;
+  }
+@media (min-width:1441px) {
+    .videosectioncover img{
+        display: none;
+    }
+    .lastslider{
+        display: block;
+      }
+    .videosectioncoverforlarge{
+       display: block;
+        margin-top: 65px;
+    }  
+    .containerofclassa{
+        max-width: 1367px;
+    }
+    .containerofcousel{
+        max-width: 1367px;
+
+    }
+    .Review_section{
+        max-width: 1367px;
+        bottom: 65px;
+    } 
+    .videosection .animation-container{
+        left: 48%;
+        margin-top: 22px;
+        
+    }
+    
+    .Course_include{
+max-width: 667px;
+    }
+}

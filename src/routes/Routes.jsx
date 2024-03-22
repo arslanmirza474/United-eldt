@@ -23,6 +23,7 @@ import StudentNav from "../Studentdashboard/StudentNav.jsx";
 import Homeofclassa from "../pages/Homeofclassa.jsx";
 import TermsAndCondition from "../pages/TermsAndCondition.jsx";
 import LoaderAnimationSVGComponent from "../components/Home/LoaderAnimationSVGComponent.jsx";
+import ClassB from "../pages/ClassB.jsx";
   
   
   const stripePromise = loadStripe('pk_test_51O5F9gFZtgAr5eHPPYRptE8ZBDBXAtaLj7XGBnSp106qIqacE80PBnqGyndDPhtDYDpBWNvpJ8YmObgxijiNX22o00C8ueO5lb'); // Replace with your actual public key
@@ -79,6 +80,18 @@ const AppRoutes = () => {
             element={
        
                             <LoaderAnimationSVGComponent />
+
+               
+            }
+          />
+            <Route
+            path="/classB"
+            element={
+              <HeaderFooter>
+
+                 <ClassB />
+              </HeaderFooter>
+                           
 
                
             }
