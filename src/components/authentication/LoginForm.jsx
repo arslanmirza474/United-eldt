@@ -147,8 +147,8 @@ const recoverEmail = async (e) => {
                 placeholder="Ex. myemail@email.com"
                 name="email"
                 value={email}
-                onChange={(e)=>{setEmail(e.target.value)}}
-              />
+                onChange={(e) => { setEmail(e.target.value.toLowerCase()) }}
+                />
             </div>
 
             <div className="form-group">
@@ -203,8 +203,8 @@ const recoverEmail = async (e) => {
                 className="form-control"
                 placeholder="Ex. myemail@email.com"
                 value={emailrecover}
-                onChange={(e)=>{setEmailrecover(e.target.value)}}
-              />
+                onChange={(e) => { setEmail(e.target.value.toLowerCase()) }}
+                />
             </div>
             <button type="submit" onClick={recoverEmail} whileTap={{ scale: 0.9 }}>
               {
