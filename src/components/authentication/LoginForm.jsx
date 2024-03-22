@@ -109,7 +109,15 @@ const recoverEmail = async (e) => {
  const handleforget =()=>{
   setForget(false)
  }
- 
+
+ const [typeofinput , setTypeofinput]=useState("password")
+ const changeinput = ()=>{
+if(typeofinput === "password"){
+  setTypeofinput("text")
+}else(
+  setTypeofinput("password") 
+)
+ }
   return (
     <>
       <Translator
@@ -155,14 +163,22 @@ const recoverEmail = async (e) => {
               <label>
                 <Translate>Password</Translate>
               </label>
-              <input
-                type="password"
-                className="form-control"
+              <div className=" form-control controller">
+                   <input
+                type={typeofinput}
                 placeholder="Ex. United2023@"
                 name="password"
-                value={password}
+                
                 onChange={(e)=>{setPassword(e.target.value)}}
               />
+              <div style={{cursor:"pointer"}} onClick={changeinput}>
+                   {
+                typeofinput === "password"?(<i class="fa-solid fa-eye"></i>):(<i class="fa-solid fa-eye-slash"></i>)
+              }
+              </div>
+           
+              </div>
+           
             </div>
 
 

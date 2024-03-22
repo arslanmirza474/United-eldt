@@ -6521,6 +6521,19 @@ body .is-layout-flex {
   height: 100%;
   z-index: 1;
 }
+.controller{
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.controller input{
+  border: none;
+  width: 80%;
+}
+.controller input:focus{
+  outline: none;
+}
 span.flag-icon-banner {
   border: 7.5px solid #2c292a !important;
   box-sizing: border-box !important;
