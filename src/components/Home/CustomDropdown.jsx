@@ -196,8 +196,9 @@ function CustomSelect({ options, handleLanguageChange, language, plans, showModa
                       <path d="M8 11.5C8.41421 11.5 8.75 11.1642 8.75 10.75C8.75 10.3358 8.41421 10 8 10C7.58579 10 7.25 10.3358 7.25 10.75C7.25 11.1642 7.58579 11.5 8 11.5Z" fill="#FE2727" />
                     </svg>   <span className='mx-2'>Please select a language</span></div>
                   )}
-
-                  <div className="toper   Acesso">
+<div className='coverover_topper'>
+  <div>
+        <div className="toper   Acesso">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -222,7 +223,7 @@ function CustomSelect({ options, handleLanguageChange, language, plans, showModa
                     </svg>{" "}
                     <span className="mx-2"><Translate>Access:</Translate><strong className="strong-text"> Unlimited</strong> </span>
                   </div>
-                  <div className="mt-3  Acesso">
+                  <div className="mt-4  Acesso">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -254,6 +255,16 @@ function CustomSelect({ options, handleLanguageChange, language, plans, showModa
                     </svg>{" "}
                     <span className="mx-2"><Translate>TPR Certified:</Translate><strong className="strong-text"> Yes</strong> </span>
                   </div>
+  </div>
+  <div className='coverforexplain'>
+      {
+    plan.thumnail ? ( <img src={plan?.thumnail} alt='explaination video'/> ):(null)
+  }
+  </div>
+
+             
+</div>
+
 
 
 

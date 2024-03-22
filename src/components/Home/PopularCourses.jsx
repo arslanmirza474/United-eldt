@@ -279,11 +279,15 @@ export default function PopularCourses({ language, showCancelButton, handleNavig
         to={language || "en"}
         googleApiKey={process.env.REACT_APP_GOOGLE_TRANSLATE_KEY}
       >
-        <CircularLogoSvg />
+        <div className="circularlogo">
+ <CircularLogoSvg />
+        </div>
+       
         <div className="courses-area tw-my-3" id="courses">
           <div id="thistarget"></div>
           <div className="container ">
-            <div className="section-title titleforcards">
+            <div className="nottoshow">
+                <div className="section-title titleforcards">
               <span className="sub-title ">
                 <Translate>Take the course your way</Translate>
               </span>
@@ -305,7 +309,16 @@ export default function PopularCourses({ language, showCancelButton, handleNavig
               </h3>
 
             </div>
+            </div>
+          
+<div className="forclassb">
+  <div className="section-title">
+    <h3 className="tab-title" >
+                <Translate>We have other courses for you </Translate>
+              </h3>
+  </div>
 
+</div>
 
 
           </div>

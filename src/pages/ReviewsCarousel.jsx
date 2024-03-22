@@ -221,7 +221,7 @@ const ReviewsCarousel = () => {
           </div>
                 </div>
             <div className="paraofreview" style={{marginTop:"8px"}}>"Único site com ELDT 100% em português. SUPER RECOMENDO para brasileiros que não falam inglês. Obrigado, United ELDT!"</div>
-             <img style={{marginTop:"16px"}} src='/images/image 12.png' alt="reviewer"/>
+             <img style={{marginTop:"16px"}} src='/images/2nd review.svg' alt="reviewer"/>
             </div>
             <div className="cover_each_carousel">
                 <div className="name_section">
@@ -286,7 +286,7 @@ const ReviewsCarousel = () => {
                 </div>
             <div className="paraofreview" style={{marginTop:"8px"}}>I was able to go to my CDL driving school with my permit and theory course completed. in less than 2 weeks”
 </div>
-             <img style={{marginTop:"16px"}} src='/images/image 12.png' alt="reviewer"/>
+             <img style={{marginTop:"16px"}} src='/images/Thirdreview.svg' alt="reviewer"/>
             </div>
 
             <div className="cover_each_carousel lastslider">
@@ -352,7 +352,7 @@ const ReviewsCarousel = () => {
                 </div>
             <div className="paraofreview" style={{marginTop:"8px"}}>"Este curso fue el mejor que encontré. Pagué 279 dólares en un sitio, lo peor, todo en inglés.” Thank YOU United ELDT
 </div>
-             <img style={{marginTop:"16px"}} src='/images/image 12.png' alt="reviewer"/>
+             <img style={{marginTop:"16px"}} src='/images/FourthReview.svg' alt="reviewer"/>
             </div>     </div>
      
        
@@ -879,9 +879,7 @@ const ReviewsCarousel = () => {
         </div>
         
        </div>
-        <br></br>
-        <br></br> <br></br>
-        <br></br> <br></br>
+       
         </>
     )
 }

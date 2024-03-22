@@ -21,6 +21,7 @@ import Googlepay from "../components/Home/Googlepay";
 import google from "./Reviews/Google.svg"
 import LearningSection from "./LearningSection";
 import ReviewsCarousel from "./ReviewsCarousel";
+import PopularCourses from "../components/Home/PopularCourses";
 const { Option } = Select;
 
 
@@ -452,6 +453,9 @@ function ClassB (){
             </div>
             <LearningSection/>
             <ReviewsCarousel/>
+            <div className="coverofUnitedEldt">
+              <PopularCourses/>
+            </div>
         </div>
         <Modal
         open={modalVisi}

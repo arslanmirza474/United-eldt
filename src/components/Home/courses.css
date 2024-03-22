@@ -784,7 +784,29 @@
     padding-bottom: 16px;
     cursor: pointer;
 }
-
+.coverover_topper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.forclassb{
+    display: none;
+}
+.coverofUnitedEldt .forclassb{
+    display: block;
+}
+.coverofUnitedEldt .nottoshow{
+    display: none;
+}
+.coverofUnitedEldt .circularlogo{
+    display: none;
+}
+.coverforexplain img{
+    width: 106px;
+    height: 79px;
+    margin-top: 20px;
+    cursor: pointer;
+}
 .straightcard {
     height: 750px;
 }
