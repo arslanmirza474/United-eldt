@@ -26,6 +26,7 @@ import TermsAndCondition from "../pages/TermsAndCondition.jsx";
 import LoaderAnimationSVGComponent from "../components/Home/LoaderAnimationSVGComponent.jsx";
 import ClassB from "../pages/ClassB.jsx";
 import ClassBSpanishSpanish from "../pages/Spanish/ClassBSpanish.jsx";
+import Navigate from "../pages/Naviagte.jsx";
 
 
 const stripePromise = loadStripe('pk_test_51O5F9gFZtgAr5eHPPYRptE8ZBDBXAtaLj7XGBnSp106qIqacE80PBnqGyndDPhtDYDpBWNvpJ8YmObgxijiNX22o00C8ueO5lb'); // Replace with your actual public key
@@ -60,18 +61,10 @@ const AppRoutes = () => {
           />
 
           <Route
-            path="/classa"
-            element={
-
-              <Homeofclassa />
-
-            }
-          />
-          <Route
             path="/classa/:pglan"
             element={
 
-              <HomeofclassaSpanish />
+              <Navigate />
 
             }
           />
