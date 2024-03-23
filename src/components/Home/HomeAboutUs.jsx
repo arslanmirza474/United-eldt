@@ -3,7 +3,7 @@ import { Translator, Translate } from "react-auto-translate";
 import OpenCloseItem from "../Faq/openCloseItem";
 import AboutFeaturesList from "./AboutFeaturesList";
 import { useSelector } from "react-redux";
-import aboutvid from "./images/black-man-truck-driver-attaching-power-cables-from-2023-11-27-05-31-11-utc (1).jpg"
+import aboutvid from "./images/Screenshot 2024-03-23 203724.png"
 import { Modal } from "antd";
 
 const WhyChooseUs = () => {
@@ -88,9 +88,7 @@ const WhyChooseUs = () => {
 };
 export default function HomeAboutUs({ language }) {
   const languageState = useSelector((state) => state.language);
-  const [ismodalopen,setIsmodalopen]=useState(false)
-  const videoRef = useRef(null);
-
+  
   const handleClick = () => {
     console.log("pushed");
     window.scrollTo({
@@ -98,13 +96,19 @@ export default function HomeAboutUs({ language }) {
       behavior: "smooth",
     });
   };
-  const handleCloseModal = () => {
-    if (videoRef.current) {
-      videoRef.current.pause();
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const toggleVideo = () => {
+    const video = document.getElementById('video');
+    if (video.paused) {
+      video.play();
+      setIsPlaying(true);
+    } else {
+      video.pause();
+      setIsPlaying(false);
     }
-    // Call the parent component's close modal function
-    setIsmodalopen(false);
   };
+  
   return (
     <>
       <Translator
@@ -151,14 +155,30 @@ export default function HomeAboutUs({ language }) {
                 </p>
 
                 <div className="about-image mobile" >
-                  <img src={aboutvid} alt="image" onClick={()=>{setIsmodalopen(true)}}/>
+                  <img src={aboutvid} alt="image" />
 
                 </div>
               </div>
+              {!isPlaying && (
+         <div className="animation-container_about">
+         <svg className="svg1_about" xmlns="http://www.w3.org/2000/svg" width="75" height="74" viewBox="0 0 75 74" fill="none">
+           <path d="M37.7471 61C51.0019 61 61.7471 50.2548 61.7471 37C61.7471 23.7452 51.0019 13 37.7471 13C24.4922 13 13.7471 23.7452 13.7471 37C13.7471 50.2548 24.4922 61 37.7471 61Z" fill="#FBB723" stroke="#FBB723" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+           <path d="M45.7471 37L33.7471 29V45L45.7471 37Z" stroke="#FDFDFD" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round" />
+         </svg>
 
-              <div className="about-image desktop" >
-                <img src={aboutvid} alt="image" onClick={()=>{setIsmodalopen(true)}}/>
-              </div>
+         <svg className="svg2_about" xmlns="http://www.w3.org/2000/svg" width="75" height="74" viewBox="0 0 75 74" fill="none">
+           <path d="M37.7471 61C51.0019 61 61.7471 50.2548 61.7471 37C61.7471 23.7452 51.0019 13 37.7471 13C24.4922 13 13.7471 23.7452 13.7471 37C13.7471 50.2548 24.4922 61 37.7471 61Z" fill="#FBB723" stroke="#FBB723" stroke-width="2.4" stroke-miterlimit="10" />
+           <path d="M37.7468 73.8002C58.0709 73.8002 74.5468 57.3243 74.5468 37.0002C74.5468 16.6761 58.0709 0.200195 37.7468 0.200195C17.4227 0.200195 0.946777 16.6761 0.946777 37.0002C0.946777 57.3243 17.4227 73.8002 37.7468 73.8002Z" fill="#FBB723" fill-opacity="0.5" />
+           <path d="M45.7471 37L33.7471 29V45L45.7471 37Z" stroke="#FDFDFD" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+         </svg>
+         <span className="learntext_about">Learn More</span>
+       </div>
+      )}
+              <div className="about-image desktop">
+      <video id="video" style={{width:"100%",height:"100%"}} src="https://united-cdl-school.s3.amazonaws.com/Videos+of/English.mp4" poster={aboutvid} alt="video thumbnail" onClick={toggleVideo} />
+  
+    </div>
+
             </div>
             {/* <div className="about-bottom">
               <AboutFeaturesList language={language} />
@@ -166,25 +186,7 @@ export default function HomeAboutUs({ language }) {
           </div>
         </div>
       </Translator>
-      <Modal
-      visible={ismodalopen}
-      onCancel={handleCloseModal}
-      footer={null}
-      closable={false}
-      centered // Center the modal content
-      style={{ padding: 0, borderRadius: 0 }} // Removed padding and border radius
-      bodyStyle={{ padding: 0 }} // Removed padding for the modal body
-    >
-      <video
-        controls
-        autoPlay
-        ref={videoRef}
-        style={{ width: '100%', height: '100%', outline: 'none' }} // Adjusted video size
-      >
-        <source src="https://res.cloudinary.com/dcve79xmj/video/upload/v1710976774/bd28c8e5-0e0a-4518-9b30-091c2e8c40fe_hdthe0.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-    </Modal>
+
     </>
   );
 }

@@ -6710,6 +6710,61 @@ div#pdf-renderer {
   width: 1240px;
   margin: auto;
 }
+@keyframes switch-animation {
+  0% {
+      opacity: 1;
+  }
+
+  /* Initial state - SVG1 fully visible */
+  50% {
+      opacity: 0;
+  }
+
+  /* Halfway point - SVG1 fades out, SVG2 fades in */
+  100% {
+      opacity: 1;
+  }
+
+  /* Final state - SVG2 fully visible */
+}
+
+.animation-container_about {
+  position: relative;
+  max-width: 35vw;
+  left: 33%;
+  z-index: 9999;
+  top: 190px;
+}
+
+.svg1_about,
+.svg2_about {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  /* Initially hidden */
+}
+
+.svg1_about {
+  animation: switch-animation 2s infinite;
+  /* Adjust animation duration as needed */
+}
+
+.svg2_about {
+  animation: switch-animation 2s infinite alternate;
+  /* Adjust animation duration as needed */
+  animation-delay: 1s;
+  /* Start after 1 second to create alternating effect */
+}
+
+.learntext_about {
+color: #fff;
+font-weight: 600;
+font-family: Inter, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+position: relative;
+top: 80px;
+
+}
 .successsent{
   color: #0A0A0A;
 text-align: center;
@@ -7237,6 +7292,10 @@ padding-bottom: 0px !important;
   }
   .about-area .about-image{
     width: 100% !important;
+  }
+
+  .about-area .about-image img{
+    height: 100%;
   }
   .courses-item .courses-block .price-line {
     font-size: 16px;
