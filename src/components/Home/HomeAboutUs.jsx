@@ -108,6 +108,13 @@ export default function HomeAboutUs({ language }) {
       setIsPlaying(false);
     }
   };
+  const closevide0 = ()=>{
+    const video = document.getElementById('video');
+if(video.play){
+  video.pause();
+      setIsPlaying(false);
+}
+  }
   
   return (
     <>
@@ -160,7 +167,7 @@ export default function HomeAboutUs({ language }) {
                 </div>
               </div>
               {!isPlaying && (
-         <div className="animation-container_about">
+         <div className="animation-container_about" onClick={toggleVideo}>
          <svg className="svg1_about" xmlns="http://www.w3.org/2000/svg" width="75" height="74" viewBox="0 0 75 74" fill="none">
            <path d="M37.7471 61C51.0019 61 61.7471 50.2548 61.7471 37C61.7471 23.7452 51.0019 13 37.7471 13C24.4922 13 13.7471 23.7452 13.7471 37C13.7471 50.2548 24.4922 61 37.7471 61Z" fill="#FBB723" stroke="#FBB723" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
            <path d="M45.7471 37L33.7471 29V45L45.7471 37Z" stroke="#FDFDFD" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round" />
@@ -175,7 +182,7 @@ export default function HomeAboutUs({ language }) {
        </div>
       )}
               <div className="about-image desktop">
-      <video id="video" style={{width:"100%",height:"100%"}} src="https://united-cdl-school.s3.amazonaws.com/Videos+of/English.mp4" poster={aboutvid} alt="video thumbnail" onClick={toggleVideo} />
+      <video id="video" style={{width:"100%",height:"100%"}} src="https://united-cdl-school.s3.amazonaws.com/Videos+of/English.mp4" poster={aboutvid} alt="video thumbnail" onClick={closevide0} />
   
     </div>
 
