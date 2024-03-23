@@ -39,7 +39,7 @@ function ReviewSlider() {
 
                 <div className="coverofsponer3" style={{ marginTop: "136px" }} >
                     <div className="courseltitle" >
-                    Este curso incluye
+                    Conteúdo do Curso
                     </div>
                     <div className="listcom">
                         <div>
@@ -62,7 +62,7 @@ function ReviewSlider() {
                             </svg>
                         </div>
 
-                        <span>Acceso ilimitado al curso.</span>
+                        <span>Acesso ilimitado ao curso</span>
 
                     </div>
                     <div className="listcom">
@@ -74,7 +74,7 @@ function ReviewSlider() {
                             </svg>
                         </div>
 
-                        <span>Varios idiomas disponibles para <br></br>un aprendizaje mejorado</span>
+                        <span>Disponível em 8 idiomas</span>
                     </div>
                     <div className="listcom">
                         <div>
@@ -86,7 +86,7 @@ function ReviewSlider() {
                             </svg>
                         </div>
 
-                        <span>Pase su CDL rápidamente <br></br> ¡GARANTIZADO!</span>
+                        <span>100% de Aprovação garantizada </span>
                     </div>
 
 

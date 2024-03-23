@@ -7,7 +7,9 @@
 .coverofvideothumbnail {
     cursor: pointer;
 }
-
+.cover_of_classA{
+    height: 697px;
+}
 .coverofcourselreview {
     max-width: 556px;
     position: relative;

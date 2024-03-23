@@ -76,35 +76,35 @@ function TitleCarousel() {
             }
             <div className="coverofsponer2" style={{ marginTop: "40px" }}>
                 <div className="courseltitle" >
-                Qué va a aprender
+                O que você vai aprender
                 </div>
                 <div className="listcom">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <path d="M10.75 6.5L7.08125 10L5.25 8.25" stroke="#2C292A" stroke-opacity="0.7" stroke-linecap="round" stroke-linejoin="round" />
                         <path d="M8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14Z" stroke="#2C292A" stroke-opacity="0.7" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
-                    <span>Curso teórico de ELDT</span>
+                    <span>Curso de permissão CDL</span>
                 </div>
                 <div className="listcom">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <path d="M10.75 6.5L7.08125 10L5.25 8.25" stroke="#2C292A" stroke-opacity="0.7" stroke-linecap="round" stroke-linejoin="round" />
                         <path d="M8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14Z" stroke="#2C292A" stroke-opacity="0.7" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
-                    <span>Entrenamiento para el permiso </span>
+                    <span>ELDT Curso teórico </span>
                 </div>
                 <div className="listcom">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <path d="M10.75 6.5L7.08125 10L5.25 8.25" stroke="#2C292A" stroke-opacity="0.7" stroke-linecap="round" stroke-linejoin="round" />
                         <path d="M8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14Z" stroke="#2C292A" stroke-opacity="0.7" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
-                    <span>In depth Pre-trip training</span>
+                    <span>Regulamentação e normas</span>
                 </div>
                 <div className="listcom">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <path d="M10.75 6.5L7.08125 10L5.25 8.25" stroke="#2C292A" stroke-opacity="0.7" stroke-linecap="round" stroke-linejoin="round" />
                         <path d="M8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14Z" stroke="#2C292A" stroke-opacity="0.7" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
-                    <span>Leyes y reglas sobre la carretera</span>
+                    <span>Treinamento detalhado de pré-viagem</span>
                 </div>
 
 
