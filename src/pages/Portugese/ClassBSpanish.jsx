@@ -465,7 +465,7 @@ function ClassBPortugese (){
       >
         <video controls width="1200px"  height="auto" autoPlay ref={videoRef}>
           {/* Adjusted video size */}
-          <source src="https://united-cdl-school.s3.amazonaws.com/Videos+of/Spanish.mp4" type="video/mp4" />
+          <source src="https://united-cdl-school.s3.amazonaws.com/Videos+of/Portugese.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </Modal> 
