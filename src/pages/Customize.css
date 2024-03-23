@@ -236,25 +236,25 @@ line-height: 140%; /* 19.6px */
 width: 292px;
 }
 /* Custom styles for React Slick Carousel dots */
-.slick-dots li  {
+.slick-dots li {
     width: 80px;
     height: 6px;
     border-radius: 7.416px;
-background: #FBB723;
+    background: #FBB723;
   }
   .slick-dots li button{
     color:transparent;
   }
   .slick-dots li button:before{
     font-family: none;
+    width: 80px;
   }
-  .custom-dot.slick-active {
+  .slick-dots .slick-active  {
     border-radius: 7.416px;
-    background: #fff;
     width: 80px;
     height: 6px;
     border-radius: 7.416px;
-background: #FBB723;
+background: #fff;
   }
   .Slider_cover{
     display: flex;
