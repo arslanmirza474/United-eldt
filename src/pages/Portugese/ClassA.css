@@ -1119,7 +1119,7 @@ margin-top: -130px;
 
 @media (max-width:415px) {
     .classacard {
-        bottom: 200px;
+        bottom: 100px;
 
     }
 
@@ -1128,14 +1128,14 @@ margin-top: -130px;
     }
 
     .animation-container {
-        bottom: 230px;
+        bottom: 191px;
     }
 }
 
 @media (max-width:400px) {
 
     .animation-container {
-        bottom: 100px;
+        bottom: 133px;
     }
 }
 
