@@ -7533,6 +7533,9 @@ padding-bottom: 0px !important;
   .basic-info .item-file {
     flex-direction: column;
   }
+  .animation-container_about{
+    display: none;
+  }
   .basic-info .item-file .image-block {
     margin: 0 0 32px;
   }
