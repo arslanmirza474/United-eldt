@@ -20,16 +20,16 @@ function ClassA() {
       <div className="cover_of_classA">
 
         <div className="desc_class_a">
-          <span className="descontent">Pase su CDL GARANTIZADO!  </span>
+          <span className="descontent">Obtenha sua CDL GARANTIDA </span>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
             <path d="M22 12.8086H18L15 21.8086L9 3.80859L6 12.8086H2" stroke="#2C292A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </div>
         <div className="title_class_a">
-        Curso certificado por el FMCSA, empiece hoy!
+        Curso certificado pela FMCSA, comece hoje mesmo com a United ELDT
         </div>
         <div className="descofclassAtitle">
-        Obtenga rápidamente su CDL con el sistema comprobado de United ELDT. Más de 10,000 estudiantes han completado con éxito su entrenamiento teórico de ELDT        </div>
+        Obtenha sua CDL rapidamente com o sistema comprovado da United ELDT; mais de 10.000 alunos concluíram com sucesso seu treinamento teórico ELDT.</div>
         <div className="bottomborder"></div>
         <div className="button_a">
           50% OFF
@@ -51,7 +51,7 @@ function ClassA() {
           $50.00
         </div>
         <div className="BuyNowforclassA" onClick={scrollup}>
-        Compra Ahora
+        Compre Agora
         </div>
       </div>
       

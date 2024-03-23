@@ -11,12 +11,10 @@ function ReviewSlider() {
             <div className="coverofreviewslider">
                 <div className="coverofsponer4">
                     <div className="courseltitle" style={{ display: "flex", justifyContent: "center",width:"254px",textAlign:"center",margin:"auto" }}>
-                    Empresas con las que trabajamos
-                    </div>
+                    Companhias parceiras                    </div>
                     <div className="descofpartner">
                         <div className="inercon">
-                        Estudiantes que se graduaron con nosotros están trabajando en estas empresas.
-
+                        Nossos ex-alunos estão agora empregados nessas empresas.
                         </div>
                     </div>
                     <div style={{ display: "flex", justifyContent: "center" }}>
