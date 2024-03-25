@@ -10,17 +10,19 @@ const Navigate = () => {
     useEffect(() => {
         // You can place any logic related to the language change here
     }, [pglan]);
+    const language = pglan.toLowerCase();
 
+console.log(language)
     // Render the appropriate component based on the language parameter
     let componentToRender;
-    switch (pglan) {
-        case 'Spanish':
+    switch (language) {
+        case 'spanish':
             componentToRender = <HomeofclassaSpanish />;
             break;
-        case 'English':
+        case 'english':
             componentToRender = <Homeofclassa />;
             break;
-            case 'Portuguese':
+            case 'portuguese':
                 componentToRender = <HomeofclassaPortueses />;
                 break;
         default:
