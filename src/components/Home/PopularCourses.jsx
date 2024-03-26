@@ -308,9 +308,7 @@ export default function PopularCourses({ language, showCancelButton, handleNavig
         to={language || "en"}
         googleApiKey={process.env.REACT_APP_GOOGLE_TRANSLATE_KEY}
       >
-        <div className="circularlogo">
- <CircularLogoSvg />
-        </div>
+       
        
         <div className="courses-area tw-my-3" id="courses">
           <div id="thistarget"></div>
