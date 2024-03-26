@@ -12,22 +12,54 @@ import review2 from "./Images/2nd review.svg"
 import review3 from "./Images/Thirdreview.svg"
 import review0 from "./Images/FourthReview.svg"
 const ReviewsCarousel = () => {
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-      
-        appendDots: (dots) => (
-          <div>
-            <ul style={{ margin: "0px" }}> {dots} </ul>
-          </div>
-        ),
-        customPaging: (i) => (
-          <button className="custom-dot"></button>
-        )
-      };
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 6000,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+          infinite: true,
+          dots: true
+        }
+      }, {
+        breakpoint: 1440,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 1300,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        }
+      },
+      {
+        breakpoint: 988,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      }
+    ],
+    appendDots: (dots) => (
+      <div>
+        <ul style={{ margin: "0px" }}> {dots} </ul>
+      </div>
+    ),
+    customPaging: (i) => (
+      <button className="custom-dot"></button>
+    )
+  };
     
 
     return(
@@ -101,7 +133,9 @@ const ReviewsCarousel = () => {
                     </div>
             </div>
             <Slider {...settings}>
-        <div className='Slider_cover d-flex'>
+          <div className='Slider_cover '>
+
+         
         <div className="cover_each_carousel">
                 <div className="name_section">
                      <div className="nameofperson">
@@ -166,8 +200,9 @@ const ReviewsCarousel = () => {
             <div className="paraofreview" style={{marginTop:"8px",width:"318px"}}>"Logré tomar todas mis clases al 100% en español con UnitedELDT. En la escuela donde estaba, solo ofrecían las clases en inglés”
 </div>
              <img style={{marginTop:"16px"}} src={review1} alt="reviewer"/>
-            </div>
-            <div className="cover_each_carousel">
+            </div> </div>
+            <div className='Slider_cover '>
+              <div className="cover_each_carousel">
                 <div className="name_section">
                      <div className="nameofperson">
                      Mario Salustino<div className="startsreview">
@@ -231,6 +266,9 @@ const ReviewsCarousel = () => {
             <div className="paraofreview" style={{marginTop:"8px"}}>"Único site com ELDT 100% em português. SUPER RECOMENDO para brasileiros que não falam inglês. Obrigado, United ELDT!"</div>
              <img style={{marginTop:"16px"}} src={review2} alt="reviewer"/>
             </div>
+            </div>
+            
+            <div className='Slider_cover '>
             <div className="cover_each_carousel">
                 <div className="name_section">
                      <div className="nameofperson">
@@ -295,9 +333,9 @@ const ReviewsCarousel = () => {
             <div className="paraofreview" style={{marginTop:"8px"}}>I was able to go to my CDL driving school with my permit and theory course completed. in less than 2 weeks”
 </div>
              <img style={{marginTop:"16px"}} src={review3} alt="reviewer"/>
-            </div>
-
-            <div className="cover_each_carousel lastslider">
+            </div></div>
+            <div className='Slider_cover '>
+            <div className="cover_each_carousel ">
                 <div className="name_section">
                      <div className="nameofperson">
                      Jefferson Vasconselos <div className="startsreview">
@@ -361,10 +399,9 @@ const ReviewsCarousel = () => {
             <div className="paraofreview" style={{marginTop:"8px"}}>"Este curso fue el mejor que encontré. Pagué 279 dólares en un sitio, lo peor, todo en inglés.” Thank YOU United ELDT
 </div>
              <img style={{marginTop:"16px"}} src={review0} alt="reviewer"/>
-            </div>     </div>
+            </div>    </div>
      
-       
-        <div className='Slider_cover d-flex'>
+            <div className='Slider_cover '>
         <div className="cover_each_carousel">
                 <div className="name_section">
                      <div className="nameofperson">
@@ -428,7 +465,9 @@ const ReviewsCarousel = () => {
                 </div>
             <div className="paraofreview" style={{marginTop:"8px"}}>"Pagar $50 dólares por este curso en español fue la mejor decisión que tomé. Encontré cursos que cobraban $280 "</div>
              <img style={{marginTop:"16px"}} src={review4} alt="reviewer"/>
-            </div>
+            </div></div>
+            <div className='Slider_cover '>
+
             <div className="cover_each_carousel">
                 <div className="name_section">
                      <div className="nameofperson">
@@ -492,7 +531,9 @@ const ReviewsCarousel = () => {
                 </div>
             <div className="paraofreview" style={{marginTop:"8px"}}>“A friend recommended United ELDT, and it was truly a smart decision. Other companies offer courses at almost $200”</div>
              <img style={{marginTop:"16px"}} src={review5} alt="reviewer"/>
-            </div>
+            </div></div>
+            <div className='Slider_cover '>
+
             <div className="cover_each_carousel">
                 <div className="name_section">
                      <div className="nameofperson">
@@ -557,9 +598,10 @@ const ReviewsCarousel = () => {
                 </div>
             <div className="paraofreview" style={{marginTop:"8px"}}>"Este curso fue el mejor que encontré. Pagué 30 dólares en un sitio web llamado ELDT.com, que tenía un curso que tomaba "</div>
              <img style={{marginTop:"16px"}} src={review6} alt="reviewer"/>
-            </div>
+            </div></div>
+            <div className='Slider_cover '>
 
-            <div className="cover_each_carousel lastslider">
+            <div className="cover_each_carousel ">
                 <div className="name_section">
                      <div className="nameofperson">
                      Jose Menjivar  <div className="startsreview">
@@ -624,7 +666,7 @@ const ReviewsCarousel = () => {
              <img style={{marginTop:"16px"}} src={review7} alt="reviewer"/>
             </div>      </div>
        
-            <div className='Slider_cover d-flex'>
+            <div className='Slider_cover '>
         <div className="cover_each_carousel">
                 <div className="name_section">
                      <div className="nameofperson">
@@ -688,7 +730,8 @@ const ReviewsCarousel = () => {
                 </div>
             <div className="paraofreview" style={{marginTop:"8px"}}>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do  ipsum dolor sit amet, consectetur adipiscing elit, sed do”</div>
              <img style={{marginTop:"16px",width:"320px",height:"231px"}} src={review8} alt="reviewer" />
-            </div>
+            </div></div>
+            <div className='Slider_cover '>
             <div className="cover_each_carousel">
                 <div className="name_section">
                      <div className="nameofperson">
@@ -752,7 +795,9 @@ const ReviewsCarousel = () => {
                 </div>
             <div className="paraofreview" style={{marginTop:"8px"}}>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do  ipsum dolor sit amet, consectetur adipiscing elit, sed do”</div>
              <img style={{marginTop:"16px"}} src={review1} alt="reviewer"/>
-            </div>
+            </div></div>
+            <div className='Slider_cover '>
+
             <div className="cover_each_carousel">
                 <div className="name_section">
                      <div className="nameofperson">
@@ -816,9 +861,10 @@ const ReviewsCarousel = () => {
                 </div>
             <div className="paraofreview" style={{marginTop:"8px"}}>“A friend recommended United ELDT, and it was truly a smart decision. Other companies offer courses at almost $200”</div>
              <img style={{marginTop:"16px"}} src={review5} alt="reviewer"/>
-            </div>
+            </div></div>
+            <div className='Slider_cover '>
 
-            <div className="cover_each_carousel lastslider">
+            <div className="cover_each_carousel ">
                 <div className="name_section">
                      <div className="nameofperson">
                      Jefferson Vasconselos <div className="startsreview">
@@ -882,8 +928,8 @@ const ReviewsCarousel = () => {
             <div className="paraofreview" style={{marginTop:"8px"}}>"Este curso fue el mejor que encontré. Pagué 279 dólares en un sitio, lo peor, todo en inglés.” Thank YOU United ELDT
 </div>
              <img style={{marginTop:"16px"}} src={review0} alt="reviewer"/>
-            </div>      </div>
-      
+            </div>      
+      </div>
       
       </Slider>
         </div>

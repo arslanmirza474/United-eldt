@@ -3463,6 +3463,9 @@ line-height: 120%; /* 18px */
   .subscribe-content .newsletter-form{
     width: 100% !important;
   }
+  .call-to-phone-block{
+    padding-top: 0px !important;
+  }
   .mobileabout{
     display: block;
   }
@@ -4521,6 +4524,7 @@ height: 100%;
 .coveroflargerscreen{
   padding-top: 50px;
   padding-bottom: 100px;
+  padding-left: 20px;
 }
 @media (max-width:1080px) {
   .about-area{
