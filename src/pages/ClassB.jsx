@@ -17,7 +17,6 @@ import Successi from "../components/Home/images/Group 6674.png"
 import { Link } from "react-router-dom";
 import Googlepay from "../components/Home/Googlepay";
 import bgofmain from "./Images/EnglsihBackground.png"
-import bgofmainsmal from "./Images/Background1920.png"
 import googlereview from "./Images/Google review.svg"
 import truckimage from "./Images/Truckimage.svg"
 import moneybackgrenty from "./Images/100-Money-Back-Guarantee-PNG-Cutout 1.svg"
@@ -282,7 +281,7 @@ function ClassB (){
 
             </div>
             <div className="videosectioncoverforlarge">
-                <img src={bgofmainsmal} alt="videoof"/>
+                <img src={bgofmain} alt="videoof"/>
 
             </div>
             <div className="animation-container" style={{cursor:"pointer"}} onClick={()=>{setOpenvideo(true)}}>

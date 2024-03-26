@@ -3459,6 +3459,9 @@ line-height: 120%; /* 18px */
   width: 100vw;
   animation: fadeInNavbar 1s ease; /* Add the animation */
 }
+.videosectioncover{
+  margin-top: 40px;
+}
 @media (max-width: 786px) {
   .subscribe-content .newsletter-form{
     width: 100% !important;

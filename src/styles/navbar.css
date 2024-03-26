@@ -1293,7 +1293,7 @@ Navbar Area CSS
 }
 
 .navbar-area.is-home {
-  padding: 40 0px 0px 0px;
+padding: 15px;
 }
 
 .navbar-area {
