@@ -57,9 +57,7 @@
     margin-top: 35px;
 }
 
-.maincontentslider {
-    margin-bottom: 180px;
-}
+
 
 .mainconofslider {
     column-gap: 20px;
@@ -988,9 +986,7 @@
         display: none;
     }
 
-    .maincontentslider {
-        margin-bottom: 60px;
-    }
+  
 
     .maincontentslider .slick-dots.slick-dots-bottom {
         display: none !important;

@@ -765,8 +765,10 @@ textarea.form-control {
   display: flex;
   flex-direction: row;
 }
+
 .about-area .about-area-block{
   justify-content: space-between;
+  padding: 0 20px;
 }
 .courses-main .courses-block
 {
@@ -4572,7 +4574,10 @@ height: 100%;
   display: none;
 }
 
-
+.titleformobile{
+  font-size: 40px;
+  font-weight: 700;
+}
 .about-area .about-image{
   margin: auto;
 }
@@ -6752,6 +6757,11 @@ div#pdf-renderer {
 .coverofhome_company .Graudatestudentjobs{
   border: none;
   background-color: #fff;
+
+}
+.coverofhome_company{
+  padding-top: 50px;
+  padding-bottom: 70px;
 }
 @keyframes switch-animation {
   0% {

@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import aboutvid from "./images/Screenshot 2024-03-23 203724.png"
 import { Modal } from "antd";
 import allcomp from "../../pages/Images/AllCampanies.svg"
+import SliderSponsor from "../../pages/Allsponsors.svg"
 
 const WhyChooseUs = () => {
 
@@ -97,26 +98,37 @@ export default function HomeAboutUs({ language }) {
       behavior: "smooth",
     });
   };
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [openvideo,setOpenvideo]=useState(false)
 
-  const toggleVideo = () => {
-    const video = document.getElementById('video');
-    if (video.paused) {
-      video.play();
-      setIsPlaying(true);
-    } else {
-      video.pause();
-      setIsPlaying(false);
+  const [openmobile,setOpenmobile]=useState(false)
+  const videoRef = useRef(null);
+  const handlemobile = () => {
+    if (videoRef.current) {
+      videoRef.current.pause();
     }
+    // Call the parent component's close modal function
+    setOpenmobile(false);
   };
-  const closevide0 = ()=>{
-    const video = document.getElementById('video');
-if(video.play){
-  video.pause();
-      setIsPlaying(false);
-}
-  }
-  
+  const handleCloseModal = () => {
+    if (videoRef.current) {
+      videoRef.current.pause();
+    }
+    // Call the parent component's close modal function
+    setOpenvideo(false);
+  };
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   return (
     <>
       <Translator
@@ -124,19 +136,41 @@ if(video.play){
         to={languageState?.language?.value || "en"}
         googleApiKey={process.env.REACT_APP_GOOGLE_TRANSLATE_KEY}
       >
-        <div className="coverofhome_company">
+        {
+          windowWidth <= 500?(<>
+                      <div className="coverofreviewslider">
+                      <div className="coverofsponer4">
+                    <div className="courseltitle" style={{ display: "flex", justifyContent: "center" }}>
+                        Partner Companies
+                    </div>
+                    <div className="descofpartner">
+                        <div className="inercon">
+                            Students who graduated with us are now working in these companies.
+
+                        </div>
+                    </div>
+                    <div style={{ display: "flex", justifyContent: "center" }}>
+                        <img className="sponsorimage" src={SliderSponsor} alt="Sponsor" />
+
+                    </div>
+
+                </div>
+                      </div>
+</>):( <div className="coverofhome_company" >
             <div className="containerofclassa mt-5">
         <div className="Graudatestudentjobs">
-        <div className="courseltitle"style={{display:"flex",justifyContent:"center",width:"100%"}} >
+        <div className="courseltitle titleformobile"style={{display:"flex",justifyContent:"center",width:"100%",fontSize:"40px",fontWeight:"700"}} >
         The best companies are with us
                     </div>
-                    <div className="describethestudent">
+                    <div className="describethestudent" style={{fontSize:"21px"}}>
                     Students who graduated with us are now working in these companies.
                     </div>
                     <img className="sponsodeimage" src={allcomp} alt="all_companies"/>
                     </div>
         </div>
-        </div>
+        </div>)
+        }
+       
          
         <div className="about-area">
           <div className="container ">
@@ -177,15 +211,14 @@ if(video.play){
                 </p>
 
                 <div className="about-image mobile" >
-                  <img src={aboutvid} alt="image" />
+                  <img src={aboutvid} alt="image"  onClick={()=>{setOpenmobile(true)}}/>
 
                 </div>
               </div>
 
               <div className="about-image desktop">
-      <video id="video" style={{width:"100%",height:"100%"}} src="https://united-cdl-school.s3.amazonaws.com/Videos+of/English.mp4" poster={aboutvid} alt="video thumbnail" onClick={closevide0} />
-      {!isPlaying && (
-         <div className="animation-container_about" onClick={toggleVideo}>
+      <img style={{width:"100%",height:"100%"}} src={aboutvid} alt="video thumbnail" onClick={()=>{setOpenvideo(true)}}/>
+         <div className="animation-container_about" onClick={()=>{setOpenvideo(true)}}>
          <svg className="svg1_about" xmlns="http://www.w3.org/2000/svg" width="75" height="74" viewBox="0 0 75 74" fill="none">
            <path d="M37.7471 61C51.0019 61 61.7471 50.2548 61.7471 37C61.7471 23.7452 51.0019 13 37.7471 13C24.4922 13 13.7471 23.7452 13.7471 37C13.7471 50.2548 24.4922 61 37.7471 61Z" fill="#FBB723" stroke="#FBB723" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
            <path d="M45.7471 37L33.7471 29V45L45.7471 37Z" stroke="#FDFDFD" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round" />
@@ -198,7 +231,6 @@ if(video.play){
          </svg>
          <span className="learntext_about">Learn More</span>
        </div>
-      )}
     </div>
 
             </div>
@@ -207,6 +239,37 @@ if(video.play){
             </div> */}
           </div>
         </div>
+        <Modal
+
+        open={openvideo}
+        onCancel={handleCloseModal}
+        footer={null}
+        width={1200}
+        style={{ padding: 0, borderRadius: 0, background: "black" }} // Removed padding and border radius
+        closeIcon={false}
+        bodyStyle={{ padding: 0, background: "black" ,marginTop: 0 }} // Removed padding for the modal body
+      >
+        <video controls width="1200px"  height="auto" autoPlay ref={videoRef}>
+          {/* Adjusted video size */}
+          <source src="https://united-cdl-school.s3.amazonaws.com/Videos+of/English.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </Modal> 
+      <Modal
+        open={openmobile}
+        onCancel={handlemobile}
+        footer={null}
+        width="90vw"
+        style={{ padding: 0, borderRadius: 0, background: "black" }} // Removed padding and border radius
+        closeIcon={false}
+        bodyStyle={{ padding: 0, background: "black" ,marginTop: 0 }} // Removed padding for the modal body
+      >
+        <video controls width="100%"  height="auto" autoPlay ref={videoRef}>
+          {/* Adjusted video size */}
+          <source src="https://united-cdl-school.s3.amazonaws.com/Videos+of/English.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </Modal> 
       </Translator>
 
     </>

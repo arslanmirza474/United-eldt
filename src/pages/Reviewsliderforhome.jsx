@@ -49,7 +49,7 @@ function ReviewSliderforhome (){
     return(
         <>
         {
-            windowWidth <= 500 ?(
+            windowWidth <= 1200 ?(
             
                 <div className="coverofreviewslider newcouselcover">
                 <Carousel >
