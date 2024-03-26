@@ -450,7 +450,7 @@ function ClassB (){
             </div>
             <LearningSection/>
             <ReviewsCarousel/>
-            <div className="coverofUnitedEldt">
+            <div className="coverofUnitedEldt mb-3">
               <PopularCourses/>
             </div>
         </div>
