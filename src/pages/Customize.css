@@ -240,7 +240,7 @@ width: 292px;
     width: 80px;
     height: 6px;
     border-radius: 7.416px;
-    background: #FBB723;
+    background: #FFECC3;
   }
   .slick-dots li button{
     color:transparent;
@@ -254,7 +254,7 @@ width: 292px;
     width: 80px;
     height: 6px;
     border-radius: 7.416px;
-background: #fff;
+background: #FBB723;
   }
   .Slider_cover{
     display: flex;

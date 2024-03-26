@@ -5,6 +5,7 @@ import AboutFeaturesList from "./AboutFeaturesList";
 import { useSelector } from "react-redux";
 import aboutvid from "./images/Screenshot 2024-03-23 203724.png"
 import { Modal } from "antd";
+import allcomp from "../../pages/Images/AllCampanies.svg"
 
 const WhyChooseUs = () => {
 
@@ -123,6 +124,20 @@ if(video.play){
         to={languageState?.language?.value || "en"}
         googleApiKey={process.env.REACT_APP_GOOGLE_TRANSLATE_KEY}
       >
+        <div className="coverofhome_company">
+            <div className="containerofclassa mt-5">
+        <div className="Graudatestudentjobs">
+        <div className="courseltitle"style={{display:"flex",justifyContent:"center",width:"100%"}} >
+        The best companies are with us
+                    </div>
+                    <div className="describethestudent">
+                    Students who graduated with us are now working in these companies.
+                    </div>
+                    <img className="sponsodeimage" src={allcomp} alt="all_companies"/>
+                    </div>
+        </div>
+        </div>
+         
         <div className="about-area">
           <div className="container ">
             <div className="about-area-block">
@@ -154,7 +169,7 @@ if(video.play){
                       At United ELDT, we understand that becoming a skilled and confident driver is the first step towards a successful career on the road. As a leading provider of Entry Level Driving Training (ELDT) courses online, we are committed to helping aspiring drivers like you achieve their goals and unlock a world of opportunities.                 </Translate>
                   </span>
 
-                  <div className="tw-flex lg:tw-justify-start tw-justify-center">
+                  <div className="tw-flex lg:tw-justify-start tw-justify-center vousebtn">
                     <button className="default-btn lg:tw-w-1/2  buttonofcourse" onClick={handleClick}>
                       View courses
                     </button>
@@ -166,7 +181,10 @@ if(video.play){
 
                 </div>
               </div>
-              {!isPlaying && (
+
+              <div className="about-image desktop">
+      <video id="video" style={{width:"100%",height:"100%"}} src="https://united-cdl-school.s3.amazonaws.com/Videos+of/English.mp4" poster={aboutvid} alt="video thumbnail" onClick={closevide0} />
+      {!isPlaying && (
          <div className="animation-container_about" onClick={toggleVideo}>
          <svg className="svg1_about" xmlns="http://www.w3.org/2000/svg" width="75" height="74" viewBox="0 0 75 74" fill="none">
            <path d="M37.7471 61C51.0019 61 61.7471 50.2548 61.7471 37C61.7471 23.7452 51.0019 13 37.7471 13C24.4922 13 13.7471 23.7452 13.7471 37C13.7471 50.2548 24.4922 61 37.7471 61Z" fill="#FBB723" stroke="#FBB723" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
@@ -181,9 +199,6 @@ if(video.play){
          <span className="learntext_about">Learn More</span>
        </div>
       )}
-              <div className="about-image desktop">
-      <video id="video" style={{width:"100%",height:"100%"}} src="https://united-cdl-school.s3.amazonaws.com/Videos+of/English.mp4" poster={aboutvid} alt="video thumbnail" onClick={closevide0} />
-  
     </div>
 
             </div>
