@@ -1060,7 +1060,9 @@
 @media (max-width: 500px) {
     .card-content {
         width: 92% !important;
+        padding: 10px;
     }
+
 
 }
 
@@ -1074,7 +1076,12 @@
 
 @media (max-width: 450px) {
 
-
+    .strong-text{
+        font-size: 12px;
+    }
+    .Acesso{
+        font-size: 12px;
+    }
     .slick-arrow {
         display: none !important
     }
