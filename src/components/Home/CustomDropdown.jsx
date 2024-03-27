@@ -366,6 +366,8 @@ useEffect(() => {
         <source src={videourl} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+      <i className="fa-solid fa-xmark" onClick={handleCloseModal} style={{ position: 'absolute', top: '10px', right: '89%', color: 'black',fontSize:"40px",cursor:"pointer" }}></i>
+
     </Modal>
   ) : (
     <Modal
@@ -382,6 +384,8 @@ useEffect(() => {
         <source src={videourl} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+      <i className="fa-solid fa-xmark" onClick={handleCloseModal} style={{ position: 'absolute', top: '10px', right: '89%', color: 'black',fontSize:"40px",cursor:"pointer" }}></i>
+
     </Modal>
   )
 }
