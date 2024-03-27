@@ -59,7 +59,8 @@ export default function Footer() {
                 </p>
                 <p className="forsmallermobile">
                   <Translate>
-                    Welcome to United ELDT, your premier destination for online Entry-Level Driver Training (ELDT) courses.{" "}
+                  Welcome to United ELDT, your premier destination for online Entry-Level Driver Training (ELDT) courses. Our comprehensive program is designed to equip aspiring drivers with the skills and knowledge needed to embark on a successful career in the transportation industry{" "}
+{" "}
                   </Translate>{" "}
                 </p>
               </div>
