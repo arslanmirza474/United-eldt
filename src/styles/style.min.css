@@ -1108,6 +1108,14 @@ height: 485px;
   .about-area {
     padding: 64px 0;
   }
+  .about-area .about-content{
+    padding: 0px;
+  }
+  .about-area{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+
+  }
   .about-image.mobile {
     width: auto;
     height: 800px;
@@ -1124,10 +1132,13 @@ height: 485px;
     font-size: 20px;
     line-height: 28.8px;
   }
+  .vousebtn{
+    display: block !important;
+  }
   .about-area .about-content .sub,
   .about-area-main .about-content .sub {
-    line-height: 22.4px;
-    font-size: 16px;
+    line-height: 160%;
+    font-size: 17px;
   }
 }
 @media (max-width: 530px) {
@@ -3474,17 +3485,26 @@ line-height: 120%; /* 18px */
   .subscribe-content .newsletter-form{
     width: 100% !important;
   }
+  .navbar-area.is-home{
+    padding: 0;
+  }
   .about-area{
 padding-top: 0px;
   }
   .left-hero-block{
-    max-width: 90%;
+    max-width: 100%;
   }
   .banner-animation-container img{
     max-width: 80%;
   }
   .rightimagecontent{
     max-width: 99%;
+  }
+  .about-area .about-area-block{
+    padding: 0;
+  }
+  .about-area{
+    padding: 0;
   }
   /* .primary-button{
     width: 100px;
@@ -3522,6 +3542,17 @@ padding-top: 0px;
   .call-to-phone-block .container-full .callphone-block{
     border-radius: 0px;
     background-image: url(./cover.png);
+    flex-direction: column-reverse;
+    height: 379px !important;
+    width: 85vw;
+    border-radius: 23px;
+  }
+  .left-side{
+    display: block !important;
+    margin-top: 50px;
+  }
+  .callphone-block .left-side img{
+    display: block !important;
   }
   .callphone-block .right-side p{
     color: #FFF;
@@ -3549,7 +3580,7 @@ margin-bottom: 16px !important;
     margin-top: 24px;
   }
   .about-area .about-content .sub-title{
-    margin-bottom: 24px ;
+    margin-bottom: 12px ;
   }
   .about-area .about-content h2{
     margin-bottom: 24px;
@@ -3601,16 +3632,21 @@ margin-bottom: 16px !important;
   .Iconscovers{
     display: none;
   }
-
+.about_formobileview{
+  padding: 15px;
+}
   .titleforcards{
     display: none;
   }
   .card-custom{
     height: 327px !important;
   }
+  .about-area .about-content{
+    text-align: left !important;
+  }
   .about-area .about-image{
     width: 100% !important;
-    height: 237px;
+    height: auto;
   }
   .footer-content .email-bottom{
     padding-right: 0px !important;
@@ -4571,10 +4607,7 @@ height: 100%;
   padding-left: 20px;
 }
 @media (max-width:1080px) {
-  .about-area{
-    padding-left: 10px !important;
-    padding-right: 10px !important;
-  }
+
  
   .about-content{
     max-width: 500px !important;
@@ -7030,10 +7063,16 @@ padding-bottom: 0px !important;
   }
   .callphone-block .left-side {
     order: 2;
-    position: initial;
-    margin: auto;
-    max-width: 450px;
+    position: relative;
+    max-width: 100%;
+    z-index: -22;
+    height: 203px;
+    left: -13px;
   }
+  .call-to-phone-block{
+    margin-top: 203px;
+  }
+
   .callphone-block .button-block,
   .feedback-content,
   .footer-bottom,
@@ -7447,6 +7486,7 @@ padding-bottom: 0px !important;
 
   .about-area .about-image img{
     height: 100%;
+    width: 100vw;
   }
   .courses-item .courses-block .price-line {
     font-size: 16px;
@@ -7474,6 +7514,9 @@ padding-bottom: 0px !important;
   }
   .courses-main .courses-block .line-more-info {
     flex-wrap: wrap;
+  }
+  .button-block{
+    width: 90%;
   }
   .courses-main .courses-block .line-more-info .item {
     padding: 0 14px;

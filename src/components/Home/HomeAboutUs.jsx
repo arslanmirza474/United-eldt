@@ -7,7 +7,7 @@ import aboutvid from "./images/Screenshot 2024-03-23 203724.png"
 import { Modal } from "antd";
 import allcomp from "../../pages/Images/AllCampanies.svg"
 import SliderSponsor from "../../pages/Allsponsors.svg"
-
+import Aboutmobile from "./About mobile picture.png"
 const WhyChooseUs = () => {
 
 
@@ -176,15 +176,29 @@ export default function HomeAboutUs({ language }) {
           <div className="container ">
             <div className="about-area-block">
               <div className="about-content">
-                <span className="sub-title" >
-                  <Translate>Online Learning</Translate>
+              <div className="about-image mobile" >
+                  <img src={Aboutmobile} alt="image"  onClick={()=>{setOpenmobile(true)}}/>
+          
+                </div>
+                <div className="about_formobileview">
+
+               
+                <span className="sub-title  " >
+                  <div className="desktopabout">
+                                      <Translate>Online Learning </Translate>
+
+                  </div>
+                </span>
+                <span className="sub-title " >
+                  <div className="mobileabout">
+                                      <Translate>Do your course your way</Translate>
+                  </div>
                 </span>
 
                 <h2 className="title mobileabout">
                   <Translate>
 
-                    Welcome to United ELDT - where driving careers begin.
-                  </Translate>
+                  Welcome to United ELDT you gateway to professional driving careers                  </Translate>
                 </h2>
                 <h2 className="title desktopabout">
                   <Translate>
@@ -195,8 +209,7 @@ export default function HomeAboutUs({ language }) {
                 <p className="sub">
                   <span className="mobileabout">
                     <Translate>
-                      At United ELDT, we know that becoming a skilled driver is your first step to a successful career. As a top ELDT course provider online, we're dedicated to helping you reach your driving goals and open doors to new opportunities.
-                    </Translate>
+                    At United ELDT, we understand that becoming a skilled and confident driver is the first step towards a successful career on the road. As a leading provider of Entry Level Driving Training (ELDT) courses online, we are committed to helping aspiring drivers like you achieve their goals and unlock a world of opportunities.                    </Translate>
                   </span>
                   <span className="desktopabout textofdesk">
                     <Translate>
@@ -209,11 +222,9 @@ export default function HomeAboutUs({ language }) {
                     </button>
                   </div>
                 </p>
-
-                <div className="about-image mobile" >
-                  <img src={aboutvid} alt="image"  onClick={()=>{setOpenmobile(true)}}/>
-          
+                
                 </div>
+               
               </div>
 
               <div className="about-image desktop">

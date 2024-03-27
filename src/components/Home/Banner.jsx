@@ -53,6 +53,7 @@ const DivHeroLeft = styled("div")({
   flex: `1`,
   margin: `0px`,
   flexWrap: "wrap",
+  marginTop:"10px"
 });
 
 const LeftHeroContentDiv = styled(LeftHeroContent)(({ theme }) => ({

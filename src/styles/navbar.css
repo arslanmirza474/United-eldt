@@ -1748,6 +1748,10 @@ padding: 15px;
   .block-right-topo {
     padding: 34px 34px 0 34px;
   }
+  .callphone-block .right-side{
+    margin: auto auto 0px !important;
+    margin-bottom: 20px !important;
+  }
 
   .left-hero-block .line-flags img {
     display: inline-block;
@@ -1757,7 +1761,7 @@ padding: 15px;
   }
 
   .left-hero-block .main-title-hero {
-    font-size: 32px;
+    font-size: 33px;
   }
 
   .left-hero-block .main-subtitle {

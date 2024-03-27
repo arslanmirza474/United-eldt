@@ -327,15 +327,7 @@ export default function PopularCourses({ language, showCancelButton, handleNavig
                 </Translate>
               </span>
             </div>
-            <div className="section-title anothertitleforcards">
-              <span className="sub-title">
-                <Translate>Take the course your way</Translate>
-              </span>
-              <h3 className="tab-title" >
-                <Translate>Choose your course language</Translate>
-              </h3>
-
-            </div>
+            
             </div>
           
 <div className="forclassb">
