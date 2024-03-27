@@ -2,6 +2,7 @@ import React from "react";
 import { Translator, Translate } from "react-auto-translate";
 import Swal from "sweetalert2";
 import imagecall from "./phoneforcalltocall.png"
+import aboutimage from "./images/aboutus.svg"
 export default function CallToPhone({ language }) {
   return (
     <>
@@ -13,7 +14,14 @@ export default function CallToPhone({ language }) {
 
         <div className="callphone-block">
           <div className="left-side">
-            <img src={imagecall} />
+            <div className="desktopabout">
+                          <img src={imagecall}  alt="image"/>
+
+            </div>
+            <div className="mobileabout">
+                          <img src={aboutimage} alt="image"/>
+
+            </div>
           </div>
           <div className="right-side">
             <div className="right-content">

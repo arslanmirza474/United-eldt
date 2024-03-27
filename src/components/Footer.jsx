@@ -213,7 +213,7 @@ export default function Footer() {
 
 
                   <li>
-                    <Link to="/privacy-policy">
+                    <Link to="/privacy">
                       <a>
                         <Translate>Privacy Policy</Translate>
                       </a>
@@ -221,7 +221,7 @@ export default function Footer() {
                   </li>
 
                   <li>
-                    <Link to="/terms-and-conditions">
+                    <Link to="/termandconditions">
                       <a>
                         <Translate>Terms And Conditions</Translate>
                       </a>
