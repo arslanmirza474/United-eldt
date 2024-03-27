@@ -1,0 +1,52 @@
+.slidercoverdiv{
+border-radius: 8px;
+border: 2px solid #EEE;
+background: #FDFDFD;
+display: flex;
+margin: auto;
+width: 90%;
+padding: 20px 10px;
+flex-direction: column;
+align-items: flex-start;
+gap: 24px;
+flex-shrink: 0;
+height: 1610px;
+}
+/* .baccov{
+    padding: 20px;
+} */
+.googlereviewdiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.slidername{
+    display: block ;
+}
+.reviewtext{
+    color: rgba(44, 41, 42, 0.70);
+font-family: Inter;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 140%; /* 19.6px */
+}
+.imageof_review{
+    width: 100%;
+}
+
+.imageof_review img{
+    width: 100%;
+    margin-top: 14px;
+    margin-bottom: 24px;
+    height: 330px;
+}
+.slidercontent{
+    border-bottom: 1px solid #EEE;
+    display: flex;
+    flex-direction: column;
+align-items: flex-start;
+gap: 10px;
+margin-top: 24px;
+}

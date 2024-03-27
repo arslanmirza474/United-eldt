@@ -3612,7 +3612,7 @@ margin-bottom: 16px !important;
   }
   .slick-dots.slick-dots-bottom{
     position: relative;
-    bottom: 400px;
+    top: 30px;
   }
   .footer-area{
     margin-top: 140px;

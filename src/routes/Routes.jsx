@@ -27,6 +27,7 @@ import LoaderAnimationSVGComponent from "../components/Home/LoaderAnimationSVGCo
 import ClassB from "../pages/ClassB.jsx";
 import ClassBSpanishSpanish from "../pages/Spanish/ClassBSpanish.jsx";
 import Navigate from "../pages/Naviagte.jsx";
+import SliderPage from "../components/Home/Sliderpage.jsx";
 
 
 const stripePromise = loadStripe('pk_test_51O5F9gFZtgAr5eHPPYRptE8ZBDBXAtaLj7XGBnSp106qIqacE80PBnqGyndDPhtDYDpBWNvpJ8YmObgxijiNX22o00C8ueO5lb'); // Replace with your actual public key
@@ -152,8 +153,11 @@ const AppRoutes = () => {
               </HeaderFooter>
             }
           />
-
-
+<Route path="/slider"
+element={
+  <SliderPage/>
+}
+/>
 
 
           <Route

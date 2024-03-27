@@ -1,8 +1,7 @@
 import { Carousel } from "antd"
-import Review1 from "../Reviews/Review1.svg"
-import Review2 from "../Reviews/Review2.svg"
-import Review3 from "../Reviews/Review3.svg"
+
 import SliderSponsor from "../Allsponsors.svg"
+import SliderPage from "../../components/Home/Sliderpage"
 
 function ReviewSlider() {
     return (
@@ -26,17 +25,7 @@ function ReviewSlider() {
 
                 </div>
                 <div className="coverofcourselreview">
-                    <Carousel >
-                        <div className="reviewcontent">
-                            <img src={Review1} alt="review" />
-                        </div>
-                        <div className="reviewcontent">
-                            <img src={Review2} alt="review" />
-                        </div>
-                        <div className="reviewcontent">
-                            <img src={Review3} alt="review" />
-                        </div>
-                    </Carousel>
+                 <SliderPage/>
                 </div>
 
                 <div className="coverofsponer3" style={{ marginTop: "136px" }} >
