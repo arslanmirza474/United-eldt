@@ -314,7 +314,7 @@ useEffect(() => {
                         strokeLinejoin="round"
                       />
                     </svg>{" "}
-                    <span className="mx-2"><Translate>TPR Certified:</Translate><strong className="strong-text"> {cardtext[0].certificate}</strong> </span>
+                    <span className="mx-2"><Translate>Certified:</Translate><strong className="strong-text"> {cardtext[0].certificate}</strong> </span>
                   </div>
   </div>
   <div className='coverforexplain'>
