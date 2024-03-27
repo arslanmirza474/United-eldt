@@ -3485,6 +3485,10 @@ line-height: 120%; /* 18px */
   .subscribe-content .newsletter-form{
     width: 100% !important;
   }
+  .footer-area .footer-content{
+    border-top: none !important;
+    padding-top: 0 !important;
+  }
   .navbar-area.is-home{
     padding: 0;
   }
@@ -3544,7 +3548,7 @@ padding-top: 0px;
     background-image: url(./cover.png);
     flex-direction: column-reverse;
     height: 379px !important;
-    width: 85vw;
+    width: 90vw;
     border-radius: 23px;
   }
   .left-side{
@@ -7066,7 +7070,7 @@ padding-bottom: 0px !important;
     position: relative;
     max-width: 100%;
     z-index: -22;
-    height: 203px;
+    height: 150px;
     left: -13px;
   }
   .call-to-phone-block{

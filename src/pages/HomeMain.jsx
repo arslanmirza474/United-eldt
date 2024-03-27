@@ -47,14 +47,21 @@ export default function HomeMain() {
 
 
       <HomeAboutUs language={languageState.language.value} />
-      <Disclaimer language={languageState.language.value} />
-{
+      {
+  windowWidth > 500 ?(
+      <Disclaimer language={languageState.language.value} />):(null)}
+      <div className="mt-4">
+        {
   windowWidth <= 1440 ?(
 <ReviewSliderforhome/>
   ):(      <FeedbackSliderWithFunFacts language={languageState.language.value} />
   )
 }
+      </div>
 
+{
+  windowWidth > 500 ?(
+     null):( <Disclaimer language={languageState.language.value} />)}
       {/* <NewsLetter language={languageState.language.value} /> */}
     </>
 

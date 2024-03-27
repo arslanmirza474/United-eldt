@@ -18,13 +18,25 @@ export default function CallToPhone({ language }) {
           <div className="right-side">
             <div className="right-content">
               <div className="text-block">
+
                 <h3>
+                <div className="desktopabout">
                   <Translate>Get to know our app</Translate>
+                  </div>
+                  <div className="mobileabout">
+                  <Translate>Find us on Google Play Store & the App Store</Translate>
+                  </div>
                 </h3>
                 <p>
-                  <Translate>
+                <div className="desktopabout">
+                      <Translate>
                     Enjoy high-level learning methods with our app; study from wherever you want
                   </Translate>
+                </div>
+                <div className="mobileabout">
+                <Translate>
+                Get your ELDT done through our mobile apps at the best ELDT provider in the US.                   </Translate>
+                </div>
                 </p>
               </div>
               <div className="button-block">
