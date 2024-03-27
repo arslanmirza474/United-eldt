@@ -1061,9 +1061,7 @@
     .card-content {
         width: 92% !important;
     }
-    .coverforexplain{
-        display: none;
-    }
+
 }
 
 @media (max-width: 1000px) {
