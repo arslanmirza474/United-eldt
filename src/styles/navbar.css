@@ -1394,7 +1394,7 @@ padding: 15px;
 
 .hero-banner {
   /* background: url("../images/hero-background.png") no-repeat center; */
-  padding-top: 15rem;
+  padding-top: 7rem;
   overflow: hidden;
 }
 
@@ -1817,7 +1817,7 @@ padding: 15px;
 
 .main-title-hero {
   color: #2c292a;
-  font-size: 56px;
+  font-size: 90px;
   letter-spacing: 2.8px;
   font-weight: 800;
   margin-bottom: 1.2rem;
@@ -1829,13 +1829,13 @@ padding: 15px;
 
 .main-subtitle {
   color: #2c292a;
-  font-size: 20px;
+  font-size: 27px;
   letter-spacing: 1px;
   line-height: 32px;
   font-weight: 500;
   display: block;
   margin-bottom: 2.5rem;
-  max-width: 450px;
+  max-width: 725px;
 }
 
 .left-hero-block .line-flags {

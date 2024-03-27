@@ -180,7 +180,7 @@ function LeftHeroContent(...props) {
           </ObtenhaCertificaçãoD>
           <SomosAMaiorCertifica
             className="main-subtitle"
-            style={{ maxWidth: "527px" }}
+            style={{ maxWidth: "725px" }}
           >
             <Translate>
               {`We are the largest CDL ELDT certified and digital platform in 8 languages in United States`}

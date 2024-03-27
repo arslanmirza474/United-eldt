@@ -38,6 +38,15 @@ function ReviewSliderforhome (){
     slidesToScroll: 1,
     responsive: [
       {
+        breakpoint: 6000,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
         breakpoint: 1440,
         settings: {
           slidesToShow: 4,

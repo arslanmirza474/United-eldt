@@ -138,7 +138,7 @@ export default function HomeAboutUs({ language }) {
       >
         {
           windowWidth <= 500?(<>
-                      <div className="coverofreviewslider">
+                      <div className="sliderforcomapny">
                       <div className="coverofsponer4">
                     <div className="courseltitle" style={{ display: "flex", justifyContent: "center" }}>
                         Partner Companies
@@ -228,21 +228,22 @@ export default function HomeAboutUs({ language }) {
           </div>
         </div>
         <Modal
-
-        open={openvideo}
-        onCancel={handleCloseModal}
-        footer={null}
-        width={1200}
-        style={{ padding: 0, borderRadius: 0, background: "black" }} // Removed padding and border radius
-        closeIcon={false}
-        bodyStyle={{ padding: 0, background: "black" ,marginTop: 0 }} // Removed padding for the modal body
-      >
-        <video controls width="1200px"  height="auto" autoPlay ref={videoRef}>
-          {/* Adjusted video size */}
-          <source src="https://united-cdl-school.s3.amazonaws.com/Videos+of/English.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </Modal> 
+  open={openvideo}
+  onCancel={handleCloseModal}
+  footer={null}
+  width={1200}
+  style={{ padding: 0, borderRadius: 0, background: "black" }} // Removed padding and border radius
+  closeIcon={false}
+  bodyStyle={{ padding: 0, background: "black", marginTop: 0, position: 'relative' }} // Added position relative to the modal body
+>
+  <video controls width="1200px" height="auto" autoPlay ref={videoRef}>
+    {/* Adjusted video size */}
+    <source src="https://united-cdl-school.s3.amazonaws.com/Videos+of/English.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  {/* Adding the X mark icon */}
+  <i className="fa-solid fa-xmark" onClick={handleCloseModal} style={{ position: 'absolute', top: '10px', right: '89%', color: 'black',fontSize:"40px",cursor:"pointer" }}></i>
+</Modal>
       <Modal
         open={openmobile}
         onCancel={handlemobile}

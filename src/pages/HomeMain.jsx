@@ -51,11 +51,11 @@ export default function HomeMain() {
 {
   windowWidth <= 1440 ?(
 <ReviewSliderforhome/>
-  ):(null)
+  ):(      <FeedbackSliderWithFunFacts language={languageState.language.value} />
+  )
 }
-      <FeedbackSliderWithFunFacts language={languageState.language.value} />
 
-      <NewsLetter language={languageState.language.value} />
+      {/* <NewsLetter language={languageState.language.value} /> */}
     </>
 
   );

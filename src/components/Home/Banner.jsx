@@ -11,6 +11,7 @@ import heroimg from "./images/Realcover.svg";
 import HeaderHeroImg from "./images/header-hero-img.png";
 import BannerAnimation from "./BannerAnimation";
 import LoaderAnimationSVGComponent from "./LoaderAnimationSVGComponent";
+import PopupSvgComponent from "./PopupSvg"
 const HeroBanner = styled("div")({
   display: `flex`,
   position: `relative`,
@@ -37,6 +38,8 @@ const Hero = styled("div")({
   flex: `1`,
   margin: `0px`,
   flexWrap: "nowrap",
+  alignItems:"center"
+
 });
 
 const DivHeroLeft = styled("div")({
@@ -112,29 +115,16 @@ function Banner(...props) {
       {/* <LoaderAnimationSVGComponent /> */}
 
       <HeroBanner className={`hero-banner  tw-px-5 ${props.className}`}>
-        <Hero className="container main-block">
+        <Hero className=" main-block">
           <DivHeroLeft className="main-left-content">
             <LeftHeroContentDiv language={props.language} />
           </DivHeroLeft>
+          <PopupSvgComponent />
+
           <DivHeroRight className="rightimagecontent">
             <BannerAnimation />
           </DivHeroRight>
-          {/* <DivHeroRight className="rightimagecontent">
-            <DivHeroRightContent imgcontent>
-              <DivHeroRightContent imgcontent>
-                <MainImage
-                  src={largeScreenImage}
-                  alt=""
-                  className="main-image desktop largescreenhero"
-                />
-              </DivHeroRightContent>
-            </DivHeroRightContent>
-            <div className="maincover">
-              <div className="main-image mobile mainpagearea">
-                <img src={heroimg} alt="" />
-              </div>
-            </div>
-          </DivHeroRight> */}
+         
         </Hero>
       </HeroBanner>
     </Translator>
